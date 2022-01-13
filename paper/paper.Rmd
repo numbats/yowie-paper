@@ -90,6 +90,13 @@ theme_set(theme_bw(base_size = 18) +
 
 # Introduction {#intro}
 
+<!--
+- how does this particular data relate to education
+- textbook data, why is this important for education
+- being able to refresh textbook data is important
+- what can we learn about the data that is different what is usually taught
+-->
+
 "Open data" is data that is freely accessible, modifiable, and shareable by anyone for any purpose [@opendata]. This type of data can be useful as example data in statistical textbooks and for research purposes. However, open data is often referred to as what we might call "wild data" because it requires substantial cleaning and tidying to tame it into textbook shape. @HuebnerMariannePhD2016Asat emphasize that making the data cleaning process accountable and transparent is imperative and essential for the integrity of downstream statistical analyses and model building <!-- AE comment: It's unclear from context what is being referred to from the Huebner et al 2020 citation -->  [@HuebnerMarianne2020Haar]. 
 Data cleaning can be considered to be a part of what is called "initial data analysis" (IDA) [@Chatfield1985TIEo]. In IDA one would also explore the data, especially to check if the data is consistent with assumptions required for modeling. This is also related to exploratory data analysis (EDA), coined by @tukey with a focus on learning from data. EDA can be considered to encompass IDA. @DasuTamraparni2003Edma say that data cleaning and exploration, without naming it as IDA, is a difficult task and consumes 80% of the data mining task. 
 
