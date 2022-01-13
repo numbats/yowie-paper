@@ -260,6 +260,9 @@ The number of jobs (`number_of_jobs`) for each respondent per year is computed f
 ```{r tidy-rate}
 ```
 
+```{r tidy-rate-hour}
+```
+
 ```{r tidy-nojob}
 ```
 
