@@ -24,9 +24,9 @@ authors:
     email: ""
   - name: Nicholas Tierney
     thanks: ""
-    department: Telethon Kids Institute
-    affiliation: Perth, WA
-    location: "Perth, WA"
+    department: 
+    affiliation: Telethon Kids Institute
+    location: Nedlands, WA 6009
     email: ""
 blind: 1 # 0 for no
 bibliography: ../references.bib
