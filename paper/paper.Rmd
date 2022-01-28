@@ -6,7 +6,7 @@ authors:
     department: Department of Econometrics and Business Statistics
     affiliation: Monash University
     location: Clayton, VIC 3800
-    email: dama0007@student.monash.edu
+    email: dlamaleeah@gmail.com
   - name: Dianne Cook
     department: Department of Econometrics and Business Statistics
     affiliation: Monash University
