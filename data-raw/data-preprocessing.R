@@ -80,8 +80,8 @@ demog_education <- new_data_qnames %>%
 # Get the highest year completed
 highest_year <- demog_education %>%
   group_by(id) %>%
-  filter(grade == max(grade),
-         year == min(year)) %>%
+  filter(grade == max(grade)) %>%
+  filter(year == min(year)) %>%
   rename(yr_hgc = year,
          hgc_i = grade) %>%
   select(id, yr_hgc, hgc_i) %>%
@@ -163,6 +163,29 @@ get_rate <- function(year) {
 
 rates_all <- map_dfr(years, get_rate)
 
+## ---- tidy-start-work
+stwork <- new_data_qnames %>%
+  select(CASEID_1979,
+         `EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND`) %>%
+  rename(id = CASEID_1979,
+         stwork_year = `EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND`)
+
+## ---- tidy-work-experience
+
+exp <- new_data_qnames %>%
+  select(CASEID_1979,
+         starts_with("WKSWK")) %>%
+  pivot_longer(!CASEID_1979, names_to = "exp", values_to = "weeks") %>%
+  separate("exp", c("exp", "year"), sep = -4) %>%
+  group_by(CASEID_1979) %>%
+  mutate(cum_exp = cumsum(coalesce(weeks, 0)) + weeks*0,
+         exp_years = cum_exp/52.143,
+         year = as.numeric(year)) %>%
+  select(CASEID_1979, year, exp_years) %>%
+  rename(id = CASEID_1979,
+         exp = exp_years)
+
+
 ## ---- tidy-rate-hour
 
 # join hours and rates variable
@@ -215,11 +238,14 @@ head(mean_hourly_wage, n = 10)
 
 ## ---- wages-demog-hs
 # join the wages information and the demographic information by case id.
-wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id")
+wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id") %>%
+  left_join(stwork, by = "id") %>%
+  left_join(exp, by = c("id", "year"))
+
 # calculate the years in work force and the age of the subjects in 1979
 wages_demog <- wages_demog %>%
   mutate(yr_hgc = as.numeric(yr_hgc)) %>%
-  mutate(years_in_workforce = year - yr_hgc) %>%
+  mutate(years_in_workforce = year - stwork_year) %>%
   mutate(age_1979 = 1979 - (dob_year + 1900))
 # filter only the id with high school education
 wages_before <- wages_demog  %>% filter(grepl("GRADE", hgc))
