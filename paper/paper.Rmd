@@ -22,13 +22,13 @@ authors:
     department: Department of Econometrics and Business Statistics
     affiliation: Monash University
     location: Clayton, VIC 3800
-    email: ""
+    email: "hyde.kate.a@gmail.com"
   - name: Nicholas Tierney
     thanks: ""
     department: ""
     affiliation: Telethon Kids Institute
     location: Nedlands, WA 6009
-    email: ""
+    email: "nicholas.tierney@gmail.com"
 bibliography: references.bib
 biblio-style: unsrt
 #preamble: >
@@ -278,11 +278,21 @@ The number of jobs (`number_of_jobs`) for each respondent per year is computed f
 ```{r tidy-rate}
 ```
 
+```{r tidy-start-work}
+```
+
+```{r tidy-work-experience}
+```
+
+```{r tidy-rate}
+```
+
 ```{r tidy-rate-hour}
 ```
 
 ```{r tidy-nojob}
 ```
+
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who completed education up to 12th grade and participated in at least five rounds in the survey. We save the resultant wage data on this cohort as `wages`.  
 
