@@ -3,7 +3,7 @@
 # setwd()
 
 
-new_data <- read.table('data-raw/NLSY79/NLSY79.dat', sep=' ')
+new_data <- read.table(here::here('data-raw/NLSY79/NLSY79.dat'), sep=' ')
 names(new_data) <- c('E0010101',
   'E0010102',
   'R0000100',
