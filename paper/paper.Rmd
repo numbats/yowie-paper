@@ -152,7 +152,7 @@ in @SingerJudithD2003Alda, we define high school dropouts as respondents who onl
 ## Getting the data {#getdata}
 
 
-The NLSY79 data contains a large number of variables but for our aim, the scope required is limited to demographic profiles and wages data. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
+The NLSY79 data contains a large number of variables but for our aim, the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
 
 \begin{figure}[t]
 
@@ -178,12 +178,24 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Hours worked  
 \begin{itemize}
-\item[\faCheck] All 442 primary variables in Hours worked were selected.
+\item[\faCheck] All 447 primary variables in Hours worked were selected.
 \end{itemize}
 \item[$\triangleright$] Hourly wages
 \begin{itemize}
 \item[\faCheck] All 156 variables in Hourly wages were selected.
 \end{itemize}
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item[$\triangleright$] Summary measures $\triangleright$ Since date of last interview $\triangleright$ Weeks worked
+\begin{itemize}
+\item[\faCheck] All 28 variables in Weeks worked were selected.
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item[$\triangleright$] Employer Roster $\triangleright$ Job dates $\triangleright$ Original start date
+\begin{itemize}
+\item[\faCheck] Only selected the start date (Year) for the first job (E00101.02)
 \end{itemize}
 \end{itemize}
 \item[$\triangleright$] Household, Geography and Contextual Variables
