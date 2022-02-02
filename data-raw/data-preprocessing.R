@@ -118,7 +118,7 @@ demog_nlsy79 <- full_demographics %>%
 
 
 ## ---- save-demog-data
-usethis::use_data(demog_nlsy79, overwrite = TRUE)
+#usethis::use_data(demog_nlsy79, overwrite = TRUE)
 
 ## ---- tidy-hours
 # make a list for years where we used the "QES-52A"
