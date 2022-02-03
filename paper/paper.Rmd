@@ -54,6 +54,7 @@ yowie <- ifelse(CENSOR, "\\texttt{[CENSORED]}", "\\texttt{yowie}")
 yowie_repo <- ifelse(CENSOR, "CENSORED", "https://github.com/numbats/yowie")
 yowie_pkgdown <- ifelse(CENSOR, "CENSORED", "https://github.com/numbats/yowie")
 yowie_shiny <- ifelse(CENSOR, "CENSORED", "https://ebsmonash.shinyapps.io/yowie_app/")
+censor_word <- function(word) ifelse(CENSOR, "CENSORED", word)
 ```
 
 
@@ -100,6 +101,8 @@ theme_set(theme_bw(base_size = 18) +
 Statistics and data science education relies on cleaned and simplified data, suitably called textbook data, for clear examples about how to apply different techniques. An example of this, is the wages data made public by @SingerJudithD2003Alda which can be used to teach generalized linear models, including hierarchical, mixed effects and multilevel. The freely available data records hourly wages of a sample of high school dropouts, from 1979-1994, along with demographic variables including education and race, taken from the National Longitudinal Survey of Youth (NLSY79) [@nlsy79]. 
 
 The story from modeling the data (and as reported by Singer and Willett) is that wages increase with the length of time in the workforce, higher level of education leads to higher wages, and that race makes a difference, on average. An exploratory analysis reveals however that the individual experience varies a great deal from the overall average. Some individuals experience a decline in wages the longer they are in the workforce, and many experience volatility in their wages. The wages data was used to illustrate exploratory longitudinal data analysis in Ozlem Ilk's PhD thesis supervised by author Cook [@ilk2004], and was further developed into a case study for use in the teaching of exploratory data analysis at Iowa State University. 
+
+This textbook data was used as an example in @ilk2004, and was developed into a case study for use in teaching exploratory data analysis at `r censor_word("Iowa State University")`. The story from modeling the data (and as reported by Singer and Willett) is that wages increase with the length of time in the workforce, higher level of education leads to higher wages, and that race makes a difference, on average. An exploratory analysis reveals however that the individual experience varies a great deal from the overall average. Some individuals experience a decline in wages the longer they are in the workforce, and many experience volatility in their wages. 
 
 This disparity between the average and the individual is a part of statistics, as a discipline, that is given less attention. It is this disparity which makes this particular data set important as a textbook example. Textbook data sets have longevity if there is a unresolved mystery. The iris data [@iris-data] is a prime example. It has withstood the test of time because the three species cannot be perfectly classified, and so it continues to challenge researchers and instructors to do better in the analysis. (A side note: the iris data is best replaced today with the penguins data [@penguins-data], which has similar qualities, is new and does not suffer from a connection with eugenics [@notiris].) We argue that the wages data is in this class of textbook data, too, because it presents a challenge for longitudinal data analysis: how can we better summarize and explain the individual experience? 
 
