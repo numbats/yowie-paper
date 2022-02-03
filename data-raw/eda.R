@@ -1,6 +1,9 @@
 ## ---- sw_wages
 
-sw <- brolgar::wages
+sw <- brolgar::wages %>%
+  group_by(id) %>%
+  mutate(index = 1:n(),
+         id = as.factor(id))
 
 sw_wages <- sw %>%
   ggplot(aes(x = xp,
@@ -45,8 +48,9 @@ sw_wages_mod <- sw %>%
 # filter do data up to 1994 since the textbook data only covers that period.
 
 do <- yowie::wages_hs_do %>%
-  mutate(lnwage = log(wage)) #%>%
-  #filter(year < 1995)
+  group_by(id) %>%
+  mutate(lnwage = log(wage),
+         index = 1:n())
 
 do_ref <- do %>%
   ggplot(aes(x = year,
@@ -89,7 +93,6 @@ sw_id <- as_tibble(sw) %>%
 
 do_id <- as_tibble(do) %>%
   group_by(id) %>%
-  mutate(id = as.numeric(id)) %>%
   count() %>%
   select(id)
 
@@ -169,6 +172,26 @@ do2 <- do %>%
 do2 %>% select(id, race) %>% distinct() %>% count(race)
 do2 %>% select(id, hgc12) %>% distinct() %>% count(hgc12)
 
+# ---- compare_xp_to_yrworkforce
+
+ggplot(do, aes(x = yr_wforce,
+               y = exp,
+               color = id)) +
+  geom_point() +
+  guides(color = "none")
+
+# ---- compare_xp_sw
+
+do_sw_join <- left_join(sw, do, by = c("id", "index"))
+
+ggplot(do_sw_join, aes(x = xp,
+               y = exp,
+               color = id)) +
+  geom_point() +
+  geom_abline(intercept = 0, slope = 1) +
+  guides(color = "none") +
+  xlab("Work experience (Singer & Willet, 2008)") +
+  ylab("Work experience (refreshed)")
 
 
 # Takeaways:
