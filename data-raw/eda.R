@@ -66,7 +66,7 @@ do_ref <- do %>%
 
 do_ref_mod <- do %>%
   mutate(hgc12 = ifelse(hgc_i < 12, "BELOW 12TH", "12TH")) %>%
-  ggplot(aes(x = year,
+  ggplot(aes(x = exp,
              y = lnwage,
              linetype = hgc12)) +
   geom_smooth(method = "lm", se = FALSE,
@@ -75,7 +75,7 @@ do_ref_mod <- do %>%
   scale_linetype("") +
   theme_bw() +
   ylab("Hourly wage ($, natural log)") +
-  xlab("Year of data collection") +
+  xlab("Experience (years)") +
   theme(legend.position = "bottom",
         legend.direction = "horizontal")
 
@@ -140,18 +140,18 @@ sw_wages_agree <- sw_agree %>%
 
 
 do_ref_agree <- do_agree %>%
-  ggplot(aes(x = year,
+  ggplot(aes(x = exp,
              y = lnwage)) +
   geom_line(aes(group = id), alpha = 0.1) +
   geom_smooth(se = FALSE) +
   labs(tag = "B") +
   theme_bw() +
   ylab("ln(Hourly wage) ($)") +
-  xlab("Year") +
+  xlab("Experience (years)") +
   theme(plot.title = element_text(size = 10)) +
   ylim(-3, 5)
 
-# sw_wages_agree + do_ref_agree
+#sw_wages_agree + do_ref_agree
 # sw_wages + do_ref
 sw_wages_mod + do_ref_mod
 
@@ -175,19 +175,18 @@ do2 %>% select(id, hgc12) %>% distinct() %>% count(hgc12)
 # ---- compare_xp_to_yrworkforce
 
 ggplot(do, aes(x = yr_wforce,
-               y = exp,
-               color = id)) +
-  geom_point() +
-  guides(color = "none")
+               y = exp)) +
+  geom_point(alpha = 0.1) +
+  guides(color = "none") +
+  geom_abline(intercept = 0, slope = 1)
 
 # ---- compare_xp_sw
 
 do_sw_join <- left_join(sw, do, by = c("id", "index"))
 
 ggplot(do_sw_join, aes(x = xp,
-               y = exp,
-               color = id)) +
-  geom_point() +
+               y = exp)) +
+  geom_point(alpha = 0.1) +
   geom_abline(intercept = 0, slope = 1) +
   guides(color = "none") +
   xlab("Work experience (Singer & Willet, 2008)") +

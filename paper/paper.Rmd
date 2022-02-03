@@ -454,7 +454,7 @@ The original set contains wages of high school dropouts [@SingerJudithD2003Alda]
 <!--AE comment: “experience in the workforce” should have the period inside the quotations.-->
 There are two aspects of the original data that make a direct comparison difficult. Th first one is that The time variable provided is "experience in the workforce". It is not clear how this is calculated. One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection. Secondly, wages were inflation-adjusted to 1990 prices, which is not done for the refreshed data.  
 
-```{r compare_xp_to_yrworkforce}
+```{r compare_xp_to_yrworkforce, fig.cap = "The association between the lenght of time in the workforce (years) and the work experience. The color represents the respondents (id). Generally, the longer someone were in the workforce, the higher the work experience. However, some of the respondents have much lower working experience compared their duration in the workforce."}
 ```
 
 ```{r compare_xp_sw}
