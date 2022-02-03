@@ -452,7 +452,14 @@ The original set contains wages of high school dropouts [@SingerJudithD2003Alda]
 
 <!--AE comment: In Section 4, you talk about the variables in the original data. “One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection.” I’m not sure what this means. Please clarify.-->
 <!--AE comment: “experience in the workforce” should have the period inside the quotations.-->
-There are two aspects of the original data that make a direct comparison difficult. The time variable provided is "experience in the workforce". It is not clear how this is calculated. One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection. We have not been able to find this information in the database. Secondly, wages were inflation-adjusted to 1990 prices, which is not done for the refreshed data.  
+There are two aspects of the original data that make a direct comparison difficult. Th first one is that The time variable provided is "experience in the workforce". It is not clear how this is calculated. One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection. Secondly, wages were inflation-adjusted to 1990 prices, which is not done for the refreshed data.  
+
+```{r compare_xp_to_yrworkforce}
+```
+
+```{r compare_xp_sw}
+```
+
 
 <!--AE comment: “The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.-->
 The treatment of unlikely wages differ in the refreshed data. In the original data by @SingerJudithD2003Alda, wages greater than $75 are set to be missing. However, in recent context, this value is too low to be set as the maximum threshold. We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section \@ref(censor).

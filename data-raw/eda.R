@@ -93,7 +93,6 @@ sw_id <- as_tibble(sw) %>%
 
 do_id <- as_tibble(do) %>%
   group_by(id) %>%
-  mutate(id = as.numeric(id)) %>%
   count() %>%
   select(id)
 
