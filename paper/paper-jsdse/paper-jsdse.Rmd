@@ -21,13 +21,13 @@ authors:
     department: Dept of Econometrics and Business Statistics
     affiliation: Monash University
     location: Clayton, VIC 3800
-    email: ""
+    email: "hyde.kate.a@gmail.com"
   - name: Nicholas Tierney
     thanks: ""
     department: 
     affiliation: Telethon Kids Institute
     location: Nedlands, WA 6009
-    email: ""
+    email: "nicholas.tierney@gmail.com"
 blind: 1 # 0 for no
 bibliography: ../references.bib
 #preamble: >
