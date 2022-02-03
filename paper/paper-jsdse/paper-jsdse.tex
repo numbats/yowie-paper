@@ -122,7 +122,11 @@ As a textbook data set though, it is outdated. The most recent year in the data 
 
 This paper demonstrates the steps of cleaning data, and documents the process, as recommended by Huebner, Vach, and Cessie (2016). They emphasize that making the data cleaning process accountable and transparent is imperative and essential for the integrity of downstream statistical analyses and model building. Data cleaning can be considered to be a part of what is called ``initial data analysis'' (IDA) (Chatfield 1985). In IDA one would also explore the data, especially to check if the data is consistent with assumptions required for modeling. This is also related to exploratory data analysis (EDA), coined by Tukey (1977) with a focus on learning from data. EDA can be considered to encompass IDA. Dasu and Johnson (2003) say that data cleaning and exploration, without naming it as IDA, is a difficult task and consumes 80\% of the data mining task.
 
+<<<<<<< HEAD
 Our process of cleaning builds heavily on the \texttt{tidyverse} approach (Wickham, Averick, et al. 2019). The data is first organized into ``tidy data'' (Wickham 2014) and then further wrangled using the data pipeline and split-apply-combine approach (Wickham 2011). (Tidy data shouldn't be confused with ``tame data'' which Kim, Ismay, and Chunn (2018) coined to refer to textbook data sets suitable for teaching, particularly teaching statistics.) The resulting (tame) data is provided in a new R package called \texttt{[CENSORED]} which includes the code so that the process is reproducible, and could be used to further refresh the data as new records are made available in the NLSY79 database.
+=======
+Our process of cleaning builds heavily on the \texttt{tidyverse} approach (Wickham et al. 2019). The data is first organized into ``tidy data'' (Wickham 2014) and then further wrangled using the data pipeline and split-apply-combine approach (Wickham 2011). (Tidy data shouldn't be confused with ``tame data'' which Kim, Ismay, and Chunn (2018) coined to refer to textbook data sets suitable for teaching, particularly teaching statistics.) The resulting (tame) data is provided in a new R package called \texttt{[CENSORED]} which includes the code so that the process is reproducible, and could be used to further refresh the data as new records are made available in the NLSY79 database.
+>>>>>>> e9174550e6e3a231aa9c7572667f6c47600e0929
 
 This paper is structured in the following way. Section \ref{database} describes the NLSY79 data source. Section \ref{cleaning} presents the steps of cleaning the data, including getting and tidying the data from the NLSY79 and IDA to find and repair anomalies. Our final subset is compared to the old textbook subset in Section \ref{compare}. Finally, Section \ref{summary} summarizes the contribution and makes recommendations for the NLSY79 data curators.
 
@@ -179,7 +183,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Summary measures $\triangleright$ By job
 \begin{itemize}
-\item[$\triangleright$] Hours worked  
+\item[$\triangleright$] Hours worked
 \begin{itemize}
 \item[\faCheck] All 447 primary variables in Hours worked were selected.
 \end{itemize}
@@ -205,12 +209,12 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Context $\triangleright$ Summary measures $\triangleright$ Basic demographics $\triangleright$ Date of birth
 \begin{itemize}
-\item[\faCheck] All 4 variables in Date of birth were selected. 
+\item[\faCheck] All 4 variables in Date of birth were selected.
 \end{itemize}
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 686 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
+\item[\faCloudDownload] To download all 686 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA.
 \end{itemize}
 \end{tcolorbox}
 \caption{The above documents the steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
@@ -355,7 +359,7 @@ In the next step, we explore the mean hourly wage data. In this case, we only ex
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figures/sample-plot-1} 
+{\centering \includegraphics[width=1\linewidth]{figures/sample-plot-1}
 
 }
 
@@ -367,7 +371,7 @@ However, when checking the summary plots (Figure \ref{fig:feature-plot}), we fou
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figures/feature-plot-1} 
+{\centering \includegraphics[width=1\linewidth]{figures/feature-plot-1}
 
 }
 
@@ -392,7 +396,7 @@ Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the ex
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{figures/compare-plot-1} 
+{\centering \includegraphics[width=0.9\linewidth]{figures/compare-plot-1}
 
 }
 
@@ -404,7 +408,7 @@ We still can see some extreme values in maximum wages, but consider it as a natu
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figures/fixed-feature-plot-1} 
+{\centering \includegraphics[width=1\linewidth]{figures/fixed-feature-plot-1}
 
 }
 
@@ -422,7 +426,11 @@ Figure \ref{fig:flow-chart-blind} summarizes the steps taken to go from raw to i
 
 \begin{figure}
 
+<<<<<<< HEAD
 {\centering \includegraphics[width=0.85\linewidth]{/Users/deeamaliah/Documents/yowie-paper/paper/figures/flowchart_blind} 
+=======
+{\centering \includegraphics[width=0.85\linewidth]{/Users/etan0038/Dropbox/repo/yowie-paper/paper/figures/flowchart_blind}
+>>>>>>> e9174550e6e3a231aa9c7572667f6c47600e0929
 
 }
 
@@ -436,7 +444,7 @@ The original set contains wages of high school dropouts (Singer and Willett 2003
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figures/plotting-sw-do-1} 
+{\centering \includegraphics[width=1\linewidth]{figures/plotting-sw-do-1}
 
 }
 
