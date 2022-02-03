@@ -428,8 +428,6 @@ The original set contains wages of high school dropouts (Singer and Willett 2003
 
 There are two aspects of the original data that make a direct comparison difficult. Th first one is that The time variable provided is ``experience in the workforce''. It is not clear how this is calculated. One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection. Secondly, wages were inflation-adjusted to 1990 prices, which is not done for the refreshed data.
 
-\begin{center}\includegraphics[width=468px]{figures/compare_xp_to_yrworkforce-1} \end{center}
-
 \begin{center}\includegraphics[width=468px]{figures/compare_xp_sw-1} \end{center}
 
 The treatment of unlikely wages differ in the refreshed data. In the original data by Singer and Willett (2003), wages greater than \$75 are set to be missing. However, in recent context, this value is too low to be set as the maximum threshold. We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section \ref{censor}.
