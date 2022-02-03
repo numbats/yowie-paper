@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.15)  3 FEB 2022 12:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.15)  3 FEB 2022 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1538,8 +1538,15 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
 (Font)              `T1/SourceSansPro-TLF/bold/n' on input line 217.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
 (Font)              scaled to size 15.0pt on input line 217.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 222.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
+(Font)              scaled to size 12.0pt on input line 222.
+[1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF o
-n input line 222.
+n input line 258.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sourcesanspro/TS1SourceSansPro-TL
 F.fd
@@ -1547,11 +1554,16 @@ File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/So
 urceSansPro-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 222.
+(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 258.
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 222.
+(Font)              scaled to size 12.0pt on input line 258.
 
-LaTeX Warning: Empty bibliography on input line 227.
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
+
+ []
+
+
+LaTeX Warning: Empty bibliography on input line 267.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1561,14 +1573,12 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 229.
-[1
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 229.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
+[2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
 (./response1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 229.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 229.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
 Package rerunfilecheck Info: File `response1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response1.run.xml'.
@@ -1576,11 +1586,11 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26097 strings out of 480488
- 425197 string characters out of 5899970
- 1113270 words of memory out of 5000000
- 41732 multiletter control sequences out of 15000+600000
- 592590 words of font info for 45 fonts, out of 8000000 for 9000
+ 26136 strings out of 480488
+ 426432 string characters out of 5899970
+ 1117270 words of memory out of 5000000
+ 41735 multiletter control sequences out of 15000+600000
+ 605733 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,96p,1198b,1591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5ponh6.en
@@ -1588,10 +1598,10 @@ c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.en
 c}</usr/local/texlive/2019/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSan
 sPro-Bold.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/adobe/sourcesansp
 ro/SourceSansPro-Regular.pfb>
-Output written on response1.pdf (1 page, 120602 bytes).
+Output written on response1.pdf (2 pages, 129021 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
+ 29 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
  4097 words of extra memory for PDF output out of 10000 (max. 10000000)
 
