@@ -13,7 +13,7 @@ age_table <- full_demographics %>%
 age_table %>%
   mutate(n = scales::comma(n)) %>%
   kable(
-      caption = "The frequency table of the age at the start of the survey (?CHECK) in the full NSLY79 data",
+      caption = "The frequency table of the age at the start of the survey in NSLY79 cohort",
       col.names = c("Age", "Number of individuals"),
       booktabs = TRUE,
       linesep = "",

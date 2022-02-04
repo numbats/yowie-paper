@@ -53,6 +53,7 @@ We thank the reviewer for pointing out to us that the data contains information 
 * We have corrected all minor grammatical errors pointed out by the reviewers.  
 * We have made the descriptions of the steps more explicit. 
 
+
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{It's unclear from context what is being referred to from the Huebner et al 2020 citation.}
 \end{description}
@@ -60,21 +61,47 @@ We thank the reviewer for pointing out to us that the data contains information 
 * We have fixed the sentences and the reference.
 
 \begin{description}
-\item[Reviewer 1:]\textcolor{violet}{What is dplyr used for? Are there tidyverse packages used but not mentioned? If not, splitting this sentence into two may make it clearer which package is used to what purpose. Also, I haven't tried it in code, but I imagine that the data could be tidied as described just using pivot_longer, at least for the job number, year, and wage data. In other words, I don't see why dplyr or stringr would be needed for the data described on page 6.}
+\item[Reviewer 1:]\textcolor{violet}{What is dplyr used for? Are there tidyverse packages used but not mentioned? If not, splitting this sentence into two may make it clearer which package is used to what purpose. Also, I haven't tried it in code, but I imagine that the data could be tidied as described just using pivot\_longer, at least for the job number, year, and wage data. In other words, I don't see why dplyr or stringr would be needed for the data described on page 6.}
 \end{description}
 
 * We have split the sentences and described the use of each package mentioned. 
 
 \begin{description}
-\item[Reviewer 1:]\textcolor{violet}{please clarify. "If either the hourly wage or hours worked is missing, we do not tally this." I take "this" to mean "number_of_jobs". But in row 2, total_hours is missing, yet number_of_jobs is 1. The number of jobs (1) was tallied even though hours worked was missing.}
+\item[Reviewer 1:]\textcolor{violet}{please clarify. "If either the hourly wage or hours worked is missing, we do not tally this." I take "this" to mean "number\_of\_jobs". But in row 2, total\_hours is missing, yet number\_of\_jobs is 1. The number of jobs (1) was tallied even though hours worked was missing.}
 \end{description}
 
 * We have clarified this that we only tally the number of jobs if the hourly wage is not missing.
 
 \begin{description}
-\item[Reviewer 1:]{"to find the anomaly in the wages values" This comes as a surprise to the reader. What anomaly? The wage anomalies should be mentioned in the introduction so as not to be a surprise at this point in the manuscript.}
+\item[Reviewer 1:]\textcolor{violet}{"to find the anomaly in the wages values" This comes as a surprise to the reader. What anomaly? The wage anomalies should be mentioned in the introduction so as not to be a surprise at this point in the manuscript.}
 \end{description}
 
 \begin{description}
-\item[Reviewer 2:] \textcolor{violet}{My primary comment is that many elements need to be more explicitly spelled out.}
+\item[Reviewer 1:]\textcolor{violet}{I don't know that Table 1 is necessary as I don't have anything to compare it to. If the numbers check out, a simple statement to that effect would suffice. Also, what does "(?CHECK)" mean? This needs to be resolved.}
 \end{description}
+
+* We have removed "(?CHECK)" in Table 1's caption. We also have stated in a sentences after the table that Table 1 reflects the consistency between the data we had and the database.
+
+\begin{description}
+\item[Reviewer 1:]\textcolor{violet}{for example, ID 39 experienced an unusual wage only in one year.' That's one way to fix this sentence, which needs to be rewritten.}
+\end{description}
+
+* We have rewritten this sentences.
+
+\begin{description}
+\item[Reviewer 1:]\textcolor{violet}{How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?}
+\end{description}
+
+* There is no individuals up to 8th grade in the refreshed dataset as we only filtered the high school dropouts (started from 9th grade ,i.e., high school grade). The plausible reasons for the differences are we might have different definition of high school dropouts with the original data and the corresponding individual back to high school after they dropped out so that their highest grade completed is 12th grade.   
+
+\begin{description}
+\item[Reviewer 1:]\textcolor{violet}{How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{My primary comment is that many elements need to be more explicitly spelled out.}
+\end{description}
+
+
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  4 FEB 2022 01:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  5 FEB 2022 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1303,7 +1303,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 140.
 Package hyperref Info: Option `colorlinks' set `true' on input line 140.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
+Package: mathtools 2021/02/02 v1.28 mathematical typesetting tools
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count433
@@ -1319,10 +1319,6 @@ LaTeX Info: Redefining \addtolength on input line 81.
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \g_MT_multlinerow_int=\count436
 \l_MT_multwidth_dim=\dimen194
 \origjot=\skip94
@@ -1408,7 +1404,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'australian'.
-No file response1.aux.
+(./response1.aux)
 \openout1 = `response1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxsfmi/m/it on input line 205.
@@ -1494,6 +1490,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 205.
 LaTeX Info: Redefining \pageref on input line 205.
 LaTeX Info: Redefining \nameref on input line 205.
+(./response1.out) (./response1.out)
 \@outlinefile=\write5
 \openout5 = `response1.out'.
 
@@ -1567,8 +1564,8 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 \openout4 = `response1.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'response1.bbl' not found.
-No file response1.bbl.
+Package biblatex Info: ... file 'response1.bbl' found.
+(./response1.bbl)
 Package biblatex Info: Reference section=0 on input line 205.
 Package biblatex Info: Reference segment=0 on input line 205.
 Package caption Info: Begin \AtBeginDocument code.
@@ -1633,22 +1630,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
+[2]
 
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
+LaTeX Warning: Empty bibliography on input line 335.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.275 \item[Reviewer 1:]
-                         
+
+Package caption Warning: Unused \captionsetup[figure] on input line 66.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Unused \captionsetup[table] on input line 67.
+See the caption package documentation for explanation.
+
+[3] (./response1.aux)
+Package rerunfilecheck Info: File `response1.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'response1.run.xml'.
+\openout1 = `response1.run.xml'.
+
+ ) 
 Here is how much of TeX's memory you used:
- 26880 strings out of 480247
- 467330 string characters out of 5894884
- 1206586 words of memory out of 5000000
- 44380 multiletter control sequences out of 15000+600000
- 545660 words of font info for 94 fonts, out of 8000000 for 9000
+ 26913 strings out of 480247
+ 467902 string characters out of 5894884
+ 1206836 words of memory out of 5000000
+ 44388 multiletter control sequences out of 15000+600000
+ 546796 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,11n,117p,1198b,833s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,11n,117p,1198b,1621s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a
+_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourc
+esanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1
+/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Library/TinyTeX/
+texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
+Output written on response1.pdf (3 pages, 134864 bytes).
+PDF statistics:
+ 36 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
+ 28673 words of extra memory for PDF output out of 29859 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!
