@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  5 FEB 2022 00:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  7 FEB 2022 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1632,7 +1632,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
 [2]
 
-LaTeX Warning: Empty bibliography on input line 335.
+LaTeX Warning: Empty bibliography on input line 339.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1650,11 +1650,11 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26913 strings out of 480247
- 467902 string characters out of 5894884
+ 26916 strings out of 480247
+ 468001 string characters out of 5894884
  1206836 words of memory out of 5000000
  44388 multiletter control sequences out of 15000+600000
- 546796 words of font info for 102 fonts, out of 8000000 for 9000
+ 547108 words of font info for 104 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  69i,11n,117p,1198b,1621s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a
@@ -1662,7 +1662,7 @@ _5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourc
 esanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1
 /adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Library/TinyTeX/
 texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response1.pdf (3 pages, 134864 bytes).
+Output written on response1.pdf (3 pages, 135286 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

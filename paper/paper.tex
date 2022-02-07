@@ -127,8 +127,39 @@ There are two ways to conduct the interview of the NLSY79, which are face-to-fac
 \hypertarget{target}{%
 \subsection{Target data}\label{target}}
 
-The NLSY79 data used in Singer and Willett (2003) contains the longitudinal measurements on yearly mean hourly wages with years of workforce experience, and demographic variables education and race, from 1979 through to 1994. In addition, the cohort is restricted to male high-school dropouts who first participated in the study at age 14-17 years.
-Thus the target data set is to collect the same variables for the extended time frame of 1994 through to 2018, the most recent year reported.
+The NLSY79 data used in Singer and Willett (2003) contains the longitudinal measurements of the male high school dropouts who first participated in the study at age 14-17 years from 1979 through to 1994. This dataset comprises of several variables as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ID: the respondents' ID.
+\item
+  EXPER: temporal scale, i.e., the length of time (years) in the workforce, starting on the respondents' first day at work.
+\item
+  LNW: natural logarithm of wages, adjusted with 1990's inflation rate.
+\item
+  BLACK: binary variables, the respondents are coded to 1 because they were Black and 0 otherwise.
+\item
+  HGC: the highest grade completed.
+\item
+  UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
+\end{enumerate}
+
+From the database, we will refresh this data with a more up to date period, which is from survey year 1979 to survey year 2018 (the most recent year published). We will also modify the variables (for example, we create a race variable, instead of the binary variable ``Black'') and add some variables so that more examples of data exploration can be displayed in teaching. The variables added are year of survey, age of individual in 1979, year when the highest grade completed, number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual starting to work, and the number of years the individual worked.
+
+In addition to the dropouts data, we will also make the up to high school graduates' wages available, including the females, and the demographic data of the NLSY79 cohort available in separate datasets. Thus, we will create three datasets as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The demographic data of the NLSY79 cohort.
+\item
+  The wages data of the up to high school graduates.
+\item
+  The wages data of the high school dropouts, which is the refreshed version of Singer and Willett (2003)'s data.
+\end{enumerate}
 
 \hypertarget{cleaning}{%
 \section{Data cleaning}\label{cleaning}}
@@ -232,7 +263,7 @@ The raw data, \texttt{new\_data\_qnames}, is organised such that each row corres
 #>   [list output truncated]
 \end{verbatim}
 
-According to Wickham (2014), tidy data sets comply with three rules: (i) each variable forms a column, (ii) each observation forms a row, and (iii) each type of observational unit forms a table. The raw data does not comply with these rules, thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables. This is done using the \texttt{tidyverse} suite of packages (Wickham, Averick, et al. 2019), \texttt{tidyr} (Wickham 2020) to pivot the data into long form, \texttt{dplyr} (Wickham, François, et al. 2020), and \texttt{stringr} (Wickham 2019) for creating new variables, and levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{CENSORED/articles/raw-to-input-data.html} but also described in the subsequent subsections.
+According to Wickham (2014), tidy data sets comply with three rules: (i) each variable forms a column, (ii) each observation forms a row, and (iii) each type of observational unit forms a table. The raw data does not comply with these rules, thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables.This is done using the \texttt{tidyverse} suite of packages (Wickham, Averick, et al. 2019), i.e., \texttt{tidyr} (Wickham 2020) to pivot the data into long form, \texttt{dplyr} (Wickham, François, et al. 2020) and \texttt{stringr} (Wickham 2019) to create new variables from the downloaded data from the database, and create levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{CENSORED/articles/raw-to-input-data.html} but also described in the subsequent subsections.
 
 \hypertarget{tidydemog}{%
 \subsubsection{Tidying demographic variables}\label{tidydemog}}
@@ -266,7 +297,7 @@ The hourly wages are in the variables beginning with \texttt{HRP} in \texttt{new
   If the total hours of worked for the corresponding job is greater than 84 hours, we set the wage and hour worked as missing.
 \end{itemize}
 
-The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is computed from the number of non-missing values of hourly wage \emph{and} hours worked. If either the hourly wage or hours worked is missing, we do not tally this.
+The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is computed from the number of non-missing values of hourly wage. Even if the information of hours worked exists for a particular observation, we do not tally when the hourly wage is missing.
 
 \begin{verbatim}
 #> # A tibble: 10 x 6
@@ -293,12 +324,11 @@ According to Huebner, Vach, and Cessie (2016), initial data analysis (IDA) is th
 
 In this paper, we conduct an IDA or a preliminary data analysis to assess the consistency of the data with the cohort information that the NLSY provides. In addition, we also aim to find the anomaly in the wages values using this approach. We mainly use graphical summaries to do the IDA using \texttt{ggplot2} (Wickham 2016) and \texttt{brolgar} (Tierney, Cook, and Prvan 2020).
 
-As stated previously, the respondents' ages ranged from 12 to 22 when first interviewed in 1979. Hence, we validate whether all of the respondents were in this range. Additionally, the \href{https://www.nlsinfo.org/content/cohorts/nlsy79/intro-to-the-sample/nlsy79-sample-introduction}{NLSY} also provides the number of the survey cohort by their gender (6,403 males and 6,283 females) and race (7,510 Non-Black/Non-Hispanic; 3,174 Black; 2,002 Hispanic). To validate this, we used the \texttt{demog\_nlsy79}, i.e., the data with the survey years 1979 sample.
-Tables \ref{tab:age-table} and \ref{tab:gender-race-table} suggest that the demographic data we had is consistent with the sample information in the database.
+As stated previously, the respondents' ages ranged from 12 to 22 when first interviewed in 1979. Hence, we validate whether all of the respondents were in this range in the data we extracted. Additionally, the \href{https://www.nlsinfo.org/content/cohorts/nlsy79/intro-to-the-sample/nlsy79-sample-introduction}{NLSY} also provides the number of the survey cohort by their gender (6,403 males and 6,283 females) and race (7,510 Non-Black/Non-Hispanic; 3,174 Black; 2,002 Hispanic). To validate this, we used the \texttt{demog\_nlsy79}, i.e., the data with the survey years 1979 sample. Tables \ref{tab:age-table} and \ref{tab:gender-race-table} suggest that the demographic data we had is consistent with the sample information in the database.
 
 \begin{table}
 
-\caption{\label{tab:age-table}The frequency table of the age at the start of the survey (?CHECK) in the full NSLY79 data}
+\caption{\label{tab:age-table}The frequency table of the age at the start of the survey in NSLY79 cohort}
 \centering
 \begin{tabular}[t]{rr}
 \toprule
@@ -357,8 +387,7 @@ However, when checking the summary plots (Figure \ref{fig:feature-plot}), we fou
 \caption{Summary plots to check the cleaned data reveal more cleaning is necessary: longitudinal profiles of wages for all individuals 1979-2018 (A), boxplots of minimum, median, and maximum wages of each individual (B), and one individual (id=39) with an unusual wage relative to their years of data (C). Some values of hourly wages are unbelievable, and some individuals have extemely unusual wages in some years.}\label{fig:feature-plot}
 \end{figure}
 
-The anomalies are also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total.
-According to Pergamit et al. (2001), one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years' job history. This shortcoming might also contribute to the fluctuation of one's wages data.
+The anomalies are also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total. According to Pergamit et al. (2001), one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years' job history. This shortcoming might also contribute to the fluctuation of one's wages data.
 
 \hypertarget{censor}{%
 \subsubsection{Replacing extreme values}\label{censor}}

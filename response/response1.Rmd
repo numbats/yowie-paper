@@ -102,6 +102,29 @@ We thank the reviewer for pointing out to us that the data contains information 
 \item[Reviewer 2:]\textcolor{violet}{My primary comment is that many elements need to be more explicitly spelled out.}
 \end{description}
 
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{I would like more discussion about the textbook selected as the exemplar. It sounds like this dataset is used in many books, why choose that one? The text should include the name of the book, so readers do not need to flip to the citations in order to learn what it was. From the name, I am guessing that the book focuses heavily on this dataset, which is why it makes sense to reproduce their subset. Be explicit about this.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{When listing the files that come zipped from the data source, be more explicit about the file formats. Comma separated values instead of csv, etc.}
+\end{description}
+
+* We have made it explicit.
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{Before the data cleaning section I would love a glimpse into the future to see what the target dataset would look like. What are the observations? What are the variables? This would allow me to follow the narrative of data wrangling more easily. Perhaps this could be put into section 2.2, which is titled Target data. Then, when starting to describe the raw data in 3,1, explain the same pieces and explicitly explain why the raw data it is not tidy to begin with.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{Before the data cleaning section I would love a glimpse into the future to see what the target dataset would look like. What are the observations? What are the variables? This would allow me to follow the narrative of data wrangling more easily. Perhaps this could be put into section 2.2, which is titled Target data. Then, when starting to describe the raw data in 3.1, explain the same pieces and explicitly explain why the raw data it is not tidy to begin with.}
+\end{description}
+
+* We have added the explanation of the observations and the variable in Section 2.2.
+
+
+
+
 
 
 

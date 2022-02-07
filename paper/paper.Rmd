@@ -85,7 +85,7 @@ theme_set(theme_bw(base_size = 18) +
                   panel.background  = element_rect(fill = 'transparent', colour = NA),
                   legend.background = element_rect(fill = 'transparent', colour = NA),
                   legend.key        = element_rect(fill = 'transparent', colour = NA)
-                  ) )
+                  ))
 ```
 
 
@@ -138,11 +138,23 @@ There are two ways to conduct the interview of the NLSY79, which are face-to-fac
 
 ## Target data {#target}
 
-<!--AE comment: What does “yearly mean hourly wages with years of workforce experience” mean? Is that one variable or two?-->
-<!--AE comment: Was your goal to collect data from 1994-2018 or 1979-2018? Page 4 states 1994 onward, but from the figures later it appears that you collected data starting in 1979 (which makes more sense to me).-->
-<!--AE comment: “The NLSY79 data used in Singer and Willett (2003) contains the longitudinal measurements on yearly mean hourly wages with years of workforce experience, and demographic variables education and race, from 1979 through to 1994.” Might work better split into two sentences. -->
-The NLSY79 data used in @SingerJudithD2003Alda contains the longitudinal measurements on yearly mean hourly wages with years of workforce experience, and demographic variables education and race, from 1979 through to 1994. In addition, the cohort is restricted to male high-school dropouts who first participated in the study at age 14-17 years. 
-<!--AE comment: Thus the target of our study is to collect the same variables for the same time period and extending through to 2018, the most recent year reported.-->Thus the target data set is to collect the same variables for the extended time frame of 1994 through to 2018, the most recent year reported.
+
+The NLSY79 data used in @SingerJudithD2003Alda contains the longitudinal measurements of the male high school dropouts who first participated in the study at age 14-17 years from 1979 through to 1994. This dataset comprises of several variables as follows: 
+
+1. ID: the respondents' ID. 
+2. EXPER: temporal scale, i.e., the length of time (years) in the workforce, starting on the respondents' first day at work.
+3. LNW: natural logarithm of wages, adjusted with 1990's inflation rate. 
+4. BLACK: binary variables, the respondents are coded to 1 because they were Black and 0 otherwise. 
+5. HGC: the highest grade completed.
+6. UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
+
+From the database, we will refresh this data with a more up to date period, which is from survey year 1979 to survey year 2018 (the most recent year published). We will  also modify the variables (for example, we create a race variable, instead of the binary variable "Black") and add some variables so that more examples of data exploration can be displayed in teaching. The variables added are year of survey, age of individual in 1979, year when the highest grade completed, number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual starting to work, and the number of years the individual worked. 
+
+In addition to the dropouts data, we will also make the up to high school graduates' wages available, including the females, and the demographic data of the NLSY79 cohort available in separate datasets. Thus, we will create three datasets as follows:
+
+1. The demographic data of the NLSY79 cohort.
+2. The wages data of the up to high school graduates.
+3. The wages data of the high school dropouts, which is the refreshed version of @SingerJudithD2003Alda's data. 
 
 <!-- Since no specific criteria on high school dropouts was defined
 in @SingerJudithD2003Alda, we define high school dropouts as respondents who only completed either 9th to 11th grade, or who completed 12th when their age is at least 19 years old (meaning that the individual may have dropped out of high school but returned at a later time to complete high school education). XXX This should probably go further down in the flow. -->
