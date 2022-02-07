@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  7 FEB 2022 22:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.8)  8 FEB 2022 01:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **response1.tex
 (./response1.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-01-21> (/Users/deeamaliah/Library/TinyTeX/texmf-dist
+L3 programming layer <2022-02-05> (/Users/deeamaliah/Library/TinyTeX/texmf-dist
 /tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
@@ -923,7 +923,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen161
 \Gm@dimlist=\toks37
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
+Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count296
@@ -966,12 +966,12 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \blx@tempcnta=\count328
 \blx@tempcntb=\count329
 \blx@tempcntc=\count330
-\blx@maxsection=\count331
-\blx@maxsegment@0=\count332
+\c@blx@maxsection=\count331
+\c@blx@maxsegment@0=\count332
 \blx@notetype=\count333
 \blx@parenlevel@text=\count334
 \blx@parenlevel@foot=\count335
-\blx@sectionciteorder@0=\count336
+\c@blx@sectionciteorder@0=\count336
 \blx@entrysetcounter=\count337
 \blx@biblioinstance=\count338
 \labelnumberwidth=\skip54
@@ -991,7 +991,7 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
+File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear-comp.dbx' not found.
@@ -1083,12 +1083,12 @@ Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+File: blx-compat.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
 \c@textcitecount=\count410
 \c@textcitetotal=\count411
 \c@textcitemaxnames=\count412
@@ -1107,7 +1107,7 @@ Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-natbib.def
-File: blx-natbib.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+File: blx-natbib.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
 Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
  overwriting.
 )
@@ -1116,19 +1116,19 @@ Package biblatex Info: ... file 'authoryear-comp.bbx' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/authoryear
 -comp.bbx
-File: authoryear-comp.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+File: authoryear-comp.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/authoryear
 .bbx
-File: authoryear.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+File: authoryear.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standard.b
 bx
-File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count419
 \c@bbx:relatedtotal=\count420
 )))
@@ -1137,7 +1137,7 @@ Package biblatex Info: ... file 'authoryear-comp.cbx' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/cbx/authoryear
 -comp.cbx
-File: authoryear-comp.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+File: authoryear-comp.cbx 2022/02/02 v3.17 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -1155,23 +1155,47 @@ Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-02-05 L3 programming layer (loader) 
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count421
+\l__pdf_internal_box=\box57
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2022-02-05 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3
+.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpars
+e.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
 )) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTleft=\skip76
 \LTright=\skip77
 \LTpre=\skip78
 \LTpost=\skip79
-\LTchunksize=\count421
+\LTchunksize=\count422
 \LTcapwidth=\dimen162
-\LT@head=\box57
-\LT@firsthead=\box58
-\LT@foot=\box59
-\LT@lastfoot=\box60
-\LT@gbox=\box61
-\LT@cols=\count422
-\LT@rows=\count423
-\c@LT@tables=\count424
-\c@LT@chunks=\count425
+\LT@head=\box58
+\LT@firsthead=\box59
+\LT@foot=\box60
+\LT@lastfoot=\box61
+\LT@gbox=\box62
+\LT@cols=\count423
+\LT@rows=\count424
+\c@LT@tables=\count425
+\c@LT@chunks=\count426
 \LT@p@ftn=\toks38
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -1185,16 +1209,16 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen170
 \cmidrulekern=\dimen171
 \defaultaddspace=\dimen172
-\@cmidla=\count426
-\@cmidlb=\count427
+\@cmidla=\count427
+\@cmidlb=\count428
 \@aboverulesep=\dimen173
 \@belowrulesep=\dimen174
-\@thisruleclass=\count428
-\@lastruleclass=\count429
+\@thisruleclass=\count429
+\@lastruleclass=\count430
 \@thisrulewidth=\dimen175
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box62
+\fn@notes=\box63
 \fn@width=\dimen176
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
@@ -1211,8 +1235,8 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen183
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count430
-\c@continuedfloat=\count431
+\c@caption@flags=\count431
+\c@continuedfloat=\count432
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1258,7 +1282,7 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \Gin@req@width=\dimen185
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box63
+\ttl@box=\box64
 \beforetitleunit=\skip89
 \aftertitleunit=\skip90
 \ttl@plus=\dimen186
@@ -1271,7 +1295,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
 \FN@temptoken=\toks40
 \footnotemargin=\dimen191
-\c@pp@next@reset=\count432
+\c@pp@next@reset=\count433
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -1306,20 +1330,20 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 140.
 Package: mathtools 2021/02/02 v1.28 mathematical typesetting tools
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count433
-\calc@Bcount=\count434
+\calc@Acount=\count434
+\calc@Bcount=\count435
 \calc@Adimen=\dimen192
 \calc@Bdimen=\dimen193
 \calc@Askip=\skip91
 \calc@Bskip=\skip92
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count435
+\calc@Ccount=\count436
 \calc@Cskip=\skip93
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count436
+\g_MT_multlinerow_int=\count437
 \l_MT_multwidth_dim=\dimen194
 \origjot=\skip94
 \l_MT_shortvdotswithinadjustabove_dim=\dimen195
@@ -1328,24 +1352,11 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_intertext_sep=\dimen198
 \l_MT_above_shortintertext_sep=\dimen199
 \l_MT_below_shortintertext_sep=\dimen256
-\xmathstrut@box=\box64
+\xmathstrut@box=\box65
 \xmathstrut@dim=\dimen257
-) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty (/U
-sers/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-01-21 L3 programming layer (loader) 
-
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdf
-tex.def
-File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count437
-\l__pdf_internal_box=\box65
-))
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
-
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpars
-e.sty
-Package: xparse 2022-01-12 L3 Experimental document command parser
-)) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/titling/titling.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip95
 \thanksmargin=\skip96
@@ -1533,34 +1544,24 @@ Package biblatex Info: ... file 'australian.lbx' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/australian
 .lbx
-File: australian.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+File: australian.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'british'...
 Package biblatex Info: ... file 'british.lbx' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/british.lb
 x
-File: british.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+File: british.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lb
 x
-File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 ))
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Data encoding 'utf8' specified.
 (biblatex)             No need to reencode data.
-Package biblatex Info: Document encoding is UTF8 ....
-Package biblatex Info: ... and expl3
-(biblatex)             2022-01-21 L3 programming layer (loader) 
-(biblatex)             is new enough (at least 2020/04/06),
-(biblatex)             setting 'casechanger=expl3'.
-
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3
-.sty
-Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
-)
 \openout4 = `response1.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
@@ -1630,9 +1631,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
-[2]
+[2] [3] [4]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+97.
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [5]
 
-LaTeX Warning: Empty bibliography on input line 339.
+LaTeX Warning: Empty bibliography on input line 474.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1642,7 +1648,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-[3] (./response1.aux)
+[6] (./response1.aux)
 Package rerunfilecheck Info: File `response1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response1.run.xml'.
@@ -1650,22 +1656,23 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26916 strings out of 480247
- 468001 string characters out of 5894884
- 1206836 words of memory out of 5000000
- 44388 multiletter control sequences out of 15000+600000
- 547108 words of font info for 104 fonts, out of 8000000 for 9000
+ 27119 strings out of 480238
+ 472771 string characters out of 5894681
+ 1214437 words of memory out of 5000000
+ 44547 multiletter control sequences out of 15000+600000
+ 552101 words of font info for 135 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,11n,117p,1198b,1621s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a
-_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourc
-esanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1
-/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Library/TinyTeX/
-texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response1.pdf (3 pages, 135286 bytes).
+ 69i,11n,117p,1273b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
+t1200.600pk>{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourc
+esanspro/a_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
+vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
+onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
+y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
+Output written on response1.pdf (6 pages, 148861 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
+ 63 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)
 

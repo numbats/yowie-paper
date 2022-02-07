@@ -95,7 +95,7 @@ We thank the reviewer for pointing out to us that the data contains information 
 * There is no individuals up to 8th grade in the refreshed dataset as we only filtered the high school dropouts (started from 9th grade ,i.e., high school grade). The plausible reasons for the differences are we might have different definition of high school dropouts with the original data and the corresponding individual back to high school after they dropped out so that their highest grade completed is 12th grade.   
 
 \begin{description}
-\item[Reviewer 1:]\textcolor{violet}{How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?}
+\item[Reviewer 1:]\textcolor{violet}{what does the natural log have to do with the y-axis?}
 \end{description}
 
 \begin{description}
@@ -121,6 +121,96 @@ We thank the reviewer for pointing out to us that the data contains information 
 \end{description}
 
 * We have added the explanation of the observations and the variable in Section 2.2.
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{With the IDA about wage data, I would appreciate a bit more context. Why sample 20 observations? I am not a longitudinal data expert, so I was a bit surprised when I flipped to the plot and found it to be small-multiple time series, although upon further consideration it makes sense. In that section it would be good to describe what the figure shows in a bit more detail. Perhaps “We randomly sample 36 respondents from the data, and plot their average wage as a time series. Looking at the patterns over time, we see a lot of variability in wages. For example, the people shown in panels 5, 7, and 11 have [explain what is interesting here, again I’m not an expert].” The next sentence here, “Some have had flat wages for years but had a sudden increase in one particular year, then it gone down again, while the others experienced an upsurge in their wage, for instance, the IDs in panel 9.” does not seem to provide much additional information. What were you looking for here? Overall trends over time, increasing/decreasing? Any places where one year’s wage looked really different?}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{I think there is a narrative step missing here, which is that looking at those samples led you to look at plots that show values for the wage variable over all participants and all years. The phrase “the summary plots” was not enough description for me to know what to expect when I flipped to Figure 3. Please be explicit about what the three plots were, why they were made, and what you were looking for. I think there is another narrative step missing about Figure 3C, which is that after you saw there were outliers you tried to identify which respondents had the extreme values. Again, please spell this out in the text. When you return to the plots for the entire dataset in Figure 5, please make parallel comments.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{
+The next paragraph, which begins “The anomalies are also found” should perhaps be “Similar anomalies were found.” Was it the same respondents with the extremely high wages that showed extremely high number of hours of work? I suspect not, but please be explicit.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{Section 3.2.1 begins “As part of the IDA, which is the model formulation, we build a robust linear regression model to treat the extreme values in the data.” This could use clarification. In 3.2, you said that part of IDA is “ model formulation without any formal statistical inference.” To me, that sounds like using modeling as a descriptive technique, and it’s something I would consider to be more a part of EDA. But then in 3.2.1, while it is perhaps not using modeling in an inferential way, the model is being used for more than just description. I might rephrase the first sentence as follows: “In order to treat the extreme values in the data, we built a robust linear regression model.”}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{
+At the bottom of page 11, where you describe the model formation, more detail would be appreciated. You are modeling the mean hourly wage based on year. Why? Is this standard practice for robust linear regression? What is a “slight” residual? Is it defined based on absolute magnitude, or standard deviations, or something else? Later, you say “To minimize the risk of mistakenly identifying an outlier as an “erroneous outlier”.” Is an erroneous outlier a technical term? If not, I think you are trying not to identify erroneous outliers, not mistakenly identifying outliers as erroneous outliers (that’s a double negative). The value of 0.12 feels very specific and out of place in a paper that has had few numerals. Is this a number an expert in RLR would be able to understand? Again, is that a raw value? Is it a standard deviation? Is there literature about how to choose a threshold? Overall, the sentence “We find that 0.12 is the most reasonable value to be the threshold to minimize that drawback’s risk because it still captures the sensible spikes in the data.” is vague and should be expanded upon. What is “that drawback’s risk”? What are “the sensible spikes in the data?” Be more explicit.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{
+What does “It implies that the fluctuation can still be observed in the data after the treatment.” mean? I suspect this sentence should be replaced with something along the lines of “The figure shows that fluctuations in wages still exist even in the imputed data.”}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{In Section 4, you talk about the variables in the original data. “One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection.” I’m not sure what this means. Please clarify.}
+\end{description}
+
+* We removed this sentence as we already have the `yr_workforce` variable which is calculated from the year of the individual start working. 
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{“The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.}
+\end{description}
+
+* Yes, you are correct. We imputed the extreme wages with its predicted values instead of setting it as missing values. We have clarified this in the paper. 
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{The bulleted difficulties in Section 5 are a bit jarring. Make them parallel (i.e. every bullet should start with a verb -ing so it is determining, calculating, etc) or turn them into a paragraph. I liked the specificity of \$30,000/hour but it would be better up in the section where you discuss the anomalous values.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{At the end of page 14, it would be good to explicitly say that if people don’t like your decisions, they can grab the code and adjust the parameters themselves! It’s implied, but should be made explicit.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{Figure 2’s caption should include something about how that data is the raw values from the survey, before inputing anomalous values so the figure and caption can stand alone.}
+\end{description}
+
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{For both Figure 3 and Figure 5, I would prefer the letter label before the description, but that’s a matter of personal preference.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{Table 1 includes the note ?CHECK which I assume was a note to self.}
+\end{description}
+
+* We have removed it from the caption. 
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{Table 2 seems to have more precision than is necessary. Certainly 100\% does not need to be reported as 100.00\%, and probably all the percentages could be rounded to the nearest 1 percent. The caption could explain this, as there might be some rounding errors.}
+\end{description}
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{What does “yearly mean hourly wages with years of workforce experience” mean? Is that one variable or two?}
+\end{description}
+
+* They are two different variables. We have separated it in the revised version. 
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{Was your goal to collect data from 1994-2018 or 1979-2018? Page 4 states 1994 onward, but from the figures later it appears that you collected data starting in 1979 (which makes more sense to me).}
+\end{description}
+
+* The original data covers 1979-1994 period, while in the refreshed data, we extended the period covered until 2018 (so that the data is from 1979-2018). We have made this explicit in Section 2.2.
+
+\begin{description}
+\item[Reviewer 2:]\textcolor{violet}{I was confused by the following section: “We choose to use this revised May data because it seemed to have less missing and presumably has been checked. However, there is no revised May data for 2012, 2014, 2016, and 2018, thus, we use the ordinary May data for these years.” I was assuming the data was collected on a yearly basis, but this section suggests it was collected each month. Please clarify somewhere in the paper.}
+\end{description}
+
+* Yes, the data is collected on a yearly basis. However, according to the database, the highest grade completed variable is revised as in May 1st of each survey year. Thus, we mentioned as the revised May data. In the revised version, we only mention it as revised data to avoid confusion. 
+
+
 
 
 
