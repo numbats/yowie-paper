@@ -22,7 +22,7 @@ The introduction has been re-written with an emphasis on how this work should be
 
 \item[Reviewer 3:] \textcolor{violet}{The authors prominently cite (Chatfield 1985) for the definition of the term “IDA”. However, Chatfield fairly explicitly defines IDA to be a data summarizing and scrutinizing process; not a cleaning, scrubbing, or munging process. It seems curious to me that the whole paper is framed as being “IDA” based on the author’s unsupported statement that data cleaning should be considered party of IDA.}
 
-Yes, there is grey area in these three activities. Thanks for pointing out Chatfield's original viewpoint, which differs from Huebner et al's. We have revised this paragraph to de-emphasize cleaning as being part of IDA. We have kept the explanation of the terminology of IDA and EDA because we think this is important for clarifying for teaching purposes.
+Yes, there is grey area in these three activities. Thanks for pointing out Chatfield's original viewpoint, which differs from Huebner et al's. We have revised this paragraph to de-emphasize cleaning as being part of IDA. We have kept the explanation of the terminology of IDA and EDA because we think this is important to clarify for teaching purposes.
 
 \item[Reviewer 3:] \textcolor{violet}{My suggestion is that the authors reconfigure this paper to be presented as a pure case study. I believe the work that has been done is valuable: the data cleaning process is often messy and unplanned, so a case study like this on a popular dataset would provide an excellent educational resource.}
 
@@ -33,7 +33,9 @@ We have kept the case study frame of mind but have re-cast the paper so that it 
 \item[Reviewer 3:] \textcolor{violet}{The authors also emphasize that “There are few research papers that document the data cleaning”. While I agree that data cleaning is under-emphasized and under-documented, it’s hardly true that there are not papers on the topic. A quick Google Scholar search for “data cleaning” unearths many scholarly papers and books on the principles of this process, none of which appear to be cited in this work.}
 \end{description}
 
-Outlier detection
+XXX We need to review this literature. It's not true that we have ignored it, the main reference is Dasu! But we need to decide whether there is more that we shoudl cite. 
+
+Outlier detection ???
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{
@@ -64,7 +66,7 @@ We thank the reviewer for pointing out to us that the data contains information 
 \item[Reviewer 1:]\textcolor{violet}{It's unclear from context what is being referred to from the Huebner et al 2020 citation.}
 \end{description}
 
-* We have fixed the sentences and the reference.
+* We have fixed the sentences and the reference. XXX Which one?
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{What is dplyr used for? Are there tidyverse packages used but not mentioned? If not, splitting this sentence into two may make it clearer which package is used to what purpose. Also, I haven't tried it in code, but I imagine that the data could be tidied as described just using pivot\_longer, at least for the job number, year, and wage data. In other words, I don't see why dplyr or stringr would be needed for the data described on page 6.}
