@@ -1,5 +1,5 @@
 ---
-title: "The Journey from Wild to Textbook Data: A Case Study from the National Longitudinal Survey of Youth"
+title: "A Journey from Wild to Textbook Data to Reproducibly Refresh the Wages Data from the National Longitudinal Survey of Youth Database"
 authors:
   - name: Dewi Amaliah
     thanks: ""
@@ -45,7 +45,7 @@ date: "24/02/2021"
 always_allow_html: true
 keywords: "Data cleaning; Data tidying; Reproducible workflow; Longitudinal data; NLSY79; Initial data analysis;"
 abstract: > 
- The National Longitudinal Survey of Youth (NLSY79) is a prominent open data source that has been important for educational purposes and multidisciplinary research on longitudinal data. Subsets of this data can be found in numerous textbooks and research articles. However, the steps and decisions taken to get from the raw data to the textbook data are never clearly articulated. This article describes our journey when trying to re-create a textbook example data set from the original database, with the goal being to refresh the textbook data more regularly. Thus, this paper demonstrates the process -- extracting, tidying, cleaning, and exploring with documentation -- to make refreshed data available for education or research. Three new data sets and the code to produce them are provided in an accompanying open source R package, called [CENSORED]. As a result of this process, some recommendations are also made for the NLSY79 curators for incorporating data quality checks and providing more convenient samples of the data to potential users. 
+ Textbook data is useful for teaching statistics and data science methods because it is highly processed and clean. Where possible textbook data sets should be refreshed regularly, because it is also important to use contemporary data for teaching. This paper describes the trials and tribulations of refreshing the wages data extracted from the National Longitudinal Survey of Youth (NLSY79) in the early 1990s. The data is useful for teaching modeling and exploratory analysis of longitudinal data. Subsets of NLSY79, including the wages data, can be found in supplementary files from numerous textbooks and research articles. The NLSY79 database has been continuously updated through to 2021, so new records are available. Here we describe our journey to re-create the wages data, and document the process so that the data can be regularly updated into the future. The process was made more difficult because the steps and decisions taken to get from the raw data to the original textbook data were not clearly articulated, so we have been diligent to provide a reproducible workflow for others to follow. Three new data sets and the code to produce them are provided in the open source R package, called [CENSORED]. 
 ---
 
 ```{r censor, include = FALSE}
