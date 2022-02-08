@@ -8,13 +8,12 @@ select <- dplyr::select
 source(here::here("data-raw/NLSY79/NLSY79.R"))
 
 ## ---- untidy-data
-options(width=70)
 new_data_qnames %>%
   select(CASEID_1979,
          starts_with("HRP") &
            ends_with(c("1979", "1980")),
          everything()) %>%
-  str(list.len = 10)
+  str(list.len = 10, vec.len = 3)
 
 
 ## ---- dob-tidy
