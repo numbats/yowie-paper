@@ -8,12 +8,12 @@ output: monash::memo
 # remotes::install_github("numbats/monash")
 ---
 
-We thank the Editor and the three reviewers for their comments, which have helped substantially to improve the manuscript. In response, we have made considerable changes to the main manuscript as outlined below. 
+We thank the Editor and the three reviewers for their comments, which have helped substantially to improve the manuscript. In response, we have made a major revision of the main manuscript as outlined below. 
 
 
 \section*{Major changes:}
 
-Reviewers suggested reframing the problem space so there is more emphasis on the case study. 
+The editor and reviewers suggest reframing so that readers can help their students to experience the journal from wild to textbook data and either emphasize the case study, for the paper to be a regular submission for JSDSE, or to better explain the relevance for  teachers and/or students in statistics and data science to be considered for the special issue. We have chosen to do the latter, because we hope that the paper fits into the goals of the special issue.
 
 \begin{description}
 \item[Reviewer 1:] \textcolor{violet}{How is this manuscript relevant for teachers and/or students in statistics and data science?}
