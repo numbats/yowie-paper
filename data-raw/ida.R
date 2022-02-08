@@ -30,9 +30,9 @@ freq_formatting <- function(x) {
 
 gender_race_table <- full_demographics %>%
   tabyl(gender, race) %>%
-  adorn_totals(c("row", "col")) %>%
   adorn_percentages("row") %>%
-  adorn_pct_formatting(digits = 2) %>%
+  adorn_totals(c("row", "col")) %>%
+  adorn_pct_formatting(digits = 0) %>%
   adorn_ns(., position = "front", ns = freq_formatting(.)) %>%
   mutate(gender = str_to_title(gender))
 
