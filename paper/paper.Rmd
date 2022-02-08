@@ -512,8 +512,8 @@ Various difficulties were encountered in trying to refresh the data, which inclu
 
 - determining which records should be downloaded from the database.
 - there are many errors in the data, e.g. hourly wages greater than $30,000 per hour.
-- there is no explicit variable in the database recording high school dropout, which means we needed to compare date of 12th grade with the individual's age.
-- calculating experience in the workforce would require knowing the time of first job within the first year the individual was recorded. 
+- there is no explicit variable in the database recording high school dropout, which means we needed to compare the date of 12th grade with the individual's age.
+<!-- calculating experience in the workforce would require knowing the time of first job within the first year the individual was recorded.--> 
 
 Ultimately, the refreshed data is reasonably similar to the original, but unsatisfactorily far from it. The last step required would be to inflation-adjust wages, but this is better to do with each wave of new data added, so that it is relative to the last date in the data. 
 
@@ -521,6 +521,10 @@ Ultimately, the refreshed data is reasonably similar to the original, but unsati
 Some readers may disagree with our decisions made to produce the refreshed textbook data and may have better insight than us in producing a more appropriate textbook data. We do not assert that we have produced the best textbook data, but rather we describe our journey to provide a reasonable textbook data set. All code and documentation are provided for transparency, and future updates of the `r yowie` package may contain additional variables, or filters of the full set, if it is deemed important. 
 
 Finally, for the data providers we recommend that a validation system with clear rules is added on data entry, and that alternative output formats, such as a tidy format would help users make better use of the resource. The problem with many of the wages records is that there are implausible values, or confusion on how to record wages for multiple jobs. These values can be validated with simple checks at data entry. Providing an open data resource also is accompanied with the responsibility that the data, especially data that is as valuable as this, is reliable. Users need to be able to trust the data. 
+
+Why is this exercise important for teachers and students? The data package and software could be used for illustrating data cleaning in the classroom. The data provided in the package can be used as examples i nthe teaching of initial data analysis, and modeling, and exploratory data analysis of longitudinal data. 
+
+XXX Importance of public policy vs for the public; and the importance of using relatable data examples in teaching that it needs to be acurate, and limitations on interpretation need to be available.
 
 <!--this paper implies that data providers should design a database that is able to produce tidy data sets. A data provider should also check for data anomalies before the data publishing or at least provides a set of rules or threshold values. For example, in this case, is the threshold of reasonable wages. This will greatly support the data users to validate and set the same understanding of which data are considered outliers. Moreover, providing validation rules would facilitate any established data validation tool, such as `validate` [@validate] package. In this case, we cannot use this handy validation package due to the absence of validation rules. -->
 
