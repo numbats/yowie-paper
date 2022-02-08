@@ -338,20 +338,8 @@ In this paper, we conduct an IDA or a preliminary data analysis to assess the va
 The respondents' ages ranged from 12 to 22 when first interviewed in 1979. Hence, we validate whether all of the respondents were in this range in the data we extracted. Additionally, the [NLSY](https://www.nlsinfo.org/content/cohorts/nlsy79/intro-to-the-sample/nlsy79-sample-introduction) also provides the number of the survey cohort by their gender (6,403 males and 6,283 females) and race (7,510 Non-Black/Non-Hispanic; 3,174 Black; 2,002 Hispanic). To validate this, we used the `demog_nlsy79`, i.e., the data with the survey years 1979 sample. Tables \ref{tab:age-table} and \ref{tab:gender-race-table} suggest that the demographic data we had is consistent with the sample information in the database.
 
 
-```{r age-table}
-```
-
-<!--AE comment: Table 2 seems to have more precision than is necessary. Certainly 100% does not need to be reported as 100.00%, and probably all the percentages could be rounded to the nearest 1 percent. The caption could explain this, as there might be some rounding errors. -->
-
-```{r gender-race-table}
-```
-
 In the next step, we explore the mean hourly wage data. In this case, we only explore the wages data of respondents that have the highest completed grade of up to $12^{th}$ grade.  We employ visualization techniques to perform the IDA as described next.
 
-```{r summarytable, eval=FALSE}
-```
-
-<!--AE comment: Figure 2’s caption should include something about how that data is the raw values from the survey, before inputing anomalous values so the figure and caption can stand alone.-->
 
 ```{r sample-plot, echo = FALSE, fig.cap="Longitudinal profiles of wages for a random sample of 20 individuals in the refreshed data. Most, but not all, individuals here experienced increasing wages over time, and several have experienced considerable fluctuation in wages. Some individuals are only measured for a short period.", fig.height=8, fig.width=10, out.width="100%"}
 ```
@@ -362,6 +350,20 @@ In the next step, we explore the mean hourly wage data. In this case, we only ex
 We randomly take 20 samples from the data and plot them, as shown in Figure \ref{fig:sample-plot}.<!--AE comment: "It" implies... Please specify what "it" refers to. This could be done by adding onto the first sentence... "as shown in Figure 2, which shows that some respondents have high variability in wages, particularly 5, 7, and 11." However, 7 and 11 don't seem to have particularly high variability, especially when compared to 18. This whole paragraph needs to be fixed/updated.--> It shows that these respondents have a lot of variability in wages, for example, the IDs in panel numbers 5, 7, and 11. The plot also implies that the samples have a different pattern of mean hourly wages. Some have had flat wages for years but had a sudden increase in one particular year, then it gone down again, while the others experienced an upsurge in their wage, for instance, <!--AE comment: Not panel 9 --> the IDs in panel 9. 
 <!--I think there is a narrative step missing here, which is that looking at those samples led you to look at plots that show values for the wage variable over all participants and all years. The phrase “the summary plots” was not enough description for me to know what to expect when I flipped to Figure 3. Please be explicit about what the three plots were, why they were made, and what you were looking for. I think there is another narrative step missing about Figure 3C, which is that after you saw there were outliers you tried to identify which respondents had the extreme values. Again, please spell this out in the text. When you return to the plots for the entire dataset in Figure 5, please make parallel comments. -->However, when checking the summary plots (Figure \ref{fig:feature-plot}), we found that some observations had exceptionally high wages. Some of them, for example respondents in Figure \ref {fig:feature-plot} C had experienced unusual wages only in certain year. 
 
+
+```{r age-table}
+```
+
+<!--AE comment: Table 2 seems to have more precision than is necessary. Certainly 100% does not need to be reported as 100.00%, and probably all the percentages could be rounded to the nearest 1 percent. The caption could explain this, as there might be some rounding errors. -->
+
+```{r gender-race-table}
+```
+
+
+```{r summarytable, eval=FALSE}
+```
+
+<!--AE comment: Figure 2’s caption should include something about how that data is the raw values from the survey, before inputing anomalous values so the figure and caption can stand alone.-->
 
 <!--For both Figure 3 and Figure 5, I would prefer the letter label before the description, but that’s a matter of personal preference.-->
 
