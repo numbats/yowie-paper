@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.13)  8 FEB 2022 15:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.13)  8 FEB 2022 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1550,7 +1550,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' will be
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF o
-n input line 261.
+n input line 264.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/sourcesanspro/TS1SourceSansPro-TL
 F.fd
@@ -1558,20 +1558,20 @@ File: TS1SourceSansPro-TLF.fd 2016/12/03 (autoinst) Font definitions for TS1/So
 urceSansPro-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 261.
+(Font)              scaled to size 12.0pt on input line 264.
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
 
  []
 
 [2] [3] [4]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-00.
+03.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [5]
 
-LaTeX Warning: Empty bibliography on input line 477.
+LaTeX Warning: Empty bibliography on input line 480.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1581,12 +1581,12 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 482.
 [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 482.
 (./response1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 479.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 482.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 482.
 Package rerunfilecheck Info: File `response1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response1.run.xml'.
@@ -1608,7 +1608,7 @@ Here is how much of TeX's memory you used:
 ro-Bold.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/sourcesanspro
 /SourceSansPro-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1200.pfb>
-Output written on response1.pdf (6 pages, 139107 bytes).
+Output written on response1.pdf (6 pages, 139739 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream

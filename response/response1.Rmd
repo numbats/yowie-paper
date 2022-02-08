@@ -18,13 +18,16 @@ The editor and reviewers suggest reframing so that readers can help their studen
 \begin{description}
 \item[Reviewer 1:] \textcolor{violet}{How is this manuscript relevant for teachers and/or students in statistics and data science?}
 
-The intoduction has been re-written with an emphasis on how this work should be interesting for teachers and students of data science and statistics.
+The introduction has been re-written with an emphasis on how this work should be interesting for teachers and students of data science and statistics.
 
 \item[Reviewer 3:] \textcolor{violet}{The authors prominently cite (Chatfield 1985) for the definition of the term “IDA”. However, Chatfield fairly explicitly defines IDA to be a data summarizing and scrutinizing process; not a cleaning, scrubbing, or munging process. It seems curious to me that the whole paper is framed as being “IDA” based on the author’s unsupported statement that data cleaning should be considered party of IDA.}
-\item[Reviewer 3:] \textcolor{violet}{My suggestion is that the authors reconfigure this paper to be presented as a pure case study. Ibelieve the work that has been done is valuable: the data cleaning process is often messy andunplanned, so a case study like this on a popular dataset would provide an excellent educational resource.}
-\end{description}
 
-Supporting information for the lack of data cleaning in papers.  
+Yes, there is grey area in these three activities. Thanks for pointing out Chatfield's original viewpoint, which differs from Huebner et al's. We have revised this paragraph to de-emphasize cleaning as being part of IDA. We have kept the explanation of the terminology of IDA and EDA because we think this is important for clarifying for teaching purposes.
+
+\item[Reviewer 3:] \textcolor{violet}{My suggestion is that the authors reconfigure this paper to be presented as a pure case study. I believe the work that has been done is valuable: the data cleaning process is often messy and unplanned, so a case study like this on a popular dataset would provide an excellent educational resource.}
+
+We have kept the case study frame of mind but have re-cast the paper so that it focuses on the importance of this type of activity for teaching of statistics and data science. 
+\end{description}
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{The authors also emphasize that “There are few research papers that document the data cleaning”. While I agree that data cleaning is under-emphasized and under-documented, it’s hardly true that there are not papers on the topic. A quick Google Scholar search for “data cleaning” unearths many scholarly papers and books on the principles of this process, none of which appear to be cited in this work.}
