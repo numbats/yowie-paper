@@ -58,8 +58,8 @@ We thank the reviewer for pointing out to us that the data contains information 
 
 \section*{Minor changes:}
 
-* We have corrected all minor grammatical errors pointed out by the reviewers.  
-* We have made the descriptions of the steps more explicit. 
+* We have corrected all minor grammatical errors pointed out by the reviewers as outlined below. [ADD the changes]  
+* We have made the descriptions of the steps more explicit as follows [LIST OF THE CHANGES]
 
 
 \begin{description}
@@ -118,15 +118,12 @@ We thank the reviewer for pointing out to us that the data contains information 
 \item[Reviewer 2:]\textcolor{violet}{When listing the files that come zipped from the data source, be more explicit about the file formats. Comma separated values instead of csv, etc.}
 \end{description}
 
-* We have made it explicit.
+* We have made the file format more explicit.
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{Before the data cleaning section I would love a glimpse into the future to see what the target dataset would look like. What are the observations? What are the variables? This would allow me to follow the narrative of data wrangling more easily. Perhaps this could be put into section 2.2, which is titled Target data. Then, when starting to describe the raw data in 3,1, explain the same pieces and explicitly explain why the raw data it is not tidy to begin with.}
 \end{description}
 
-\begin{description}
-\item[Reviewer 2:]\textcolor{violet}{Before the data cleaning section I would love a glimpse into the future to see what the target dataset would look like. What are the observations? What are the variables? This would allow me to follow the narrative of data wrangling more easily. Perhaps this could be put into section 2.2, which is titled Target data. Then, when starting to describe the raw data in 3.1, explain the same pieces and explicitly explain why the raw data it is not tidy to begin with.}
-\end{description}
 
 * We have added the explanation of the observations and the variable in Section 2.2.
 
@@ -200,11 +197,13 @@ What does “It implies that the fluctuation can still be observed in the data a
 \item[Reviewer 2:]\textcolor{violet}{Table 2 seems to have more precision than is necessary. Certainly 100\% does not need to be reported as 100.00\%, and probably all the percentages could be rounded to the nearest 1 percent. The caption could explain this, as there might be some rounding errors.}
 \end{description}
 
+We agree that this level of precision was not necessary. We have modified Table 2 in line with this.
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{What does “yearly mean hourly wages with years of workforce experience” mean? Is that one variable or two?}
 \end{description}
 
-* They are two different variables. We have separated it in the revised version. 
+* These are two different variables. We have made this easier to follow in the manuscript as: [FILL]
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{Was your goal to collect data from 1994-2018 or 1979-2018? Page 4 states 1994 onward, but from the figures later it appears that you collected data starting in 1979 (which makes more sense to me).}
