@@ -210,7 +210,7 @@ M. van der Loo and de Jonge (2018) in the context of official statistics describ
 \hypertarget{getdata}{%
 \subsection{Getting the data}\label{getdata}}
 
-The NLSY79 data contains a large number of variables but for our aim, the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
+The NLSY79 data contains a large number of variables but for our purposes the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
 
 \begin{figure}[t]
 
@@ -268,7 +268,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \item[\faCloudDownload] To download all 686 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
-\caption{The above documents the steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
+\caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
 \end{figure}
 
 The downloaded data set comes as a zip file, containing the following set of files:
@@ -304,7 +304,7 @@ According to Wickham (2014), tidy data sets comply with three rules: (i) each va
 #>   [list output truncated]
 \end{verbatim}
 
-Thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables.This is done using the \texttt{tidyverse} suite of packages (Wickham et al. 2019), i.e., \texttt{tidyr} (Wickham 2020) to pivot the data into long form, \texttt{dplyr} (Wickham et al. 2020) and \texttt{stringr} (Wickham 2019) to create new variables from the downloaded data from the database, and create levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{CENSORED/articles/raw-to-input-data.html} but also described in the subsequent subsections.
+Thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables.This is done using the \texttt{tidyverse} suite of packages (Wickham et al. 2019):\texttt{tidyr} (Wickham 2020) to pivot the data into long form, with \texttt{dplyr} (Wickham et al. 2020) and \texttt{stringr} (Wickham 2019) to mutate new variables from the downloaded data from the database, and code levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{CENSORED/articles/raw-to-input-data.html} but also described in the subsequent subsections.
 
 \hypertarget{tidydemog}{%
 \subsubsection{Tidying demographic variables}\label{tidydemog}}

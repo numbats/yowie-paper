@@ -168,7 +168,7 @@ in @SingerJudithD2003Alda, we define high school dropouts as respondents who onl
 ## Getting the data {#getdata}
 
 
-The NLSY79 data contains a large number of variables but for our aim, the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
+The NLSY79 data contains a large number of variables but for our purposes the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
 
 \begin{figure}[t]
 
@@ -226,7 +226,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \item[\faCloudDownload] To download all 686 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
-\caption{The above documents the steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
+\caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
 \end{figure}
       
 The downloaded data set comes as a zip file, containing the following set of files:
@@ -246,7 +246,7 @@ According to @WickhamHadley2014TD, tidy data sets comply with three rules: (i) e
 ```{r untidy-data}
 ```
 
-Thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables.This is done using the `tidyverse` suite of packages [@tidyverse], i.e., `tidyr` [@tidyr] to pivot the data into long form, `dplyr` [@dplyr] and `stringr` [@stringr] to create new variables from the downloaded data from the database, and create levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{`r yowie_pkgdown`/articles/raw-to-input-data.html} but also described in the subsequent subsections.
+Thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables.This is done using the `tidyverse` suite of packages [@tidyverse]:`tidyr` [@tidyr] to pivot the data into long form, with `dplyr` [@dplyr] and `stringr` [@stringr] to mutate new variables from the downloaded data from the database, and code levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{`r yowie_pkgdown`/articles/raw-to-input-data.html} but also described in the subsequent subsections.
 
 <!-- required by making use of the `tidyverse` suite of packages [@tidyverse], which include the main set of packages needed, namely `tidyr` [@tidyr], `dplyr` [@dplyr], and `stringr` [@stringr]. The tidy data form, where we have a variable that indicates the individual ID, year, job number, wage in dollars and demographic variables, is important for downstream analysis, such as visualisation and modelling that will be performed later. 
 
