@@ -8,17 +8,21 @@ output: monash::memo
 # remotes::install_github("numbats/monash")
 ---
 
-We thank the Editor and the three reviewers for their comments, which have helped substantially to improve the manuscript. In response, we have made a major revision of the main manuscript as outlined below. 
+We thank the Editor, Associate Editor and the three reviewers for their extensive comments, which have helped substantially to improve the manuscript. In response, we have made a major revision of the main manuscript as outlined below. 
 
 
 \section*{Major changes:}
 
-The editor and reviewers suggest reframing so that readers can help their students to experience the journal from wild to textbook data and either emphasize the case study, for the paper to be a regular submission for JSDSE, or to better explain the relevance for  teachers and/or students in statistics and data science to be considered for the special issue. We have chosen to do the latter, because we hope that the paper fits into the goals of the special issue.
+The editors and reviewers suggest reframing so that readers can help their students to experience the journal from wild to textbook data and either emphasize the case study, for the paper to be a regular submission for JSDSE, or to better explain the relevance for teachers and/or students in statistics and data science to be considered for the special issue. We have chosen to do the latter, because we hope that the paper fits into the goals of the special issue.
 
 \begin{description}
-\item[Reviewer 1:] \textcolor{violet}{How is this manuscript relevant for teachers and/or students in statistics and data science?}
+\item[Editor and Reviewer 1:] \textcolor{violet}{How is this manuscript relevant for teachers and/or students in statistics and data science?}
 
 The introduction has been re-written with an emphasis on how this work should be interesting for teachers and students of data science and statistics.
+
+\item[Reviewer 1:] \textcolor{violet}{I don't see the direct relevance of this manuscript with the readership of JSDSE. I think this could be a valuable paper to describe the author(s) R package and would have value for researchers using the NLSY79 dataset. I am not convinced that JSDSE is the appropriate venue for this. I do not see this manuscript being engaging enough to be used in the classroom as a case study in data cleaning.}
+
+It is commonly said 80\% of a data analysts/scientist's work is on data cleaning/preperation so we believe that shedding more light in this aspect of work is an important for students to be aware of. We believe that there are often subjective decisions made in the process (as we have done) which can be used as a conversation for transparency and reproducibility in class based on a real case study. 
 
 \item[Reviewer 3:] \textcolor{violet}{The authors prominently cite (Chatfield 1985) for the definition of the term “IDA”. However, Chatfield fairly explicitly defines IDA to be a data summarizing and scrutinizing process; not a cleaning, scrubbing, or munging process. It seems curious to me that the whole paper is framed as being “IDA” based on the author’s unsupported statement that data cleaning should be considered party of IDA.}
 
@@ -58,7 +62,25 @@ We thank the reviewer for pointing out to us that the data contains information 
 
 \section*{Minor changes:}
 
-* We have corrected all minor grammatical errors pointed out by the reviewers as outlined below. [ADD the changes]  
+* We have corrected all minor grammatical errors pointed out by the reviewers as outlined below:
+
+\begin{description}
+\item[Reviewer 1:] \textcolor{violet}{
+\begin{itemize}
+\item p2 l16: It's unclear from context what is being referred to from the Huebner et al 2020 citation.
+\item p3 l19: sentence ends with a comma
+\item p3 l24: this is an important point that shouldn't be relegated to a parenthetical statement
+\item p3 l38: compared "to" the old textbook subset
+\item p4 l51: might be better to add "the" before "data cleaning process"
+\item p5 l39: two data "sets"
+\item p6 l28: comply "with" these rules
+\end{itemize}}
+\item[Reviewer 1:] \textcolor{violet}{}
+\end{description}
+
+
+
+
 * We have made the descriptions of the steps more explicit as follows [LIST OF THE CHANGES]
 
 
