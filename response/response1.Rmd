@@ -197,7 +197,7 @@ What does “It implies that the fluctuation can still be observed in the data a
 \item[Reviewer 2:]\textcolor{violet}{Table 2 seems to have more precision than is necessary. Certainly 100\% does not need to be reported as 100.00\%, and probably all the percentages could be rounded to the nearest 1 percent. The caption could explain this, as there might be some rounding errors.}
 \end{description}
 
-We agree that this level of precision was not necessary. We have modified Table 2 in line with this.
+We agree that this level of precision was not necessary. We have modified Table 2 so percentages are to the nearest 1 percent and total percentage (=100%) is omitted. 
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{What does “yearly mean hourly wages with years of workforce experience” mean? Is that one variable or two?}

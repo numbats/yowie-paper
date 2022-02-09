@@ -30,15 +30,15 @@ freq_formatting <- function(x) {
 
 gender_race_table <- full_demographics %>%
   tabyl(gender, race) %>%
-  adorn_percentages("row") %>%
   adorn_totals(c("row", "col")) %>%
+  adorn_percentages("row") %>%
   adorn_pct_formatting(digits = 0) %>%
   adorn_ns(., position = "front", ns = freq_formatting(.)) %>%
   mutate(gender = str_to_title(gender),
          Total = str_replace(Total, "\\([1|2]00\\%\\)", ""))
 
 kable(gender_race_table,
-      caption = "The contingency table for gender and race for the full NLSY79 data.",
+      caption = "The contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1%) is out of the total corresponding to row.",
       col.names = c("Gender", "Hispanic", "Black", "Non-Black, Non-Hispanic", "Total"),
       booktabs = TRUE,
       linesep = "",
