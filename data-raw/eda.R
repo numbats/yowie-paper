@@ -172,7 +172,7 @@ do2 <- do %>%
 do2 %>% select(id, race) %>% distinct() %>% count(race)
 do2 %>% select(id, hgc12) %>% distinct() %>% count(hgc12)
 
-# ---- compare_xp_to_yrworkforce
+# ---- compare-xp-to-yrworkforce
 
 ggplot(do, aes(x = yr_wforce,
                y = exp)) +
@@ -180,7 +180,7 @@ ggplot(do, aes(x = yr_wforce,
   guides(color = "none") +
   geom_abline(intercept = 0, slope = 1)
 
-# ---- compare_xp_sw
+# ---- compare-xp-sw
 
 do_sw_join <- left_join(sw, do, by = c("id", "index"))
 
@@ -190,7 +190,8 @@ ggplot(do_sw_join, aes(x = xp,
   geom_abline(intercept = 0, slope = 1) +
   guides(color = "none") +
   xlab("Work experience (Singer & Willet, 2008)") +
-  ylab("Work experience (refreshed)")
+  ylab("Work experience (refreshed)") +
+  theme_bw()
 
 
 # Takeaways:
