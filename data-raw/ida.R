@@ -34,7 +34,8 @@ gender_race_table <- full_demographics %>%
   adorn_totals(c("row", "col")) %>%
   adorn_pct_formatting(digits = 0) %>%
   adorn_ns(., position = "front", ns = freq_formatting(.)) %>%
-  mutate(gender = str_to_title(gender))
+  mutate(gender = str_to_title(gender),
+         Total = str_replace(Total, "\\([1|2]00\\%\\)", ""))
 
 kable(gender_race_table,
       caption = "The contingency table for gender and race for the full NLSY79 data.",
