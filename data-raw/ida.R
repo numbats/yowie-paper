@@ -124,7 +124,8 @@ feature_bp <- ggplot(wages_feat_long,
   labs(tag = "(B)")  +
   ylab("Hourly wage ($)") +
   xlab("Feature") +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  scale_color_viridis_d()
 
 plot_high <- ggplot(filter(wages_high2, id == 39)) +
   geom_line(aes(x = year,
@@ -229,7 +230,8 @@ feature2_bp <- ggplot(wages_feat_long_rlm,
   labs(x = "Feature",
        y = "Hourly wage ($)",
        tag = "(B)") +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  scale_color_viridis_d()
 
 plot_high_after <- ggplot(filter(wages_cleaned, id == 39)) +
   geom_line(aes(x = year,
