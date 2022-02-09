@@ -13,7 +13,7 @@ sw_wages <- sw %>%
   labs(tag = "(A)", title = "Original") +
   theme_bw() +
   ylab("Hourly wage ($, natural log)") +
-  xlab("Experience in years") +
+  xlab("Experience (years)") +
   #theme(plot.title = element_text(size = 10)) +
   ylim(0, 5)
 
