@@ -289,7 +289,7 @@ Finally, we get all of the demographic profiles of the NLSY79 cohort. We then sa
 
 ### Tidying employment variables {#tidyemp}
 
-Our target variables for the employment are to obtain respondent's mean hourly wage (`mean_hourly_wage`), the number of jobs (`number_of_jobs`) and the total hours of work per week (`total_hours`) for each survey year. As the data only reports up to 5 jobs for each respondent, the maximum number of jobs is capped at 5. 
+Our target variables for the employment are to obtain respondent's mean hourly wage (`wage`), the number of jobs (`njobs`), the total hours of work per week (`hours`) for each survey year, the year when individual starting to work (`stwork`), the length of time (years) in workforce (`yr_workforce`), and work experience measured as the number of years worked (`exp`). As the data only reports up to 5 jobs for each respondent, the maximum number of jobs is capped at 5. 
 
 From 1979 to 1987, `new_data_qnames` only contains one version of hours worked per week for each job (in the variables with names starting with `QES-52A`). From 1988 onward, we selected the total hours worked per week, including hours working from home (`QES-52D`). However, in 1993, this variable was missing for the first and last job so we selected to use `QES-52A` instead. In addition, 2008 only had jobs 1-4 for the `QES-52D` variable, so we use only these.
 
@@ -321,11 +321,13 @@ The number of jobs (`number_of_jobs`) for each respondent per year is computed f
 ```{r tidy-nojob}
 ```
 
+For `st_work` variable,  we only rename the column names from the raw, NLSY79 data. This variable is then used to calculate the next variable, `yr_workforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`st_work`). Finally, `exp` variable is derived from the variable started with `WKSWK` in `new_data_qnames`. This variable measured since the last interview. Thus, to obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.  
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who completed education up to 12th grade and participated in at least five rounds in the survey. We save the resultant wage data on this cohort as `wages`.  
 
 ```{r wages-demog-hs}
 ```
+
 
 
 ## Initial data analysis {#ida}
