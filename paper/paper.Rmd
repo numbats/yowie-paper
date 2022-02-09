@@ -321,7 +321,7 @@ The number of jobs (`number_of_jobs`) for each respondent per year is computed f
 ```{r tidy-nojob}
 ```
 
-For `st_work` variable,  we only rename the column names from the raw, NLSY79 data. This variable is then used to calculate the next variable, `yr_workforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`st_work`). Finally, `exp` variable is derived from the variable started with `WKSWK` in `new_data_qnames`. This variable measured since the last interview. Thus, to obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.  
+For `st_work` variable,  we only rename the column names from `new_data_qnames`. This variable is then used to calculate the next variable, `yr_workforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`st_work`). Finally, `exp` variable is derived from the number of weeks worked since the last interview indicated as variable started with `WKSWK` in `new_data_qnames`. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.  
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who completed education up to 12th grade and participated in at least five rounds in the survey. We save the resultant wage data on this cohort as `wages`.  
 
@@ -454,29 +454,31 @@ From this stage forward, we assume that we already have valid data. We also subs
 ```{r compare-sw-do}
 ```
 
+```{r compare-xp-sw, fig.cap = "Males dropouts' work experience in the original and refreshed data. Each point represents the work experience of individuals (identified by the ID) in the corresponding survey period. We can see that the correlation is reasonably high between them even though the exactly same figure could not be obtained.", out.width = "70%"}
+```
+
+
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
 The original set contains wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package `brolgar` and the refreshed data is available in the R package `r yowie`. 
 
 <!--AE comment: what does the natural log have to do with the y-axis?-->
 <!--AE comment: For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.-->
 
+
 ```{r plotting-sw-do, fig.cap = "Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.", fig.width = 9, fig.height = 5, out.width = "100%", cache = FALSE}
 ```
-
 
 There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the "work experience", is not clearly articulated. @SingerJudithD2003Alda mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide [@nlsy79guide], we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare-xp-sw}.
 
 
-```{r compare-xp-sw, fig.cap = "Males dropouts' work experience in the original and refreshed data. Each point represents the work experience of individuals (identified by the ID) in the corresponding survey period. We can see that the correlation is reasonably high between them even though the exactly same figure could not be obtained.", out.width = "70%"}
-```
-
-Secondly, in the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data from the newest survey period release. The 1990 prices might not be relevant anymore for the future context. Hence, we keep it as the original value to allow the users to treat it as their needs. 
+Secondly, in the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data from the newest survey period  release. Thus, the 1990 prices might not be relevant anymore for the future context. Hence, we keep it as the original value to allow the users to treat it as their needs. 
 
 ```{r compare-xp-to-yrworkforce, fig.cap = "The association between the lenght of time in the workforce and the work experience. Generally, the longer someone were in the workforce, the higher the work experience. However, some of the respondents have much lower working experience compared to their duration in the workforce. This is possible when someone ", eval=FALSE}
 ```
 
 <!--AE comment: “The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.-->
 It is also worth noting that the treatment of unlikely wages differ in the refreshed data. In the original data by @SingerJudithD2003Alda, wages greater than $75 are set to be missing. However, in recent context, this value is too low to be set as the maximum threshold. We opted to use the weights from a robust linear regression to determine what should be regarded as outliers and imputed them with their predicted values as as described in Section \@ref(censor).
+
 
 Figure \ref{fig:plotting-sw-do} shows a comparison of the two sets. (A direct ID matching is not possible.) There are 888 individuals in the original and 1,188 individuals in the refreshed data. This suggests some individuals were removed in the original data.
 In addition, in the original set the racial breakdown was 246 Black, 204 Hispanic and 438 White participants, while in the refreshed data there are 346 Black, 219 Hispanic, and 623 White participants, so the proportions have not been exactly reproduced. On education, in the refreshed data there are very few individuals with less than a 12th grade education, which is different from the original. <!--AE comment: How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?--> In the original data there were 366 individuals with up to 8th grade and 522 9th-12th grade, as compared to 967 with 12th grade in the refreshed data. 

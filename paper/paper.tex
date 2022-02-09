@@ -317,7 +317,7 @@ The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is c
 #> 10     2  1986             7.69          NA              1 FALSE
 \end{verbatim}
 
-For \texttt{st\_work} variable, we only rename the column names from the raw, NLSY79 data. This variable is then used to calculate the next variable, \texttt{yr\_workforce} for each survey round, which is the year of survey (\texttt{year}) minus the year of individual start working (\texttt{st\_work}). Finally, \texttt{exp} variable is derived from the variable started with \texttt{WKSWK} in \texttt{new\_data\_qnames}. This variable measured since the last interview. Thus, to obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.
+For \texttt{st\_work} variable, we only rename the column names from \texttt{new\_data\_qnames}. This variable is then used to calculate the next variable, \texttt{yr\_workforce} for each survey round, which is the year of survey (\texttt{year}) minus the year of individual start working (\texttt{st\_work}). Finally, \texttt{exp} variable is derived from the number of weeks worked since the last interview indicated as variable started with \texttt{WKSWK} in \texttt{new\_data\_qnames}. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who completed education up to 12th grade and participated in at least five rounds in the survey. We save the resultant wage data on this cohort as \texttt{wages}.
 
@@ -366,7 +366,7 @@ Age & Number of individuals\\
 
 \begin{table}
 
-\caption{\label{tab:gender-race-table}The contingency table for gender and race for the full NLSY79 data.}
+\caption{\label{tab:gender-race-table}The contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1\%) is out of the total corresponding to row.}
 \centering
 \begin{tabular}[t]{lrrrr}
 \toprule
@@ -374,10 +374,10 @@ Age & Number of individuals\\
 \cmidrule(l{3pt}r{3pt}){2-4}
 Gender & Hispanic & Black & Non-Black, Non-Hispanic & Total\\
 \midrule
-Male & 1,000 (16\%) & 1,613 (25\%) & 3,790  (59\%) & 6,403 (100\%)\\
-Female & 1,002 (16\%) & 1,561 (25\%) & 3,720  (59\%) & 6,283 (100\%)\\
+Male & 1,000 (16\%) & 1,613 (25\%) & 3,790 (59\%) & 6,403\\
+Female & 1,002 (16\%) & 1,561 (25\%) & 3,720 (59\%) & 6,283\\
 \midrule
-Total & 2,002 (32\%) & 3,174 (50\%) & 7,510 (118\%) & 12,686 (200\%)\\
+Total & 2,002 (16\%) & 3,174 (25\%) & 7,510 (59\%) & 12,686\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -448,6 +448,15 @@ Figure \ref{fig:flow-chart-blind} summarizes the steps taken to go from raw to i
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{figures/compare-xp-sw-1} 
+
+}
+
+\caption{Males dropouts' work experience in the original and refreshed data. Each point represents the work experience of individuals (identified by the ID) in the corresponding survey period. We can see that the correlation is reasonably high between them even though the exactly same figure could not be obtained.}\label{fig:compare-xp-sw}
+\end{figure}
+
 The original set contains wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package \texttt{brolgar} and the refreshed data is available in the R package \texttt{[CENSORED]}.
 
 \begin{figure}
@@ -459,18 +468,9 @@ The original set contains wages of high school dropouts (Singer and Willett 2003
 \caption{Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.}\label{fig:plotting-sw-do}
 \end{figure}
 
-There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the ``work experience'', is not clearly articulated. Singer and Willett (2003) mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide (Bureau of Labor Statistics, U.S. Department of Labor 2021b), we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare_xp_sw}.
+There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the ``work experience'', is not clearly articulated. Singer and Willett (2003) mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide (Bureau of Labor Statistics, U.S. Department of Labor 2021b), we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare-xp-sw}.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{figures/compare-xp-sw-1} 
-
-}
-
-\caption{Males dropouts' work experience in the original and refreshed data. Each point represents the work experience of individuals (identified by the ID) in the corresponding survey period. We can see that the correlation is reasonably high between them even though the exactly same figure could not be obtained.}\label{fig:compare-xp-sw}
-\end{figure}
-
-Secondly, in the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data from the newest survey period release. The 1990 prices might not be relevant anymore for the future context. Hence, we keep it as the original value to allow the users to treat it as their needs.
+Secondly, in the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data from the newest survey period release. Thus, the 1990 prices might not be relevant anymore for the future context. Hence, we keep it as the original value to allow the users to treat it as their needs.
 
 It is also worth noting that the treatment of unlikely wages differ in the refreshed data. In the original data by Singer and Willett (2003), wages greater than \$75 are set to be missing. However, in recent context, this value is too low to be set as the maximum threshold. We opted to use the weights from a robust linear regression to determine what should be regarded as outliers and imputed them with their predicted values as as described in Section \ref{censor}.
 
