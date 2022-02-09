@@ -60,25 +60,18 @@ feasible?
 We thank the reviewer for pointing out to us that the data contains information on the work experience -- this additional data is added in the extraction of the data in Figure 1. This information was compared with Singer & Willet's original data. Comparison shown in Figure X shows that the information does not match up, however, there is a high correlation between the variables.
 
 
-\section*{Minor changes:}
-
-* We have corrected all minor grammatical errors pointed out by the reviewers as outlined below:
-
 \begin{description}
-\item[Reviewer 1:] \textcolor{violet}{
-\begin{itemize}
-\item p2 l16: It's unclear from context what is being referred to from the Huebner et al 2020 citation.
-\item p3 l19: sentence ends with a comma
-\item p3 l24: this is an important point that shouldn't be relegated to a parenthetical statement
-\item p3 l38: compared "to" the old textbook subset
-\item p4 l51: might be better to add "the" before "data cleaning process"
-\item p5 l39: two data "sets"
-\item p6 l28: comply "with" these rules
-\end{itemize}}
 \item[Reviewer 1:] \textcolor{violet}{This sentence is unclear. What is dplyr used for? Are there tidyverse packages used but not mentioned? If not, splitting this sentence into two may make it clearer which package is used to what purpose. Also, I haven't tried it in code, but I imagine that the data could be tidied as described just using pivot\_longer, at least for the job number, year, and wage data. In other words, I don't see why dplyr or stringr would be needed for the data described on page 6.}
 
 We did not go into great detail about the packages used as the whole code is available as a vignette within the package. We realise that this was not available to the reviewers due to the requirement of a blind review. To circumvent this, we have added the vignettes as supplementary materials. 
 \end{description}
+
+
+\section*{Minor changes:}
+
+* We have corrected all minor grammatical errors pointed out by the reviewers.
+
+
 
 
 
