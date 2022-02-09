@@ -16,26 +16,34 @@
 % NOTE: To produce blinded version, replace "0" with "1" below.
 \newcommand{\blind}{1}
 
-% need this for pandoc %
+% Pandoc citation processing
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+% for Pandoc 2.8 to 2.10.1
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+% For Pandoc 2.11+
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
  {% don't indent paragraphs
   \setlength{\parindent}{0pt}
   % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
   \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
  }%
  {}
-\usepackage{calc} % for \widthof, \maxof
+\usepackage{calc}
 \newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\maxof{\widthof{#1}}{\csllabelwidth}}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth}{#1}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
@@ -67,7 +75,7 @@
 
 \if0\blind
 {
-  \title{\bf The Journey from Wild to Textbook Data: A Case Study from the National Longitudinal Survey of Youth}
+  \title{\bf A Journey from Wild to Textbook Data to Reproducibly Refresh the Wages Data from the National Longitudinal Survey of Youth Database}
   \author{
             Dewi Amaliah\thanks{Corresponding author, \href{mailto:dlamaleeah@gmail.com}{\nolinkurl{dlamaleeah@gmail.com}}}\\
       Dept of Econometrics and Business Statistics, Monash University, \\
@@ -88,14 +96,14 @@
   \bigskip
   \bigskip
   \begin{center}
-    {\LARGE\bf The Journey from Wild to Textbook Data: A Case Study from the National Longitudinal Survey of Youth}
+    {\LARGE\bf A Journey from Wild to Textbook Data to Reproducibly Refresh the Wages Data from the National Longitudinal Survey of Youth Database}
 \end{center}
   \medskip
 } \fi
 
 \bigskip
 \begin{abstract}
-The National Longitudinal Survey of Youth (NLSY79) is a prominent open data source that has been important for educational purposes and multidisciplinary research on longitudinal data. Subsets of this data can be found in numerous textbooks and research articles. However, the steps and decisions taken to get from the raw data to the textbook data are never clearly articulated. This article describes our journey when trying to re-create a textbook example data set from the original database, with the goal being to refresh the textbook data more regularly. Thus, this paper demonstrates the process -- extracting, tidying, cleaning, and exploring with documentation -- to make refreshed data available for education or research. Three new data sets and the code to produce them are provided in an accompanying open source R package, called {[}CENSORED{]}. As a result of this process, some recommendations are also made for the NLSY79 curators for incorporating data quality checks and providing more convenient samples of the data to potential users.
+Textbook data is useful for teaching statistics and data science methods because it is highly processed and clean. Where possible textbook data sets should be refreshed regularly, because it is also important to use contemporary data for teaching. This paper describes the trials and tribulations of refreshing the wages data extracted from the National Longitudinal Survey of Youth (NLSY79) in the early 1990s. The data is useful for teaching modeling and exploratory analysis of longitudinal data. Subsets of NLSY79, including the wages data, can be found in supplementary files from numerous textbooks and research articles. The NLSY79 database has been continuously updated through to 2018, so new records are available. Here we describe our journey to re-create the wages data, and document the process so that the data can be regularly updated into the future. The process was made more difficult because the steps and decisions taken to get from the raw data to the original textbook data were not clearly articulated, so we have been diligent to provide a reproducible workflow for others to follow. Three new data sets and the code to produce them are provided in the open source R package, called {[}CENSORED{]}.
 \end{abstract}
 
 \noindent%
@@ -116,17 +124,13 @@ This textbook data was used as an example in Ilk (2004), and was developed into 
 
 This disparity between the average and the individual is a part of statistics, as a discipline, that is given less attention. It is this disparity which makes this particular data set important as a textbook example. Textbook data sets have longevity if there is a unresolved mystery. The iris data (Andereson 1935) is a prime example. It has withstood the test of time because the three species cannot be perfectly classified, and so it continues to challenge researchers and instructors to do better in the analysis. (A side note: the iris data is best replaced today with the penguins data (Horst, Hill, and Gorman 2020), which has similar qualities, is new and does not suffer from a connection with eugenics (Stodel 2020).) We argue that the wages data is in this class of textbook data, too, because it presents a challenge for longitudinal data analysis: how can we better summarize and explain the individual experience?
 
-For the field of statistics, and data science by association, it is increasingly important to reach the individual. One might describe this as a divergence of purpose, statistics for public policy or statistics for the public. The two are not the same. As the world becomes more electronically connected combating misinformation and mitigating conspiracy theories require that statistics address the individual. For example, with the wages data, even though the message for public policy is that demographic profile is related to different wage patterns on average, the message for the individual is that you are more than your demographic. The majority of people in the study do not have a pattern that is similar to the average. If you have a bad experience, that your wages have declined over time, you are not alone, there are others like you, and more than you think. {[}ET: a related article: \url{https://www.smh.com.au/national/by-the-numbers--the-average-australian-doesnt-exist--not-a-single-one-of-us-is-normal-20150124-12xlh0.html}{]}
+For the field of statistics, and data science by association, it is increasingly important to reach the individual. One might describe this as a divergence of purpose, statistics for public policy or statistics for the public. The two are not the same. As the world becomes more electronically connected combating misinformation and mitigating conspiracy theories require that statistics address the individual. For example, with the wages data, even though the message for public policy is that demographic profile is related to different wage patterns on average, the message for the individual is that you are more than your demographic. The majority of people in the study do not have a pattern that is similar to the average. If you have a bad experience, that your wages have declined over time, you are not alone, there are others like you, and more than you think. A similar tone is echoed occasionally in the public media, for example, an article published in the Sydney Morning Herald argues that there is no average Australian (Moncrief 2015).
 
-As a textbook data set though, it is outdated. The most recent year in the data is 1994, 10 years prior to when Singer and Willett (2003) was published. Teachers of statistics need use contemporary data sets to show how techniques are relevant to today's students. Using tired old textbook data sets can imbue a misconception that the field is not current. The wages data is extracted from NSLY79, one of the best examples of open data, which is constantly being updated. It should be possible to continuously refresh the textbook data from the data repository. This paper describes our (non-glamorous) journey from open (Open Knowledge Foundation 2021) wild data to textbook data.
+As a textbook data set though, the wages data is outdated. The most recent year in the data is 1994, 10 years prior to when Singer and Willett (2003) was published. Teachers of statistics need use contemporary data sets to show how techniques are relevant for today's students. Using tired old textbook data sets can imbue a misconception that the field is not current. The wages data is extracted from NSLY79, one of the best examples of open data, which is constantly being updated. It should be possible to continuously refresh the textbook data from the data repository. This paper describes our (non-glamorous) journey from open (Open Knowledge Foundation 2021) wild data to textbook data.
 
-This paper demonstrates the steps of cleaning data, and documents the process, as recommended by Huebner, Vach, and Cessie (2016). They emphasize that making the data cleaning process accountable and transparent is imperative and essential for the integrity of downstream statistical analyses and model building. Data cleaning can be considered to be a part of what is called ``initial data analysis'' (IDA) (Chatfield 1985). In IDA one would also explore the data, especially to check if the data is consistent with assumptions required for modeling. This is also related to exploratory data analysis (EDA), coined by Tukey (1977) with a focus on learning from data. EDA can be considered to encompass IDA. Dasu and Johnson (2003) say that data cleaning and exploration, without naming it as IDA, is a difficult task and consumes 80\% of the data mining task.
+This paper demonstrates the steps of cleaning data, and documents the process, as recommended by Huebner, Vach, and Cessie (2016). They emphasize that making the data cleaning process accountable and transparent is imperative and essential for the integrity of downstream statistical analyses and model building. Clean data often then goes through an ``initial data analysis'' (IDA) (Chatfield 1985), where one would summarize and scrutinize the data, especially to check if the data is consistent with assumptions required for modeling. This stage is related to exploratory data analysis (EDA), coined by Tukey (1977) with a focus on learning from data. EDA can be considered to encompass IDA. In practice the three stages of cleaning, summarizing and exploring are cyclical, that one often needs to do more cleaning after scrutinizing. Dasu and Johnson (2003) say that data cleaning and exploration is a difficult task and typically consumes a large percentage of the time spent in analyzing data.
 
-<<<<<<< HEAD
-Our process of cleaning builds heavily on the \texttt{tidyverse} approach (Wickham, Averick, et al. 2019). The data is first organized into ``tidy data'' (Wickham 2014) and then further wrangled using the data pipeline and split-apply-combine approach (Wickham 2011). (Tidy data shouldn't be confused with ``tame data'' which Kim, Ismay, and Chunn (2018) coined to refer to textbook data sets suitable for teaching, particularly teaching statistics.) The resulting (tame) data is provided in a new R package called \texttt{[CENSORED]} which includes the code so that the process is reproducible, and could be used to further refresh the data as new records are made available in the NLSY79 database.
-=======
 Our process of cleaning builds heavily on the \texttt{tidyverse} approach (Wickham et al. 2019). The data is first organized into ``tidy data'' (Wickham 2014) and then further wrangled using the data pipeline and split-apply-combine approach (Wickham 2011). (Tidy data shouldn't be confused with ``tame data'' which Kim, Ismay, and Chunn (2018) coined to refer to textbook data sets suitable for teaching, particularly teaching statistics.) The resulting (tame) data is provided in a new R package called \texttt{[CENSORED]} which includes the code so that the process is reproducible, and could be used to further refresh the data as new records are made available in the NLSY79 database.
->>>>>>> e9174550e6e3a231aa9c7572667f6c47600e0929
 
 This paper is structured in the following way. Section \ref{database} describes the NLSY79 data source. Section \ref{cleaning} presents the steps of cleaning the data, including getting and tidying the data from the NLSY79 and IDA to find and repair anomalies. Our final subset is compared to the old textbook subset in Section \ref{compare}. Finally, Section \ref{summary} summarizes the contribution and makes recommendations for the NLSY79 data curators.
 
@@ -139,7 +143,7 @@ Our aim is to refresh this textbook data and append it with data from 1994 throu
 \hypertarget{database-1}{%
 \subsection{Database}\label{database-1}}
 
-The NLSY79 is a longitudinal survey administered by the U.S Bureau of Labor Statistics that follows the lives of a sample of American youth born between 1957-1964 (Bureau of Labor Statistics, U.S. Department of Labor 2021). The cohort originally included 12,686 respondents aged 14-22 when first interviewed in 1979. It comprised of people sampled because they were Blacks, Hispanics, economically disadvantaged non-Black non-Hispanics, and youth in the military. In 1984 and 1990, two sub-samples were dropped from the interview; the dropped subjects were the 1,079 members of the military sample and 1,643 members who represents economically disadvantage people, but were not Black nor Hispanics, respectively. These subsamples were dropped because they are not eligible anymore for interview (Bureau of Labor Statistics, U.S. Department of Labor 2021). Hence, 9,964 respondents remain in the eligible samples. The surveys were conducted annually from 1979 to 1994 and biennially thereafter. Data are currently available from Round 1 (1979 survey year) to Round 28 (2018 survey year).
+The NLSY79 is a longitudinal survey administered by the U.S Bureau of Labor Statistics that follows the lives of a sample of American youth born between 1957-1964 (Bureau of Labor Statistics, U.S. Department of Labor 2021). The cohort originally included 12,686 respondents aged 14-22 when first interviewed in 1979. For a variety of reasons, some structural, the number of respondents dropped to 9,964 after 1990. The surveys were conducted annually from 1979 to 1994 and biennially thereafter. Data are currently available from Round 1 (1979 survey year) to Round 28 (2018 survey year).
 
 Although the main focus area of the NLSY is labor and employment, the NLSY also covers several other topics, including education, training, achievement, household, geography, dating, marriage, cohabitation, sexual activity, pregnancy, fertility, children, income, assets, health, attitudes and expectations, crime, and substance use.
 
@@ -148,18 +152,51 @@ There are two ways to conduct the interview of the NLSY79, which are face-to-fac
 \hypertarget{target}{%
 \subsection{Target data}\label{target}}
 
-The NLSY79 data used in Singer and Willett (2003) contains the longitudinal measurements on yearly mean hourly wages with years of workforce experience, and demographic variables education and race, from 1979 through to 1994. In addition, the cohort is restricted to male high-school dropouts who first participated in the study at age 14-17 years.
-Thus the target data set is to collect the same variables for the extended time frame of 1994 through to 2018, the most recent year reported.
+The NLSY79 data used in Singer and Willett (2003) contains the longitudinal records of male high school dropouts who first participated in the study at age 14-17 years from 1979 through to 1994. This dataset contains several variables as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ID: the respondents' ID.
+\item
+  EXPER: temporal scale, i.e., the length of time (years) in the workforce, starting on the respondents' first day at work.
+\item
+  LNW: natural logarithm of wages, adjusted with 1990's inflation rate.
+\item
+  BLACK: binary variable, 1 indicates black and 0 otherwise.
+\item
+  HISPANIC: binary variable, 1 indicates hispanic and 0 otherwise.
+\item
+  HGC: the highest grade completed.
+\item
+  UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
+\end{enumerate}
+
+From the database, we will refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also plan to make some modifications of the variables. For example, we create a categorical race variable instead of the binary variable ``black'' and ``hispanic''. We also include additional variables so that more interesting data exploration can be included in teaching examples: year of survey, age of individual in 1979, year when the highest grade was completed, number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked.
+
+We will also make all of the high school graduates data available, including females, in addition to high school dropouts, and separate the demographic data of the NLSY79 cohort. Thus, the plan is to create three datasets as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The demographic data of the NLSY79 cohort.
+\item
+  The wages data of the up to high school graduates.
+\item
+  The wages data of the high school dropouts, which is closest to a refreshed version of Singer and Willett (2003)'s data.
+\end{enumerate}
 
 \hypertarget{cleaning}{%
 \section{Data cleaning}\label{cleaning}}
 
-van der Loo and de Jonge (2018) describe the notion of a ``statistical value chain'' where the production stages of the data cleaning process are earmarked as raw data (data as arrived to the desk of an analyst), input data (data organised with correct type and identified variables) and valid data (data that faithfully represent the variables). In this section, we outline the steps to download the raw data (Section \ref{getdata}) and then tidy the raw data into input data, specifically for the demographic variables (Section \ref{tidydemog}) and the employment variables (Section \ref{tidyemp}), so that the resulting input data can be used downstream for validating the data as described in Section \ref{ida}.
+M. van der Loo and de Jonge (2018) in the context of official statistics describe the ``statistical value chain'' which includes various production stages of the data cleaning process as raw data (data in the initial that it arrives), input data (data organised with correct type and identified variables) and valid data (data that has been cleaned and more accurately represents the intent of variables). What we have colorfully named as wild data can be considered to be raw data, and valid data could be considered to be textbook data, in the above statistical value chain. In this section, we outline the steps to download the raw data (Section \ref{getdata}) and then tidy the raw data into input data, specifically for the demographic variables (Section \ref{tidydemog}) and the employment variables (Section \ref{tidyemp}), so that the resulting input data can be used downstream for validating the data as described in Section \ref{ida}.
 
 \hypertarget{getdata}{%
 \subsection{Getting the data}\label{getdata}}
 
-The NLSY79 data contains a large number of variables but for our aim, the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
+The NLSY79 data contains a large number of variables but for our purposes the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data and navigated as described in Figure \ref{fig:source-nav}.
 
 \begin{figure}[t]
 
@@ -183,7 +220,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Summary measures $\triangleright$ By job
 \begin{itemize}
-\item[$\triangleright$] Hours worked
+\item[$\triangleright$] Hours worked  
 \begin{itemize}
 \item[\faCheck] All 447 primary variables in Hours worked were selected.
 \end{itemize}
@@ -209,15 +246,15 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Context $\triangleright$ Summary measures $\triangleright$ Basic demographics $\triangleright$ Date of birth
 \begin{itemize}
-\item[\faCheck] All 4 variables in Date of birth were selected.
+\item[\faCheck] All 4 variables in Date of birth were selected. 
 \end{itemize}
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 686 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA.
+\item[\faCloudDownload] To download all 686 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
-\caption{The above documents the steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
+\caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
 \end{figure}
 
 The downloaded data set comes as a zip file, containing the following set of files:
@@ -236,24 +273,24 @@ The downloaded data set comes as a zip file, containing the following set of fil
 
 We alter only the file path in \texttt{NLSY79.R} and run the script without any other alteration. This results in an initial processing of the raw data into two data sets, \texttt{categories\_qnames} (where the observations are stored in categorical/interval values) and \texttt{new\_data\_qnames} (the observations are stored in integer form).
 
-The raw data, \texttt{new\_data\_qnames}, is organised such that each row corresponds to an individual. As respondents can have multiple jobs at specific years, the column names, such as \texttt{HRP1\_1979}, \texttt{HRP2\_1979}, \texttt{HRP1\_1980} and \texttt{HRP2\_1980}, contain the information about the job number up to 5 (\texttt{HRP1} = job 1, \texttt{HRP2} = job 2) and the year. The raw data consequently has a large number of columns (686 to be specific). The values in the cell under the variables that begin with \texttt{HRP} correspond to the hourly wage in dollars. A glimpse of this data output is shown below.
+According to Wickham (2014), tidy data sets comply with three rules: (i) each variable forms a column, (ii) each observation forms a row, and (iii) each type of observational unit forms a table. The raw data, \texttt{new\_data\_qnames}, does not comply with these rules as it is organised such that each row corresponds to an individual. As respondents can have multiple jobs at specific years, the column names, such as \texttt{HRP1\_1979}, \texttt{HRP2\_1979}, \texttt{HRP1\_1980} and \texttt{HRP2\_1980}, contain the information about the job number up to 5 (\texttt{HRP1} = job 1, \texttt{HRP2} = job 2) and the year. The raw data consequently has a large number of columns (716 to be specific). The values in the cell under the variables that begin with \texttt{HRP} correspond to the hourly wage in dollars. A glimpse of this data shows:
 
 \begin{verbatim}
 #> 'data.frame':    12686 obs. of  716 variables:
-#>  $ CASEID_1979                               : int  1 2 3 4 5 6 7 8 9 10 ...
-#>  $ HRP1_1979                                 : int  328 385 365 NA 310 NA NA NA 214 NA ...
-#>  $ HRP2_1979                                 : int  NA NA NA NA 375 NA NA NA NA NA ...
-#>  $ HRP3_1979                                 : int  NA NA 275 NA NA NA NA NA NA NA ...
-#>  $ HRP4_1979                                 : int  NA NA NA NA NA 250 NA NA NA NA ...
-#>  $ HRP5_1979                                 : int  NA NA NA NA NA NA NA NA NA NA ...
-#>  $ HRP1_1980                                 : int  NA 457 397 NA 333 275 300 394 200 318 ...
-#>  $ HRP2_1980                                 : int  NA NA 367 NA NA NA NA NA NA NA ...
-#>  $ HRP3_1980                                 : int  NA NA 380 NA NA NA 290 NA NA NA ...
-#>  $ HRP4_1980                                 : int  NA NA NA NA NA NA NA NA NA NA ...
+#>  $ CASEID_1979                               : int  1 2 3 4 5 6 7 8 ...
+#>  $ HRP1_1979                                 : int  328 385 365 NA 310 NA NA NA ...
+#>  $ HRP2_1979                                 : int  NA NA NA NA 375 NA NA NA ...
+#>  $ HRP3_1979                                 : int  NA NA 275 NA NA NA NA NA ...
+#>  $ HRP4_1979                                 : int  NA NA NA NA NA 250 NA NA ...
+#>  $ HRP5_1979                                 : int  NA NA NA NA NA NA NA NA ...
+#>  $ HRP1_1980                                 : int  NA 457 397 NA 333 275 300 394 ...
+#>  $ HRP2_1980                                 : int  NA NA 367 NA NA NA NA NA ...
+#>  $ HRP3_1980                                 : int  NA NA 380 NA NA NA 290 NA ...
+#>  $ HRP4_1980                                 : int  NA NA NA NA NA NA NA NA ...
 #>   [list output truncated]
 \end{verbatim}
 
-According to Wickham (2014), tidy data sets comply with three rules: (i) each variable forms a column, (ii) each observation forms a row, and (iii) each type of observational unit forms a table. The raw data does not comply with these rules, thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables. This is done using the \texttt{tidyverse} suite of packages (Wickham, Averick, et al. 2019), \texttt{tidyr} (Wickham 2020) to pivot the data into long form, \texttt{dplyr} (Wickham, François, et al. 2020), and \texttt{stringr} (Wickham 2019) for creating new variables, and levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{CENSORED/articles/raw-to-input-data.html} but also described in the subsequent subsections.
+Thus we re-arrange and wrangle the data into tidy data form, columns corresponding to individual ID, year, job number, wage in dollars and the demographic variables.This is done using the \texttt{tidyverse} suite of packages (Wickham et al. 2019): \texttt{tidyr} (Wickham 2020) to pivot the data into long form, with \texttt{dplyr} (Wickham et al. 2020) and \texttt{stringr} (Wickham 2019) to mutate new variables from the downloaded data from the database, and code levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{CENSORED/articles/raw-to-input-data.html} but also described in the subsequent subsections.
 
 \hypertarget{tidydemog}{%
 \subsubsection{Tidying demographic variables}\label{tidydemog}}
@@ -264,7 +301,7 @@ For gender and race, we only rename the column names. It is worth noting that us
 
 The \texttt{new\_data\_qnames} contains the variables \texttt{Q1-3\_A\textasciitilde{}Y\_1979} and \texttt{Q1-3\_A\textasciitilde{}Y\_1981} which records two versions of the birth year of the respondent; this is also the case for the record of birth month (\texttt{Q1-3\_A\textasciitilde{}M\_1979} and \texttt{Q1-3\_A\textasciitilde{}M\_1981}). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year.
 
-The next step is tidying to obtain \texttt{hgc} and \texttt{yr\_hgc}. The highest grade completed are recorded in \texttt{new\_data\_qnames} as variables beginning with \texttt{Q3-4} and \texttt{HGC} with suffix of the year it was recorded. In addition the variables beginning with \texttt{HGCREV} contain the revised data. We choose to use this revised May data because it seemed to have less missing and presumably has been checked. However, there is no revised May data for 2012, 2014, 2016, and 2018, thus, we use the ordinary May data for these years.
+The next step is tidying to obtain \texttt{hgc} and \texttt{yr\_hgc}. The highest grade completed are recorded in \texttt{new\_data\_qnames} as variables beginning with \texttt{Q3-4} and \texttt{HGC} with suffix of the year it was recorded. In addition, the variables beginning with \texttt{HGCREV} contain the revised data. We choose to use this revised data because it seemed to have less missing and presumably has been checked. However, there is no revised data for 2012, 2014, 2016, and 2018, thus, we use the ordinary data for these years.
 
 The \texttt{hgc} is measured and could be updated in each period of the survey. We chose to only retain the highest grade completed for each individual and derived the year when they completed it (\texttt{yr\_hgc}) by finding the minimum year with the highest completed grade.
 
@@ -273,7 +310,7 @@ Finally, we get all of the demographic profiles of the NLSY79 cohort. We then sa
 \hypertarget{tidyemp}{%
 \subsubsection{Tidying employment variables}\label{tidyemp}}
 
-Our target variables for the employment are to obtain respondent's mean hourly wage (\texttt{mean\_hourly\_wage}), the number of jobs (\texttt{number\_of\_jobs}) and the total hours of work per week (\texttt{total\_hours}) for each survey year. As the data only reports up to 5 jobs for each respondent, the maximum number of jobs is capped at 5.
+Our target variables for the employment are to obtain respondent's mean hourly wage (\texttt{wage}), the number of jobs (\texttt{njobs}), the total hours of work per week (\texttt{hours}) for each survey year, the year when individual starting to work (\texttt{stwork}), the length of time (years) in workforce (\texttt{yr\_workforce}), and work experience measured as the number of years worked (\texttt{exp}). As the data only reports up to 5 jobs for each respondent, the maximum number of jobs is capped at 5.
 
 From 1979 to 1987, \texttt{new\_data\_qnames} only contains one version of hours worked per week for each job (in the variables with names starting with \texttt{QES-52A}). From 1988 onward, we selected the total hours worked per week, including hours working from home (\texttt{QES-52D}). However, in 1993, this variable was missing for the first and last job so we selected to use \texttt{QES-52A} instead. In addition, 2008 only had jobs 1-4 for the \texttt{QES-52D} variable, so we use only these.
 
@@ -287,7 +324,7 @@ The hourly wages are in the variables beginning with \texttt{HRP} in \texttt{new
   If the total hours of worked for the corresponding job is greater than 84 hours, we set the wage and hour worked as missing.
 \end{itemize}
 
-The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is computed from the number of non-missing values of hourly wage \emph{and} hours worked. If either the hourly wage or hours worked is missing, we do not tally this.
+The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is computed from the number of non-missing values of hourly wage. In other words, even if the information of hours worked exists for a particular observation, we do not tally when the hourly wage is missing.
 
 \begin{verbatim}
 #> # A tibble: 10 x 6
@@ -305,21 +342,36 @@ The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is c
 #> 10     2  1986             7.69          NA              1 FALSE
 \end{verbatim}
 
+For \texttt{st\_work} variable, we only rename the column names from the raw, NLSY79 data. This variable is then used to calculate the next variable, \texttt{yr\_workforce} for each survey round, which is the year of survey (\texttt{year}) minus the year of individual start working (\texttt{st\_work}). Finally, \texttt{exp} variable is derived from the variable started with \texttt{WKSWK} in \texttt{new\_data\_qnames}. This variable measured since the last interview. Thus, to obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.
+
 The employment and demographic variables are then joined. These data are further filtered to the cohort who completed education up to 12th grade and participated in at least five rounds in the survey. We save the resultant wage data on this cohort as \texttt{wages}.
 
 \hypertarget{ida}{%
 \subsection{Initial data analysis}\label{ida}}
 
-According to Huebner, Vach, and Cessie (2016), initial data analysis (IDA) is the step of inspecting and screening the data after being collected to ensure that the data is clean, valid, and ready to be deployed in the later formal statistical analysis. Moreover, Chatfield (1985) argues that the two main objectives of IDA are data description, which is to assess the structure and the quality of the data, and model formulation without any formal statistical inference.
+According to Huebner, Vach, and Cessie (2016), initial data analysis (IDA) is the step of inspecting and screening the data after collection to ensure that the data is clean, valid, and ready to be deployed in the later analyses. This is supported by Chatfield (1985) who argues that the two main objectives of IDA are data description, which is to assess the structure and the quality of the data, and model formulation without any formal statistical inference.
 
-In this paper, we conduct an IDA or a preliminary data analysis to assess the consistency of the data with the cohort information that the NLSY provides. In addition, we also aim to find the anomaly in the wages values using this approach. We mainly use graphical summaries to do the IDA using \texttt{ggplot2} (Wickham 2016) and \texttt{brolgar} (Tierney, Cook, and Prvan 2020).
+In this paper, we conduct an IDA or a preliminary data analysis to assess the validity of the variable values in the cohort of data that the NLSY provides. A first step is validating numerical summaries of the raw data are the same as reported by NLSY79. This is followed with graphical summaries using methods available in \texttt{ggplot2} (Wickham 2016) and \texttt{brolgar} (Tierney, Cook, and Prvan 2020).
 
-As stated previously, the respondents' ages ranged from 12 to 22 when first interviewed in 1979. Hence, we validate whether all of the respondents were in this range. Additionally, the \href{https://www.nlsinfo.org/content/cohorts/nlsy79/intro-to-the-sample/nlsy79-sample-introduction}{NLSY} also provides the number of the survey cohort by their gender (6,403 males and 6,283 females) and race (7,510 Non-Black/Non-Hispanic; 3,174 Black; 2,002 Hispanic). To validate this, we used the \texttt{demog\_nlsy79}, i.e., the data with the survey years 1979 sample.
-Tables \ref{tab:age-table} and \ref{tab:gender-race-table} suggest that the demographic data we had is consistent with the sample information in the database.
+The respondents' ages ranged from 12 to 22 when first interviewed in 1979. Hence, we validate whether all of the respondents were in this range in the data we extracted. Additionally, the \href{https://www.nlsinfo.org/content/cohorts/nlsy79/intro-to-the-sample/nlsy79-sample-introduction}{NLSY} also provides the number of the survey cohort by their gender (6,403 males and 6,283 females) and race (7,510 Non-Black/Non-Hispanic; 3,174 Black; 2,002 Hispanic). To validate this, we used the \texttt{demog\_nlsy79}, i.e., the data with the survey years 1979 sample. Tables \ref{tab:age-table} and \ref{tab:gender-race-table} suggest that the demographic data we had is consistent with the sample information in the database.
+
+In the next step, we explore the mean hourly wage data. In this case, we only explore the wages data of respondents that have the highest completed grade of up to \(12^{th}\) grade. We employ visualization techniques to perform the IDA as described next.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figures/sample-plot-1} 
+
+}
+
+\caption{Longitudinal profiles of wages for a random sample of 20 individuals in the refreshed data. Most, but not all, individuals here experienced increasing wages over time, and several have experienced considerable fluctuation in wages. Some individuals are only measured for a short period.}\label{fig:sample-plot}
+\end{figure}
+
+We randomly take 20 samples from the data and plot them, as shown in Figure \ref{fig:sample-plot}. It shows that these respondents have a lot of variability in wages, for example, the IDs in panel numbers 5, 7, and 11. The plot also implies that the samples have a different pattern of mean hourly wages. Some have had flat wages for years but had a sudden increase in one particular year, then it gone down again, while the others experienced an upsurge in their wage, for instance, the IDs in panel 9.
+However, when checking the summary plots (Figure \ref{fig:feature-plot}), we found that some observations had exceptionally high wages. Some of them, for example respondents in Figure \ref {fig:feature-plot} C had experienced unusual wages only in certain year.
 
 \begin{table}
 
-\caption{\label{tab:age-table}The frequency table of the age at the start of the survey (?CHECK) in the full NSLY79 data}
+\caption{\label{tab:age-table}The frequency table of the age at the start of the survey in NSLY79 cohort}
 \centering
 \begin{tabular}[t]{rr}
 \toprule
@@ -337,49 +389,36 @@ Age & Number of individuals\\
 \end{tabular}
 \end{table}
 
-\begin{table}
+\textbackslash begin\{table\}
 
-\caption{\label{tab:gender-race-table}The contingency table for gender and race for the full NLSY79 data.}
+\textbackslash caption\{\label{tab:gender-race-table}The contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1\%) is out of the total corresponding to row.\}
 \centering
+
 \begin{tabular}[t]{lrrrr}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{Race} & \multicolumn{1}{c}{ } \\
 \cmidrule(l{3pt}r{3pt}){2-4}
 Gender & Hispanic & Black & Non-Black, Non-Hispanic & Total\\
 \midrule
-Male & 1,000 (15.62\%) & 1,613 (25.19\%) & 3,790 (59.19\%) & 6,403 (100.00\%)\\
-Female & 1,002 (15.95\%) & 1,561 (24.84\%) & 3,720 (59.21\%) & 6,283 (100.00\%)\\
+Male & 1,000 (16\%) & 1,613 (25\%) & 3,790 (59\%) & 6,403\\
+Female & 1,002 (16\%) & 1,561 (25\%) & 3,720 (59\%) & 6,283\\
 \midrule
-Total & 2,002 (15.78\%) & 3,174 (25.02\%) & 7,510 (59.20\%) & 12,686 (100.00\%)\\
+Total & 2,002 (16\%) & 3,174 (25\%) & 7,510 (59\%) & 12,686\\
 \bottomrule
 \end{tabular}
-\end{table}
 
-In the next step, we explore the mean hourly wage data. In this case, we only explore the wages data of respondents that have the highest completed grade of up to \(12^{th}\) grade. We employ visualization techniques to perform the IDA as described next.
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{figures/sample-plot-1}
-
-}
-
-\caption{Longitudinal profiles of wages for a random sample of 20 individuals in the refreshed data. Most, but not all, individuals here experienced increasing wages over time, and several have experienced considerable fluctuation in wages. Some individuals are only measured for a short period.}\label{fig:sample-plot}
-\end{figure}
-
-We randomly take 20 samples from the data and plot them, as shown in Figure \ref{fig:sample-plot}. It shows that these respondents have a lot of variability in wages, for example, the IDs in panel numbers 5, 7, and 11. The plot also implies that the samples have a different pattern of mean hourly wages. Some have had flat wages for years but had a sudden increase in one particular year, then it gone down again, while the others experienced an upsurge in their wage, for instance, the IDs in panel 9.
-However, when checking the summary plots (Figure \ref{fig:feature-plot}), we found that some observations had exceptionally high wages. Some of them, for example respondents in Figure \ref {fig:feature-plot} C had experienced unusual wages only in certain year.
+\textbackslash end\{table\}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figures/feature-plot-1}
+{\centering \includegraphics[width=1\linewidth]{figures/feature-plot-1} 
 
 }
 
 \caption{Summary plots to check the cleaned data reveal more cleaning is necessary: longitudinal profiles of wages for all individuals 1979-2018 (A), boxplots of minimum, median, and maximum wages of each individual (B), and one individual (id=39) with an unusual wage relative to their years of data (C). Some values of hourly wages are unbelievable, and some individuals have extemely unusual wages in some years.}\label{fig:feature-plot}
 \end{figure}
 
-The anomalies are also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total.
-According to Pergamit et al. (2001), one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years' job history. This shortcoming might also contribute to the fluctuation of one's wages data.
+The anomalies are also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total. According to Pergamit et al. (2001), one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years' job history. This shortcoming might also contribute to the fluctuation of one's wages data.
 
 \hypertarget{censor}{%
 \subsubsection{Replacing extreme values}\label{censor}}
@@ -396,7 +435,7 @@ Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the ex
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{figures/compare-plot-1}
+{\centering \includegraphics[width=0.9\linewidth]{figures/compare-plot-1} 
 
 }
 
@@ -408,7 +447,7 @@ We still can see some extreme values in maximum wages, but consider it as a natu
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figures/fixed-feature-plot-1}
+{\centering \includegraphics[width=1\linewidth]{figures/fixed-feature-plot-1} 
 
 }
 
@@ -420,21 +459,17 @@ Finally, we save the imputed data and set the appropriate data type for the vari
 \hypertarget{recap}{%
 \subsection{Recap}\label{recap}}
 
-Figure \ref{fig:flow-chart-blind} summarizes the steps taken to go from raw to input to valid data (van der Loo and de Jonge 2018) to create a refreshed wages data set.
+Figure \ref{fig:flow-chart-blind} summarizes the steps taken to go from raw to input to valid data (M. van der Loo and de Jonge 2018) to create a refreshed wages data set.
 
 
 
 \begin{figure}
 
-<<<<<<< HEAD
-{\centering \includegraphics[width=0.85\linewidth]{/Users/deeamaliah/Documents/yowie-paper/paper/figures/flowchart_blind} 
-=======
-{\centering \includegraphics[width=0.85\linewidth]{/Users/etan0038/Dropbox/repo/yowie-paper/paper/figures/flowchart_blind}
->>>>>>> e9174550e6e3a231aa9c7572667f6c47600e0929
+{\centering \includegraphics[width=0.85\linewidth]{/Users/etan0038/Dropbox/repo/yowie-paper/paper/figures/flowchart_blind} 
 
 }
 
-\caption{The stages of data cleaning from the raw data to get three datasets contained in \texttt{[CENSORED]}. ``\# of individuals'' means the number of respondents included in each stage, while ``\# of observations'' means the number of rows in the data. The color represents the stage of data cleaning in statistical value chain (van der Loo and de Jonge 2021). Pink, blue, and green represent the raw, input, and valid data, respectively.}\label{fig:flow-chart-blind}
+\caption{The stages of data cleaning from the raw data to get three datasets contained in \texttt{[CENSORED]}. ``\# of individuals'' means the number of respondents included in each stage, while ``\# of observations'' means the number of rows in the data. The color represents the stage of data cleaning in statistical value chain (M. P. J. van der Loo and de Jonge 2021). Pink, blue, and green represent the raw, input, and valid data, respectively.}\label{fig:flow-chart-blind}
 \end{figure}
 
 \hypertarget{compare}{%
@@ -444,29 +479,18 @@ The original set contains wages of high school dropouts (Singer and Willett 2003
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figures/plotting-sw-do-1}
+{\centering \includegraphics[width=1\linewidth]{figures/plotting-sw-do-1} 
 
 }
 
 \caption{Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.}\label{fig:plotting-sw-do}
 \end{figure}
 
-There are two aspects of the original data that make a direct comparison difficult. Th first one is that The time variable provided is ``experience in the workforce''. It is not clear how this is calculated. One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection. Secondly, wages were inflation-adjusted to 1990 prices, which is not done for the refreshed data.
-
-\textbackslash begin\{figure\}
-
-\{\centering \includegraphics[width=468px]{figures/compare_xp_to_yrworkforce-1}
-
-\}
-
-\caption{The association between the lenght of time in the workforce (years) and the work experience. The color represents the respondents (id). Generally, the longer someone were in the workforce, the higher the work experience. However, some of the respondents have much lower working experience compared their duration in the workforce.}
-
-(\#fig:compare\_xp\_to\_yrworkforce)
-\textbackslash end\{figure\}
+There are two aspects of the original data that make a direct comparison difficult. The first one is that The time variable provided is ``experience in the workforce''. It is not clear how this is calculated. One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection. Secondly, wages were inflation-adjusted to 1990 prices, which is not done for the refreshed data.
 
 \begin{center}\includegraphics[width=468px]{figures/compare_xp_sw-1} \end{center}
 
-The treatment of unlikely wages differ in the refreshed data. In the original data by Singer and Willett (2003), wages greater than \$75 are set to be missing. However, in recent context, this value is too low to be set as the maximum threshold. We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section \ref{censor}.
+The treatment of unlikely wages differ in the refreshed data. In the original data by Singer and Willett (2003), wages greater than \$75 are set to be missing. However, in recent context, this value is too low to be set as the maximum threshold. We opted to use the weights from a robust linear regression to determine what should be regarded as outliers and imputed them with their predicted values as as described in Section \ref{censor}.
 
 Figure \ref{fig:plotting-sw-do} shows a comparison of the two sets. (A direct ID matching is not possible.) There are 888 individuals in the original and 1,188 individuals in the refreshed data. This suggests some individuals were removed in the original data.
 In addition, in the original set the racial breakdown was 246 Black, 204 Hispanic and 438 White participants, while in the refreshed data there are 346 Black, 219 Hispanic, and 623 White participants, so the proportions have not been exactly reproduced. On education, in the refreshed data there are very few individuals with less than a 12th grade education, which is different from the original. In the original data there were 366 individuals with up to 8th grade and 522 9th-12th grade, as compared to 967 with 12th grade in the refreshed data.
@@ -489,23 +513,29 @@ Various difficulties were encountered in trying to refresh the data, which inclu
 \item
   there are many errors in the data, e.g.~hourly wages greater than \$30,000 per hour.
 \item
-  there is no explicit variable in the database recording high school dropout, which means we needed to compare date of 12th grade with the individual's age.
-\item
-  calculating experience in the workforce would require knowing the time of first job within the first year the individual was recorded.
+  there is no explicit variable in the database recording high school dropout, which means we needed to compare the date of 12th grade with the individual's age.
 \end{itemize}
 
 Ultimately, the refreshed data is reasonably similar to the original, but unsatisfactorily far from it. The last step required would be to inflation-adjust wages, but this is better to do with each wave of new data added, so that it is relative to the last date in the data.
 
 Some readers may disagree with our decisions made to produce the refreshed textbook data and may have better insight than us in producing a more appropriate textbook data. We do not assert that we have produced the best textbook data, but rather we describe our journey to provide a reasonable textbook data set. All code and documentation are provided for transparency, and future updates of the \texttt{[CENSORED]} package may contain additional variables, or filters of the full set, if it is deemed important.
 
-Finally, for the data providers we recommend that a validation system with clear rules is added on data entry, and that alternative output formats, such as a tidy format would help users make better use of the resource. The problem with many of the wages records is that there are implausible values, or confusion on how to record wages for multiple jobs. These values can be validated with simple checks at data entry. Providing an open data resource also is accompanied with the responsibility that the data, especially data that is as valuable as this, is reliable. Users need to be able to trust the data.
+For the data providers, we recommend that a validation system with clear rules is added on data entry, and that alternative output formats, such as a tidy format would help users make better use of the resource. The problem with many of the wages records is that there are implausible values, or confusion on how to record wages for multiple jobs. These values can be validated with simple checks at data entry. Providing an open data resource also is accompanied with the responsibility that the data, especially data that is as valuable as this, is reliable. Users need to be able to trust the data.
+
+Why is this exercise important for teachers and students? The data package and software could be used for illustrating data cleaning in the classroom. The refreshed and contemporary data provided in the package can be used as examples in the teaching of initial data analysis and modeling, and exploratory data analysis of longitudinal data.
+
+The wages data provides a good opportunity to discuss the difference between statistics to use for public policy and statistics that relate to the individual. From modeling the wages relative to workforce experience, with demographic covariates we learn that there are significantly different patterns. That more education leads to increasingly higher wages, which is a satisfying result for educators. It means that education makes a difference in the wage experience, and that public policy that encourages education is a data-supported action. We would also learn, although not presented here, that race matters and that being black leads to lower wages. This is a disturbing finding because there is no rational for such a difference in a fair society. This is would provide support for action in public policy to remove this overall average effect. It also provides an example for educators to explain the use of data to support public policy action.
+
+These are interpretations of results from analyzing the wages data, which rely on trusting that the data provided is accurate and valid. The data is collected from a reputable organization, but the data has obvious errors that need correcting. This paper has illustrated procedures and guidelines to achieve valid data, and provides the code and details for it to be reproduced, and modified if deemed appropriate.
+
+Having trustworthy data is imperative for statistics and data science education. Students do interpret results and take seriously what is reported from example analyses. If the data in the examples are synthetic, with our own inherent prejudices (on fog e.g.~gender and race) applied, or inaccurately processed leaving errors, we as educators are being irresponsible because the societal message taught to students is flawed. This paper demonstrates the process to produce a trustworthy data set for teaching.
 
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}
 
 We would like to thank Aarathy Babu for the insight and discussion during the writing of this paper.
 
-The entire analysis is conducted using \texttt{R} (R Core Team 2020) in RStudio IDE using these packages: \texttt{tidyverse} (Wickham, Averick, et al. 2019), \texttt{ggplot2} (Wickham 2016), \texttt{dplyr} (Wickham, François, et al. 2020), \texttt{readr} (Wickham and Hester 2020), \texttt{tidyr} (Wickham 2020), \texttt{stringr} (Wickham 2019), \texttt{purrr} (Henry and Wickham 2020), \texttt{brolgar} (Tierney, Cook, and Prvan 2020), \texttt{patchwork} (Pedersen 2020), \texttt{kableExtra} (Zhu 2019), \texttt{MASS} (Venables and Ripley 2002), \texttt{janitor} (Firke 2020), and \texttt{tsibble} (Wang, Cook, and Hyndman 2020). The paper was generated using \texttt{knitr} (Xie 2014) and \texttt{rmarkdown} (Xie, Dervieux, and Riederer 2020).
+The entire analysis is conducted using \texttt{R} (R Core Team 2020) in RStudio IDE using these packages: \texttt{tidyverse} (Wickham et al. 2019), \texttt{ggplot2} (Wickham 2016), \texttt{dplyr} (Wickham et al. 2020), \texttt{readr} (Wickham and Hester 2020), \texttt{tidyr} (Wickham 2020), \texttt{stringr} (Wickham 2019), \texttt{purrr} (Henry and Wickham 2020), \texttt{brolgar} (Tierney, Cook, and Prvan 2020), \texttt{patchwork} (Pedersen 2020), \texttt{kableExtra} (Zhu 2019), \texttt{MASS} (Venables and Ripley 2002), \texttt{janitor} (Firke 2020), and \texttt{tsibble} (Wang, Cook, and Hyndman 2020). The paper was generated using \texttt{knitr} (Xie 2014) and \texttt{rmarkdown} (Xie, Dervieux, and Riederer 2020).
 
 \hypertarget{supplementary-materials}{%
 \section{Supplementary Materials}\label{supplementary-materials}}
@@ -529,122 +559,128 @@ The authors confirm that the data supporting the findings of this study are avai
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
-\leavevmode\hypertarget{ref-iris-data}{}%
-Andereson, Edgar. 1935. ``The Irises of the Gaspe Peninsula.'' \emph{Bulletin of the American Iris Society} 59: 2--5.
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-iris-data}{}}%
+Andereson, Edgar. 1935. {``The Irises of the Gaspe Peninsula.''} \emph{Bulletin of the American Iris Society} 59: 2--5.
 
-\leavevmode\hypertarget{ref-nlsy79}{}%
-Bureau of Labor Statistics, U.S. Department of Labor. 2021. ``National Longitudinal Survey of Youth 1979 Cohort, 1979-2016 (Rounds 1-28).'' Produced and distributed by the Center for Human Resource Research (CHRR), The Ohio State University. Columbus, OH.
+\leavevmode\vadjust pre{\hypertarget{ref-nlsy79}{}}%
+Bureau of Labor Statistics, U.S. Department of Labor. 2021. {``National Longitudinal Survey of Youth 1979 Cohort, 1979-2016 (Rounds 1-28).''} Produced and distributed by the Center for Human Resource Research (CHRR), The Ohio State University. Columbus, OH.
 
-\leavevmode\hypertarget{ref-shiny}{}%
-Chang, Winston, Joe Cheng, JJ Allaire, Yihui Xie, and Jonathan McPherson. 2020. \emph{shiny: Web Application Framework for R}. \url{https://CRAN.R-project.org/package=shiny}.
+\leavevmode\vadjust pre{\hypertarget{ref-shiny}{}}%
+Chang, Winston, Joe Cheng, JJ Allaire, Yihui Xie, and Jonathan McPherson. 2020. \emph{{shiny: Web Application Framework for R}}. \url{https://CRAN.R-project.org/package=shiny}.
 
-\leavevmode\hypertarget{ref-Chatfield1985TIEo}{}%
-Chatfield, C. 1985. ``The Initial Examination of Data.'' \emph{Journal of the Royal Statistical Society. Series A. General} 148 (3): 214--53.
+\leavevmode\vadjust pre{\hypertarget{ref-Chatfield1985TIEo}{}}%
+Chatfield, C. 1985. {``The Initial Examination of Data.''} \emph{Journal of the Royal Statistical Society. Series A. General} 148 (3): 214--53.
 
-\leavevmode\hypertarget{ref-eliznlsy}{}%
-Cooksey, Elizabeth C. 2017. ``Using the National Longitudinal Surveys of Youth (Nlsy) to Conduct Life Course Analyses.'' In \emph{Handbook of Life Course Health Development}, edited by Richard M. Lerner Neal Halfon Christoper B. Forrest, 561--77. Cham: Springer. \url{https://doi.org/https://doi.org/10.1007/978-3-319-47143-3_23}.
+\leavevmode\vadjust pre{\hypertarget{ref-eliznlsy}{}}%
+Cooksey, Elizabeth C. 2017. {``Using the National Longitudinal Surveys of Youth (NLSY) to Conduct Life Course Analyses.''} In \emph{Handbook of Life Course Health Development}, edited by Richard M. Lerner Neal Halfon Christoper B. Forrest, 561--77. Cham: Springer. https://doi.org/\url{https://doi.org/10.1007/978-3-319-47143-3_23}.
 
-\leavevmode\hypertarget{ref-DasuTamraparni2003Edma}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-DasuTamraparni2003Edma}{}}%
 Dasu, Tamraparni, and Theodore Johnson. 2003. \emph{Exploratory Data Mining and Data Cleaning}. Wiley Series in Probability and Statistics. Hoboken: WILEY.
 
-\leavevmode\hypertarget{ref-janitor}{}%
-Firke, Sam. 2020. \emph{janitor: Simple Tools for Examining and Cleaning Dirty Data}. \url{https://CRAN.R-project.org/package=janitor}.
+\leavevmode\vadjust pre{\hypertarget{ref-janitor}{}}%
+Firke, Sam. 2020. \emph{{janitor: Simple Tools for Examining and Cleaning Dirty Data}}. \url{https://CRAN.R-project.org/package=janitor}.
 
-\leavevmode\hypertarget{ref-racismnotrace}{}%
-Fullilove, M. T. 1998. ``Comment: Abandoning ``Race" as a Variable in Public Health Research--an Idea Whose Time Has Come.'' \emph{American Journal of Public Health} 88 (9): 1297--8.
+\leavevmode\vadjust pre{\hypertarget{ref-racismnotrace}{}}%
+Fullilove, M. T. 1998. {``Comment: Abandoning ``Race" as a Variable in Public Health Research--an Idea Whose Time Has Come.''} \emph{American Journal of Public Health} 88 (9): 1297--98.
 
-\leavevmode\hypertarget{ref-grimshaw}{}%
-Grimshaw, Scott D. 2015. ``A Framework for Infusing Authentic Data Experiences Within Statistics Courses.'' \emph{The American Statistician} 69 (4): 307--14. \url{https://doi.org/10.1080/00031305.2015.1081106}.
+\leavevmode\vadjust pre{\hypertarget{ref-grimshaw}{}}%
+Grimshaw, Scott D. 2015. {``A Framework for Infusing Authentic Data Experiences Within Statistics Courses.''} \emph{The American Statistician} 69 (4): 307--14. \url{https://doi.org/10.1080/00031305.2015.1081106}.
 
-\leavevmode\hypertarget{ref-purrr}{}%
-Henry, Lionel, and Hadley Wickham. 2020. \emph{purrr: Functional Programming Tools}. \url{https://CRAN.R-project.org/package=purrr}.
+\leavevmode\vadjust pre{\hypertarget{ref-purrr}{}}%
+Henry, Lionel, and Hadley Wickham. 2020. \emph{{purrr: Functional Programming Tools}}. \url{https://CRAN.R-project.org/package=purrr}.
 
-\leavevmode\hypertarget{ref-penguins-data}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-penguins-data}{}}%
 Horst, Allison Marie, Alison Presmanes Hill, and Kristen B Gorman. 2020. \emph{Palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data}. \url{https://doi.org/10.5281/zenodo.3960218}.
 
-\leavevmode\hypertarget{ref-HuebnerMariannePhD2016Asat}{}%
-Huebner, Marianne, Werner Vach, and Saskia le Cessie. 2016. ``A Systematic Approach to Initial Data Analysis Is Good Research Practice.'' \emph{The Journal of Thoracic and Cardiovascular Surgery} 151 (1): 25--27.
+\leavevmode\vadjust pre{\hypertarget{ref-HuebnerMariannePhD2016Asat}{}}%
+Huebner, Marianne, Werner Vach, and Saskia le Cessie. 2016. {``A Systematic Approach to Initial Data Analysis Is Good Research Practice.''} \emph{The Journal of Thoracic and Cardiovascular Surgery} 151 (1): 25--27.
 
-\leavevmode\hypertarget{ref-ilk2004}{}%
-Ilk, Ozlem. 2004. ``Exploratory Multivariate Longitudinal Data Analysis and Models for Multivariate Longitudinal Binary Data.'' PhD thesis, Iowa State University. \url{https://doi.org/10.31274/rtd-180813-11012}.
+\leavevmode\vadjust pre{\hypertarget{ref-ilk2004}{}}%
+Ilk, Ozlem. 2004. {``Exploratory Multivariate Longitudinal Data Analysis and Models for Multivariate Longitudinal Binary Data.''} PhD thesis, Iowa State University. \url{https://doi.org/10.31274/rtd-180813-11012}.
 
-\leavevmode\hypertarget{ref-tamedata}{}%
-Kim, A. Y, C. Ismay, and J. Chunn. 2018. ``The Fivethirtyeight R Package: ``Tame Data" Principles for Introductory Statistics and Data Science Courses.'' \emph{Technology Innovations in Statistics Education} 11 (1). \url{https://doi.org/10.5070/T511103589}.
+\leavevmode\vadjust pre{\hypertarget{ref-tamedata}{}}%
+Kim, A. Y, C. Ismay, and J. Chunn. 2018. {``The Fivethirtyeight {R} Package: ``Tame Data" Principles for Introductory Statistics and Data Science Courses.''} \emph{Technology Innovations in Statistics Education} 11 (1). \url{https://doi.org/10.5070/T511103589}.
 
-\leavevmode\hypertarget{ref-KollerManuel2016rARP}{}%
-Koller, Manuel. 2016. ``robustlmm: An R Package for Robust Estimation of Linear Mixed-Effects Models.'' \emph{Journal of Statistical Software} 75 (6): 1--24.
+\leavevmode\vadjust pre{\hypertarget{ref-KollerManuel2016rARP}{}}%
+Koller, Manuel. 2016. {``{robustlmm: An R Package for Robust Estimation of Linear Mixed-Effects Models}.''} \emph{Journal of Statistical Software} 75 (6): 1--24.
 
-\leavevmode\hypertarget{ref-opendata}{}%
-Open Knowledge Foundation. 2021. ``Open Definition. Defining Open in Open Data, Open Content, and Open Knowledge.'' 2021. \url{http://opendefinition.org/od/2.1/en/}.
+\leavevmode\vadjust pre{\hypertarget{ref-notaverage}{}}%
+Moncrief, Marc. 2015. {``By the Numbers - the Average Australian Doesn't Exist ... Not a Single One of Us Is 'Normal'.''} \url{https://bit.ly/smh-not-normal}.
 
-\leavevmode\hypertarget{ref-patchwork}{}%
-Pedersen, Thomas Lin. 2020. \emph{patchwork: The Composer of Plots}. \url{https://CRAN.R-project.org/package=patchwork}.
+\leavevmode\vadjust pre{\hypertarget{ref-opendata}{}}%
+Open Knowledge Foundation. 2021. {``Open Definition. Defining Open in Open Data, Open Content, and Open Knowledge.''} 2021. \url{http://opendefinition.org/od/2.1/en/}.
 
-\leavevmode\hypertarget{ref-MichaelRPergamit2001DWTN}{}%
-Pergamit, Michael R., Charles R. Pierret, Donna S. Rothstein, and Jonathan R. Veum. 2001. ``Data Watch: The National Longitudinal Surveys.'' \emph{The Journal of Economic Perspectives} 15 (2): 239--53.
+\leavevmode\vadjust pre{\hypertarget{ref-patchwork}{}}%
+Pedersen, Thomas Lin. 2020. \emph{{patchwork: The Composer of Plots}}. \url{https://CRAN.R-project.org/package=patchwork}.
 
-\leavevmode\hypertarget{ref-R}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-MichaelRPergamit2001DWTN}{}}%
+Pergamit, Michael R., Charles R. Pierret, Donna S. Rothstein, and Jonathan R. Veum. 2001. {``Data Watch: The National Longitudinal Surveys.''} \emph{The Journal of Economic Perspectives} 15 (2): 239--53.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R}{}}%
 R Core Team. 2020. \emph{R: A Language and Environment for Statistical Computing}. Vienna, Austria: R Foundation for Statistical Computing. \url{https://www.R-project.org/}.
 
-\leavevmode\hypertarget{ref-SingerJudithD2003Alda}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-SingerJudithD2003Alda}{}}%
 Singer, Judith D, and John B Willett. 2003. \emph{Applied Longitudinal Data Analysis: Modeling Change and Event Occurrence}. Oxford u.a: Oxford Univ. Pr.
 
-\leavevmode\hypertarget{ref-notiris}{}%
-Stodel, Megan. 2020. ``Stop Using Iris.'' \url{https://www.meganstodel.com/posts/no-to-iris/}.
+\leavevmode\vadjust pre{\hypertarget{ref-notiris}{}}%
+Stodel, Megan. 2020. {``Stop Using Iris.''} \url{https://www.meganstodel.com/posts/no-to-iris/}.
 
-\leavevmode\hypertarget{ref-brolgar}{}%
-Tierney, Nicholas, Di Cook, and Tania Prvan. 2020. \emph{brolgar: BRowse Over Longitudinal data Graphically and Analytically in R}. \url{https://github.com/njtierney/brolgar}.
+\leavevmode\vadjust pre{\hypertarget{ref-brolgar}{}}%
+Tierney, Nicholas, Di Cook, and Tania Prvan. 2020. \emph{{brolgar: BRowse Over Longitudinal data Graphically and Analytically in R}}. \url{https://github.com/njtierney/brolgar}.
 
-\leavevmode\hypertarget{ref-tukey}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tukey}{}}%
 Tukey, John W. (John Wilder). 1977. \emph{Exploratory Data Analysis}. Addison-Wesley Series in Behavioral Science. Reading, Mass.: Addison-Wesley Pub. Co.
 
-\leavevmode\hypertarget{ref-rlm}{}%
-UCLA: Statistical Consulting Group. 2021. ``Robust Regression \textbar{} R Data Analysis Examples.'' February 2021. \url{https://stats.idre.ucla.edu/r/dae/robust-regression/}.
+\leavevmode\vadjust pre{\hypertarget{ref-rlm}{}}%
+UCLA: Statistical Consulting Group. 2021. {``{Robust Regression \textbar{} R Data Analysis Examples}.''} February 2021. \url{https://stats.idre.ucla.edu/r/dae/robust-regression/}.
 
-\leavevmode\hypertarget{ref-LooMarkvander2018Sdcw}{}%
-van der Loo, Mark, and Edwin de Jonge. 2018. \emph{Statistical Data Cleaning with Applications in R}.
+\leavevmode\vadjust pre{\hypertarget{ref-validate}{}}%
+van der Loo, Mark P. J., and Edwin de Jonge. 2021. {``Data Validation Infrastructure for {R}.''} \emph{Journal of Statistical Software} 97 (10): 1--31. \url{https://doi.org/10.18637/jss.v097.i10}.
 
-\leavevmode\hypertarget{ref-validate}{}%
-van der Loo, Mark P. J., and Edwin de Jonge. 2021. ``Data Validation Infrastructure for R.'' \emph{Journal of Statistical Software} 97 (10): 1--31. \url{https://doi.org/10.18637/jss.v097.i10}.
+\leavevmode\vadjust pre{\hypertarget{ref-LooMarkvander2018Sdcw}{}}%
+van der Loo, Mark, and Edwin de Jonge. 2018. \emph{Statistical Data Cleaning with Applications in r}.
 
-\leavevmode\hypertarget{ref-mass}{}%
-Venables, W. N., and B. D. Ripley. 2002. \emph{Modern Applied Statistics with S}. Fourth. New York: Springer. \url{http://www.stats.ox.ac.uk/pub/MASS4}.
+\leavevmode\vadjust pre{\hypertarget{ref-mass}{}}%
+Venables, W. N., and B. D. Ripley. 2002. \emph{Modern Applied Statistics with s}. Fourth. New York: Springer. \url{http://www.stats.ox.ac.uk/pub/MASS4}.
 
-\leavevmode\hypertarget{ref-tsibble}{}%
-Wang, Earo, Dianne Cook, and Rob J Hyndman. 2020. ``A New Tidy Data Structure to Support Exploration and Modeling of Temporal Data.'' \emph{Journal of Computational and Graphical Statistics} 29 (3): 466--78. \url{https://doi.org/10.1080/10618600.2019.1695624}.
+\leavevmode\vadjust pre{\hypertarget{ref-tsibble}{}}%
+Wang, Earo, Dianne Cook, and Rob J Hyndman. 2020. {``A New Tidy Data Structure to Support Exploration and Modeling of Temporal Data.''} \emph{Journal of Computational and Graphical Statistics} 29 (3): 466--78. \url{https://doi.org/10.1080/10618600.2019.1695624}.
 
-\leavevmode\hypertarget{ref-plyr}{}%
-Wickham, Hadley. 2011. ``The Split-Apply-Combine Strategy for Data Analysis.'' \emph{Journal of Statistical Software, Articles} 40 (1): 1--29. \url{https://doi.org/10.18637/jss.v040.i01}.
+\leavevmode\vadjust pre{\hypertarget{ref-plyr}{}}%
+Wickham, Hadley. 2011. {``The Split-Apply-Combine Strategy for Data Analysis.''} \emph{Journal of Statistical Software, Articles} 40 (1): 1--29. \url{https://doi.org/10.18637/jss.v040.i01}.
 
-\leavevmode\hypertarget{ref-WickhamHadley2014TD}{}%
----------. 2014. ``Tidy Data.'' \emph{Journal of Statistical Software} 59 (10): 1--23.
+\leavevmode\vadjust pre{\hypertarget{ref-WickhamHadley2014TD}{}}%
+---------. 2014. {``Tidy Data.''} \emph{Journal of Statistical Software} 59 (10): 1--23.
 
-\leavevmode\hypertarget{ref-ggplot2}{}%
----------. 2016. \emph{ggplot2: Elegant Graphics for Data Analysis}. Springer-Verlag New York. \url{https://ggplot2.tidyverse.org}.
+\leavevmode\vadjust pre{\hypertarget{ref-ggplot2}{}}%
+---------. 2016. \emph{{ggplot2: Elegant Graphics for Data Analysis}}. Springer-Verlag New York. \url{https://ggplot2.tidyverse.org}.
 
-\leavevmode\hypertarget{ref-stringr}{}%
----------. 2019. \emph{stringr: Simple, Consistent Wrappers for Common String Operations}. \url{https://CRAN.R-project.org/package=stringr}.
+\leavevmode\vadjust pre{\hypertarget{ref-stringr}{}}%
+---------. 2019. \emph{{stringr: Simple, Consistent Wrappers for Common String Operations}}. \url{https://CRAN.R-project.org/package=stringr}.
 
-\leavevmode\hypertarget{ref-tidyr}{}%
----------. 2020. \emph{tidyr: Tidy Messy Data}. \url{https://CRAN.R-project.org/package=tidyr}.
+\leavevmode\vadjust pre{\hypertarget{ref-tidyr}{}}%
+---------. 2020. \emph{{tidyr: Tidy Messy Data}}. \url{https://CRAN.R-project.org/package=tidyr}.
 
-\leavevmode\hypertarget{ref-tidyverse}{}%
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. ``Welcome to the tidyverse.'' \emph{Journal of Open Source Software} 4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
+\leavevmode\vadjust pre{\hypertarget{ref-tidyverse}{}}%
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. {``Welcome to the {tidyverse}.''} \emph{Journal of Open Source Software} 4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
 
-\leavevmode\hypertarget{ref-dplyr}{}%
-Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2020. \emph{dplyr: A Grammar of Data Manipulation}. \url{https://CRAN.R-project.org/package=dplyr}.
+\leavevmode\vadjust pre{\hypertarget{ref-dplyr}{}}%
+Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2020. \emph{{dplyr: A Grammar of Data Manipulation}}. \url{https://CRAN.R-project.org/package=dplyr}.
 
-\leavevmode\hypertarget{ref-readr}{}%
-Wickham, Hadley, and Jim Hester. 2020. \emph{readr: Read Rectangular Text Data}. \url{https://CRAN.R-project.org/package=readr}.
+\leavevmode\vadjust pre{\hypertarget{ref-readr}{}}%
+Wickham, Hadley, and Jim Hester. 2020. \emph{{readr: Read Rectangular Text Data}}. \url{https://CRAN.R-project.org/package=readr}.
 
-\leavevmode\hypertarget{ref-knitr}{}%
-Xie, Yihui. 2014. ``Knitr: A Comprehensive Tool for Reproducible Research in R.'' In \emph{Implementing Reproducible Computational Research}, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. \url{http://www.crcpress.com/product/isbn/9781466561595}.
+\leavevmode\vadjust pre{\hypertarget{ref-knitr}{}}%
+Xie, Yihui. 2014. {``Knitr: A Comprehensive Tool for Reproducible Research in {R}.''} In \emph{Implementing Reproducible Computational Research}, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. \url{http://www.crcpress.com/product/isbn/9781466561595}.
 
-\leavevmode\hypertarget{ref-rmarkdown}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-rmarkdown}{}}%
 Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. \emph{R Markdown Cookbook}. Boca Raton, Florida: Chapman; Hall/CRC. \url{https://bookdown.org/yihui/rmarkdown-cookbook}.
 
-\leavevmode\hypertarget{ref-kableExtra}{}%
-Zhu, Hao. 2019. \emph{kableExtra: Construct Complex Table with 'kable' and Pipe Syntax}. \url{https://CRAN.R-project.org/package=kableExtra}.
+\leavevmode\vadjust pre{\hypertarget{ref-kableExtra}{}}%
+Zhu, Hao. 2019. \emph{{kableExtra: Construct Complex Table with 'kable' and Pipe Syntax}}. \url{https://CRAN.R-project.org/package=kableExtra}.
+
+\end{CSLReferences}
 
 
 \bibliographystyle{Chicago}
