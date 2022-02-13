@@ -48,6 +48,7 @@ sw_wages_mod <- sw %>%
 # filter do data up to 1994 since the textbook data only covers that period.
 
 do <- yowie::wages_hs_do %>%
+  as_tibble() %>%
   group_by(id) %>%
   mutate(lnwage = log(wage),
          index = 1:n())
@@ -65,7 +66,7 @@ do_ref <- do %>%
   ylim(0, 5)
 
 do_ref_mod <- do %>%
-  mutate(hgc12 = ifelse(hgc_i < 12, "BELOW 12TH", "12TH")) %>%
+  mutate(hgc12 = ifelse(hgc_i < 9, "8TH", "12TH")) %>%
   ggplot(aes(x = exp,
              y = lnwage,
              linetype = hgc12)) +
