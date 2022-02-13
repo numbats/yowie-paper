@@ -149,12 +149,12 @@ The NLSY79 data used in @SingerJudithD2003Alda contains the longitudinal records
 6. HGC: the highest grade completed.
 7. UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
 
-From the database, we will refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also plan to make some modifications of the variables. For example, we create a categorical race variable instead of the binary variable "Black" and "Hispanic".  We also include additional variables so that more interesting data exploration can be included in teaching examples: year of survey, age of individual in 1979, year when the highest grade was completed, number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. 
+From the database, we will refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also plan to make some modifications of the variables. For example, we create a categorical race variable instead of the binary variable "Black" and "Hispanic".  We also include additional variables so that more interesting data exploration can be included in teaching examples: year of survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. 
 
-We will also make all of the high school graduates data available, including females, in addition to high school dropouts, and separate the demographic data of the NLSY79 cohort. Thus, the plan is to create three datasets as follows:
+We will also make the wages and demographic data of the NLSY79 cohort available, including females, in addition to high school dropouts. Thus, the plan is to create three datasets as follows:
 
 1. The demographic data of the NLSY79 cohort.
-2. The wages data of the up to high school graduates.
+2. The wages data of NLSY79 cohort.
 3. The wages data of the high school dropouts, which is closest to a refreshed version of @SingerJudithD2003Alda's data. 
 
 <!-- Since no specific criteria on high school dropouts was defined
@@ -183,9 +183,18 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Education, Training and Achievement Scores
 \begin{itemize}
-\item[$\triangleright$] Education $\triangleright$ Summary measures $\triangleright$ All schools $\triangleright$ By year $\triangleright$ Highest grade completed
+\item[$\triangleright$] Education $\triangleright$ Summary measures $\triangleright$ All schools $\triangleright$ By year
 \begin{itemize}
-\item[\faCheck] All 80 variables in Highest grade completed were selected.
+\item[$\triangleright$] Dates of diploma or degree
+\begin{itemize}
+\item[\faCheck] All variables named Q3-8A were selected. 
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item[$\triangleright$] Highest grade completed
+\begin{itemize}
+\item[\faCheck] Selected HGC\_EVER, which is the highest grade respondent has ever reported completed and getting credit for.
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \item[$\triangleright$] Employment
@@ -214,16 +223,16 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \item[\faCheck] Only selected the start date (Year) for the first job (E00101.02)
 \end{itemize}
 \end{itemize}
-\item[$\triangleright$] Household, Geography and Contextual Variables
+\item[$\triangleright$] Household, Geography \& Demographics
 \begin{itemize}
-\item[$\triangleright$] Context $\triangleright$ Summary measures $\triangleright$ Basic demographics $\triangleright$ Date of birth
+\item[$\triangleright$] Demographics $\triangleright$ Basic demographics $\triangleright$ Date of birth
 \begin{itemize}
 \item[\faCheck] All 4 variables in Date of birth were selected. 
 \end{itemize}
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 686 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
+\item[\faCloudDownload] To download all 663 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
 \caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
@@ -255,7 +264,7 @@ Thus we re-arrange and wrangle the data into tidy data form, columns correspondi
 
 ### Tidying demographic variables {#tidydemog}
 
-In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`) and the corresponding year this grade was completed (`yr_hgc`).
+In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`), and the whether the graduate equivalency diploma is obtained (`ged`).
 
 For gender and race, we only rename the column names. It is worth noting that using these two variable needs special attention. Gender, as reported in the data, only has two categories, which is recognised today as inadequate. Gender is not binary. Further, race is as reported in the database. When doing analysis with this variable, one should keep in mind that the purpose is to study racism rather than race.
 
@@ -271,12 +280,10 @@ The `new_data_qnames` contains the variables `Q1-3_A~Y_1979` and `Q1-3_A~Y_1981`
 
 <!--AE comment: I was confused by the following section: “We choose to use this revised May data because it seemed to have less missing and presumably has been checked. However, there is no revised May data for 2012, 2014, 2016, and 2018, thus, we use the ordinary May data for these years.” I was assuming the data was collected on a yearly basis, but this section suggests it was collected each month. Please clarify somewhere in the paper. 
 -->
-The next step is tidying to obtain `hgc` and `yr_hgc`. The highest grade completed are recorded in `new_data_qnames` as variables beginning with `Q3-4` and `HGC` with suffix of the year it was recorded. In addition, the variables beginning with `HGCREV` contain the revised data. We choose to use this revised data because it seemed to have less missing and presumably has been checked. However, there is no revised data for 2012, 2014, 2016, and 2018, thus, we use the ordinary data for these years. 
+The next step is tidying to obtain `hgc` and `ged`. As the highest grade completed is already exist in  `new_data_qnames` and stored in years unit, we only rename the column name to be `hgc_i` and recode it so we have the factor data type. For `ged`, we only separate the years and the GED status of the individual. Later on, this variable is useful to determine the refreshed high school dropouts data. 
 
 ```{r tidy-grade}
 ```
-
-The `hgc` is measured and could be updated in each period of the survey. We chose to only retain the highest grade completed for each individual and derived the year when they completed it (`yr_hgc`) by finding the minimum year with the highest completed grade. 
 
 ```{r tidy-hgc}
 ```
@@ -323,11 +330,12 @@ The number of jobs (`number_of_jobs`) for each respondent per year is computed f
 
 For `st_work` variable,  we only rename the column names from `new_data_qnames`. This variable is then used to calculate the next variable, `yr_workforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`st_work`). Finally, `exp` variable is derived from the number of weeks worked since the last interview indicated as variable started with `WKSWK` in `new_data_qnames`. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.  
 
-The employment and demographic variables are then joined. These data are further filtered to the cohort who completed education up to 12th grade and participated in at least five rounds in the survey. We save the resultant wage data on this cohort as `wages`.  
+The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation articulated in @SingerJudithD2003Alda. We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when the data is used to teach longitudinal data. We save the resultant wage data on this cohort as `wages`.  
 
 ```{r wages-demog-hs}
 ```
 
+## Highlighting the work experience 
 
 ## Initial data analysis {#ida}
 
@@ -381,7 +389,7 @@ We randomly take 20 samples from the data and plot them, as shown in Figure \ref
 The anomalies are also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total. According to @MichaelRPergamit2001DWTN, one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years’ job history. This shortcoming might also contribute to the fluctuation of one's wages data. 
 
 
-### Replacing extreme values {#censor}
+## Replacing extreme values {#censor}
 
 <!--AE comment: Section 3.2.1 begins “As part of the IDA, which is the model formulation, we build a robust linear regression model to treat the extreme values in the data.” This could use clarification. In 3.2, you said that part of IDA is “ model formulation without any formal statistical inference.” To me, that sounds like using modeling as a descriptive technique, and it’s something I would consider to be more a part of EDA. But then in 3.2.1, while it is perhaps not using modeling in an inferential way, the model is being used for more than just description. I might rephrase the first sentence as follows: “In order to treat the extreme values in the data, we built a robust linear regression model.” -->
 As part of the IDA, <!--AE comment: Awkward sentence. "which is the model formulation"?--> which is the model formulation, we build a robust linear regression model to treat the extreme values in the data. Robust linear regression yields an estimation robust to the influence of noise or contamination [@KollerManuel2016rARP]. It also aims to detect the contamination by weighting each observation based on how "well-behaved" they are, known as robustness weight. An observation with a lower robustness weight would be suggested as an outlier [@KollerManuel2016rARP]. 
@@ -444,6 +452,8 @@ From this stage forward, we assume that we already have valid data. We also subs
 ```
 
 # Comparison of refreshed with the original data {#compare}
+
+## Calculated variables: Determining who is a dropout
 
 ```{r sw_wages}
 ```
