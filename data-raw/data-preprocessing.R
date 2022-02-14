@@ -210,11 +210,11 @@ get_rate <- function(year) {
 rates_all <- map_dfr(years, get_rate)
 
 ## ---- tidy-start-work
-stwork <- new_data_qnames %>%
+st_work <- new_data_qnames %>%
   select(CASEID_1979,
          `EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND`) %>%
   rename(id = CASEID_1979,
-         stwork_year = `EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND`)
+         stwork = `EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND`)
 
 ## ---- tidy-work-experience
 
@@ -305,9 +305,9 @@ head(mean_hourly_wage, n = 10)
 
 # join the wages information and the demographic information by case id.
 wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id") %>%
-  left_join(stwork, by = "id") %>%
+  left_join(st_work, by = "id") %>%
   left_join(exp, by = c("id", "year")) %>%
-  mutate(years_in_workforce = year - stwork_year)
+  mutate(yr_wforce = year - stwork)
 
 # # filter only the id with high school education
 # wages_before <- wages_demog  %>% filter(grepl("GRADE", hgc))

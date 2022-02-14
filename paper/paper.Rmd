@@ -296,7 +296,7 @@ Finally, we get all of the demographic profiles of the NLSY79 cohort. We then sa
 
 ### Tidying employment variables {#tidyemp}
 
-Our target variables for the employment are to obtain respondent's mean hourly wage (`wage`), the number of jobs (`njobs`), the total hours of work per week (`hours`) for each survey year, the year when individual starting to work (`stwork`), the length of time (years) in workforce (`yr_workforce`), and work experience measured as the number of years worked (`exp`). As the data only reports up to 5 jobs for each respondent, the maximum number of jobs is capped at 5. 
+Our target variables for the employment are to obtain respondent's mean hourly wage (`wage`), the number of jobs (`njobs`), the total hours of work per week (`hours`) for each survey year, the year when individual starting to work (`stwork`), the length of time (years) in workforce (`yr_wforce`), and work experience measured as the number of years worked (`exp`). As the data only reports up to 5 jobs for each respondent, the maximum number of jobs is capped at 5. 
 
 From 1979 to 1987, `new_data_qnames` only contains one version of hours worked per week for each job (in the variables with names starting with `QES-52A`). From 1988 onward, we selected the total hours worked per week, including hours working from home (`QES-52D`). However, in 1993, this variable was missing for the first and last job so we selected to use `QES-52A` instead. In addition, 2008 only had jobs 1-4 for the `QES-52D` variable, so we use only these.
 
@@ -319,23 +319,22 @@ The number of jobs (`number_of_jobs`) for each respondent per year is computed f
 ```{r tidy-work-experience}
 ```
 
-```{r tidy-rate}
-```
-
 ```{r tidy-rate-hour}
 ```
 
 ```{r tidy-nojob}
 ```
 
-For `st_work` variable,  we only rename the column names from `new_data_qnames`. This variable is then used to calculate the next variable, `yr_workforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`st_work`). Finally, `exp` variable is derived from the number of weeks worked since the last interview indicated as variable started with `WKSWK` in `new_data_qnames`. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.  [ET: inconsistency in `st_work` and `yr_workforce`?]
+For `stwork` variable,  we only rename the column names from `new_data_qnames`. This variable is then used to calculate the next variable, `yr_wforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`stwork`). Finally, `exp` variable is derived from the number of weeks worked since the last interview indicated as variable started with `WKSWK` in `new_data_qnames`. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.
 
-The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation articulated in @SingerJudithD2003Alda. We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when the data is used to teach longitudinal data. We save the resultant wage data on this cohort as `wages`.  
+The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation articulated in @SingerJudithD2003Alda. We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when it is used to teach longitudinal data. We save the resultant wage data on this cohort as `wages`.  
 
 ```{r wages-demog-hs}
 ```
 
-## Highlighting the work experience 
+## Calculated variables: work experience
+
+It is conceptually motivated by the variables available in the original data and it also illustrates how one would create a new variable from the information provided by the database, a variable that is more useful than those provided.
 
 ## Initial data analysis {#ida}
 
@@ -468,7 +467,7 @@ From this stage forward, we assume that we already have valid data. We also subs
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
 The original set contains wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package `brolgar` and the refreshed data is available in the R package `r yowie`. 
 
-## Calculated variables: Determining who is a dropout
+## Filtering: Determining who is a dropout
 
 In the original data, there is no explicit explanation of how the dropouts cohort is obtained from the database. Hence, we use the high school dropouts criteria mentioned in @nlsy79edu to determine who is the dropouts, which are:
 
