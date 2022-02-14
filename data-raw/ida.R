@@ -323,7 +323,7 @@ join_eligible <- join %>% filter(age_1979 <= 17) %>%
 also_do <- wages %>% filter(id %in% join_eligible$id)
 
 # bind the initial dropouts data and the eligible data that are not captured in the first filtering
-wages_hs_do <- rbind(wages_hs_do, also_do)
+wages_hs_do <- bind_rows(wages_hs_do, also_do)
 
 ### ---- nrow
 a <- nrow(categories_qnames)
