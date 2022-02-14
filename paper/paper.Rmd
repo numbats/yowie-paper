@@ -328,7 +328,7 @@ The number of jobs (`number_of_jobs`) for each respondent per year is computed f
 ```{r tidy-nojob}
 ```
 
-For `st_work` variable,  we only rename the column names from `new_data_qnames`. This variable is then used to calculate the next variable, `yr_workforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`st_work`). Finally, `exp` variable is derived from the number of weeks worked since the last interview indicated as variable started with `WKSWK` in `new_data_qnames`. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.  
+For `st_work` variable,  we only rename the column names from `new_data_qnames`. This variable is then used to calculate the next variable, `yr_workforce` for each survey round, which is the year of survey (`year`) minus the year of individual start working (`st_work`). Finally, `exp` variable is derived from the number of weeks worked since the last interview indicated as variable started with `WKSWK` in `new_data_qnames`. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.  [ET: inconsistency in `st_work` and `yr_workforce`?]
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation articulated in @SingerJudithD2003Alda. We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when the data is used to teach longitudinal data. We save the resultant wage data on this cohort as `wages`.  
 
