@@ -264,7 +264,7 @@ Thus we re-arrange and wrangle the data into tidy data form, columns correspondi
 
 ### Tidying demographic variables {#tidydemog}
 
-In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`), and the whether the graduate equivalency diploma is obtained (`ged`).
+In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`), and whether the graduate equivalency diploma is obtained (`ged`).
 
 For gender and race, we only rename the column names. It is worth noting that using these two variable needs special attention. Gender, as reported in the data, only has two categories, which is recognised today as inadequate. Gender is not binary. Further, race is as reported in the database. When doing analysis with this variable, one should keep in mind that the purpose is to study racism rather than race.
 
@@ -280,7 +280,7 @@ The `new_data_qnames` contains the variables `Q1-3_A~Y_1979` and `Q1-3_A~Y_1981`
 
 <!--AE comment: I was confused by the following section: “We choose to use this revised May data because it seemed to have less missing and presumably has been checked. However, there is no revised May data for 2012, 2014, 2016, and 2018, thus, we use the ordinary May data for these years.” I was assuming the data was collected on a yearly basis, but this section suggests it was collected each month. Please clarify somewhere in the paper. 
 -->
-The next step is tidying to obtain `hgc` and `ged`. As the highest grade completed is already exist in  `new_data_qnames` and stored in years unit, we only rename the column name to be `hgc_i` and recode it so we have the factor data type. For `ged`, we only separate the years and the GED status of the individual. Later on, this variable is useful to determine the refreshed high school dropouts data. 
+The next step is tidying to obtain `hgc` and `ged`. As the highest grade completed is already exist in  `new_data_qnames` and stored in year unit, we only rename the column name to be `hgc_i` and recode it so we have the factor data type. For `ged`, we only separate the years and the GED status of the individual. Later on, this variable is useful to determine the refreshed high school dropouts data. 
 
 ```{r tidy-grade}
 ```
@@ -453,7 +453,6 @@ From this stage forward, we assume that we already have valid data. We also subs
 
 # Comparison of refreshed with the original data {#compare}
 
-## Calculated variables: Determining who is a dropout
 
 ```{r sw_wages}
 ```
@@ -471,6 +470,27 @@ From this stage forward, we assume that we already have valid data. We also subs
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
 The original set contains wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package `brolgar` and the refreshed data is available in the R package `r yowie`. 
 
+## Calculated variables: Determining who is a dropout
+
+In the original data, there is no explicit explanation of how the dropouts cohort is obtained from the database. Hence, we use the high school dropouts criteria mentioned in @nlsy79edu to determine who is the dropouts, which are:
+
+1. The individual whose highest grade completed (`hgc`) is reported to be less than 12th grade, **or**
+2. The individual whose highest grade completed (`hgc`) is reported to be at least 12th grade and have received a GED (`ged` is code to 2).
+
+Further, @SingerJudithD2003Alda set additional criteria for the dropouts in the textbook data, which are male and aged between 14 and 17 years old in 1979. Hence, we also use this information to re-create the dropouts data. 
+
+With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. We then matched the individuals in the original and refreshed dataset to investigate why some individuals in the original data were not captured in the refreshed data. We found several reasons for this as follows:
+
+1. 173 individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate, that there are people older than 17 in their subset. Our decision is to also include them in the refreshed data as the data has age variable in it, so analyst could filter them later. 
+2. 79 individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because: 
+
+  + 35 of them completed at least 12th grade and having a diploma instead of GED (`ged` variable is coded to 1). Thus, they are indeed are not dropouts and we decide to not include them in the refreshed data. 
+  + The information of `ged` is missing in 38 individuals. We decide to include them in the refreshed data. 
+  + 3 individuals are having both diploma and GED (`ged` is coded to 3). They essentially have GED, so we decide to keep them in the refreshed data as well. 
+  + 12 individuals do not exist in `wages` data because they were participated in less than 3 rounds of survey. 
+
+We then redo the filtering based on those decisions we made on those individuals who were not captured in the refreshed data. Finally, we have 863 dropouts in the refreshed data, the closest number of individuals we get to the original data. 
+
 <!--AE comment: what does the natural log have to do with the y-axis?-->
 <!--AE comment: For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.-->
 
@@ -478,8 +498,10 @@ The original set contains wages of high school dropouts [@SingerJudithD2003Alda]
 ```{r plotting-sw-do, fig.cap = "Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.", fig.width = 9, fig.height = 5, out.width = "100%", cache = FALSE}
 ```
 
-There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the "work experience", is not clearly articulated. @SingerJudithD2003Alda mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide [@nlsy79guide], we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare-xp-sw}.
 
+## The takeaways 
+
+There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the "work experience", is not clearly articulated. @SingerJudithD2003Alda mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide [@nlsy79guide], we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare-xp-sw}.
 
 Secondly, in the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data from the newest survey period  release. Thus, the 1990 prices might not be relevant anymore for the future context. Hence, we keep it as the original value to allow the users to treat it as their needs. 
 

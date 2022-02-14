@@ -91,17 +91,17 @@ Textbook data is useful for teaching statistics and data science methods because
 \hypertarget{intro}{%
 \section{Introduction}\label{intro}}
 
-Statistics and data science education relies on cleaned and simplified data, suitably called textbook data, for clear examples about how to apply different techniques. An example of this, is the wages data made public by Singer and Willett (2003) which can be used to teach generalized linear models, including hierarchical, mixed effects and multilevel. The freely available data records hourly wages of a sample of high school dropouts, from 1979-1994, along with demographic variables including education and race, taken from the National Longitudinal Survey of Youth (NLSY79) (Bureau of Labor Statistics, U.S. Department of Labor 2021a).
+Statistics and data science education relies on cleaned and simplified data, suitably called textbook data, for clear examples about how to apply different techniques. An example of this, is the wages data made public by Singer and Willett (2003) which can be used to teach generalized linear models, in addition to hierarchical, mixed effects and multilevel. The data records hourly wages of a sample of high school dropouts, from 1979-1994, along with the demographic variables, such as education and race, taken from the National Longitudinal Survey of Youth (NLSY79) (Bureau of Labor Statistics, U.S. Department of Labor 2021a).
 
-The story from modeling the data (and as reported by Singer and Willett) is that wages increase with the length of time in the workforce, higher level of education leads to higher wages, and that race makes a difference, on average. An exploratory analysis reveals however that the individual experience varies a great deal from the overall average. Some individuals experience a decline in wages the longer they are in the workforce, and many experience volatility in their wages. The wages data was used to illustrate exploratory longitudinal data analysis in Ozlem Ilk's PhD thesis supervised by author Cook (Ilk 2004), and was further developed into a case study for use in the teaching of exploratory data analysis at Iowa State University.
+The story from modeling the data (and as reported by Singer and Willett) is that wages increase with the length of time in the workforce, higher level of education leads to higher wages, and that race makes a difference, on average. An exploratory analysis reveals however that the individual experience varies a great deal from the overall average. Some individuals experience a decline in wages the longer they are in the workforce, and many experience volatility in their wages. The wages data was used to illustrate exploratory longitudinal data analysis in Ozlem Ilk's PhD thesis (Ilk 2004), and was further developed into a case study for use in the teaching of exploratory data analysis at Iowa State University.
 
 This textbook data was used as an example in Ilk (2004), and was developed into a case study for use in teaching exploratory data analysis at CENSORED. The story from modeling the data (and as reported by Singer and Willett) is that wages increase with the length of time in the workforce, higher level of education leads to higher wages, and that race makes a difference, on average. An exploratory analysis reveals however that the individual experience varies a great deal from the overall average. Some individuals experience a decline in wages the longer they are in the workforce, and many experience volatility in their wages.
 
-This disparity between the average and the individual is a part of statistics, as a discipline, that is given less attention. It is this disparity which makes this particular data set important as a textbook example. Textbook data sets have longevity if there is a unresolved mystery. The iris data (Andereson 1935) is a prime example. It has withstood the test of time because the three species cannot be perfectly classified, and so it continues to challenge researchers and instructors to do better in the analysis. (A side note: the iris data is best replaced today with the penguins data (Horst, Hill, and Gorman 2020), which has similar qualities, is new and does not suffer from a connection with eugenics (Stodel 2020).) We argue that the wages data is in this class of textbook data, too, because it presents a challenge for longitudinal data analysis: how can we better summarize and explain the individual experience?
+This disparity between the average and the individual is a part of statistics, as a discipline, that require more attention. It is this disparity which makes this particular data set important as a textbook example. Textbook data sets have longevity if there is a unresolved mystery. The iris data (Andereson 1935) is a prime example. It has withstood the test of time because the three species cannot be perfectly classified, and so it continues to challenge researchers and instructors to do better in the analysis. (A side note: the iris data is best replaced today with the penguins data (Horst, Hill, and Gorman 2020), which has similar qualities, is new and does not suffer from a connection with eugenics (Stodel 2020).) We argue that the wages data is in this class of textbook data, too, because it presents a challenge for longitudinal data analysis: how can we better summarize and explain the individual experience?
 
 For the field of statistics, and data science by association, it is increasingly important to reach the individual. One might describe this as a divergence of purpose, statistics for public policy or statistics for the public. The two are not the same. As the world becomes more electronically connected combating misinformation and mitigating conspiracy theories require that statistics address the individual. For example, with the wages data, even though the message for public policy is that demographic profile is related to different wage patterns on average, the message for the individual is that you are more than your demographic. The majority of people in the study do not have a pattern that is similar to the average. If you have a bad experience, that your wages have declined over time, you are not alone, there are others like you, and more than you think. A similar tone is echoed occasionally in the public media, for example, an article published in the Sydney Morning Herald argues that there is no average Australian (Moncrief 2015).
 
-As a textbook data set though, the wages data is outdated. The most recent year in the data is 1994, 10 years prior to when Singer and Willett (2003) was published. Teachers of statistics need use contemporary data sets to show how techniques are relevant for today's students. Using tired old textbook data sets can imbue a misconception that the field is not current. The wages data is extracted from NSLY79, one of the best examples of open data, which is constantly being updated. It should be possible to continuously refresh the textbook data from the data repository. This paper describes our (non-glamorous) journey from open (Open Knowledge Foundation 2021) wild data to textbook data.
+As a textbook data set though, the wages data is outdated. The most recent year in the data is 1994, 10 years prior to when Singer and Willett (2003) was published. Teachers of statistics need contemporary data sets to show how techniques are relevant for today's students. Using tired old textbook data sets can imbue a misconception that the field is not current. The wages data is extracted from NSLY79, one of the best examples of open data, which is constantly being updated. It should be possible to continuously refresh the textbook data from the data repository. This paper describes our (non-glamorous) journey from open (Open Knowledge Foundation 2021) wild data to textbook data.
 
 This paper demonstrates the steps of cleaning data, and documents the process, as recommended by Huebner, Vach, and Cessie (2016). They emphasize that making the data cleaning process accountable and transparent is imperative and essential for the integrity of downstream statistical analyses and model building. Clean data often then goes through an ``initial data analysis'' (IDA) (Chatfield 1985), where one would summarize and scrutinize the data, especially to check if the data is consistent with assumptions required for modeling. This stage is related to exploratory data analysis (EDA), coined by Tukey (1977) with a focus on learning from data. EDA can be considered to encompass IDA. In practice the three stages of cleaning, summarizing and exploring are cyclical, that one often needs to do more cleaning after scrutinizing. Dasu and Johnson (2003) say that data cleaning and exploration is a difficult task and typically consumes a large percentage of the time spent in analyzing data.
 
@@ -279,13 +279,13 @@ Thus we re-arrange and wrangle the data into tidy data form, columns correspondi
 \hypertarget{tidydemog}{%
 \subsubsection{Tidying demographic variables}\label{tidydemog}}
 
-In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (\texttt{gender}), race (\texttt{race}), age (\texttt{age\_1979}), highest grade completed (\texttt{hgc}), highest grade completed in terms of years, e.g.~9th grade = 9, 3rd year college = 15, (\texttt{hgc\_i}), and the whether the graduate equivalency diploma is obtained (\texttt{ged}).
+In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (\texttt{gender}), race (\texttt{race}), age (\texttt{age\_1979}), highest grade completed (\texttt{hgc}), highest grade completed in terms of years, e.g.~9th grade = 9, 3rd year college = 15, (\texttt{hgc\_i}), and whether the graduate equivalency diploma is obtained (\texttt{ged}).
 
 For gender and race, we only rename the column names. It is worth noting that using these two variable needs special attention. Gender, as reported in the data, only has two categories, which is recognised today as inadequate. Gender is not binary. Further, race is as reported in the database. When doing analysis with this variable, one should keep in mind that the purpose is to study racism rather than race.
 
 The \texttt{new\_data\_qnames} contains the variables \texttt{Q1-3\_A\textasciitilde{}Y\_1979} and \texttt{Q1-3\_A\textasciitilde{}Y\_1981} which records two versions of the birth year of the respondent; this is also the case for the record of birth month (\texttt{Q1-3\_A\textasciitilde{}M\_1979} and \texttt{Q1-3\_A\textasciitilde{}M\_1981}). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year.
 
-The next step is tidying to obtain \texttt{hgc} and \texttt{ged}. As the highest grade completed is already exist in \texttt{new\_data\_qnames} and stored in years unit, we only rename the column name to be \texttt{hgc\_i} and recode it so we have the factor data type. For \texttt{ged}, we only separate the years and the GED status of the individual. Later on, this variable is useful to determine the refreshed high school dropouts data.
+The next step is tidying to obtain \texttt{hgc} and \texttt{ged}. As the highest grade completed is already exist in \texttt{new\_data\_qnames} and stored in year unit, we only rename the column name to be \texttt{hgc\_i} and recode it so we have the factor data type. For \texttt{ged}, we only separate the years and the GED status of the individual. Later on, this variable is useful to determine the refreshed high school dropouts data.
 
 Finally, we get all of the demographic profiles of the NLSY79 cohort. We then save this data as \texttt{demog\_nlsy79}.
 
@@ -458,9 +458,6 @@ Figure \ref{fig:flow-chart-blind} summarizes the steps taken to go from raw to i
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
-\hypertarget{calculated-variables-determining-who-is-a-dropout}{%
-\subsection{Calculated variables: Determining who is a dropout}\label{calculated-variables-determining-who-is-a-dropout}}
-
 \begin{figure}
 
 {\centering \includegraphics[width=0.7\linewidth]{figures/compare-xp-sw-1} 
@@ -472,6 +469,47 @@ Figure \ref{fig:flow-chart-blind} summarizes the steps taken to go from raw to i
 
 The original set contains wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package \texttt{brolgar} and the refreshed data is available in the R package \texttt{[CENSORED]}.
 
+\hypertarget{calculated-variables-determining-who-is-a-dropout}{%
+\subsection{Calculated variables: Determining who is a dropout}\label{calculated-variables-determining-who-is-a-dropout}}
+
+In the original data, there is no explicit explanation of how the dropouts cohort is obtained from the database. Hence, we use the high school dropouts criteria mentioned in Wolpin (2005) to determine who is the dropouts, which are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The individual whose highest grade completed (\texttt{hgc}) is reported to be less than 12th grade, \textbf{or}
+\item
+  The individual whose highest grade completed (\texttt{hgc}) is reported to be at least 12th grade and have received a GED (\texttt{ged} is code to 2).
+\end{enumerate}
+
+Further, Singer and Willett (2003) set additional criteria for the dropouts in the textbook data, which are male and aged between 14 and 17 years old in 1979. Hence, we also use this information to re-create the dropouts data.
+
+With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. We then matched the individuals in the original and refreshed dataset to investigate why some individuals in the original data were not captured in the refreshed data. We found several reasons for this as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  173 individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate, that there are people older than 17 in their subset. Our decision is to also include them in the refreshed data as the data has age variable in it, so analyst could filter them later.
+\item
+  79 individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  35 of them completed at least 12th grade and having a diploma instead of GED (\texttt{ged} variable is coded to 1). Thus, they are indeed are not dropouts and we decide to not include them in the refreshed data.
+\item
+  The information of \texttt{ged} is missing in 38 individuals. We decide to include them in the refreshed data.
+\item
+  3 individuals are having both diploma and GED (\texttt{ged} is coded to 3). They essentially have GED, so we decide to keep them in the refreshed data as well.
+\item
+  12 individuals do not exist in \texttt{wages} data because they were participated in less than 3 rounds of survey.
+\end{itemize}
+
+We then redo the filtering based on those decisions we made on those individuals who were not captured in the refreshed data. Finally, we have 863 dropouts in the refreshed data, the closest number of individuals we get to the original data.
+
 \begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{figures/plotting-sw-do-1} 
@@ -480,6 +518,9 @@ The original set contains wages of high school dropouts (Singer and Willett 2003
 
 \caption{Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.}\label{fig:plotting-sw-do}
 \end{figure}
+
+\hypertarget{the-takeaways}{%
+\subsection{The takeaways}\label{the-takeaways}}
 
 There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the ``work experience'', is not clearly articulated. Singer and Willett (2003) mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide (Bureau of Labor Statistics, U.S. Department of Labor 2021b), we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare-xp-sw}.
 
@@ -561,7 +602,7 @@ Andereson, Edgar. 1935. ``The Irises of the Gaspe Peninsula.'' \emph{Bulletin of
 Bureau of Labor Statistics, U.S. Department of Labor. 2021a. ``National Longitudinal Survey of Youth 1979 Cohort, 1979-2016 (Rounds 1-28).'' Produced and distributed by the Center for Human Resource Research (CHRR), The Ohio State University. Columbus, OH.
 
 \leavevmode\hypertarget{ref-nlsy79guide}{}%
----------. 2021b. ``National Longitudinal Survey of Youth 1979 Cohort, 1979-2016 (Rounds 1-28).'' Produced and distributed by the Center for Human Resource Research (CHRR), The Ohio State University. Columbus, OH. \url{https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience}.
+---------. 2021b. ``National Longitudinal Survey of Youth 1979 Cohort, Topical Guide to the Data.'' \url{https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience}.
 
 \leavevmode\hypertarget{ref-shiny}{}%
 Chang, Winston, Joe Cheng, JJ Allaire, Yihui Xie, and Jonathan McPherson. 2020. \emph{shiny: Web Application Framework for R}. \url{https://CRAN.R-project.org/package=shiny}.
@@ -667,6 +708,9 @@ Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2020. \emph
 
 \leavevmode\hypertarget{ref-readr}{}%
 Wickham, Hadley, and Jim Hester. 2020. \emph{readr: Read Rectangular Text Data}. \url{https://CRAN.R-project.org/package=readr}.
+
+\leavevmode\hypertarget{ref-nlsy79edu}{}%
+Wolpin, Kenneth I. 2005. ``National Longitudinal Survey of Youth 1979 Cohort, 1979-2016 (Rounds 1-28).'' Published by Bureau of Labor Statistics, U.S. Department of Labor. \url{https://www.bls.gov/opub/mlr/2005/02/art3full.pdf}.
 
 \leavevmode\hypertarget{ref-knitr}{}%
 Xie, Yihui. 2014. ``Knitr: A Comprehensive Tool for Reproducible Research in R.'' In \emph{Implementing Reproducible Computational Research}, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. \url{http://www.crcpress.com/product/isbn/9781466561595}.

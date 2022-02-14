@@ -302,6 +302,9 @@ wages_hs_do <- wages %>%
 
 
 # investigate the dropouts IDs with the IDs in the original data
+
+ori_do_nrow <- wages_hs_do %>% as_tibble() %>% count(id) %>% nrow()
+
 `%!in%` <- Negate(`%in%`)
 
 sw <- brolgar::wages
@@ -311,13 +314,29 @@ not_in_sw <- sw %>% filter(id %!in% wages_hs_do$id) %>% distinct(id, .keep_all =
 join <- left_join(not_in_sw, full_demographics, by = "id")
 
 # some IDs are more than 17 y.o
-join_more_17 <- join %>% filter(age_1979 > 17) #this IDs are not eligible
+join_more_17 <- join %>% filter(age_1979 > 17)
+#this IDs are not eligible according to original data definition, bu we decide to include them later on
 
-# investigate ID less than 17 y.o (should be eligible)
-# if these IDs are in teh wages data, they will be also included in the dropouts database
-join_eligible <- join %>% filter(age_1979 <= 17) %>%
-  filter((hgc_i >= 12 & dip_or_ged != 1) |
-           is.na(dip_or_ged))
+# the following should be eligible by age rule but somehow not included
+join_less_17 <- join %>% filter(age_1979 <= 17)
+
+# reasons:
+# some ID are not eligible as their hgc_i >= 12 and GED is coded to 1
+join_not_elig <- join_less_17 %>% filter(hgc_i >= 12 & dip_or_ged == 1)
+
+# the information of dip_or_ged is missing in some IDs, decide to include them
+join_missing_ged <- join_less_17 %>% filter(is.na(dip_or_ged))
+
+## the ged is coded to 3, we decide to include them in the data
+join_ged_both <- join_less_17 %>% filter(dip_or_ged == 3)
+
+## the IDs do not exist in the complete wages data
+join_not_exist <- join_less_17 %>% filter(id %!in% wages$id)
+
+# based on those decisions, we refilter those who are not included in the refreshed  data
+not_elig <- join %>% filter(hgc_i >= 12 & dip_or_ged == 1)
+
+join_eligible <- join %>% filter(id %!in% not_elig$id)
 
 # filter the wages data
 also_do <- wages %>% filter(id %in% join_eligible$id)
