@@ -466,7 +466,7 @@ From this stage forward, we assume that we already have valid data. We also subs
 ```{r compare-sw-do}
 ```
 
-```{r compare-xp-sw, fig.cap = "Males dropouts' work experience in the original and refreshed data. Each point represents the work experience of individuals (identified by the ID) in the corresponding survey period. We can see that the correlation is reasonably high between them even though the exactly same figure could not be obtained.", out.width = "70%"}
+```{r compare-xp-sw, fig.cap = "Males dropouts' work experience in the original and refreshed data. Each point represents the work experience of individuals (identified by the ID) in the corresponding survey period. We can see that the correlation is reasonably high between them even there are different values for many individuals.", out.width = "70%"}
 ```
 
 

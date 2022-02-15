@@ -190,9 +190,12 @@ ggplot(do_sw_join, aes(x = xp,
   geom_point(alpha = 0.1) +
   geom_abline(intercept = 0, slope = 1) +
   guides(color = "none") +
+  #scale_x_sqrt() +
+  #scale_y_sqrt() +
   xlab("Work experience (Singer & Willet, 2008)") +
   ylab("Work experience (refreshed)") +
-  theme_bw()
+  theme_bw() +
+  theme(aspect.ratio=1)
 
 
 # Takeaways:
