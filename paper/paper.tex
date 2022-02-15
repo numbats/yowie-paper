@@ -370,9 +370,11 @@ The employment and demographic variables are then joined. These data are further
 \hypertarget{calculated-variables-work-experience}{%
 \subsection{Calculated variables: work experience}\label{calculated-variables-work-experience}}
 
-Work experience is one of the ``key'' variables in Singer and Willett (2003) as it indicates time variable, instead of using the survey year. Thus, in the spirit of refreshing the data to the newest round of the survey, we also want to include this variable. However,it is not straightforwardly available in the database. Thus, we take the definition of experience mentioned by Singer and Willett (2003) to recreate it with the information already provided in the database.
+Work experience is one of the most important variables in Singer and Willett (2003) as it indicates time, and makes longitudinal analysis possible. It is desirable to calculate this rather than using the survey year for time because it more accurately reflects a person's time in the workforce. Thus, in the spirit of refreshing the data to the newest round of the survey, this variable needs to be calculated from other variables provided. It is not straightforward. We start with the definition of experience in Singer and Willett (2003).
 
-According to Singer and Willett (2003), experience is years after entering the labor force. It identifies the specific day in which individual entering the labor force associated with each wages. Based on that definition, one would assume that experience must be related to the date of individual starting to work. However, after calculating it (\texttt{yr\_wforce}), we found that the number we obtained was not quite match with the one in Singer and Willett (2003)'s data. On the other hand, the \href{https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience}{topical guide of NLSY79 data}, provided by Bureau of Labor Statistics, U.S. Department of Labor (2021b), has the information of variable related to labor force experience. One of the variables mentioned is ``number of weeks worked since last interview''. We then calculated the experience variables using this information. Since it is only measured since the last interview, to adjust it with the experience since the individual entering the labor force, we calculate the cumulative value. We found a more appropriate results in terms of its closeness with the original data (see Subsection \ref{takeaways}).
+Experience is years after entering the labor force. It represents the difference between the day an individual enters the labor force (\texttt{EMPLOYERS\_ALL\_STARTDATE\_ORIGINAL.01\textasciitilde{}Y\_XRND} in the database) relative to the date of the survey, which we call \texttt{yr\_wforce}. However, using this calculation produced numbers which don't quite match with the original data.
+
+Reading the section titled \href{https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience}{``Topical Guide to the Data''} in the guide, suggests that it should be calculated based on the variable ``number of weeks worked since last interview''. This would remove periods of unemployment which makes sense when measuring experience while actually working. Since it is only measured since the last interview, this needs to be cumulated for each survey year. This produced results more similar to the original data (see Subsection \ref{takeaways}).
 
 \hypertarget{ida}{%
 \subsection{Initial data analysis}\label{ida}}
@@ -399,7 +401,7 @@ However, when checking the summary plots (Figure \ref{fig:feature-plot}), we fou
 
 \begin{table}
 
-\caption{\label{tab:age-table}The frequency table of the age at the start of the survey in NSLY79 cohort}
+\caption{\label{tab:age-table}Frequency table of the age at the start of the survey in NSLY79 cohort}
 \centering
 \begin{tabular}[t]{rr}
 \toprule
@@ -419,7 +421,7 @@ Age & Number of individuals\\
 
 \begin{table}
 
-\caption{\label{tab:gender-race-table}The contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1\%) is out of the total corresponding to row.}
+\caption{\label{tab:gender-race-table}Contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1\%) is out of the total corresponding to row.}
 \centering
 \begin{tabular}[t]{lrrrr}
 \toprule
@@ -644,7 +646,7 @@ The authors confirm that the data supporting the findings of this study are avai
 Andereson, Edgar. 1935. {``The Irises of the Gaspe Peninsula.''} \emph{Bulletin of the American Iris Society} 59: 2--5.
 
 \leavevmode\vadjust pre{\hypertarget{ref-nlsy79}{}}%
-Bureau of Labor Statistics, U.S. Department of Labor. 2021a. {``National Longitudinal Survey of Youth 1979 Cohort, 1979-2016 (Rounds 1-28).''} Produced and distributed by the Center for Human Resource Research (CHRR), The Ohio State University. Columbus, OH.
+Bureau of Labor Statistics, U.S. Department of Labor. 2021a. {``National Longitudinal Survey of Youth 1979 Cohort, 1979-2016 (Rounds 1-28).''} Produced and distributed by the Center for Human Resource Research (CHRR), The Ohio State University. Columbus, OH, through \url{https://www.nlsinfo.org/bibliography-citing-nls-data}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-nlsy79guide}{}}%
 ---------. 2021b. {``National Longitudinal Survey of Youth 1979 Cohort, Topical Guide to the Data.''} \url{https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience}.

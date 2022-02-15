@@ -13,7 +13,7 @@ age_table <- full_demographics %>%
 age_table %>%
   mutate(n = scales::comma(n)) %>%
   kable(
-      caption = "The frequency table of the age at the start of the survey in NSLY79 cohort",
+      caption = "Frequency table of the age at the start of the survey in NSLY79 cohort",
       col.names = c("Age", "Number of individuals"),
       booktabs = TRUE,
       linesep = "",
@@ -38,7 +38,7 @@ gender_race_table <- full_demographics %>%
          Total = str_replace(Total, "\\([1|2]00\\%\\)", ""))
 
 kable(gender_race_table,
-      caption = "The contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1\\%) is out of the total corresponding to row.",
+      caption = "Contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1\\%) is out of the total corresponding to row.",
       col.names = c("Gender", "Hispanic", "Black", "Non-Black, Non-Hispanic", "Total"),
       booktabs = TRUE,
       linesep = "",
