@@ -258,6 +258,8 @@ eligible_wages <- hours_wages %>%
 # calculate the mean_hourly_wage
 # flag1 = code 1 for weighted mean
 # code 0 for arithmetic mean
+# XXX we lose 346 individuals here, should they be kept?
+# with NAs for mean hourly wage?
 mean_hourly_wage <- eligible_wages %>%
   group_by(id, year) %>%
   #calculate the weighted mean if the number of jobs > 1
@@ -314,7 +316,11 @@ wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id") %>%
 # # calculate the number of observation
 keep_me <- wages_demog %>%
   count(id) %>%
-  filter(n >= 3)
+  filter(n >= 3) # XXX why do we need to filter here?
+# is it because this data is processed with rlm only
+# when there are 3 or more cases?
+# how does it get joined again with the individuals
+# with less than 3 measurements?
 
 wages_before <- wages_demog %>%
   filter(id %in% keep_me$id)

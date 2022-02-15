@@ -35,7 +35,8 @@ sw_wages_mod <- sw %>%
   ylab("Hourly wage ($, natural log)") +
   xlab("Experience in years") +
   theme(legend.position = "bottom",
-        legend.direction = "horizontal")
+        legend.direction = "horizontal") +
+  xlim(c(0,15))
 
 ## ---- do_refreshed
 
@@ -47,7 +48,7 @@ sw_wages_mod <- sw %>%
 
 # filter do data up to 1994 since the textbook data only covers that period.
 
-do <- yowie::wages_hs_do %>%
+do <- wages_hs_do %>% #yowie::wages_hs_do %>%
   as_tibble() %>%
   group_by(id) %>%
   mutate(lnwage = log(wage),
@@ -78,13 +79,27 @@ do_ref_mod <- do %>%
   ylab("Hourly wage ($, natural log)") +
   xlab("Experience (years)") +
   theme(legend.position = "bottom",
-        legend.direction = "horizontal")
+        legend.direction = "horizontal") +
+  xlim(c(0,15))
 
 # sw_wages + do_ref
 
 # the two plots are not comparable
 # since the id who are in Singer-Willet and the id in do-refreshed might be different
 
+# XXX Code to check that the hgc matches
+do_check <- do %>%
+  mutate(hgc12 = ifelse(hgc_i < 9, "8TH", "12TH")) %>%
+  select(id, hgc12) %>%
+  distinct()
+sw_check <- sw %>%
+  as_tibble() %>%
+  mutate(hgc = ifelse(high_grade < 9, "8TH", "12TH")) %>%
+  select(id, hgc) %>%
+  distinct()
+
+sw_check <- sw_check %>% left_join(do_check, by="id")
+sw_check %>% filter(hgc != hgc12) %>% count(hgc, hgc12)
 
 ## --- compare-sw-do
 sw_id <- as_tibble(sw) %>%

@@ -5,6 +5,8 @@ library(tsibble)
 library(brolgar)
 library(patchwork)
 
+# Note: full_demographics has 12686 individuals
+
 ## ---- age-table
 age_table <- full_demographics %>%
   group_by(age_1979) %>%
