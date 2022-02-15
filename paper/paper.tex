@@ -324,14 +324,16 @@ The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is c
 #> 10     2  1986             7.69          NA              1 FALSE
 \end{verbatim}
 
-For \texttt{stwork} variable, we only rename the column names from \texttt{new\_data\_qnames}. This variable is then used to calculate the next variable, \texttt{yr\_wforce} for each survey round, which is the year of survey (\texttt{year}) minus the year of individual start working (\texttt{stwork}). Finally, \texttt{exp} variable is derived from the number of weeks worked since the last interview indicated as variable started with \texttt{WKSWK} in \texttt{new\_data\_qnames}. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year. {[}ET: inconsistency in \texttt{st\_work} and \texttt{yr\_wforce}?{]}
+For \texttt{stwork} variable, we only rename the column names from \texttt{new\_data\_qnames}. This variable is then used to calculate the next variable, \texttt{yr\_wforce} for each survey round, which is the year of survey (\texttt{year}) minus the year of individual start working (\texttt{stwork}). Finally, \texttt{exp} variable is derived from the number of weeks worked since the last interview indicated as variable started with \texttt{WKSWK} in \texttt{new\_data\_qnames}. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is in week, we convert this to year.
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation articulated in Singer and Willett (2003). We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when it is used to teach longitudinal data. We save the resultant wage data on this cohort as \texttt{wages}.
 
 \hypertarget{calculated-variables-work-experience}{%
 \subsection{Calculated variables: work experience}\label{calculated-variables-work-experience}}
 
-It is conceptually motivated by the variables available in the original data and it also illustrates how one would create a new variable from the information provided by the database, a variable that is more useful than those provided.
+Work experience is one of the ``key'' variables in Singer and Willett (2003) as it indicates time variable, instead of using the survey year. Thus, in the spirit of refreshing the data to the newest round of the survey, we also want to include this variable. However,it is not straightforwardly available in the database. Thus, we take the definition of experience mentioned by Singer and Willett (2003) to recreate it with the information already provided in the database.
+
+According to Singer and Willett (2003), experience is years after entering the labor force. It identifies the specific day in which individual entering the labor force associated with each wages. Based on that definition, one would assume that experience must be related to the date of individual starting to work. However, after calculating it (\texttt{yr\_wforce}), we found that the number we obtained was not quite match with the one in Singer and Willett (2003)'s data. On the other hand, the \href{https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience}{topical guide of NLSY79 data}, provided by Bureau of Labor Statistics, U.S. Department of Labor (2021b), has the information of variable related to labor force experience. One of the variables mentioned is ``number of weeks worked since last interview''. We then calculated the experience variables using this information. Since it is only measured since the last interview, to adjust it with the experience since the individual entering the labor force, we calculate the cumulative value. We found a more appropriate results in terms of its closeness with the original data (see Subsection \ref{takeaways}).
 
 \hypertarget{ida}{%
 \subsection{Initial data analysis}\label{ida}}
@@ -519,8 +521,8 @@ We then redo the filtering based on those decisions we made on those individuals
 \caption{Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.}\label{fig:plotting-sw-do}
 \end{figure}
 
-\hypertarget{the-takeaways}{%
-\subsection{The takeaways}\label{the-takeaways}}
+\hypertarget{takeaways}{%
+\subsection{The takeaways}\label{takeaways}}
 
 There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the ``work experience'', is not clearly articulated. Singer and Willett (2003) mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide (Bureau of Labor Statistics, U.S. Department of Labor 2021b), we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare-xp-sw}.
 

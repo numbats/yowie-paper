@@ -334,7 +334,11 @@ The employment and demographic variables are then joined. These data are further
 
 ## Calculated variables: work experience
 
-It is conceptually motivated by the variables available in the original data and it also illustrates how one would create a new variable from the information provided by the database, a variable that is more useful than those provided.
+Work experience is one of the "key" variables in @SingerJudithD2003Alda as it indicates time variable, instead of using the survey year. Thus, in the spirit of refreshing the data to the newest round of the survey, we also want to include this variable. However,it is not straightforwardly available in the database. Thus, we take the definition of experience mentioned by @SingerJudithD2003Alda to recreate it with the information already provided in the database. 
+
+According to @SingerJudithD2003Alda, experience is years after entering the labor force. It identifies the specific day in which individual entering the labor force associated with each wages. Based on that definition, one would assume that experience must be related to the date of individual starting to work. However, after calculating it (`yr_wforce`), we found that the number we obtained was not quite match with the one in @SingerJudithD2003Alda's data. On the other hand, the [topical guide of NLSY79 data](https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience), provided by @nlsy79guide, has the information of variable related to labor force experience. One of the variables mentioned is "number of weeks worked since last interview". We then calculated the experience variables using this information. Since it is only measured since the last interview, to adjust it with the experience since the individual entering the labor force, we calculate the cumulative value. We found a more appropriate results in terms of its closeness with the original data (see Subsection \@ref(takeaways)).
+
+<!--It is conceptually motivated by the variables available in the original data and it also illustrates how one would create a new variable from the information provided by the database, a variable that is more useful than those provided.-->
 
 ## Initial data analysis {#ida}
 
@@ -496,7 +500,7 @@ We then redo the filtering based on those decisions we made on those individuals
 ```
 
 
-## The takeaways 
+## The takeaways {#takeaways}
 
 There are two aspects of the original data that make the replication with exactly the same result is not obtained. The first one is that the calculation of the time variable provided, which is the "work experience", is not clearly articulated. @SingerJudithD2003Alda mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide [@nlsy79guide], we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. Hence, we use this to calculate the variable. Even though we got different result, the correlation between the original and refreshed work experience is reasonably high as shown in Figure \ref{fig:compare-xp-sw}.
 
