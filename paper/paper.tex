@@ -523,26 +523,26 @@ The original set contains wages of high school dropouts (Singer and Willett 2003
 \hypertarget{filtering-determining-who-is-a-dropout}{%
 \subsection{Filtering: Determining who is a dropout}\label{filtering-determining-who-is-a-dropout}}
 
-In the original data, there is no explicit explanation of how the dropouts cohort is obtained from the database. Hence, we use the high school dropouts criteria mentioned in Wolpin (2005) to determine who is the dropouts, which are:
+There is no explicit explanation of how the dropouts cohort is determined in the original data. Hence, we use the high school dropouts criteria from Wolpin (2005), which are:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  The individual whose highest grade completed (\texttt{hgc}) is reported to be less than 12th grade, \textbf{or}
+  An individual whose highest grade completed (\texttt{hgc}) is reported to be less than 12th grade, \textbf{or}
 \item
-  The individual whose highest grade completed (\texttt{hgc}) is reported to be at least 12th grade and have received a GED (\texttt{ged} is code to 2).
+  An individual whose highest grade completed (\texttt{hgc}) is reported to be at least 12th grade and have received a GED (\texttt{ged} is code to 2).
 \end{enumerate}
 
-Further, Singer and Willett (2003) set additional criteria for the dropouts in the textbook data, which are male and aged between 14 and 17 years old in 1979. Hence, we also use this information to re-create the dropouts data.
+An additional criteria from Singer and Willett (2003) is to only include males aged between 14 and 17 years old in 1979. Filters using these criteria used re-create the dropouts data.
 
-With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. We then matched the individuals in the original and refreshed dataset to investigate why some individuals in the original data were not captured in the refreshed data. We found several reasons for this as follows:
+With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. To investigate the reason for the difference, individuals from the original and refreshed dataset were matched by id. This revealed several reasons for for the disparity:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  173 individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate, that there are people older than 17 in their subset. Our decision is to also include them in the refreshed data as the data has age variable in it, so analyst could filter them later.
+  173 individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate, that there are people older than 17 in the subset. Our decision is to also include them in the refreshed data as the new data contains an age variable, so analyst could filter them later.
 \item
   79 individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because:
 \end{enumerate}
@@ -550,16 +550,16 @@ With this filtering, we obtained 670 individuals in the refreshed data compared 
 \begin{itemize}
 \tightlist
 \item
-  35 of them completed at least 12th grade and having a diploma instead of GED (\texttt{ged} variable is coded to 1). Thus, they are indeed are not dropouts and we decide to not include them in the refreshed data.
+  35 of them completed at least 12th grade with a diploma instead of GED (\texttt{ged} variable is coded to 1). This suggests that they are not dropouts, and so we excluded them from the refreshed data.
 \item
-  The information of \texttt{ged} is missing in 38 individuals. We decide to include them in the refreshed data.
+  The information about \texttt{ged} is missing in 38 individuals. We decided to include them in the refreshed data.
 \item
-  3 individuals are having both diploma and GED (\texttt{ged} is coded to 3). They essentially have GED, so we decide to keep them in the refreshed data as well.
+  3 individuals have both diploma and GED (\texttt{ged} is coded to 3). These were kept in the refreshed data.
 \item
   12 individuals do not exist in \texttt{wages} data because they were participated in less than 3 rounds of survey.
 \end{itemize}
 
-We then redo the filtering based on those decisions we made on those individuals who were not captured in the refreshed data. Finally, we have 863 dropouts in the refreshed data, the closest number of individuals we get to the original data.
+The filtering was re-applied using these decisions. The refreshed dropout data has 863 individuals.
 
 \begin{figure}
 
