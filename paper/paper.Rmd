@@ -149,12 +149,12 @@ The NLSY79 data used in @SingerJudithD2003Alda contains the longitudinal records
 6. HGC: the highest grade completed.
 7. UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
 
-We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also made some modifications of the variables. For example, we create a categorical race variable instead of the binary variable "Black" and "Hispanic".  We also include additional variables so that more interesting data exploration can be included in teaching examples: year of survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. 
+We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also modify some variables. For example, use a single categorical race variable instead of the two binary race variables.  We also plan to include additional variables, some for the purpose of providing more options for data exploration in teaching examples: year of the survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), the number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. We do not attempt to re-create the unemployment rate variable.
 
-We will also make the wages and demographic data of the NLSY79 cohort available, including females, in addition to high school dropouts. Thus, the plan is to create three datasets as follows:
+The plan is to create three datasets as follows:
 
-1. The demographic data of the whole NLSY79 cohort.
-2. The wages data of the whole NLSY79 cohort.
+1. The wages data of the whole NLSY79 cohort, including females.
+2. A separate table of the demographic data of the whole NLSY79 cohort.
 3. The wages data of the high school dropouts, which is closest to a refreshed version of @SingerJudithD2003Alda's data. 
 
 <!-- Since no specific criteria on high school dropouts was defined
