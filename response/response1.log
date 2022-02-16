@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.16)  17 FEB 2022 00:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.16)  17 FEB 2022 01:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1623,14 +1623,14 @@ LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
 [1
 
 {/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-}] [2] [3] [4] [5]
+}] [2] [3] [4]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-92.
+63.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [6] [7] [8] [9]
+) [5] [6] [7] [8] [9] [10]
 
-LaTeX Warning: Empty bibliography on input line 768.
+LaTeX Warning: Empty bibliography on input line 798.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1640,7 +1640,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-[10] (./response1.aux)
+[11] (./response1.aux)
 Package rerunfilecheck Info: File `response1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response1.run.xml'.
@@ -1648,8 +1648,8 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27164 strings out of 480238
- 473712 string characters out of 5894680
+ 27165 strings out of 480238
+ 473719 string characters out of 5894680
  1216441 words of memory out of 5000000
  44576 multiletter control sequences out of 15000+600000
  553349 words of font info for 143 fonts, out of 8000000 for 9000
@@ -1661,10 +1661,10 @@ esanspro/a_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
 vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
 onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
 y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response1.pdf (10 pages, 167935 bytes).
+Output written on response1.pdf (11 pages, 168845 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
+ 101 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)
 

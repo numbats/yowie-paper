@@ -174,6 +174,8 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 The next paragraph, which begins “The anomalies are also found” should perhaps be “Similar anomalies were found.” Was it the same respondents with the extremely high wages that showed extremely high number of hours of work? I suspect not, but please be explicit.}
 \end{description}
 
+* We have made this sentences more explicit that the extremely high values were also observed in the `total hours of work`. 
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{Section 3.2.1 begins “As part of the IDA, which is the model formulation, we build a robust linear regression model to treat the extreme values in the data.” This could use clarification. In 3.2, you said that part of IDA is “ model formulation without any formal statistical inference.” To me, that sounds like using modeling as a descriptive technique, and it’s something I would consider to be more a part of EDA. But then in 3.2.1, while it is perhaps not using modeling in an inferential way, the model is being used for more than just description. I might rephrase the first sentence as follows: “In order to treat the extreme values in the data, we built a robust linear regression model.”}
 \end{description}
@@ -191,6 +193,8 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 2:]\textcolor{violet}{What does “It implies that the fluctuation can still be observed in the data after the treatment.” mean? I suspect this sentence should be replaced with something along the lines of “The figure shows that fluctuations in wages still exist even in the imputed data.”}
 \end{description}
 
+* We have replaced this sentences as per the suggestion. 
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{In Section 4, you talk about the variables in the original data. “One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection.” I’m not sure what this means. Please clarify.}
 \end{description}
@@ -207,6 +211,8 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 2:]\textcolor{violet}{The bulleted difficulties in Section 5 are a bit jarring. Make them parallel (i.e. every bullet should start with a verb -ing so it is determining, calculating, etc) or turn them into a paragraph. I liked the specificity of \$30,000/hour but it would be better up in the section where you discuss the anomalous values.}
 \end{description}
 
+* We have added the specifity of the extremely high wages in Subsection 3.3. Initial Data Analysis. We have also edited every bullet so it started with verb -ing. 
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{At the end of page 14, it would be good to explicitly say that if people don’t like your decisions, they can grab the code and adjust the parameters themselves! It’s implied, but should be made explicit.}
 \end{description}
@@ -217,16 +223,19 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 2:]\textcolor{violet}{Figure 2’s caption should include something about how that data is the raw values from the survey, before inputing anomalous values so the figure and caption can stand alone.}
 \end{description}
 
+* We have edited the caption. 
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{For both Figure 3 and Figure 5, I would prefer the letter label before the description, but that’s a matter of personal preference.}
 \end{description}
 
+* We have moved the letter label before the description. 
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.}
 \end{description}
 
-* We have filter the x-axis of the refreshed data set until 1994, so they are comparable.
+* We have filtered the x-axis of the refreshed data set until 1994, so they are comparable.
 
 
 \begin{description}
@@ -350,7 +359,7 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{It’s unclear about what fluctuation or treatment the author is referring to.}
 \end{description}
 
-* Fluctuation is the variability in the data (up and down in the wages), while treatment is imputing the extremely high wages (anomaly) with their RLM's predicted value. The detail explanation of fluctation is discussed in Subsection 3.3 Initial Data Analysis, while the treatment is explained in Subsection 3.4 (Paragraph 3). 
+* Fluctuation is the variability in the data (up and down) in the wages, while treatment is imputing the extremely high wages (anomaly) with their RLM's predicted value. The detail explanation of fluctation is discussed in Subsection 3.3 Initial Data Analysis, while the treatment is explained in Subsection 3.4 (Paragraph 3). We also have edited this sentences to avoid implicity. 
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{If the goal was to reproduce the textbook data, then why weren’t wages inflation-adjusted?}

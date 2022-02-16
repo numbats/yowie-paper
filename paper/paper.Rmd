@@ -364,7 +364,8 @@ In the next step, we explore the mean hourly wage data. In this case, we only ex
 
 
 We randomly take 20 samples from the data and plot them, as shown in Figure \ref{fig:sample-plot}.<!--AE comment: "It" implies... Please specify what "it" refers to. This could be done by adding onto the first sentence... "as shown in Figure 2, which shows that some respondents have high variability in wages, particularly 5, 7, and 11." However, 7 and 11 don't seem to have particularly high variability, especially when compared to 18. This whole paragraph needs to be fixed/updated.--> It shows that these respondents have a lot of variability in wages, for example, the IDs in panel numbers 5, 7, and 11. The plot also implies that the samples have a different pattern of mean hourly wages. Some have had flat wages for years but had a sudden increase in one particular year, then it gone down again, while the others experienced an upsurge in their wage, for instance, <!--AE comment: Not panel 9 --> the IDs in panel 9. 
-<!--I think there is a narrative step missing here, which is that looking at those samples led you to look at plots that show values for the wage variable over all participants and all years. The phrase “the summary plots” was not enough description for me to know what to expect when I flipped to Figure 3. Please be explicit about what the three plots were, why they were made, and what you were looking for. I think there is another narrative step missing about Figure 3C, which is that after you saw there were outliers you tried to identify which respondents had the extreme values. Again, please spell this out in the text. When you return to the plots for the entire dataset in Figure 5, please make parallel comments. -->However, when checking the summary plots (Figure \ref{fig:feature-plot}), we found that some observations had exceptionally high wages. Some of them, for example respondents in Figure \ref {fig:feature-plot} C had experienced unusual wages only in certain year. 
+<!--I think there is a narrative step missing here, which is that looking at those samples led you to look at plots that show values for the wage variable over all participants and all years. The phrase “the summary plots” was not enough description for me to know what to expect when I flipped to Figure 3. Please be explicit about what the three plots were, why they were made, and what you were looking for. I think there is another narrative step missing about Figure 3C, which is that after you saw there were outliers you tried to identify which respondents had the extreme values. Again, please spell this out in the text. When you return to the plots for the entire dataset in Figure 5, please make parallel comments. -->
+However, when checking the summary plots (Figure \ref{fig:feature-plot}), we found that some observations had exceptionally high wages, the maximum value of the wages unbelievably reached about $60,000/hour. Besides, some of them, for example respondents in Figure \ref {fig:feature-plot} C, had experienced unusual wages only in certain year. 
 
 
 ```{r age-table}
@@ -383,7 +384,7 @@ We randomly take 20 samples from the data and plot them, as shown in Figure \ref
 
 <!--For both Figure 3 and Figure 5, I would prefer the letter label before the description, but that’s a matter of personal preference.-->
 
-```{r feature-plot, fig.cap = "Summary plots to check the cleaned data reveal more cleaning is necessary: longitudinal profiles of wages for all individuals 1979-2018 (A), boxplots of minimum, median, and maximum wages of each individual (B), and one individual (id=39) with an unusual wage relative to their years of data (C). Some values of hourly wages are unbelievable, and some individuals have extemely unusual wages in some years.", fig.width=10, fig.height=4, out.width="100%", cache = FALSE}
+```{r feature-plot, fig.cap = "Summary plots to check the data after the tidying stage: (A) longitudinal profiles of wages for all individuals 1979-2018, (B) boxplots of minimum, median, and maximum wages of each individual, (C) and one individual (id=39) with an unusual wage relative to their years of data. It reveals that some values of hourly wages are unbelievable, and some individuals have extemely unusual wages in some years. Accordingly, more cleaning is necessary to treat these extreme values.", fig.width=10, fig.height=4, out.width="100%", cache = FALSE}
 ```
 
 ```{r high-wages}
@@ -393,7 +394,7 @@ We randomly take 20 samples from the data and plot them, as shown in Figure \ref
 ```
 
 <!--The next paragraph, which begins “The anomalies are also found” should perhaps be “Similar anomalies were found.” Was it the same respondents with the extremely high wages that showed extremely high number of hours of work? I suspect not, but please be explicit.-->
-The anomalies are also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total. According to @MichaelRPergamit2001DWTN, one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years’ job history. This shortcoming might also contribute to the fluctuation of one's wages data. 
+Extremely high values were also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total. According to @MichaelRPergamit2001DWTN, one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years’ job history. This shortcoming might also contribute to the fluctuation of one's wages data. 
 
 
 ## Replacing extreme values {#censor}
@@ -411,7 +412,7 @@ To minimize the risk of mistakenly identifying an outlier as an "erroneous outli
 ```{r rlm, eval=FALSE}
 ```
 
-Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the extreme values are replaced. It implies that the fluctuation can still be observed in the data after the treatment. However, the large spikes, which are considered "erroneous outliers", are already eliminated from the data. Hence, the model produces a data set with a more reasonable degree of fluctuation.
+Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the extreme values are replaced. The figure shows that fluctuations in wages still exist even in the imputed data. However, the large spikes, which are considered "erroneous outliers", are already eliminated from the data. Hence, the model produces a data set with a more reasonable degree of fluctuation.
 
 
 ```{r compare-data}
@@ -426,7 +427,7 @@ Further, Figure \ref{fig:fixed-feature-plot} A shows that after eliminating the 
 We still can see some extreme values in maximum wages, but consider it as a natural variability of the data. In Figure \ref{fig:fixed-feature-plot} C, we can see that after imputing the extreme value in ID=39, we can see how the the wages change over the years more clearly. 
 
 
-```{r fixed-feature-plot, fig.cap = "Re-make of the summary plots of the fully processed data suggest that it is now in a reasonable state: longitudinal profiles of wages for all individuals 1979-2018 (A), boxplots of minimum, median, and maximum wages of each individual (B), and one individual with an unusual wage relative to their years of data (C). ", fig.width=10, fig.height=4, out.width="100%", cache = FALSE}
+```{r fixed-feature-plot, fig.cap = "Re-make of the summary plots of the fully processed data suggest that it is now in a reasonable state: (A) longitudinal profiles of wages for all individuals 1979-2018, (B) boxplots of minimum, median, (C) and maximum wages of each individual, and one individual with an unusual wage relative to their years of data. ", fig.width=10, fig.height=4, out.width="100%", cache = FALSE}
 ```
 
 
@@ -552,9 +553,9 @@ Various difficulties were encountered in trying to refresh the data, which inclu
 
 - determining which records should be downloaded from the database.
 - calculating experience in the workforce requires comparing the date of first job with the first year the individual was recorded, both of which are available in the database. 
-- there are many unusually high hourly wages, e.g. greater than $30,000 per hour.
-- there is no explicit variable in the database recording high school dropout, which means we needed to compare the date of 12th grade with the individual's age.
-- matching id's from the original data with those in the refreshed data, do refer to the same person based on the demographic information available.
+- treating the extreme values since there are many unusually high hourly wages, e.g. greater than $60,000 per hour.
+- determining the dropouts subset as there is no explicit variable in the database recording high school dropout, which means we needed to compare the date of 12th grade with their GED status.
+- matching ID's from the original data with those in the refreshed data, do refer to the same person based on the demographic information available.
 
 Ultimately, the refreshed data is reasonably similar to the original, but unsatisfactorily far from it. The last step required would be to inflation-adjust wages. This is better to do with each wave of new data added, so that it is relative to the last date in the data. Our decision was to provide the raw wages, and include code to do the adjustment as part of the package. 
 
