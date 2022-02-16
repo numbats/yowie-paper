@@ -98,8 +98,8 @@ sw_check <- sw %>%
   select(id, hgc) %>%
   distinct()
 
-sw_check <- sw_check %>% left_join(do_check, by="id")
-sw_check %>% filter(hgc != hgc12) %>% count(hgc, hgc12)
+#sw_check <- sw_check %>% left_join(do_check, by="id")
+#sw_check %>% filter(hgc != hgc12) %>% count(hgc, hgc12)
 
 ## --- compare-sw-do
 sw_id <- as_tibble(sw) %>%
