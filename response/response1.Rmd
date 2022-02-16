@@ -37,7 +37,7 @@ The editors and reviewers suggest reframing so that readers can help their stude
 \item[Reviewer 3:] \textcolor{violet}{The authors also emphasize that “There are few research papers that document the data cleaning”. While I agree that data cleaning is under-emphasized and under-documented, it’s hardly true that there are not papers on the topic. A quick Google Scholar search for “data cleaning” unearths many scholarly papers and books on the principles of this process, none of which appear to be cited in this work.}
 \end{description}
 
-We agree that there is substantial literature on data cleaning. We have referenced one of the main works, Dasu and Johnson (2003) but don't feel it is necessary to cite more than this. We have similarly only pointed to one main reference for IDA and EDA.
+* We agree that there is substantial literature on data cleaning. We have referenced one of the main works, Dasu and Johnson (2003) but don't feel it is necessary to cite more than this. We have similarly only pointed to one main reference for IDA and EDA.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{
@@ -65,7 +65,7 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 \end{description}
 
 
-* We thank the reviewer for pointing out to us that the data contains information on the work experience -- this additional data is added in the extraction of the data in Figure 1. This information was compared with Singer & Willet's original data. Comparison shown in Figure 7 shows that the information does not match up, however, there is a high correlation between the variables.
+* We thank the reviewer for pointing out to us that the data contains information on the work experience -- this additional data is added in the extraction of the data in Figure 1. We also add a Subsection dedicated to explain this variable, i.e., Subsection 3.2. Calculated variables: work experience. This information was compared with Singer & Willet's original data. Comparison shown in Figure 7 shows that the information does not match up, however, there is a high correlation between the variables.
 
 * **NEED HELP in responding comments on Figure 8.**
 
@@ -130,6 +130,9 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 \item[Reviewer 1:]\textcolor{violet}{what does the natural log have to do with the y-axis?}
 \end{description}
 
+* Sometimes, the natural log is used to rescale the variable in the graph to adjust with the skewness in the data. Singer and Willet (2003) use the natural log to store the wages data by default, although without mention their motivation of doing so. Thus, we also use the natural log in Figure 8 to compare the refreshed data with the original data.  
+
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{My primary comment is that many elements need to be more explicitly spelled out.}
 \end{description}
@@ -140,7 +143,7 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 \item[Reviewer 2:]\textcolor{violet}{I would like more discussion about the textbook selected as the exemplar. It sounds like this dataset is used in many books, why choose that one? The text should include the name of the book, so readers do not need to flip to the citations in order to learn what it was. From the name, I am guessing that the book focuses heavily on this dataset, which is why it makes sense to reproduce their subset. Be explicit about this.}
 \end{description}
 
-* **NEED HELP**
+* We have mentioned the book's title in the Introduction. The motivation of refreshing this text book data and how it is used for teaching purpose are discussed in the Introduction of the paper. 
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{When listing the files that come zipped from the data source, be more explicit about the file formats. Comma separated values instead of csv, etc.}
@@ -163,6 +166,7 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{I think there is a narrative step missing here, which is that looking at those samples led you to look at plots that show values for the wage variable over all participants and all years. The phrase “the summary plots” was not enough description for me to know what to expect when I flipped to Figure 3. Please be explicit about what the three plots were, why they were made, and what you were looking for. I think there is another narrative step missing about Figure 3C, which is that after you saw there were outliers you tried to identify which respondents had the extreme values. Again, please spell this out in the text. When you return to the plots for the entire dataset in Figure 5, please make parallel comments.}
 \end{description}
+
 * **NEED HELP**
 
 \begin{description}
@@ -184,15 +188,14 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 * **NEED HELP**
 
 \begin{description}
-\item[Reviewer 2:]\textcolor{violet}{
-What does “It implies that the fluctuation can still be observed in the data after the treatment.” mean? I suspect this sentence should be replaced with something along the lines of “The figure shows that fluctuations in wages still exist even in the imputed data.”}
+\item[Reviewer 2:]\textcolor{violet}{What does “It implies that the fluctuation can still be observed in the data after the treatment.” mean? I suspect this sentence should be replaced with something along the lines of “The figure shows that fluctuations in wages still exist even in the imputed data.”}
 \end{description}
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{In Section 4, you talk about the variables in the original data. “One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection.” I’m not sure what this means. Please clarify.}
 \end{description}
 
-* We removed this sentence as we already have the `yr_wforce` variable which is calculated from the year of the individual start working. 
+* We removed this sentence as we already have the `stwork` and `yr_wforce`  variables which are the year of individual start working and length of the years of individual entering the labor force, respectively. 
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{“The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.}
@@ -263,6 +266,130 @@ What does “It implies that the fluctuation can still be observed in the data a
 \end{description}
 
 * **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{Where is IDA undervalued and neglected? Research? Teaching? Both?}
+\end{description}
+
+* We removed this sentences, and edited the explanation about IDA in Paragraph 6 of the Introduction. 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{The authors discuss refreshing an example from Singer and Willet (2003), but this isn’t ever completed. They compare the data, but not the longitudinal model. Again, it’s more about demonstrating a procedure for “initial data analysis” than it is reproducing Singer and Willet (2003).}
+\end{description}
+
+* Our main aim in this paper is to refresh the data, which is used as one of examples of longitudinal data and its modelling in Singer and Willet (2003). In other words, we only aims to refresh the data  until the most recent survey period, and not the longitudinal model, so that it is more relevant for today's context, especially, if its is used for teaching.
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{Tidy and tame data are discussed in passing and the utility of tidy and tame data are not obvious. The authors later describe tidy data rather clearly (page 7) but tame data never receives the same treatment.}
+\end{description}
+
+* We put explanation on the difference between tidy and tame data in the Introduction (Paragraph 7). Tame data is sort of a result product, in which, in order to produce it, we need to tidy the data. 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{A historical context of NLSY79 would be helpful. Specifically, the dropped subjects are mentioned but there’s no context of why. By the argument of the paper, these steps should be transparent and well-considered.}
+\end{description}
+
+* We have added the reason of why some subject were dropped from the interview in Section 2.1. 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{The author switches between gender (man/woman/etc) and sex (male/female/etc.) throughout the manuscript. Further, the explanation here covers important ideas in teaching how to use data on gender/sex and race, but it’s just the beginning of ideas. It might be better to discuss the questions on the survey and discuss possible shortcomings, rather than make a somewhat empty gesture towards today’s standard.}
+\end{description}
+
+* **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{The discussion around highest grade completed is mechanical in what was done, but lacks substantive reasoning for those decisions and possible downstream consequences.}
+\end{description}
+
+* The variable of `highest grade completed`, besides it is available in the original data, it is also use to filter the high school dropouts (the subset of NLSY79 cohort that is contained in the original data). We explain how we use this variable, along with a newly added variable, GED, and possible downstream consequences in Subsection 4.1 Filtering: Determining who is a dropout. 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{It appears the goal of the paper switches to just IDA and dealing with problematic points here. This is completed in the paper.} 
+\end{description}
+
+* **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{Gender (man/woman/etc). Sex (male/female/etc).} 
+\end{description}
+
+* **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{It is not clear why participants without a high school degree are not part of the analysis.} 
+\end{description}
+
+* In the current version of the manuscript, we have included all of the cohort, regardless of their school degree in a dataset called `wages`. However, we also subset the data to be high school dropouts only as we aims to refresh Singer and Willet's data (only contains male high school dropouts aged 14-17 years old when first interviewed). Hence, for comparability, we only analyse the high school dropouts in Section 4. 
+
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{Figure 2 is helpful for observing the data there is a lot of variability in both hourly wage and trends. A discussion about censored data might be helpful here – this is not something you impute from the data.} 
+\end{description}
+
+* **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{You’re using iteratively reweighted least squares with Huber weighting.} 
+\end{description}
+
+* **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{I’m not sure this is accurate. The robustlmm package in R fits these models rather quickly with thousands of observations. What are the authors using? Does it run out of memory (requires more RAM) or does it take too much time?}
+\end{description}
+
+* We use `MASS` package instead of `robustlmm` package. We have tried to use `robustlmm`, but perhaps because the data is large and imbalanced, the model was not converging. Also, for reproducibility reason, we made it more affordable (in terms of memory and time), especially when people want to perform the stages in cleaning the data in class/teaching. 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{The choice of 0.12 seems arbitrary at best. I don’t see any justification for this approach (e.g., literature, simulations, etc). Why not use bi-square, instead of huber, and simply impute for observations with weight 0. While still arbitrary, it’s decided by the bisquare model and isn’t a guesstimate. Further, it would be sensible for any dataset and not just this one. (This would correspond to a smaller threshold, which may catch too many strange outcomes). In any case, it’s hard to justify something so adhoc.}
+\end{description}
+
+* **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{It’s unclear about what fluctuation or treatment the author is referring to.}
+\end{description}
+
+* Fluctuation is the variability in the data (up and down in the wages), while treatment is imputing the extremely high wages (anomaly) with their RLM's predicted value. The detail explanation of fluctation is discussed in Subsection 3.3 Initial Data Analysis, while the treatment is explained in Subsection 3.4 (Paragraph 3). 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{If the goal was to reproduce the textbook data, then why weren’t wages inflation-adjusted?}
+\end{description}
+
+* This is not done for the refreshed data because we plan to keep refreshing it as the data from the newest survey period  release. Thus, the 1990 prices might not be relevant anymore for the future context. Hence, we keep it as the original value to allow the users to treat it as their needs. In other words, the inflation-adjustment of the wages is better to do with each wave of new data added, so that it is relative to the last date in the data.
+
+* This explanation exists in the manuscript in Section 4.2 and Section 5.
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{Figure 7 (Figure 8 in the current manuscript) is interesting, but it wasn’t until my second time through that I realized this was the textbook example for replicating. There is a clear difference in analyses (different question really), but is there anything to justify a similarity, or improvement of the analysis?}
+\end{description}
+
+* **NEED HELP**
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{(page 14, line 46) Thank you for this acknowledgment. I think this is true for most analyses. It doesn’t mean that you shouldn’t transparently and fully investigate your own choices.}
+\end{description}
+
+* **NEED HELP**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
