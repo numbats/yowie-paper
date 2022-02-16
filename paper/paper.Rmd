@@ -149,7 +149,7 @@ The NLSY79 data used in @SingerJudithD2003Alda contains the longitudinal records
 6. HGC: the highest grade completed.
 7. UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
 
-We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also modify some variables. For example, use a single categorical race variable instead of the two binary race variables.  We also plan to include additional variables, some for the purpose of providing more options for data exploration in teaching examples: year of the survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), the number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. We do not attempt to re-create the unemployment rate variable.
+We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also modify some variables. For example, use a single categorical race variable instead of the two binary race variables.  We also plan to include additional variables, some for the purpose of providing more options for data exploration in teaching examples: year of the survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), the highest grade completed in the corresponding year of survey, the number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. We do not attempt to re-create the unemployment rate variable.
 
 The plan is to create three datasets as follows:
 
@@ -185,15 +185,15 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Education $\triangleright$ Summary measures $\triangleright$ All schools $\triangleright$ By year
 \begin{itemize}
-\item[$\triangleright$] Dates of diploma or degree
-\begin{itemize}
-\item[\faCheck] All variables named Q3-8A were selected. 
-\end{itemize}
-\end{itemize}
-\begin{itemize}
 \item[$\triangleright$] Highest grade completed
 \begin{itemize}
-\item[\faCheck] Selected HGC\_EVER, which is the highest grade respondent has ever reported completed and getting credit for.
+\item[\faCheck] All 80 variables in Highest grade completed were selected.
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item[$\triangleright$] Dates of diploma or degree
+\begin{itemize}
+\item[\faCheck] All variables named Q3-8A were selected.
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -232,7 +232,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 663 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
+\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
 \caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
@@ -264,7 +264,7 @@ Thus we re-arrange and wrangle the data into tidy data form, columns correspondi
 
 ### Tidying demographic variables {#tidydemog}
 
-In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`), and whether the graduate equivalency diploma is obtained (`ged`).
+In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed reported in each round of survey (`grade`), highest grade completed ever reported (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`), and whether the graduate equivalency diploma is obtained (`ged`).
 
 For gender and race, we only rename the column names. It is worth noting that using these two variable needs special attention. Gender, as reported in the data, only has two categories, which is recognised today as inadequate. Gender is not binary. Further, race is as reported in the database. When doing analysis with this variable, one should keep in mind that the purpose is to study racism rather than race.
 
@@ -280,7 +280,12 @@ The raw data, `new_data_qnames`, contains the variables `Q1-3_A~Y_1979` and `Q1-
 
 <!--AE comment: I was confused by the following section: “We choose to use this revised May data because it seemed to have less missing and presumably has been checked. However, there is no revised May data for 2012, 2014, 2016, and 2018, thus, we use the ordinary May data for these years.” I was assuming the data was collected on a yearly basis, but this section suggests it was collected each month. Please clarify somewhere in the paper. 
 -->
-The next step is tidying to obtain `hgc` and `ged`. Besides that `hgc` is available in the original data, along with `ged`, it is used to subset the data to the high school dropouts as in the original data. As the highest grade completed is already exist in  `new_data_qnames` and stored in year unit (e.g., 10, 11, 12, 13, and so on), we only rename the column name to be `hgc_i` and recode it so we have the factor data type (e.g., 10th grade, 11th grade, and so on). For `ged`, we only separate the year of survey and the GED status of the individual.
+
+The refreshed dataset has two types of highest grade completed. The first one is the highest grade completed ever reported in the database (`hgc` and `hgc_i`, for the factor and integer type, respectively). For each ID, there is only one value of `hgc` and `hgc_i`. This variable is obtained from `new_data_qnames` with name `HGC_EVER_XRND` and stored in year unit (e.g., 10, 11, 12, 13, and so on), we only rename the column name to be `hgc_i` and recode it so we have the factor data type (e.g., 10th grade, 11th grade, and so on). 
+
+The second one is the highest grade completed corresponds to value  reported in each round of the survey (`grade`), meaning that the value can change. We decide to include this variable in the refreshed dataset to enrich the analysis possibly done with the data, for example if one would like to explore how the changes of highest grade completed in individuals affecting their wages. The highest grade completed are recorded in `new_data_qnames` as variables beginning with `Q3-4` and `HGC` with suffix of the year it was recorded. In addition the variables beginning with `HGCREV` contain the revised data. We choose to use this revised data because it seemed to have less missing and presumably has been checked. However, there is no revised data for 2012, 2014, 2016, and 2018, thus, we use the ordinary data for these years. <!--We also check the consistency between `hgc_i` and `grade`. Some problematic observations were found, for example, `grade` value is greater than `hgc_i`. We then fix this problem by replacing those `grade` that is greater than its `hgc_i`. -->
+
+The next step is tidying to obtain `ged`. Along with `hgc`, `ged` is used to subset the data to the high school dropouts as in the original data. The graduate equivalency status is saved as variable started with "Q3-8A" followed by the year of the survey. Thus, we only separate the year and the GED status. Although there GED status is asked in each round of the survey, we only retain the latest status of one's GED.  
 
 ```{r tidy-grade}
 ```
@@ -288,7 +293,7 @@ The next step is tidying to obtain `hgc` and `ged`. Besides that `hgc` is availa
 ```{r tidy-hgc}
 ```
 
-Finally, we get all of the demographic profiles of the NLSY79 cohort. We then save this data as `demog_nlsy79`. 
+Finally, we get all of the demographic profiles of the NLSY79 cohort. We then save this data as `demog_nlsy79`.
 
 ```{r full-demog}
 ```
@@ -329,7 +334,7 @@ For `stwork` variable,  we only rename the column names from `new_data_qnames`. 
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation recommended for longitudinal data in @SingerJudithD2003Alda. We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when it is used to teach longitudinal data. However, it is worth noting that the original data does not restrict the number of observation for each individual, i.e, there are individuals with only one and two observations. 
 
-Finally, we save the resultant wage data on this cohort as `wages`.  
+Finally, we save the resultant wage data on this cohort as `wages`. Note that we save `grade` variable in this dataset, instead of `demog_nlsy79` dataset because it is a longitudinal variable, while `demog_nlsy79` is cross-sectional dataset reflecting the state of individuals corresponding to the most recent round of the survey. 
 
 ```{r wages-demog-hs}
 ```

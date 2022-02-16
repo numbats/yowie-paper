@@ -146,7 +146,7 @@ The NLSY79 data used in Singer and Willett (2003) contains the longitudinal reco
   UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
 \end{enumerate}
 
-We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also modify some variables. For example, use a single categorical race variable instead of the two binary race variables. We also plan to include additional variables, some for the purpose of providing more options for data exploration in teaching examples: year of the survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), the number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. We do not attempt to re-create the unemployment rate variable.
+We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also modify some variables. For example, use a single categorical race variable instead of the two binary race variables. We also plan to include additional variables, some for the purpose of providing more options for data exploration in teaching examples: year of the survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), the highest grade completed in the corresponding year of survey, the number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. We do not attempt to re-create the unemployment rate variable.
 
 The plan is to create three datasets as follows:
 
@@ -186,15 +186,15 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \begin{itemize}
 \item[$\triangleright$] Education $\triangleright$ Summary measures $\triangleright$ All schools $\triangleright$ By year
 \begin{itemize}
-\item[$\triangleright$] Dates of diploma or degree
-\begin{itemize}
-\item[\faCheck] All variables named Q3-8A were selected. 
-\end{itemize}
-\end{itemize}
-\begin{itemize}
 \item[$\triangleright$] Highest grade completed
 \begin{itemize}
-\item[\faCheck] Selected HGC\_EVER, which is the highest grade respondent has ever reported completed and getting credit for.
+\item[\faCheck] All 80 variables in Highest grade completed were selected.
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item[$\triangleright$] Dates of diploma or degree
+\begin{itemize}
+\item[\faCheck] All variables named Q3-8A were selected.
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -233,7 +233,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 663 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
+\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
 \caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
@@ -277,13 +277,17 @@ Thus we re-arrange and wrangle the data into tidy data form, columns correspondi
 \hypertarget{tidydemog}{%
 \subsubsection{Tidying demographic variables}\label{tidydemog}}
 
-In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (\texttt{gender}), race (\texttt{race}), age (\texttt{age\_1979}), highest grade completed (\texttt{hgc}), highest grade completed in terms of years, e.g.~9th grade = 9, 3rd year college = 15, (\texttt{hgc\_i}), and whether the graduate equivalency diploma is obtained (\texttt{ged}).
+In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (\texttt{gender}), race (\texttt{race}), age (\texttt{age\_1979}), highest grade completed reported in each round of survey (\texttt{grade}), highest grade completed ever reported (\texttt{hgc}), highest grade completed in terms of years, e.g.~9th grade = 9, 3rd year college = 15, (\texttt{hgc\_i}), and whether the graduate equivalency diploma is obtained (\texttt{ged}).
 
 For gender and race, we only rename the column names. It is worth noting that using these two variable needs special attention. Gender, as reported in the data, only has two categories, which is recognised today as inadequate. Gender is not binary. Further, race is as reported in the database. When doing analysis with this variable, one should keep in mind that the purpose is to study racism rather than race.
 
 The raw data, \texttt{new\_data\_qnames}, contains the variables \texttt{Q1-3\_A\textasciitilde{}Y\_1979} and \texttt{Q1-3\_A\textasciitilde{}Y\_1981} which records two versions of the birth year of the respondent; this is also the case for the record of birth month (\texttt{Q1-3\_A\textasciitilde{}M\_1979} and \texttt{Q1-3\_A\textasciitilde{}M\_1981}). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year.
 
-The next step is tidying to obtain \texttt{hgc} and \texttt{ged}. Besides that \texttt{hgc} is available in the original data, along with \texttt{ged}, it is used to subset the data to the high school dropouts as in the original data. As the highest grade completed is already exist in \texttt{new\_data\_qnames} and stored in year unit (e.g., 10, 11, 12, 13, and so on), we only rename the column name to be \texttt{hgc\_i} and recode it so we have the factor data type (e.g., 10th grade, 11th grade, and so on). For \texttt{ged}, we only separate the year of survey and the GED status of the individual.
+The refreshed dataset has two types of highest grade completed. The first one is the highest grade completed ever reported in the database (\texttt{hgc} and \texttt{hgc\_i}, for the factor and integer type, respectively). For each ID, there is only one value of \texttt{hgc} and \texttt{hgc\_i}. This variable is obtained from \texttt{new\_data\_qnames} with name \texttt{HGC\_EVER\_XRND} and stored in year unit (e.g., 10, 11, 12, 13, and so on), we only rename the column name to be \texttt{hgc\_i} and recode it so we have the factor data type (e.g., 10th grade, 11th grade, and so on).
+
+The second one is the highest grade completed corresponds to value reported in each round of the survey (\texttt{grade}), meaning that the value can change. We decide to include this variable in the refreshed dataset to enrich the analysis possibly done with the data, for example if one would like to explore how the changes of highest grade completed in individuals affecting their wages. The highest grade completed are recorded in \texttt{new\_data\_qnames} as variables beginning with \texttt{Q3-4} and \texttt{HGC} with suffix of the year it was recorded. In addition the variables beginning with \texttt{HGCREV} contain the revised data. We choose to use this revised data because it seemed to have less missing and presumably has been checked. However, there is no revised data for 2012, 2014, 2016, and 2018, thus, we use the ordinary data for these years.
+
+The next step is tidying to obtain \texttt{ged}. Along with \texttt{hgc}, \texttt{ged} is used to subset the data to the high school dropouts as in the original data. The graduate equivalency status is saved as variable started with ``Q3-8A'' followed by the year of the survey. Thus, we only separate the year and the GED status. Although there GED status is asked in each round of the survey, we only retain the latest status of one's GED.
 
 Finally, we get all of the demographic profiles of the NLSY79 cohort. We then save this data as \texttt{demog\_nlsy79}.
 
@@ -326,7 +330,7 @@ For \texttt{stwork} variable, we only rename the column names from \texttt{new\_
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation recommended for longitudinal data in Singer and Willett (2003). We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when it is used to teach longitudinal data. However, it is worth noting that the original data does not restrict the number of observation for each individual, i.e, there are individuals with only one and two observations.
 
-Finally, we save the resultant wage data on this cohort as \texttt{wages}.
+Finally, we save the resultant wage data on this cohort as \texttt{wages}. Note that we save \texttt{grade} variable in this dataset, instead of \texttt{demog\_nlsy79} dataset because it is a longitudinal variable, while \texttt{demog\_nlsy79} is cross-sectional dataset reflecting the state of individuals corresponding to the most recent round of the survey.
 
 \hypertarget{calculated-variables-work-experience}{%
 \subsection{Calculated variables: work experience}\label{calculated-variables-work-experience}}
@@ -358,7 +362,7 @@ In the next step, we explore the mean hourly wage data. In this case, we only ex
 \end{figure}
 
 We randomly take 20 samples from the data and plot them, as shown in Figure \ref{fig:sample-plot}. It shows that these respondents have a lot of variability in wages, for example, the IDs in panel numbers 5, 7, and 11. The plot also implies that the samples have a different pattern of mean hourly wages. Some have had flat wages for years but had a sudden increase in one particular year, then it gone down again, while the others experienced an upsurge in their wage, for instance, the IDs in panel 9.
-However, when checking the summary plots (Figure \ref{fig:feature-plot}), we found that some observations had exceptionally high wages. Some of them, for example respondents in Figure \ref {fig:feature-plot} C had experienced unusual wages only in certain year.
+However, when checking the summary plots (Figure \ref{fig:feature-plot}), we found that some observations had exceptionally high wages, the maximum value of the wages unbelievably reached about \$60,000/hour. Besides, some of them, for example respondents in Figure \ref {fig:feature-plot} C, had experienced unusual wages only in certain year.
 
 \begin{table}
 
@@ -404,10 +408,10 @@ Total & 2,002 (16\%) & 3,174 (25\%) & 7,510 (59\%) & 12,686\\
 
 }
 
-\caption{(A) Summary plots to check the cleaned data reveal more cleaning is necessary: longitudinal profiles of wages for all individuals 1979-2018, (B) boxplots of minimum, median, and maximum wages of each individual, (C) and one individual (id=39) with an unusual wage relative to their years of data. Some values of hourly wages are unbelievable, and some individuals have extemely unusual wages in some years.}\label{fig:feature-plot}
+\caption{Summary plots to check the data after the tidying stage: (A) longitudinal profiles of wages for all individuals 1979-2018, (B) boxplots of minimum, median, and maximum wages of each individual, (C) and one individual (id=39) with an unusual wage relative to their years of data. It reveals that some values of hourly wages are unbelievable, and some individuals have extemely unusual wages in some years. Accordingly, more cleaning is necessary to treat these extreme values.}\label{fig:feature-plot}
 \end{figure}
 
-The anomalies are also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total. According to Pergamit et al. (2001), one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years' job history. This shortcoming might also contribute to the fluctuation of one's wages data.
+Extremely high values were also found in the total hours of work, where some observations reported as having worked for 420 hours a week in total. According to Pergamit et al. (2001), one of the flaws of the NLSY79 employment data is that the NLSY79 collects the information of the working hours since the last interview. Thus, it might be challenging for the respondents to track the within-job hours' changes between survey years, especially for the respondents with fluctuating working hours or seasonal jobs. It even has been more challenging since 1994, after which respondents were only surveyed every other year and thus had to recall two full years' job history. This shortcoming might also contribute to the fluctuation of one's wages data.
 
 \hypertarget{censor}{%
 \subsection{Replacing extreme values}\label{censor}}
@@ -418,7 +422,7 @@ We build the model using the \texttt{rlm} function from \texttt{MASS} package (V
 
 To minimize the risk of mistakenly identifying an outlier as an ``erroneous outlier'', we simulate some thresholds and study how they affect the data by eye balling the results. Based on this eye balling, we find that 0.12 is the most reasonable value to use as the threshold to minimize the risk of overly smoothing the wage by retaining sensible spikes in the data. In other words, we keep maintaining the natural variability of the wages while minimizing anomalies because of the error in the data recording. After deciding the threshold, we impute the observations whose weights are less than 0.12 with the models' predicted value. We then flag those observations in a new variable called \texttt{is\_pred}.
 
-Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the extreme values are replaced. It implies that the fluctuation can still be observed in the data after the treatment. However, the large spikes, which are considered ``erroneous outliers'', are already eliminated from the data. Hence, the model produces a data set with a more reasonable degree of fluctuation.
+Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the extreme values are replaced. The figure shows that fluctuations in wages still exist even in the imputed data. However, the large spikes, which are considered ``erroneous outliers'', are already eliminated from the data. Hence, the model produces a data set with a more reasonable degree of fluctuation.
 
 \begin{figure}
 
@@ -560,11 +564,11 @@ Various difficulties were encountered in trying to refresh the data, which inclu
 \item
   calculating experience in the workforce requires comparing the date of first job with the first year the individual was recorded, both of which are available in the database.
 \item
-  there are many unusually high hourly wages, e.g.~greater than \$30,000 per hour.
+  treating the extreme values since there are many unusually high hourly wages, e.g.~greater than \$60,000 per hour.
 \item
-  there is no explicit variable in the database recording high school dropout, which means we needed to compare the date of 12th grade with the individual's age.
+  determining the dropouts subset as there is no explicit variable in the database recording high school dropout, which means we needed to compare the date of 12th grade with their GED status.
 \item
-  matching id's from the original data with those in the refreshed data, do refer to the same person based on the demographic information available.
+  matching ID's from the original data with those in the refreshed data, do refer to the same person based on the demographic information available.
 \end{itemize}
 
 Ultimately, the refreshed data is reasonably similar to the original, but unsatisfactorily far from it. The last step required would be to inflation-adjust wages. This is better to do with each wave of new data added, so that it is relative to the last date in the data. Our decision was to provide the raw wages, and include code to do the adjustment as part of the package.
