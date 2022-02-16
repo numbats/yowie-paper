@@ -89,7 +89,7 @@ do_ref_mod <- do %>%
 
 # XXX Code to check that the hgc matches
 do_check <- do %>%
-  mutate(hgc12 = ifelse(hgc_i < 9, "8TH", "12TH")) %>%
+  mutate(hgc12 = max(grade[between(do$year, 1979, 1994)])) %>% # ifelse(hgc_i < 9, "8TH", "12TH")) %>%
   select(id, hgc12) %>%
   distinct()
 sw_check <- sw %>%

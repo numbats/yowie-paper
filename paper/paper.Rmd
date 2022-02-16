@@ -119,7 +119,7 @@ As a textbook data set though, the wages data is outdated. The most recent year 
 
 This paper demonstrates the steps of cleaning data, including subjective decisions made on dealing with anomalies, and documents the process, as recommended by @HuebnerMariannePhD2016Asat. They emphasize that making the data cleaning process accountable and transparent is imperative and essential for the integrity of downstream statistical analyses and model building. Clean data often then goes through an "initial data analysis" (IDA) [@Chatfield1985TIEo], where one would summarize and scrutinize the data, especially to check if the data is consistent with assumptions required for modeling. This stage is related to exploratory data analysis (EDA), coined by @tukey with a focus on learning from data. EDA can be considered to encompass IDA. In practice, the three stages of cleaning, summarizing, and exploring are cyclical, that one often needs to do more cleaning after scrutinizing. @DasuTamraparni2003Edma say that data cleaning and exploration is a difficult task and typically consumes a large percentage of the time spent in analyzing data.
 
-Our process of cleaning builds heavily on the `tidyverse` approach [@tidyverse]. The data is first organized into "tidy data" [@WickhamHadley2014TD] and then further wrangled using the data pipeline and split-apply-combine approach [@plyr]. Tidy data shouldn't be confused with "tame data" which @tamedata coined to refer to textbook data sets suitable for teaching, particularly teaching statistics. The resulting (tame) data is provided in a new R package called `r yowie` which includes the code so that the process is reproducible, and could be used to further refresh the data as new records are made available in the NLSY79 database. 
+Our approach to cleaning builds heavily on the `tidyverse` approach [@tidyverse]. The data is first organized into "tidy data" [@WickhamHadley2014TD] and then further wrangled using a step-wise piping with split-apply-combine strategy for mutating new variables [@plyr]. Tidy data shouldn't be confused with "tame data" which @tamedata coined to refer to textbook data sets suitable for teaching, particularly teaching statistics. The resulting (tame) data is provided in a new R package called `r yowie` which includes the code so that the process is reproducible, and could be used to further refresh the data as new records are made available in the NLSY79 database. 
 
 This paper is structured in the following way. Section \@ref(database) describes the NLSY79 data source. Section \@ref(cleaning) presents the steps of cleaning the data, including getting and tidying the data from the NLSY79 and IDA to find and repair anomalies. Our final subset is compared to the old textbook subset in Section \@ref(compare). Finally, Section \@ref(summary) summarizes the contribution and makes recommendations for the NLSY79 data curators. 
 
@@ -149,7 +149,7 @@ The NLSY79 data used in @SingerJudithD2003Alda contains the longitudinal records
 6. HGC: the highest grade completed.
 7. UERATE: unemployment rate of the year of survey. When missing, the variable is set to be 7.875 (the average rate).
 
-We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also modify some variables. For example, use a single categorical race variable instead of the two binary race variables.  We also plan to include additional variables, some for the purpose of providing more options for data exploration in teaching examples: year of the survey, age of individual in 1979, whether the individual completed high school with diploma or with Graduate Equivalency Degree (GED), the highest grade completed in the corresponding year of survey, the number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. We do not attempt to re-create the unemployment rate variable.
+We refresh this data by re-creating the full data with records from survey years 1979 through to 2018 (the most recent year published). We also modify some variables. For example, use a single categorical race variable instead of the two binary race variables.  We also plan to include additional variables, some for the purpose of providing more options for data exploration in teaching examples: year of the survey, age of individual in 1979, whether the individual completed high school with diploma or with a graduate equivalency degree (GED), the highest grade completed in the corresponding year of survey, the number of jobs that the individual had in the corresponding year of survey, total number of hours the individual usually works per week, the year when individual started to work, and the number of years the individual worked. We do not attempt to re-create the unemployment rate variable.
 
 The plan is to create three datasets as follows:
 
@@ -232,7 +232,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and Comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
+\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
 \caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
@@ -240,9 +240,9 @@ For the remaining variables, we went to the "Variable Search" tab and select var
       
 The downloaded data set comes as a zip file, containing the following set of files:
 
-- `NLSY79.csv`: Comma Separated Value format of the response data,
-- `NLSY79.dat`: .dat format of the response data,
-- `NLSY79.NLSY79`: Tagset of variables that can be uploaded to the website to recreate the data set, and
+- `NLSY79.csv`: comma separated value format of the response data,
+- `NLSY79.dat`: alternative text format of the response data,
+- `NLSY79.NLSY79`: tagset of variables that can be uploaded to the website to recreate the data set, and
 - `NLSY79.R`: R script for reading the data into R and converting the variables' names and label into something more sensible. 
 
 We alter only the file path in `NLSY79.R` and run the script without any other alteration. This results in an initial processing of the raw data into two data sets,  `categories_qnames` (where the observations are stored in categorical/interval values) and `new_data_qnames` (the observations are stored in integer form). 
