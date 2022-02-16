@@ -37,9 +37,7 @@ We have kept the case study frame of mind but have re-cast the paper so that it 
 \item[Reviewer 3:] \textcolor{violet}{The authors also emphasize that “There are few research papers that document the data cleaning”. While I agree that data cleaning is under-emphasized and under-documented, it’s hardly true that there are not papers on the topic. A quick Google Scholar search for “data cleaning” unearths many scholarly papers and books on the principles of this process, none of which appear to be cited in this work.}
 \end{description}
 
-XXX We need to review this literature. It's not true that we have ignored it, the main reference is Dasu! But we need to decide whether there is more that we shoudl cite. 
-
-Outlier detection ???
+We agree that there is substantial literature on data cleaning. We have referenced one of the main works, Dasu and Johnson (2003) but don't feel it is necessary to cite more than this. We have similarly only pointed to one main reference for IDA and EDA.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{
@@ -83,7 +81,7 @@ We did not go into great detail about the packages used as the whole code is ava
 \item[Reviewer 1:]\textcolor{violet}{It's unclear from context what is being referred to from the Huebner et al 2020 citation.}
 \end{description}
 
-* We have fixed the sentences and the reference. XXX Which one?
+* We have fixed the sentences and the reference. 
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{What is dplyr used for? Are there tidyverse packages used but not mentioned? If not, splitting this sentence into two may make it clearer which package is used to what purpose. Also, I haven't tried it in code, but I imagine that the data could be tidied as described just using pivot\_longer, at least for the job number, year, and wage data. In other words, I don't see why dplyr or stringr would be needed for the data described on page 6.}
