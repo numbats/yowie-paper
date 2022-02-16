@@ -37,8 +37,7 @@ The editors and reviewers suggest reframing so that readers can help their stude
 \item[Reviewer 3:] \textcolor{violet}{The authors also emphasize that “There are few research papers that document the data cleaning”. While I agree that data cleaning is under-emphasized and under-documented, it’s hardly true that there are not papers on the topic. A quick Google Scholar search for “data cleaning” unearths many scholarly papers and books on the principles of this process, none of which appear to be cited in this work.}
 \end{description}
 
-* **Need help** XXX We need to review this literature. It's not true that we have ignored it, the main reference is Dasu! But we need to decide whether there is more that we should cite. 
-
+We agree that there is substantial literature on data cleaning. We have referenced one of the main works, Dasu and Johnson (2003) but don't feel it is necessary to cite more than this. We have similarly only pointed to one main reference for IDA and EDA.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{
