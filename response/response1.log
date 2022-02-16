@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.9)  15 FEB 2022 00:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.16)  16 FEB 2022 18:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1292,17 +1292,17 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \titlewidthlast=\dimen189
 \titlewidthfirst=\dimen190
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/footmisc/footmisc.sty
-Package: footmisc 2022/02/10 v6.0a a miscellany of footnote facilities
+Package: footmisc 2022/02/14 v6.0b a miscellany of footnote facilities
 \FN@temptoken=\toks40
 \footnotemargin=\dimen191
 \@outputbox@depth=\dimen192
-Package footmisc Info: Declaring symbol style bringhurst on input line 657.
-Package footmisc Info: Declaring symbol style chicago on input line 665.
-Package footmisc Info: Declaring symbol style wiley on input line 674.
-Package footmisc Info: Declaring symbol style lamport-robust on input line 685.
+Package footmisc Info: Declaring symbol style bringhurst on input line 686.
+Package footmisc Info: Declaring symbol style chicago on input line 694.
+Package footmisc Info: Declaring symbol style wiley on input line 703.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 714.
 
-Package footmisc Info: Declaring symbol style lamport* on input line 705.
-Package footmisc Info: Declaring symbol style lamport*-robust on input line 726
+Package footmisc Info: Declaring symbol style lamport* on input line 734.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 755
 .
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
@@ -1385,7 +1385,7 @@ Grid set 16 x 16 = 37.34424pt x 52.81541pt
 \TP@tbargs=\toks41
 TextBlockOrigin set to 0pt x 0pt
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2022/01/26 3.70 The Babel package
+Package: babel 2022/02/13 3.71 The Babel package
 \babel@savecnt=\count437
 \U@D=\dimen270
 \l@unhyphenated=\language4
@@ -1608,12 +1608,8 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
 (Font)              `T1/SourceSansPro-TLF/bold/n' on input line 222.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
 (Font)              scaled to size 12.0pt on input line 222.
-[1
-
-{/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-}] [2]
 LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF o
-n input line 275.
+n input line 228.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/sourcesanspro/TS1Source
 SansPro-TLF.fd
@@ -1621,17 +1617,20 @@ File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/So
 urceSansPro-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 275.
+(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 228.
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 275.
-[3] [4]
+(Font)              scaled to size 12.0pt on input line 228.
+[1
+
+{/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+}] [2] [3] [4] [5]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-10.
+87.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [5] [6]
+) [6]
 
-LaTeX Warning: Empty bibliography on input line 489.
+LaTeX Warning: Empty bibliography on input line 582.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1649,11 +1648,11 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27155 strings out of 480238
- 473561 string characters out of 5894681
- 1215401 words of memory out of 5000000
- 44573 multiletter control sequences out of 15000+600000
- 553037 words of font info for 141 fonts, out of 8000000 for 9000
+ 27156 strings out of 480238
+ 473532 string characters out of 5894680
+ 1216439 words of memory out of 5000000
+ 44576 multiletter control sequences out of 15000+600000
+ 552817 words of font info for 140 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  69i,11n,117p,1273b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
@@ -1662,9 +1661,9 @@ esanspro/a_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
 vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
 onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
 y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response1.pdf (7 pages, 152465 bytes).
+Output written on response1.pdf (7 pages, 157667 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 79 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
  8 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)

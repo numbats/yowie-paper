@@ -57,21 +57,22 @@ demog_tidy <- categories_qnames %>%
          gender = SAMPLE_SEX_1979)
 
 ## ---- demog-ed
-# demog_education <- new_data_qnames %>%
-#   # in 2018, the variable's name is Q3-4_2018, instead of HGC_2018
-#   rename(HGC_2018 = `Q3-4_2018`) %>%
-#   select(id = CASEID_1979,
-#          starts_with("HGCREV"),
-#          "HGC_2012",
-#          "HGC_2014",
-#          "HGC_2016",
-#          "HGC_2018") %>%
-#   pivot_longer(!id,
-#                names_to = "var",
-#                values_to = "grade") %>%
-#   separate("var", c("var", "year"), sep = "_") %>%
-#   filter(!is.na(grade)) %>%
-#   select(-var)
+demog_education <- new_data_qnames %>%
+  # in 2018, the variable's name is Q3-4_2018, instead of HGC_2018
+  rename(HGC_2018 = `Q3-4_2018`) %>%
+  select(id = CASEID_1979,
+         starts_with("HGCREV"),
+         "HGC_2012",
+         "HGC_2014",
+         "HGC_2016",
+         "HGC_2018") %>%
+  pivot_longer(!id,
+               names_to = "var",
+               values_to = "grade") %>%
+  separate("var", c("var", "year"), sep = "_") %>%
+  mutate(year = as.numeric(year)) %>%
+  #filter(!is.na(grade)) %>%
+  select(-var)
 
 hgc_ever <- new_data_qnames %>%
   select(id = CASEID_1979,
@@ -89,6 +90,60 @@ hgc_ever <- new_data_qnames %>%
 
 ## ---- tidy-hgc
 
+# Get the highest year completed
+hgc_calc <- demog_education %>%
+  filter(!is.na(grade)) %>%
+  group_by(id) %>%
+  filter(grade == max(grade)) %>%
+  filter(year == min(year)) %>%
+  rename(yr_hgc = year,
+         hgc_i = grade) %>%
+  select(id, yr_hgc, hgc_i) %>%
+  ungroup() %>%
+  mutate(hgc = case_when(hgc_i == 0 ~ "NONE",
+                         hgc_i == 1 ~ "1ST GRADE",
+                         hgc_i == 2 ~ "2ND GRADE",
+                         hgc_i == 3 ~ "3RD GRADE",
+                         hgc_i >= 4 & hgc_i <= 12 ~ paste0(hgc_i, "TH GRADE"),
+                         hgc_i == 13 ~ "1ST YEAR COL",
+                         hgc_i == 14 ~ "2ND YEAR COL",
+                         hgc_i == 15 ~ "3RD YEAR COL",
+                         hgc_i == 95 ~ "UNGRADED",
+                         TRUE ~ paste0((hgc_i - 12), "TH YEAR COL")))
+
+## check between the hgc ever and the highest year calculated from the data
+
+check_hgc_1 <- left_join(hgc_ever, hgc_calc, by = c("id"), suffix = c("_database", "_calculated")) %>%
+  filter(hgc_i_database > hgc_i_calculated)
+
+check_hgc_2 <- left_join(hgc_ever, hgc_calc, by = c("id"), suffix = c("_database", "_calculated")) %>%
+  filter(hgc_i_database < hgc_i_calculated)
+
+# we try to fix this issue
+fix_grade_issue_1 <- left_join(demog_education, hgc_ever, by = "id") %>%
+  filter(id %in% check_hgc_1$id) %>%
+  # there is some cases where the
+  group_by(id) %>%
+  mutate(new_grade = ifelse((grade < lag(grade)), hgc_i, grade)) %>%
+  mutate(new_grade = ifelse(is.na(new_grade), grade, new_grade)) %>%
+  select(id, year, grade = new_grade, hgc_i, hgc)
+
+fix_grade_issue_2 <- left_join(demog_education, hgc_ever, by = "id") %>%
+  filter(id %in% check_hgc_2$id) %>%
+  # there is some cases where the
+  group_by(id) %>%
+  mutate(grade = ifelse(grade > hgc_i, hgc_i, grade))
+
+grade_fixed <- rbind(fix_grade_issue_1, fix_grade_issue_2)
+
+`%!in%` <- Negate(`%in%`)
+
+grade_ok <- left_join(demog_education, hgc_ever, by = "id") %>%
+  filter(id %!in% grade_fixed$id)
+
+grade <- rbind(grade_ok, grade_fixed) %>%
+  select(id, year, grade)
+
 # get the variable oh GED
 
 ged <- new_data_qnames %>%
@@ -102,26 +157,6 @@ ged <- new_data_qnames %>%
   select(id, dip_or_ged)
 
 highest_year <- left_join(hgc_ever, ged, by = "id")
-
-# Get the highest year completed
-# highest_year <- demog_education %>%
-#   group_by(id) %>%
-#   filter(grade == max(grade)) %>%
-#   filter(year == min(year)) %>%
-#   rename(yr_hgc = year,
-#          hgc_i = grade) %>%
-#   select(id, yr_hgc, hgc_i) %>%
-#   ungroup() %>%
-#   mutate(hgc = case_when(hgc_i == 0 ~ "NONE",
-#                          hgc_i == 1 ~ "1ST GRADE",
-#                          hgc_i == 2 ~ "2ND GRADE",
-#                          hgc_i == 3 ~ "3RD GRADE",
-#                          hgc_i >= 4 & hgc_i <= 12 ~ paste0(hgc_i, "TH GRADE"),
-#                          hgc_i == 13 ~ "1ST YEAR COL",
-#                          hgc_i == 14 ~ "2ND YEAR COL",
-#                          hgc_i == 15 ~ "3RD YEAR COL",
-#                          hgc_i == 95 ~ "UNGRADED",
-#                          TRUE ~ paste0((hgc_i - 12), "TH YEAR COL")))
 
 ## ---- full-demog
 
@@ -307,6 +342,7 @@ head(mean_hourly_wage, n = 10)
 
 # join the wages information and the demographic information by case id.
 wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id") %>%
+  left_join(grade, by = c("id", "year")) %>%
   left_join(st_work, by = "id") %>%
   left_join(exp, by = c("id", "year")) %>%
   mutate(yr_wforce = year - stwork)

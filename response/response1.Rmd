@@ -17,29 +17,28 @@ The editors and reviewers suggest reframing so that readers can help their stude
 
 \begin{description}
 \item[Editor and Reviewer 1:] \textcolor{violet}{How is this manuscript relevant for teachers and/or students in statistics and data science?}
-
-The introduction has been re-written with an emphasis on how this work should be interesting for teachers and students of data science and statistics.
-
-\item[Reviewer 1:] \textcolor{violet}{I don't see the direct relevance of this manuscript with the readership of JSDSE. I think this could be a valuable paper to describe the author(s) R package and would have value for researchers using the NLSY79 dataset. I am not convinced that JSDSE is the appropriate venue for this. I do not see this manuscript being engaging enough to be used in the classroom as a case study in data cleaning.}
-
-It is commonly said 80\% of a data analysts/scientist's work is on data cleaning/preperation so we believe that shedding more light in this aspect of work is an important for students to be aware of. We believe that there are often subjective decisions made in the process (as we have done) which can be used as a conversation for transparency and reproducibility in class based on a real case study. 
-
-\item[Reviewer 3:] \textcolor{violet}{The authors prominently cite (Chatfield 1985) for the definition of the term “IDA”. However, Chatfield fairly explicitly defines IDA to be a data summarizing and scrutinizing process; not a cleaning, scrubbing, or munging process. It seems curious to me that the whole paper is framed as being “IDA” based on the author’s unsupported statement that data cleaning should be considered party of IDA.}
-
-Yes, there is grey area in these three activities. Thanks for pointing out Chatfield's original viewpoint, which differs from Huebner et al's. We have revised this paragraph to de-emphasize cleaning as being part of IDA. We have kept the explanation of the terminology of IDA and EDA because we think this is important to clarify for teaching purposes.
-
-\item[Reviewer 3:] \textcolor{violet}{My suggestion is that the authors reconfigure this paper to be presented as a pure case study. I believe the work that has been done is valuable: the data cleaning process is often messy and unplanned, so a case study like this on a popular dataset would provide an excellent educational resource.}
-
-We have kept the case study frame of mind but have re-cast the paper so that it focuses on the importance of this type of activity for teaching of statistics and data science. 
 \end{description}
+
+* The introduction has been re-written with an emphasis on how this work should be interesting for teachers and students of data science and statistics.
+
+\begin{description}
+\item[Reviewer 1:] \textcolor{violet}{I don't see the direct relevance of this manuscript with the readership of JSDSE. I think this could be a valuable paper to describe the author(s) R package and would have value for researchers using the NLSY79 dataset. I am not convinced that JSDSE is the appropriate venue for this. I do not see this manuscript being engaging enough to be used in the classroom as a case study in data cleaning.}
+\end{description}
+
+* It is commonly said 80\% of a data analysts/scientist's work is on data cleaning/preperation so we believe that shedding more light in this aspect of work is an important for students to be aware of. We believe that there are often subjective decisions made in the process (as we have done) which can be used as a conversation for transparency and reproducibility in class based on a real case study. 
+
+\begin{description}
+\item[Reviewer 3:] \textcolor{violet}{The authors prominently cite (Chatfield 1985) for the definition of the term “IDA”. However, Chatfield fairly explicitly defines IDA to be a data summarizing and scrutinizing process; not a cleaning, scrubbing, or munging process. It seems curious to me that the whole paper is framed as being “IDA” based on the author’s unsupported statement that data cleaning should be considered party of IDA.}
+\end{description}
+
+* Yes, there is grey area in these three activities. Thanks for pointing out Chatfield's original viewpoint, which differs from Huebner et al's. We have revised this paragraph to de-emphasize cleaning as being part of IDA. We have kept the explanation of the terminology of IDA and EDA because we think this is important to clarify for teaching purposes.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{The authors also emphasize that “There are few research papers that document the data cleaning”. While I agree that data cleaning is under-emphasized and under-documented, it’s hardly true that there are not papers on the topic. A quick Google Scholar search for “data cleaning” unearths many scholarly papers and books on the principles of this process, none of which appear to be cited in this work.}
 \end{description}
 
-XXX We need to review this literature. It's not true that we have ignored it, the main reference is Dasu! But we need to decide whether there is more that we shoudl cite. 
+* **Need help** XXX We need to review this literature. It's not true that we have ignored it, the main reference is Dasu! But we need to decide whether there is more that we should cite. 
 
-Outlier detection ???
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{
@@ -57,23 +56,29 @@ feasible?
 }
 \end{description}
 
-We thank the reviewer for pointing out to us that the data contains information on the work experience -- this additional data is added in the extraction of the data in Figure 1. This information was compared with Singer & Willet's original data. Comparison shown in Figure X shows that the information does not match up, however, there is a high correlation between the variables.
+* **NEED HELP**
 
-
+ 
 \begin{description}
-\item[Reviewer 1:] \textcolor{violet}{This sentence is unclear. What is dplyr used for? Are there tidyverse packages used but not mentioned? If not, splitting this sentence into two may make it clearer which package is used to what purpose. Also, I haven't tried it in code, but I imagine that the data could be tidied as described just using pivot\_longer, at least for the job number, year, and wage data. In other words, I don't see why dplyr or stringr would be needed for the data described on page 6.}
-
-We did not go into great detail about the packages used as the whole code is available as a vignette within the package. We realise that this was not available to the reviewers due to the requirement of a blind review. To circumvent this, we have added the vignettes as supplementary materials. 
+\item[Reviewer 3:]\textcolor{violet}{The authors explain the complication of the “years of job experience” variable being unavailable in the raw data. This information is available in the NLSY79 data accessor; it seems to simply have been not selected in the initial data download by the authors.
+Given that the stated goal is to recreate the textbook data, this seems like a glaring oversight.
+It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsurprised that salaries are higher with more years of experience, and we are unsurprised that salaries go up over the years with both age of employee and inflation. The positive slope of these two different plots does not mean they are related to each other in any way.}
 \end{description}
 
+
+* We thank the reviewer for pointing out to us that the data contains information on the work experience -- this additional data is added in the extraction of the data in Figure 1. This information was compared with Singer & Willet's original data. Comparison shown in Figure 7 shows that the information does not match up, however, there is a high correlation between the variables.
+
+* **NEED HELP in responding comments on Figure 8.**
+
+\begin{description}
+\item[Reviewer 3:] \textcolor{violet}{My suggestion is that the authors reconfigure this paper to be presented as a pure case study. I believe the work that has been done is valuable: the data cleaning process is often messy and unplanned, so a case study like this on a popular dataset would provide an excellent educational resource.}
+\end{description}
+
+* We have kept the case study frame of mind but have re-cast the paper so that it focuses on the importance of this type of activity for teaching of statistics and data science.
 
 \section*{Minor changes:}
 
 * We have corrected all minor grammatical errors pointed out by the reviewers.
-
-
-
-
 
 
 * We have made the descriptions of the steps more explicit as follows [LIST OF THE CHANGES]
@@ -83,13 +88,14 @@ We did not go into great detail about the packages used as the whole code is ava
 \item[Reviewer 1:]\textcolor{violet}{It's unclear from context what is being referred to from the Huebner et al 2020 citation.}
 \end{description}
 
-* We have fixed the sentences and the reference. XXX Which one?
+* We have fixed the sentences and the reference, it is reflected on the last paragraph in page 3. 
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{What is dplyr used for? Are there tidyverse packages used but not mentioned? If not, splitting this sentence into two may make it clearer which package is used to what purpose. Also, I haven't tried it in code, but I imagine that the data could be tidied as described just using pivot\_longer, at least for the job number, year, and wage data. In other words, I don't see why dplyr or stringr would be needed for the data described on page 6.}
 \end{description}
 
-* We have split the sentences and described the use of each package mentioned. 
+* We did not go into great detail about the packages used as the whole code is available as a vignette within the package. Also, for the blind review purpose, we have made all of the code and the raw dataset available to reviewers and it is not depend on the R package we created. The reviewers can see the data processing code and run it to also see the reproducibility of the code. Besides, in the paper, we have split the sentences and described the use of each package mentioned.  
+
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{please clarify. "If either the hourly wage or hours worked is missing, we do not tally this." I take "this" to mean "number\_of\_jobs". But in row 2, total\_hours is missing, yet number\_of\_jobs is 1. The number of jobs (1) was tallied even though hours worked was missing.}
@@ -100,6 +106,8 @@ We did not go into great detail about the packages used as the whole code is ava
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{"to find the anomaly in the wages values" This comes as a surprise to the reader. What anomaly? The wage anomalies should be mentioned in the introduction so as not to be a surprise at this point in the manuscript.}
 \end{description}
+
+* **NEED HELP**
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{I don't know that Table 1 is necessary as I don't have anything to compare it to. If the numbers check out, a simple statement to that effect would suffice. Also, what does "(?CHECK)" mean? This needs to be resolved.}
@@ -117,7 +125,7 @@ We did not go into great detail about the packages used as the whole code is ava
 \item[Reviewer 1:]\textcolor{violet}{How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?}
 \end{description}
 
-* There is no individuals up to 8th grade in the refreshed dataset as we only filtered the high school dropouts (started from 9th grade ,i.e., high school grade). The plausible reasons for the differences are we might have different definition of high school dropouts with the original data and the corresponding individual back to high school after they dropped out so that their highest grade completed is 12th grade.   
+* There are 108 individuals up to 8th grade in the refreshed dataset, compared to 366 individuals in the original dataset. The plausible reason for this difference is that some people have had GED after the period covered in the original dataset. 
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{what does the natural log have to do with the y-axis?}
@@ -127,9 +135,13 @@ We did not go into great detail about the packages used as the whole code is ava
 \item[Reviewer 2:]\textcolor{violet}{My primary comment is that many elements need to be more explicitly spelled out.}
 \end{description}
 
+* We have it more explicit as per the reviewers' comments. 
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{I would like more discussion about the textbook selected as the exemplar. It sounds like this dataset is used in many books, why choose that one? The text should include the name of the book, so readers do not need to flip to the citations in order to learn what it was. From the name, I am guessing that the book focuses heavily on this dataset, which is why it makes sense to reproduce their subset. Be explicit about this.}
 \end{description}
+
+* **NEED HELP**
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{When listing the files that come zipped from the data source, be more explicit about the file formats. Comma separated values instead of csv, etc.}
@@ -141,16 +153,18 @@ We did not go into great detail about the packages used as the whole code is ava
 \item[Reviewer 2:]\textcolor{violet}{Before the data cleaning section I would love a glimpse into the future to see what the target dataset would look like. What are the observations? What are the variables? This would allow me to follow the narrative of data wrangling more easily. Perhaps this could be put into section 2.2, which is titled Target data. Then, when starting to describe the raw data in 3,1, explain the same pieces and explicitly explain why the raw data it is not tidy to begin with.}
 \end{description}
 
-
 * We have added the explanation of the observations and the variable in Section 2.2.
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{With the IDA about wage data, I would appreciate a bit more context. Why sample 20 observations? I am not a longitudinal data expert, so I was a bit surprised when I flipped to the plot and found it to be small-multiple time series, although upon further consideration it makes sense. In that section it would be good to describe what the figure shows in a bit more detail. Perhaps “We randomly sample 36 respondents from the data, and plot their average wage as a time series. Looking at the patterns over time, we see a lot of variability in wages. For example, the people shown in panels 5, 7, and 11 have [explain what is interesting here, again I’m not an expert].” The next sentence here, “Some have had flat wages for years but had a sudden increase in one particular year, then it gone down again, while the others experienced an upsurge in their wage, for instance, the IDs in panel 9.” does not seem to provide much additional information. What were you looking for here? Overall trends over time, increasing/decreasing? Any places where one year’s wage looked really different?}
 \end{description}
 
+* **NEED HELP**
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{I think there is a narrative step missing here, which is that looking at those samples led you to look at plots that show values for the wage variable over all participants and all years. The phrase “the summary plots” was not enough description for me to know what to expect when I flipped to Figure 3. Please be explicit about what the three plots were, why they were made, and what you were looking for. I think there is another narrative step missing about Figure 3C, which is that after you saw there were outliers you tried to identify which respondents had the extreme values. Again, please spell this out in the text. When you return to the plots for the entire dataset in Figure 5, please make parallel comments.}
 \end{description}
+* **NEED HELP**
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{
@@ -161,10 +175,14 @@ The next paragraph, which begins “The anomalies are also found” should perha
 \item[Reviewer 2:]\textcolor{violet}{Section 3.2.1 begins “As part of the IDA, which is the model formulation, we build a robust linear regression model to treat the extreme values in the data.” This could use clarification. In 3.2, you said that part of IDA is “ model formulation without any formal statistical inference.” To me, that sounds like using modeling as a descriptive technique, and it’s something I would consider to be more a part of EDA. But then in 3.2.1, while it is perhaps not using modeling in an inferential way, the model is being used for more than just description. I might rephrase the first sentence as follows: “In order to treat the extreme values in the data, we built a robust linear regression model.”}
 \end{description}
 
+* **NEED HELP**
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{
 At the bottom of page 11, where you describe the model formation, more detail would be appreciated. You are modeling the mean hourly wage based on year. Why? Is this standard practice for robust linear regression? What is a “slight” residual? Is it defined based on absolute magnitude, or standard deviations, or something else? Later, you say “To minimize the risk of mistakenly identifying an outlier as an “erroneous outlier”.” Is an erroneous outlier a technical term? If not, I think you are trying not to identify erroneous outliers, not mistakenly identifying outliers as erroneous outliers (that’s a double negative). The value of 0.12 feels very specific and out of place in a paper that has had few numerals. Is this a number an expert in RLR would be able to understand? Again, is that a raw value? Is it a standard deviation? Is there literature about how to choose a threshold? Overall, the sentence “We find that 0.12 is the most reasonable value to be the threshold to minimize that drawback’s risk because it still captures the sensible spikes in the data.” is vague and should be expanded upon. What is “that drawback’s risk”? What are “the sensible spikes in the data?” Be more explicit.}
 \end{description}
+
+* **NEED HELP**
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{
@@ -175,7 +193,7 @@ What does “It implies that the fluctuation can still be observed in the data a
 \item[Reviewer 2:]\textcolor{violet}{In Section 4, you talk about the variables in the original data. “One would expect that there is a record of the day the individual first started a job, and this is used to adjust the year of collection.” I’m not sure what this means. Please clarify.}
 \end{description}
 
-* We removed this sentence as we already have the `yr_workforce` variable which is calculated from the year of the individual start working. 
+* We removed this sentence as we already have the `yr_wforce` variable which is calculated from the year of the individual start working. 
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{“The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.}
@@ -191,6 +209,8 @@ What does “It implies that the fluctuation can still be observed in the data a
 \item[Reviewer 2:]\textcolor{violet}{At the end of page 14, it would be good to explicitly say that if people don’t like your decisions, they can grab the code and adjust the parameters themselves! It’s implied, but should be made explicit.}
 \end{description}
 
+* **NEED HELP**
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{Figure 2’s caption should include something about how that data is the raw values from the survey, before inputing anomalous values so the figure and caption can stand alone.}
 \end{description}
@@ -204,6 +224,9 @@ What does “It implies that the fluctuation can still be observed in the data a
 \item[Reviewer 2:]\textcolor{violet}{For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.}
 \end{description}
 
+* We have filter the x-axis of the refreshed data set until 1994, so they are comparable.
+
+
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{Table 1 includes the note ?CHECK which I assume was a note to self.}
 \end{description}
@@ -214,13 +237,13 @@ What does “It implies that the fluctuation can still be observed in the data a
 \item[Reviewer 2:]\textcolor{violet}{Table 2 seems to have more precision than is necessary. Certainly 100\% does not need to be reported as 100.00\%, and probably all the percentages could be rounded to the nearest 1 percent. The caption could explain this, as there might be some rounding errors.}
 \end{description}
 
-We agree that this level of precision was not necessary. We have modified Table 2 so percentages are to the nearest 1 percent and total percentage (=100%) is omitted. 
+* We agree that this level of precision was not necessary. We have modified Table 2 so percentages are to the nearest 1 percent and total percentage (=100%) is omitted. 
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{What does “yearly mean hourly wages with years of workforce experience” mean? Is that one variable or two?}
 \end{description}
 
-* These are two different variables. We have made this easier to follow in the manuscript as: [FILL]
+* These are two different variables. We have made this easier to follow in the manuscript as we add explanation on what the target data is (See Subsection 2.2: Target Data).
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{Was your goal to collect data from 1994-2018 or 1979-2018? Page 4 states 1994 onward, but from the figures later it appears that you collected data starting in 1979 (which makes more sense to me).}
@@ -232,7 +255,19 @@ We agree that this level of precision was not necessary. We have modified Table 
 \item[Reviewer 2:]\textcolor{violet}{I was confused by the following section: “We choose to use this revised May data because it seemed to have less missing and presumably has been checked. However, there is no revised May data for 2012, 2014, 2016, and 2018, thus, we use the ordinary May data for these years.” I was assuming the data was collected on a yearly basis, but this section suggests it was collected each month. Please clarify somewhere in the paper.}
 \end{description}
 
-* Yes, the data is collected on a yearly basis. However, according to the database, the highest grade completed variable is revised as in May 1st of each survey year. Thus, we mentioned as the revised May data. In the revised version, we only mention it as revised data to avoid confusion. 
+<!--* Yes, the data is collected on a yearly basis. However, according to the database, the highest grade completed variable is revised as in May 1st of each survey year. Thus, we mentioned as the revised May data. In the revised version, we only mention it as revised data to avoid confusion.-->
+
+*  The database has the variable of `the highest grade completed ever`. Thus, we use this variable for `hgc` instead of calculating it from the`hgc` the respondents answer for each round of the survey. Besides, we also add new variable `grade`, which is the highest grade completed for each round of survey, so the value changes corresponding to the year of the survey. According to the database, the `hgc` variable is revised as in May 1st of each survey year. Thus, we mentioned as the revised May data. In the revised version, we only mention it as revised data to avoid confusion. 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{Abstract: The abstract portrays this work as ”re-creating a textbook example data set.” This doesn’t appear to be quite accurate because there are several notable differences between the end result and the textbook data. Currently, it’s more about demonstrating a procedure for “initial data analysis.”}
+\end{description}
+
+* **NEED HELP**
+
+
+
+
 
 
 
