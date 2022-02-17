@@ -63,13 +63,15 @@ wages_before_tsibble <- as_tsibble(x = wages_before,
                                      index = year,
                                      regular = FALSE)
 
-set.seed(20210225)
-ggplot(wages_before_tsibble,
-       aes(x = year,
-           y = mean_hourly_wage,
-           group = id)) +
+set.seed(20220207)
+# Select a set with an extreme outlier and a decreasing trend
+# for published paper
+wages_before_tsibble %>%
+  sample_n_keys(size=36) %>%
+  ggplot(aes(x = year,
+           y = mean_hourly_wage)) +
   geom_line(alpha = 0.7) +
-  facet_sample(n_per_facet = 1, n_facets = 20) +
+  facet_wrap(~id, scales="free_y") +
   scale_x_continuous("Year",
                      breaks = seq(1980, 2020, 10),
                      labels = c("80", "90", "00", "10", "20"),
