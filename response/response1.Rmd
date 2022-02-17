@@ -166,7 +166,7 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 \item[Reviewer 2:]\textcolor{violet}{I think there is a narrative step missing here, which is that looking at those samples led you to look at plots that show values for the wage variable over all participants and all years. The phrase “the summary plots” was not enough description for me to know what to expect when I flipped to Figure 3. Please be explicit about what the three plots were, why they were made, and what you were looking for. I think there is another narrative step missing about Figure 3C, which is that after you saw there were outliers you tried to identify which respondents had the extreme values. Again, please spell this out in the text. When you return to the plots for the entire dataset in Figure 5, please make parallel comments.}
 \end{description}
 
-* **NEED HELP**
+* This section has been re-written, and additional details provided.
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{
@@ -216,7 +216,7 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 2:]\textcolor{violet}{At the end of page 14, it would be good to explicitly say that if people don’t like your decisions, they can grab the code and adjust the parameters themselves! It’s implied, but should be made explicit.}
 \end{description}
 
-* **NEED HELP**
+* Done
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{Figure 2’s caption should include something about how that data is the raw values from the survey, before inputing anomalous values so the figure and caption can stand alone.}
@@ -273,7 +273,7 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{Abstract: The abstract portrays this work as ”re-creating a textbook example data set.” This doesn’t appear to be quite accurate because there are several notable differences between the end result and the textbook data. Currently, it’s more about demonstrating a procedure for “initial data analysis.”}
 \end{description}
 
-* **NEED HELP**
+* The abstract has been re-written to reflect the re-framing of the paper.
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{Where is IDA undervalued and neglected? Research? Teaching? Both?}
@@ -315,13 +315,13 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{It appears the goal of the paper switches to just IDA and dealing with problematic points here. This is completed in the paper.} 
 \end{description}
 
-* **NEED HELP**
+* Paper has been re-written to change focus.
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{Gender (man/woman/etc). Sex (male/female/etc).} 
 \end{description}
 
-* **NEED HELP**
+* See explanation above
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{It is not clear why participants without a high school degree are not part of the analysis.} 
@@ -346,13 +346,13 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{I’m not sure this is accurate. The robustlmm package in R fits these models rather quickly with thousands of observations. What are the authors using? Does it run out of memory (requires more RAM) or does it take too much time?}
 \end{description}
 
-* We use `MASS` package instead of `robustlmm` package. We have tried to use `robustlmm`, but perhaps because the data is large and imbalanced, the model was not converging. Also, for reproducibility reason, we made it more affordable (in terms of memory and time), especially when people want to perform the stages in cleaning the data in class/teaching. 
+* The `robustlmm` model would not converge. We have added some text to the paper on this.
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{The choice of 0.12 seems arbitrary at best. I don’t see any justification for this approach (e.g., literature, simulations, etc). Why not use bi-square, instead of huber, and simply impute for observations with weight 0. While still arbitrary, it’s decided by the bisquare model and isn’t a guesstimate. Further, it would be sensible for any dataset and not just this one. (This would correspond to a smaller threshold, which may catch too many strange outcomes). In any case, it’s hard to justify something so adhoc.}
 \end{description}
 
-* **NEED HELP**
+* **NEED HELP** We have added more explanation on the process used to decide on the threshold. 
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{It’s unclear about what fluctuation or treatment the author is referring to.}
@@ -372,13 +372,13 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{Figure 7 (Figure 8 in the current manuscript) is interesting, but it wasn’t until my second time through that I realized this was the textbook example for replicating. There is a clear difference in analyses (different question really), but is there anything to justify a similarity, or improvement of the analysis?}
 \end{description}
 
-* **NEED HELP**
+* **NEED HELP** Figure 8 has been updated, and other comparisons of the original and refreshed data have been added. There are still some differences, but with the change in variables being created and better filtering to get the dropouts the data are now more similar.
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{(page 14, line 46) Thank you for this acknowledgment. I think this is true for most analyses. It doesn’t mean that you shouldn’t transparently and fully investigate your own choices.}
 \end{description}
 
-* **NEED HELP**
+* NEED HELP We are really not sue what this refers to.
 
 
 

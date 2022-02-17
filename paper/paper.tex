@@ -504,6 +504,23 @@ There are many steps and decisions made to go from raw to input to valid data. F
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
+\begin{verbatim}
+#> # A tibble: 43 x 6
+#>    id     year  wage age_1979 gender   exp
+#>    <fct> <int> <dbl>    <int> <fct>  <dbl>
+#>  1 1663   1987  5.90       15 MALE    4.26
+#>  2 1663   1988  7          15 MALE    4.26
+#>  3 1663   1989 14          15 MALE    4.26
+#>  4 2466   1988  6.97       17 MALE    8.17
+#>  5 2466   1989  6.97       17 MALE    8.17
+#>  6 2466   1990  7.25       17 MALE    9.03
+#>  7 2466   1991  7.25       17 MALE    9.03
+#>  8 2594   1986 11          17 MALE    5.95
+#>  9 2594   1987  9.68       17 MALE    5.95
+#> 10 3087   1993 18.7        18 MALE   10.7 
+#> # ... with 33 more rows
+\end{verbatim}
+
 The original set contains wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package \texttt{brolgar} and the refreshed data is available in the R package \texttt{[CENSORED]}.
 
 \hypertarget{filtering-determining-who-is-a-dropout}{%

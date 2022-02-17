@@ -85,12 +85,12 @@ wages_before_tsibble %>%
 ## ---- feature-plot
 
 # create the summary plots of all of the individuals
-# wages_high <- filter(wages_before, mean_hourly_wage > 500) %>%
-#   as_tibble() %>%
-#   head(n = 6)
-#
-# wages_high2 <- wages_before %>%
-#   filter(id %in% wages_high$id)
+wages_high <- filter(wages_before, mean_hourly_wage > 500) %>%
+   as_tibble() %>%
+   head(n = 6)
+
+ wages_high2 <- wages_before %>%
+   filter(id %in% wages_high$id)
 
 # the spaghetty plot of wages before imputation (raw values from database)
 spag <- wages_before %>%
