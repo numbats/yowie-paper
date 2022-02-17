@@ -10,6 +10,34 @@ sw <- brolgar::wages %>%
 hgc_1979 <- hgc_1979 %>%
   mutate(id = as.factor(id))
 
+# XXX Re-do of the comparison section
+# tabular hgc
+sw %>%
+  as_tibble() %>%
+  select(id, high_grade) %>%
+  distinct() %>%
+  count(high_grade)
+
+do_1994 <- wages_hs_do %>%
+  filter(year <= 1994) %>%
+  as_tibble() %>%
+  group_by(id) %>%
+  mutate(hgc_1994 = max(grade[between(year, 1979, 1994)], na.rm=TRUE)) %>%
+  ungroup()
+
+do_1994 %>%
+  select(id, hgc_1994) %>%
+  filter(between(hgc_1994, 6, 12)) %>%
+  distinct() %>%
+  count(hgc_1994)
+
+exp_p1 <- sw %>% ggplot(aes(x=xp)) +
+  geom_density(fill="black", alpha=0.7) +
+  xlim(c(0, 13))
+exp_p2 <- do_1994 %>% ggplot(aes(x=exp)) +
+  geom_density(fill="black", alpha=0.7) +
+  xlim(c(0, 13))
+
 # load the refreshed data, join it with the hgc_1979
 do <- wages_hs_do %>%
   as_tibble() %>%
@@ -19,7 +47,6 @@ do <- wages_hs_do %>%
          index = 1:n())
 
 # join original and refreshed data, only for the same individuals that appears in the two data
-
 do_sw_join <- inner_join(sw, do, by = c("id", "index"))
 
 sw_wages <- sw %>%
