@@ -31,12 +31,34 @@ do_1994 %>%
   distinct() %>%
   count(hgc_1994)
 
+# compare distributions of exp
 exp_p1 <- sw %>% ggplot(aes(x=xp)) +
   geom_density(fill="black", alpha=0.7) +
   xlim(c(0, 13))
 exp_p2 <- do_1994 %>% ggplot(aes(x=exp)) +
   geom_density(fill="black", alpha=0.7) +
   xlim(c(0, 13))
+
+# tabulate race
+sw %>%
+  as_tibble() %>%
+  select(id, black, hispanic) %>%
+  distinct() %>%
+  count(black, hispanic)
+
+do_1994 %>%
+  select(id, race) %>%
+  distinct() %>%
+  count(race)
+
+# compare density of wages
+wg_p1 <- sw %>% ggplot(aes(x=ln_wages)) +
+  geom_density(fill="black", alpha=0.7) +
+  xlim(c(0.5, 4.5))
+wg_p2 <- do_1994 %>% ggplot(aes(x=log(wage))) +
+  geom_density(fill="black", alpha=0.7) +
+  xlim(c(0.5, 4.5))
+
 
 # load the refreshed data, join it with the hgc_1979
 do <- wages_hs_do %>%
