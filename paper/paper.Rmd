@@ -418,26 +418,24 @@ Using this threshold, we impute the observations whose weights are less than 0.1
 ```{r rlm, eval=FALSE}
 ```
 
-Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the extreme values are replaced. The figure shows that fluctuations in wages still exist even in the imputed data. However, the large spikes, which are considered "erroneous outliers", are already eliminated from the data. Hence, the model produces a data set with a more reasonable degree of fluctuation.
+Figure \ref{fig:compare-plot} shows the mean hourly wage before and after the extreme values are replaced. The plot shows that fluctuations in wages remain but the large spikes (in this sample individuals 8296, 9962) which are considered implausible are replaced. 
 
 
 ```{r compare-data}
 ```
 
 
-```{r compare-plot, fig.cap="Comparison between the original (black dots) and the corrected (solid grey) mean hourly wage for same sample of individuals as shown in Figure 2. A robust linear model prediction was used to identify and correct mean hourly wages value. The extreme spikes, corresponding to implausible wages, have been replaced with values more similar to wages in neighboring years, but otherwise the profiles are not changed.", fig.height=8, fig.width=10, out.width="90%"}
+```{r compare-plot, fig.cap="Comparison between the original (black dots) and the corrected (solid grey) mean hourly wage for same sample of individuals as shown in Figure 2. A robust linear model prediction was used to identify and correct mean hourly wages value. The extreme spikes, corresponding to implausible wages, have been replaced with values more similar to wages in neighboring years for individuals 8296 and 9962, but otherwise the profiles have not changed.", fig.height=8, fig.width=10, out.width="90%"}
 ```
 
-Further, Figure \ref{fig:fixed-feature-plot} A shows that after eliminating the extreme values, the highest value has decreased to be around $350. The spikes are still observed but not as extreme as the original data set. In Figure \ref{fig:fixed-feature-plot} B, we plot the three features of mean hourly wages, namely the minimum, median, and maximum value. 
+Figure \ref{fig:fixed-feature-plot} shows the summary statistics after removing extremes. The highest wage overall is now around $1000. Plot (A) shows a more reasonable spagetti plot, where there are some profiles with high wages, but most profiles have wages under $300, and there is a steady increase in wages with years. Plot (B) shows that there are still a small number of individuals with high maximum wages.  Plot (C) shows the profile for ID=39, after imputing the extreme value. The wages for this individual increase over the years, and do fluctuate some between 1900 and 2005. 
 <!--AE comment: What does “It implies that the fluctuation can still be observed in the data after the treatment.” mean? I suspect this sentence should be replaced with something along the lines of “The figure shows that fluctuations in wages still exist even in the imputed data.”-->
-We still can see some extreme values in maximum wages, but consider it as a natural variability of the data. In Figure \ref{fig:fixed-feature-plot} C, we can see that after imputing the extreme value in ID=39, we can see how the the wages change over the years more clearly. 
+
 
 
 ```{r fixed-feature-plot, fig.cap = "Re-make of the summary plots of the fully processed data suggest that it is now in a reasonable state: (A) longitudinal profiles of wages for all individuals 1979-2018, (B) boxplots of minimum, median, (C) and maximum wages of each individual, and one individual with an unusual wage relative to their years of data. ", fig.width=10, fig.height=4, out.width="100%", cache = FALSE}
 ```
 
-
-Finally, we save the imputed data and set the appropriate data type for the variables.
 
 ```{r save-data}
 ```
