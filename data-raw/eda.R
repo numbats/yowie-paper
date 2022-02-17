@@ -112,14 +112,22 @@ do_id <- as_tibble(do) %>%
   count() %>%
   select(id)
 
+# Restrict do to 1994 and before
+do_1994 <- do %>%
+  filter(year <= 1994) %>%
+  filter(!is.na(exp)) %>%
+  select(id, year, wage, age_1979, gender, exp)
+duplicates(do_1994, key=id, index=exp)
+
 # check common id in data set
 sw_do <- inner_join(sw_id, do_id, by = "id")
 
-# only have 94 id that agree upon each other
 sw_agree <- filter(sw, id %in% sw_do$id)
-do_agree <- filter(do, id %in% sw_do$id)
+do_agree <- filter(do, id %in% sw_do$id) # 839 do_agree %>% count(id)
 
-sw_do_sample <- sample(sw_do$id, 12)
+sw_do_sample <- sw_agree %>%
+  mutate(id = as.integer(as.character(id))) %>%
+  sample_n_keys(size = 12)
 
 sw_agree_sample <- sw_agree %>%
   filter(id %in% sw_do_sample) %>%
