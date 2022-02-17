@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.13)  17 FEB 2022 20:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.12)  18 FEB 2022 08:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1602,7 +1602,7 @@ Here is how much of TeX's memory you used:
 ro-Bold.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/sourcesanspro
 /SourceSansPro-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1200.pfb>
-Output written on response1.pdf (11 pages, 159052 bytes).
+Output written on response1.pdf (11 pages, 159041 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

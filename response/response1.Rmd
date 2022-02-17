@@ -189,6 +189,26 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 * Thank you for your enquiry. We have re-written this section to better describe our process and intent. In particular, the threshold values are chosen based on extensive eye-balling of the plots of wages over time for each individual. We try to maintain a balance of not overly smoothing the observations but clearly repairing unlikely wage values. As alluded in the section, we believe that an alternative approach such as robust linear mixed models is more appropriate but we did not proceed with this as we had issues fitting the model with `robustlmm` package. In addition, we thought that the use of robust linear models is easier to explain in the context of teaching and the use of non-optimal approach can generate a good discussion about alternative approaches in class. 
 
 \begin{description}
+\item[Reviewer 3:]\textcolor{violet}{The choice of 0.12 seems arbitrary at best. I don’t see any justification for this approach (e.g., literature, simulations, etc). Why not use bi-square, instead of huber, and simply impute for observations with weight 0. While still arbitrary, it’s decided by the bisquare model and isn’t a guesstimate. Further, it would be sensible for any dataset and not just this one. (This would correspond to a smaller threshold, which may catch too many strange outcomes). In any case, it’s hard to justify something so adhoc.}
+\end{description}
+
+* Similar comment to this is addressed above. 
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{You’re using iteratively reweighted least squares with Huber weighting.} 
+\end{description}
+
+* Thank you, we have changed from "M estimation" to "iteratively reweighted least squares".
+
+\begin{description}
+\item[Reviewer 3:]\textcolor{violet}{I’m not sure this is accurate. The robustlmm package in R fits these models rather quickly with thousands of observations. What are the authors using? Does it run out of memory (requires more RAM) or does it take too much time?}
+\end{description}
+
+* The `robustlmm` model would not converge. We have added some text to the paper on this.
+
+
+
+\begin{description}
 \item[Reviewer 2:]\textcolor{violet}{What does “It implies that the fluctuation can still be observed in the data after the treatment.” mean? I suspect this sentence should be replaced with something along the lines of “The figure shows that fluctuations in wages still exist even in the imputed data.”}
 \end{description}
 
@@ -336,23 +356,7 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 
 * **NEED HELP**
 
-\begin{description}
-\item[Reviewer 3:]\textcolor{violet}{You’re using iteratively reweighted least squares with Huber weighting.} 
-\end{description}
 
-* **NEED HELP**
-
-\begin{description}
-\item[Reviewer 3:]\textcolor{violet}{I’m not sure this is accurate. The robustlmm package in R fits these models rather quickly with thousands of observations. What are the authors using? Does it run out of memory (requires more RAM) or does it take too much time?}
-\end{description}
-
-* The `robustlmm` model would not converge. We have added some text to the paper on this.
-
-\begin{description}
-\item[Reviewer 3:]\textcolor{violet}{The choice of 0.12 seems arbitrary at best. I don’t see any justification for this approach (e.g., literature, simulations, etc). Why not use bi-square, instead of huber, and simply impute for observations with weight 0. While still arbitrary, it’s decided by the bisquare model and isn’t a guesstimate. Further, it would be sensible for any dataset and not just this one. (This would correspond to a smaller threshold, which may catch too many strange outcomes). In any case, it’s hard to justify something so adhoc.}
-\end{description}
-
-* **NEED HELP** We have added more explanation on the process used to decide on the threshold. 
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{It’s unclear about what fluctuation or treatment the author is referring to.}
