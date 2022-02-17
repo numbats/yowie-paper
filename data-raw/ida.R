@@ -64,13 +64,15 @@ wages_before_tsibble <- as_tsibble(x = wages_before,
                                      index = year,
                                      regular = FALSE)
 
-set.seed(20210225)
-ggplot(wages_before_tsibble,
-       aes(x = year,
-           y = mean_hourly_wage,
-           group = id)) +
+set.seed(20220207)
+# Select a set with an extreme outlier and a decreasing trend
+# for published paper
+wages_before_tsibble %>%
+  sample_n_keys(size=36) %>%
+  ggplot(aes(x = year,
+           y = mean_hourly_wage)) +
   geom_line(alpha = 0.7) +
-  facet_sample(n_per_facet = 1, n_facets = 20) +
+  facet_wrap(~id, scales="free_y") +
   scale_x_continuous("Year",
                      breaks = seq(1980, 2020, 10),
                      labels = c("80", "90", "00", "10", "20"),
@@ -164,10 +166,20 @@ set.seed(31251587)
 
 # reading the cleaned (imputed wages)
 wages_cleaned <- readRDS(here::here("paper/results/wages_after.rds"))
-sample_id <- sample(unique(wages_cleaned$id), 20)
-sample <- subset(wages_cleaned, id %in% sample_id)
 
-wages_compare <- sample %>%
+# Use the same sample used in first plot
+set.seed(20220207)
+sample_id <- wages_before_tsibble %>%
+  sample_n_keys(size=36) %>%
+  as_tibble() %>%
+  select(id) %>%
+  distinct() %>%
+  pull()
+
+#sample_id <- sample(unique(wages_cleaned$id), 20)
+wages_sample <- subset(wages_cleaned, id %in% sample_id)
+
+wages_compare <- wages_sample %>%
   select(id, year, mean_hourly_wage, wages_rlm) %>%
   rename(mean_hourly_wage_rlm = wages_rlm) %>%
   pivot_longer(c(-id, -year), names_to = "type", values_to = "wages")
