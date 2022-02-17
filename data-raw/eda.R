@@ -200,7 +200,7 @@ ggplot(do, aes(x = yr_wforce,
 
 do_sw_join <- left_join(sw, do, by = c("id", "index"))
 
-ggplot(do_sw_join, aes(x = xp,
+wp_compare1 <- ggplot(do_sw_join, aes(x = xp,
                y = exp)) +
   geom_point(alpha = 0.1) +
   geom_abline(intercept = 0, slope = 1) +
@@ -212,6 +212,19 @@ ggplot(do_sw_join, aes(x = xp,
   theme_bw() +
   theme(aspect.ratio=1)
 
+wp_compare2 <- ggplot(do_sw_join, aes(x = xp,
+                       y = exp)) +
+  geom_density2d_filled(contour_var = "ndensity") +
+  #geom_abline(intercept = 0, slope = 1) +
+  guides(color = "none") +
+  scale_x_sqrt(breaks = seq(0, 13, 1)) +
+  scale_y_sqrt(breaks = seq(0, 13, 1)) +
+  xlab("Work experience (Singer & Willet, 2008)") +
+  ylab("Work experience (refreshed)") +
+  theme_bw() +
+  theme(aspect.ratio=1, legend.position="none")
+
+wp_compare2
 
 # Takeaways:
 
