@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.13)  17 FEB 2022 09:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.12)  17 FEB 2022 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1558,13 +1558,12 @@ LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 228.
 [1
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-[4]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-63.
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+80.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [5] [6] [7] [8] [9] [10]
+) [2] [3] [4] [5] [6] [7] [8] [9] [10]
 
 LaTeX Warning: Empty bibliography on input line 798.
 
@@ -1589,11 +1588,11 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26033 strings out of 480608
- 424771 string characters out of 5903630
+ 26037 strings out of 480608
+ 424885 string characters out of 5903630
  1116130 words of memory out of 5000000
- 41415 multiletter control sequences out of 15000+600000
- 613193 words of font info for 121 fonts, out of 8000000 for 9000
+ 41416 multiletter control sequences out of 15000+600000
+ 613502 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,96p,1273b,1589s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1603,7 +1602,7 @@ Here is how much of TeX's memory you used:
 ro-Bold.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/sourcesanspro
 /SourceSansPro-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1200.pfb>
-Output written on response1.pdf (11 pages, 157816 bytes).
+Output written on response1.pdf (11 pages, 159126 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

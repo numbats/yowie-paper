@@ -55,8 +55,7 @@ feasible?
 }
 \end{description}
 
-* **NEED HELP**
-
+* The approach is for the case study only and is not meant to be extrapolated for other cases. We suggest using a robust mixed model as a better alternative, however, our attempt to fit such a model via `robustlmm` resulted in computational issues. 
  
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{The authors explain the complication of the “years of job experience” variable being unavailable in the raw data. This information is available in the NLSY79 data accessor; it seems to simply have been not selected in the initial data download by the authors.
@@ -106,7 +105,7 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 \item[Reviewer 1:]\textcolor{violet}{"to find the anomaly in the wages values" This comes as a surprise to the reader. What anomaly? The wage anomalies should be mentioned in the introduction so as not to be a surprise at this point in the manuscript.}
 \end{description}
 
-* **NEED HELP**
+* We have added in Introduction that "Section 3 presents the steps ... to find and repair anomalies.". 
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{I don't know that Table 1 is necessary as I don't have anything to compare it to. If the numbers check out, a simple statement to that effect would suffice. Also, what does "(?CHECK)" mean? This needs to be resolved.}
@@ -180,14 +179,14 @@ The next paragraph, which begins “The anomalies are also found” should perha
 \item[Reviewer 2:]\textcolor{violet}{Section 3.2.1 begins “As part of the IDA, which is the model formulation, we build a robust linear regression model to treat the extreme values in the data.” This could use clarification. In 3.2, you said that part of IDA is “ model formulation without any formal statistical inference.” To me, that sounds like using modeling as a descriptive technique, and it’s something I would consider to be more a part of EDA. But then in 3.2.1, while it is perhaps not using modeling in an inferential way, the model is being used for more than just description. I might rephrase the first sentence as follows: “In order to treat the extreme values in the data, we built a robust linear regression model.”}
 \end{description}
 
-* **NEED HELP**
+* Thank you for your suggetion. We have modified the description to "To treat the extreme values in the data, we build a robust linear regression model where we use the robustness weight to determine if a value should be replaced with the fitted value from the model."
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{
 At the bottom of page 11, where you describe the model formation, more detail would be appreciated. You are modeling the mean hourly wage based on year. Why? Is this standard practice for robust linear regression? What is a “slight” residual? Is it defined based on absolute magnitude, or standard deviations, or something else? Later, you say “To minimize the risk of mistakenly identifying an outlier as an “erroneous outlier”.” Is an erroneous outlier a technical term? If not, I think you are trying not to identify erroneous outliers, not mistakenly identifying outliers as erroneous outliers (that’s a double negative). The value of 0.12 feels very specific and out of place in a paper that has had few numerals. Is this a number an expert in RLR would be able to understand? Again, is that a raw value? Is it a standard deviation? Is there literature about how to choose a threshold? Overall, the sentence “We find that 0.12 is the most reasonable value to be the threshold to minimize that drawback’s risk because it still captures the sensible spikes in the data.” is vague and should be expanded upon. What is “that drawback’s risk”? What are “the sensible spikes in the data?” Be more explicit.}
 \end{description}
 
-* **NEED HELP**
+* Thank you for your enquiry. We have re-written this section to better describe our process and intent. In particular, the threshold values are chosen based on extensive eye-balling of the plots of wages over time for each individual. We try to maintain a balance of not overly smoothing the observations but clearly repairing unlikely wage values. As alluded in the section, we believe that an alternative approach such as robust linear mixed models is more appropriate but we did not proceed with this as we had issues fitting the model with `robustlmm` package. In addition, we thought that the use of robust linear models is easier to explain in the context of teaching and the use of non-optimal approach can generate a good discussion about alternative approaches in class. 
 
 \begin{description}
 \item[Reviewer 2:]\textcolor{violet}{What does “It implies that the fluctuation can still be observed in the data after the treatment.” mean? I suspect this sentence should be replaced with something along the lines of “The figure shows that fluctuations in wages still exist even in the imputed data.”}
