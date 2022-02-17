@@ -3,6 +3,7 @@ library(tidyverse)
 select <- dplyr::select
 
 ## ---- raw-data
+# reading the data downloaded from the NLSY79 database.
 source(here::here("data-raw/NLSY79/NLSY79.R"))
 
 ## ---- untidy-data
@@ -15,6 +16,7 @@ new_data_qnames %>%
 
 
 ## ---- dob-tidy
+# tidy the variable of date of birth.
 dob_tidy <- new_data_qnames %>%
   select(id = CASEID_1979,
          year_1979 = `Q1-3_A~Y_1979`,
@@ -51,12 +53,14 @@ has_dob_conflict <- any(dob_tidy$dob_conflict, na.rm = TRUE)
 
 
 ## ---- demog-tidy
+# rename the sex and race
 demog_tidy <- categories_qnames %>%
   select(id = CASEID_1979,
          race = SAMPLE_RACE_78SCRN,
          gender = SAMPLE_SEX_1979)
 
 ## ---- demog-ed
+# tidy highest grade completed
 demog_education <- new_data_qnames %>%
   # in 2018, the variable's name is Q3-4_2018, instead of HGC_2018
   rename(HGC_2018 = `Q3-4_2018`) %>%
@@ -74,6 +78,7 @@ demog_education <- new_data_qnames %>%
   #filter(!is.na(grade)) %>%
   select(-var)
 
+# get the highest grade completed ever
 hgc_ever <- new_data_qnames %>%
   select(id = CASEID_1979,
          hgc_i = HGC_EVER_XRND) %>%
@@ -90,7 +95,9 @@ hgc_ever <- new_data_qnames %>%
 
 ## ---- tidy-hgc
 
-# Get the highest year completed
+# Get the highest year completed from the calculation using `grade` variable
+# This aims to check the consistency between grade and hgc_ever in the database
+
 hgc_calc <- demog_education %>%
   filter(!is.na(grade)) %>%
   group_by(id) %>%
@@ -119,6 +126,8 @@ check_hgc_1 <- left_join(hgc_ever, hgc_calc, by = c("id"), suffix = c("_database
 check_hgc_2 <- left_join(hgc_ever, hgc_calc, by = c("id"), suffix = c("_database", "_calculated")) %>%
   filter(hgc_i_database < hgc_i_calculated)
 
+# we found some issues, i.e., inconsistency between grade and hgc.
+
 # we try to fix this issue
 fix_grade_issue_1 <- left_join(demog_education, hgc_ever, by = "id") %>%
   filter(id %in% check_hgc_1$id) %>%
@@ -134,18 +143,26 @@ fix_grade_issue_2 <- left_join(demog_education, hgc_ever, by = "id") %>%
   group_by(id) %>%
   mutate(grade = ifelse(grade > hgc_i, hgc_i, grade))
 
+# fixed record
 grade_fixed <- rbind(fix_grade_issue_1, fix_grade_issue_2)
 
+
+# filter the unproblematic observations
 `%!in%` <- Negate(`%in%`)
 
 grade_ok <- left_join(demog_education, hgc_ever, by = "id") %>%
   filter(id %!in% grade_fixed$id)
 
+# bind already clean grade
 grade <- rbind(grade_ok, grade_fixed) %>%
   select(id, year, grade)
 
-# get the variable oh GED
+# get the highest grade completed reported in the first round of the survey
+hgc_1979 <- grade %>%
+  filter(year == 1979) %>%
+  select(id, hgc_1979 = grade)
 
+# get the variable oh GED
 ged <- new_data_qnames %>%
   select(id = CASEID_1979,
          starts_with("Q3-8A"))%>%
@@ -156,15 +173,17 @@ ged <- new_data_qnames %>%
   distinct(id, .keep_all = TRUE) %>%
   select(id, dip_or_ged)
 
+# join the hgc_ever and GED as education information for NLSY79 demographic data
 highest_year <- left_join(hgc_ever, ged, by = "id")
 
 ## ---- full-demog
 
-
+# join date of birth, sex, race, and educational information
 full_demographics <- full_join(dob_tidy, demog_tidy, by = "id") %>%
   full_join(highest_year, by = "id") %>%
   mutate(age_1979 = 1979 - (dob_year + 1900))
 
+# create demographic data
 demog_nlsy79 <- full_demographics %>%
   mutate(age_1979 = 1979 - (dob_year + 1900)) %>%
   dplyr::select(id,
@@ -179,29 +198,10 @@ demog_nlsy79 <- full_demographics %>%
          hgc = as.factor(hgc),
          ged = as.factor(ged))
 
-# full_demographics <- full_join(dob_tidy, demog_tidy, by = "id") %>%
-#   full_join(highest_year, by = "id") %>%
-#   mutate(age_1979 = 1979 - (dob_year + 1900))
-#
-# demog_nlsy79 <- full_demographics %>%
-#   mutate(age_1979 = 1979 - (dob_year + 1900)) %>%
-#   dplyr::select(id,
-#                 age_1979,
-#                 gender,
-#                 race,
-#                 hgc,
-#                 hgc_i,
-#                 yr_hgc) %>%
-#   mutate(id = as.factor(id),
-#          age_1979 = as.integer(age_1979),
-#          hgc = as.factor(hgc),
-#          yr_hgc = as.integer(yr_hgc))
-
-
-## ---- save-demog-data
-#usethis::use_data(demog_nlsy79, overwrite = TRUE)
+#==== TIDY THE EMPLOYMENT DATA ===
 
 ## ---- tidy-hours
+
 # make a list for years where we used the "QES-52A"
 year_A <- c(1979:1987, 1993)
 # function to get the hour of work
@@ -231,6 +231,7 @@ hours_all <- map_dfr(years, get_hour)
 
 ## ---- tidy-rate
 
+# getting the rate of each job and each year
 get_rate <- function(year) {
   new_data_qnames %>%
     select(CASEID_1979,
@@ -245,6 +246,7 @@ get_rate <- function(year) {
 rates_all <- map_dfr(years, get_rate)
 
 ## ---- tidy-start-work
+# tidy the variable of year when individual start working
 st_work <- new_data_qnames %>%
   select(CASEID_1979,
          `EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND`) %>%
@@ -252,7 +254,8 @@ st_work <- new_data_qnames %>%
          stwork = `EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND`)
 
 ## ---- tidy-work-experience
-
+# calculating individuals' work experience since the first round of the survey
+# this is longitudinal value for each round of the survey
 exp <- new_data_qnames %>%
   select(CASEID_1979,
          starts_with("WKSWK")) %>%
@@ -265,7 +268,6 @@ exp <- new_data_qnames %>%
   select(CASEID_1979, year, exp_years) %>%
   rename(id = CASEID_1979,
          exp = exp_years)
-
 
 ## ---- tidy-rate-hour
 
@@ -293,8 +295,7 @@ eligible_wages <- hours_wages %>%
 # calculate the mean_hourly_wage
 # flag1 = code 1 for weighted mean
 # code 0 for arithmetic mean
-# XXX we lose 346 individuals here, should they be kept?
-# with NAs for mean hourly wage?
+
 mean_hourly_wage <- eligible_wages %>%
   group_by(id, year) %>%
   #calculate the weighted mean if the number of jobs > 1
@@ -320,25 +321,6 @@ mean_hourly_wage <- eligible_wages %>%
 head(mean_hourly_wage, n = 10)
 
 ## ---- wages-demog-hs
-# # join the wages information and the demographic information by case id.
-# wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id") %>%
-#   left_join(stwork, by = "id") %>%
-#   left_join(exp, by = c("id", "year"))
-#
-# # calculate the years in work force and the age of the subjects in 1979
-# wages_demog <- wages_demog %>%
-#   mutate(yr_hgc = as.numeric(yr_hgc)) %>%
-#   mutate(years_in_workforce = year - stwork_year) %>%
-#   mutate(age_1979 = 1979 - (dob_year + 1900))
-# # filter only the id with high school education
-# wages_before <- wages_demog  %>% filter(grepl("GRADE", hgc))
-# # calculate the number of observation
-# keep_me <- wages_before %>%
-#   count(id) %>%
-#   filter(n > 4)
-# wages_before <- wages_before %>%
-#   filter(id %in% keep_me$id)
-
 
 # join the wages information and the demographic information by case id.
 wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id") %>%
@@ -347,19 +329,15 @@ wages_demog <- left_join(mean_hourly_wage, full_demographics, by="id") %>%
   left_join(exp, by = c("id", "year")) %>%
   mutate(yr_wforce = year - stwork)
 
-# # filter only the id with high school education
-# wages_before <- wages_demog  %>% filter(grepl("GRADE", hgc))
-# # calculate the number of observation
+# filter IDs with at least three observations
 keep_me <- wages_demog %>%
   count(id) %>%
   filter(n >= 3) # XXX why do we need to filter here?
-# is it because this data is processed with rlm only
-# when there are 3 or more cases?
-# how does it get joined again with the individuals
-# with less than 3 measurements?
 
 wages_before <- wages_demog %>%
   filter(id %in% keep_me$id)
 
 ## ---- save-data
 saveRDS(wages_before, here::here("paper/results/wages_before.rds"))
+
+# After this, go to data-raw/data-valid.R to perform more cleaning on the wages data

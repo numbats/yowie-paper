@@ -47,3 +47,6 @@ wages_after <- left_join(wages_before, wages_rlm_dat, by = c("id", "year"))
 ## ---- save-wages-after
 # save it to rds file so it would faster the knitting process
 saveRDS(wages_after, here::here("paper/results/wages_after.rds"))
+
+# To explore the changes before and after the imputation
+# and to save the data (including the dropouts cohort), go to "data-raw/ida.R" file.

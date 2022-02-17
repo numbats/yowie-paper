@@ -58,6 +58,7 @@ kable(as.array(summary(wages_before$mean_hourly_wage)),
   kable_styling()
 
 ## ---- sample-plot
+# take 20 sample of individuals to explore wages by ID
 wages_before_tsibble <- as_tsibble(x = wages_before,
                                      key = id,
                                      index = year,
@@ -82,13 +83,16 @@ wages_before_tsibble %>%
 
 
 ## ---- feature-plot
-wages_high <- filter(wages_before, mean_hourly_wage > 500) %>%
-  as_tibble() %>%
-  head(n = 6)
 
-wages_high2 <- wages_before %>%
-  filter(id %in% wages_high$id)
+# create the summary plots of all of the individuals
+# wages_high <- filter(wages_before, mean_hourly_wage > 500) %>%
+#   as_tibble() %>%
+#   head(n = 6)
+#
+# wages_high2 <- wages_before %>%
+#   filter(id %in% wages_high$id)
 
+# the spaghetty plot of wages before imputation (raw values from database)
 spag <- wages_before %>%
   ggplot(aes(x = year,
              y = mean_hourly_wage,
@@ -103,6 +107,8 @@ spag <- wages_before %>%
   ylab("Hourly wage ($)") #+
   #theme(plot.title = element_text(size = 10))
 
+
+# three feature of wages data (mas, min, median)
 wages_three_feat <- wages_before_tsibble %>%
   features(mean_hourly_wage,
            feat_three_num
@@ -131,6 +137,8 @@ feature_bp <- ggplot(wages_feat_long,
   theme(legend.position = "none") +
   scale_color_viridis_d()
 
+# take one ID (id == 39) to illustrate that some IDs
+# only has one extremely high of wages (inconsistence with other wages )
 plot_high <- ggplot(filter(wages_high2, id == 39)) +
   geom_line(aes(x = year,
                 y = mean_hourly_wage)) +
@@ -156,6 +164,7 @@ spag + feature_bp + plot_high +
 ## ---- compare-data
 set.seed(31251587)
 
+# reading the cleaned (imputed wages)
 wages_cleaned <- readRDS(here::here("paper/results/wages_after.rds"))
 
 # Use the same sample used in first plot
@@ -288,23 +297,10 @@ wages <- wages_clean %>%
              index = year,
              regular = FALSE)
 
-# Create a data set for demographic variables
-demog_nlsy79 <- full_demographics %>%
-  select(id,
-         age_1979,
-         gender,
-         race,
-         hgc,
-         hgc_i,
-         ged = dip_or_ged) %>%
-  mutate(id = as.factor(id),
-         age_1979 = as.integer(age_1979),
-         hgc = as.factor(hgc),
-         ged = as.factor(ged))
 
 # Create a data set for the high school dropouts cohort
-# Create a data set for the high school dropouts cohort
 wages_hs_do <- wages %>%
+  # based on two criteria mentioned in the paper
   filter(hgc_i < 12 | (hgc_i >= 12 & ged != 1)) %>%
   filter(age_1979 <= 17,
          gender == "MALE") %>%
@@ -313,17 +309,24 @@ wages_hs_do <- wages %>%
              regular = FALSE)
 
 
-# investigate the dropouts IDs with the IDs in the original data
+# investigate the dropouts IDs whether it agrees with the IDs in the original data
 
+# number of IDs in the original data
 ori_do_nrow <- wages_hs_do %>% as_tibble() %>% count(id) %>% nrow()
 
+# create a negation function
 `%!in%` <- Negate(`%in%`)
 
+# read the original data
 sw <- brolgar::wages
 
+# filter the IDs in the refreshed data set that do not exist in the original data
 not_in_sw <- sw %>% filter(id %!in% wages_hs_do$id) %>% distinct(id, .keep_all = TRUE)
 
+# inspect it with its demographic value
 join <- left_join(not_in_sw, full_demographics, by = "id")
+
+# === Reasons for it not included in the refreshed data
 
 # some IDs are more than 17 y.o
 join_more_17 <- join %>% filter(age_1979 > 17)
@@ -350,7 +353,7 @@ not_elig <- join %>% filter(hgc_i >= 12 & dip_or_ged == 1)
 
 join_eligible <- join %>% filter(id %!in% not_elig$id)
 
-# filter the wages data
+# filter the wages data that is also eligible to be included in the dropouts data
 also_do <- wages %>% filter(id %in% join_eligible$id)
 
 # bind the initial dropouts data and the eligible data that are not captured in the first filtering
@@ -414,3 +417,5 @@ include_graphics(here::here("paper/figures/flowchart.png"))
 ### ---- flow-chart-blind
 include_graphics(here::here("paper/figures/flowchart_blind.png"))
 
+## The end of data refreshing procedure
+## Go to "data-raw/eda" to see the code of comparison between original and refreshed data.

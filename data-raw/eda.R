@@ -1,9 +1,26 @@
 ## ---- sw_wages
 
+# load the original data
 sw <- brolgar::wages %>%
   group_by(id) %>%
   mutate(index = 1:n(),
          id = as.factor(id))
+
+# load the dataset of hgc in 1979
+hgc_1979 <- hgc_1979 %>%
+  mutate(id = as.factor(id))
+
+# load the refreshed data, join it with the hgc_1979
+do <- wages_hs_do %>%
+  as_tibble() %>%
+  left_join(hgc_1979, by = "id") %>%
+  group_by(id) %>%
+  mutate(lnwage = log(wage),
+         index = 1:n())
+
+# join original and refreshed data, only for the same individuals that appears in the two data
+
+do_sw_join <- inner_join(sw, do, by = c("id", "index"))
 
 sw_wages <- sw %>%
   ggplot(aes(x = xp,
@@ -17,7 +34,7 @@ sw_wages <- sw %>%
   #theme(plot.title = element_text(size = 10)) +
   ylim(0, 5)
 
-sw_wages_mod <- sw %>%
+sw_wages_mod <- do_sw_join %>%
   as_tibble() %>%
   mutate(hgc = ifelse(high_grade < 9, "8TH", "12TH")) %>%
   mutate(race = case_when(black == 1 ~ "black",
@@ -48,11 +65,7 @@ sw_wages_mod <- sw %>%
 
 # filter do data up to 1994 since the textbook data only covers that period.
 
-do <- wages_hs_do %>% #yowie::wages_hs_do %>%
-  as_tibble() %>%
-  group_by(id) %>%
-  mutate(lnwage = log(wage),
-         index = 1:n())
+
 
 do_ref <- do %>%
   ggplot(aes(x = year,
@@ -66,8 +79,8 @@ do_ref <- do %>%
   theme(plot.title = element_text(size = 10)) +
   ylim(0, 5)
 
-do_ref_mod <- do %>%
-  mutate(hgc12 = ifelse(hgc_i < 9, "8TH", "12TH")) %>%
+do_ref_mod <- do_sw_join %>%
+  mutate(hgc12 = ifelse(high_grade < 9, "8TH", "12TH")) %>%
   ggplot(aes(x = exp,
              y = lnwage,
              linetype = hgc12)) +
@@ -206,7 +219,7 @@ ggplot(do, aes(x = yr_wforce,
 
 # ---- compare-xp-sw
 
-do_sw_join <- left_join(sw, do, by = c("id", "index"))
+do_sw_join <- inner_join(sw, do, by = c("id", "index"))
 
 wp_compare1 <- ggplot(do_sw_join, aes(x = xp,
                y = exp)) +
