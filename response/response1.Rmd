@@ -79,8 +79,6 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 * We have corrected all minor grammatical errors pointed out by the reviewers.
 
 
-* We have made the descriptions of the steps more explicit as follows [LIST OF THE CHANGES]
-
 
 \begin{description}
 \item[Reviewer 1:]\textcolor{violet}{It's unclear from context what is being referred to from the Huebner et al 2020 citation.}
