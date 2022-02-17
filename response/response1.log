@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.12)  17 FEB 2022 11:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.13)  17 FEB 2022 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1588,11 +1588,11 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26037 strings out of 480608
- 424885 string characters out of 5903630
+ 26043 strings out of 480608
+ 425083 string characters out of 5903630
  1116130 words of memory out of 5000000
  41416 multiletter control sequences out of 15000+600000
- 613502 words of font info for 123 fonts, out of 8000000 for 9000
+ 614120 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,96p,1273b,1589s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1602,7 +1602,7 @@ Here is how much of TeX's memory you used:
 ro-Bold.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/sourcesanspro
 /SourceSansPro-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1200.pfb>
-Output written on response1.pdf (11 pages, 159126 bytes).
+Output written on response1.pdf (11 pages, 159052 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

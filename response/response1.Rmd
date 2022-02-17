@@ -303,7 +303,7 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{The author switches between gender (man/woman/etc) and sex (male/female/etc.) throughout the manuscript. Further, the explanation here covers important ideas in teaching how to use data on gender/sex and race, but it’s just the beginning of ideas. It might be better to discuss the questions on the survey and discuss possible shortcomings, rather than make a somewhat empty gesture towards today’s standard.}
 \end{description}
 
-* **NEED HELP**
+* **NEED HELP** The paper has been fixed so that male/female is used consistently. We have also rewritten the paragraph to focus on the survey questions and shortcomings.
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{The discussion around highest grade completed is mechanical in what was done, but lacks substantive reasoning for those decisions and possible downstream consequences.}
@@ -378,7 +378,7 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{(page 14, line 46) Thank you for this acknowledgment. I think this is true for most analyses. It doesn’t mean that you shouldn’t transparently and fully investigate your own choices.}
 \end{description}
 
-* NEED HELP We are really not sue what this refers to.
+* NEED HELP We are really not sure what this refers to.
 
 
 
