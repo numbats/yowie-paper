@@ -10,34 +10,71 @@ sw <- brolgar::wages %>%
 hgc_1979 <- hgc_1979 %>%
   mutate(id = as.factor(id))
 
-# XXX Re-do of the comparison section
-# tabular hgc
+# Comparing the original and refreshed data
+# tabulating hgc
 sw_hgc <- sw %>%
   as_tibble() %>%
   select(id, high_grade) %>%
   distinct() %>%
-  count(high_grade)
+  count(high_grade) %>%
+  rename(hgc = high_grade, original = n)
 
 do_1994 <- wages_hs_do %>%
   filter(year <= 1994) %>%
   as_tibble() %>%
   group_by(id) %>%
-  mutate(hgc_1994 = max(grade[between(year, 1979, 1994)], na.rm=TRUE)) %>%
+  mutate(hgc_1994 = max(grade[between(year, 1979, 1994)],
+                        na.rm=TRUE)) %>%
   ungroup()
 
 d94_hgc <- do_1994 %>%
   select(id, hgc_1994) %>%
   filter(between(hgc_1994, 6, 12)) %>%
   distinct() %>%
-  count(hgc_1994)
+  count(hgc_1994) %>%
+  rename(hgc = hgc_1994, refreshed = n)
+
+hgc_join <- left_join(sw_hgc, d94_hgc) %>%
+  mutate(original = -original, hgc = factor(hgc)) %>%
+  pivot_longer(cols = c(original, refreshed),
+               names_to = "subset",
+               values_to = "count")
+
+hgc_p <- ggplot(hgc_join, aes(x=hgc, y=count, fill=subset)) +
+  geom_col() +
+  facet_wrap(~subset, scales = "free_x") +
+  coord_flip() +
+  scale_y_continuous(expand = c(0, 0)) +
+  scale_fill_brewer("", palette="Dark2") +
+  ggtitle("(A)") +
+  theme_bw() +
+  theme(panel.spacing.x = unit(0, "mm"),
+        legend.position = "none")
 
 # compare distributions of exp
-exp_p1 <- sw %>% ggplot(aes(x=xp)) +
-  geom_density(fill="black", alpha=0.7) +
-  xlim(c(0, 13))
-exp_p2 <- do_1994 %>% ggplot(aes(x=exp)) +
-  geom_density(fill="black", alpha=0.7) +
-  xlim(c(0, 13))
+exp_sw <- sw %>%
+  as_tibble() %>%
+  select(xp) %>%
+  rename(exp=xp) %>%
+  mutate(subset = "original")
+
+exp_d94 <- do_1994 %>%
+  as_tibble() %>%
+  select(exp) %>%
+  mutate(subset = "refreshed")
+
+exp_join <- bind_rows(exp_sw, exp_d94)
+
+exp_p <- ggplot(exp_join) +
+  geom_density(aes(x=exp, colour=subset, fill=subset)) +
+  facet_wrap(~subset, ncol=1) +
+  xlim(c(0,13)) +
+  xlab("Experience") + ylab("") +
+  scale_fill_brewer("", palette="Dark2") +
+  scale_colour_brewer("", palette="Dark2") +
+  ggtitle("(B)") +
+  theme_bw() +
+  theme(legend.position = "none")
 
 # tabulate race
 sw_d <- sw %>%
@@ -52,13 +89,32 @@ d94_d <- do_1994 %>%
   count(race)
 
 # compare density of wages
-wg_p1 <- sw %>% ggplot(aes(x=ln_wages)) +
-  geom_density(fill="black", alpha=0.7) +
-  xlim(c(0.5, 4.5))
-wg_p2 <- do_1994 %>% ggplot(aes(x=log(wage))) +
-  geom_density(fill="black", alpha=0.7) +
-  xlim(c(0.5, 4.5))
+wg_sw <- sw %>%
+  as_tibble() %>%
+  select(ln_wages) %>%
+  mutate(subset = "original")
 
+wg_d94 <- do_1994 %>%
+  as_tibble() %>%
+  mutate(ln_wages = log(wage)) %>%
+  select(ln_wages) %>%
+  mutate(subset = "refreshed")
+
+wg_join <- bind_rows(wg_sw, wg_d94)
+
+wg_p <- ggplot(wg_join) +
+  geom_density(aes(x=ln_wages, colour=subset, fill=subset)) +
+  facet_wrap(~subset, ncol=1) +
+  xlim(c(0,4)) +
+  xlab("Wages (natural log)") + ylab("") +
+  scale_fill_brewer("", palette="Dark2") +
+  scale_colour_brewer("", palette="Dark2") +
+  ggtitle("(C)") +
+  theme_bw() +
+  theme(legend.position = "none")
+
+## compare-subsets
+hgc_p + exp_p + wg_p
 
 # load the refreshed data, join it with the hgc_1979
 do <- wages_hs_do %>%

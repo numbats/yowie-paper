@@ -505,6 +505,8 @@ There are many steps and decisions made to go from raw to input to valid data. F
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
+\begin{center}\includegraphics[width=468px]{figures/sw_wages-1} \end{center}
+
 The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar}. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This would require first identifying individuals who dropped out of high school.
 
 \hypertarget{filtering-determining-who-is-a-dropout}{%
@@ -551,6 +553,8 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 \subsection{Summaries of original with refreshed dropouts data}\label{summaries-of-original-with-refreshed-dropouts-data}}
 
 Because the original data does not have the year of collection, it is not possible to directly merge the two subsets. Merging longitudinal data requires both the key (\texttt{id}) and the index (ideally survey year). In the original data the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets has to be conducted in a two sample fashion rather than as a matched sample.
+
+Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets.
 
 \hypertarget{takeaways}{%
 \subsection{The takeaways}\label{takeaways}}

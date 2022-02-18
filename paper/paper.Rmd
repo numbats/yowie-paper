@@ -510,6 +510,12 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 
 Because the original data does not have the year of collection, it is not possible to directly merge the two subsets. Merging longitudinal data requires both the key (`id`) and the index (ideally survey year). In the original data the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets has to be conducted in a two sample fashion rather than as a matched sample. 
 
+Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets.
+
+```{r compare-subsets, fig.cap = "Comparison of original textbook example with refreshed data: (A) highest grade completed, (B) experience and (C) log wages", fig.width = 9, fig.height = 7, out.width = "100%", cache = FALSE}
+```
+
+
 ## The takeaways {#takeaways}
 
 There are two aspects of the original data that we cannot replicate. The first is that the calculation of the work experience is not clearly articulated. @SingerJudithD2003Alda mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide [@nlsy79guide], we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. This is used to calculate the variable. It produces a highly correlated results as shown in Figure \ref{fig:compare-xp-sw}. 
