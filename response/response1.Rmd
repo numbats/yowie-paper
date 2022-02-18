@@ -352,9 +352,7 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{Figure 2 is helpful for observing the data there is a lot of variability in both hourly wage and trends. A discussion about censored data might be helpful here – this is not something you impute from the data.} 
 \end{description}
 
-* **NEED HELP**
-
-
+* Added some additional text on this.
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{It’s unclear about what fluctuation or treatment the author is referring to.}
