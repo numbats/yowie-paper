@@ -42,7 +42,7 @@ hgc_join <- left_join(sw_hgc, d94_hgc) %>%
                values_to = "count")
 
 hgc_p <- ggplot(hgc_join, aes(x=hgc, y=count, fill=subset)) +
-  geom_col() +
+  geom_col(alpha=0.9) +
   facet_wrap(~subset, scales = "free_x") +
   scale_y_continuous("Count",
                      breaks = c(-300, -200, -100, 0, 100, 200, 300),
@@ -70,7 +70,7 @@ exp_d94 <- do_1994 %>%
 exp_join <- bind_rows(exp_sw, exp_d94)
 
 exp_p <- ggplot(exp_join) +
-  geom_density(aes(x=exp, colour=subset, fill=subset)) +
+  geom_density(aes(x=exp, colour=subset, fill=subset), alpha=0.9) +
   facet_wrap(~subset, ncol=1) +
   xlim(c(0,13)) +
   xlab("Experience") + ylab("") +
@@ -107,7 +107,7 @@ wg_d94 <- do_1994 %>%
 wg_join <- bind_rows(wg_sw, wg_d94)
 
 wg_p <- ggplot(wg_join) +
-  geom_density(aes(x=ln_wages, colour=subset, fill=subset)) +
+  geom_density(aes(x=ln_wages, colour=subset, fill=subset), alpha=0.9) +
   facet_wrap(~subset, ncol=1) +
   xlim(c(0,4)) +
   xlab("Wages (natural log)") + ylab("") +

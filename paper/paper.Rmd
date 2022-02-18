@@ -531,7 +531,7 @@ Figure \ref{fig:compare-subsets} contains summaries of corresponding variables i
 ```{r calculate-summaries-on-subsets}
 ```
 
-```{r compare-subsets, fig.cap = "Comparison of original textbook example with refreshed data: (A) highest grade completed, (B) experience and (C) log wages", fig.width = 9, fig.height = 7, out.width = "100%", cache = FALSE}
+```{r compare-subsets, fig.cap = "Comparison of original and refreshed data: (A) highest grade completed, (B) experience and (C) log wages. Some difference in wages would be expected because the refreshed data is not inflation-adjusted, but the two sets are reasonably similar.", fig.width = 9, fig.height = 5, out.width = "100%", cache = FALSE}
 ```
 
 
