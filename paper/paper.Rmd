@@ -470,8 +470,8 @@ The list of variables provided in the three new datasets are as follows:
   2. `age_1979`: The age of the individual in 1979.
   3. `gender`: Gender of the individual, FEMALE and MALE.
   4. `race` : Race of the individual, NON-BLACK,NON-HISPANIC; HISPANIC; BLACK.
-  5. `hgc`: The highest grade completed.
-  6. `hgc_i`: Integer value of the highest grade completed.
+  5. `hgc`: The highest grade completed ever.
+  6. `hgc_i`: Integer value of the highest grade completed ever.
   7. `ged`: Wether the respondent had a high school diploma or Graduate Equivalency Degree (GED). 1: High school diploma; 2: GED; 3: Both.
   
 **`wages`** and its subset for high school dropouts cohort **`wages_hs_do`**:
@@ -499,7 +499,7 @@ The list of variables provided in the three new datasets are as follows:
 
 
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
-The original set, containing wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994, is available in the R package `brolgar`. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This would require first identifying individuals who dropped out of high school.
+The original set, containing wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994, is available in the R package `brolgar`. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This requires first identifying individuals who dropped out of high school.
 
 ## Filtering: Determining who is a dropout
 
@@ -537,15 +537,18 @@ Figure \ref{fig:compare-subsets} contains summaries of corresponding variables i
 
 ## The takeaways {#takeaways}
 
-There are two aspects of the original data that we cannot replicate. The first is that the calculation of the work experience is not clearly articulated. @SingerJudithD2003Alda mention that the temporal variable is the years of experience since the first day of work. However, this exact same variable is not explicitly available in the database. From the NLSY79 topical guide [@nlsy79guide], we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. This is used to calculate the variable. It produces a highly correlated results as shown in Figure \ref{fig:compare-xp-sw}. 
+There are several aspects of the original data that were difficult to replicate. Calculation of the work experience is not clearly articulated. @SingerJudithD2003Alda describe the temporal variable as the years of experience since the first day of work. This variable is not explicitly available in the database. From the NLSY79 topical guide [@nlsy79guide], we find that several variables are tagged as work experience-related variables. One of them is the weeks of worked since the last interview. This is used to calculate the variable. It produces reasonably similar but not exactly the same values. Because the original data set did not include year of the survey, it cannot be precisely compared.
 
-Secondly, in the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data added to and released from the survey. Instead we have provided a function in the R package, `r yowie`, for users to conduct the inflation adjustment when they are ready to analyse the data.  
+Highest grade completed has some confusion. There are several ways that this is reported, including the highest grade ever completed, and also the hgc at each survey year. To match the original data, it is appropriate to use the hgc while in high school. The documentation suggests that this variable is available but it is not actually present in the data. Hence, for matching the original data, we have calculated the hgc to match the hgc achieved in the years between 1979 and 1994 based on the yearly survey value. The result does not exactly match with the original for a few individuals.
+
+In the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data added to and released from the survey. Instead we have provided a function in the R package, `r yowie`, for users to conduct the inflation adjustment when they are ready to analyse the data.  
 
 <!--AE comment: “The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.-->
 It is important to note that the treatment of unlikely wages differs in the refreshed data. In the original data by @SingerJudithD2003Alda, wages greater than $75 are set to be missing. However, this value is too low to be set as the maximum threshold, and it doesn't take into account temporal neighbors for an individual. We opted to use the weights from a robust linear regression to determine what should be regarded as extreme and imputed them with their predicted values as as described in Section \@ref(censor).
 
-Figure \ref{fig:plotting-sw-do} shows a comparison of the two sets. (A direct ID matching is not possible.) There are 888 individuals in the original and 1,188 individuals in the refreshed data. This suggests some individuals were removed in the original data.
-In addition, in the original set the racial breakdown was 246 Black, 204 Hispanic and 438 White participants, while in the refreshed data there are 346 Black, 219 Hispanic, and 623 White participants, so the proportions have not been exactly reproduced. On education, in the refreshed data there are very few individuals with less than a 12th grade education, which is different from the original. <!--AE comment: How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?--> In the original data there were 366 individuals with up to 8th grade and 522 9th-12th grade, as compared to 967 with 12th grade in the refreshed data. 
+Lastly, the race variable is almost perfectly matched. The id's in the dropouts subset of the refreshed data all correspond to males, which is a perfect match with the original subset.
+
+ <!--AE comment: How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?--> 
 
 
 # Summary {#summary}
