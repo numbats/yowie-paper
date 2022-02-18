@@ -462,7 +462,7 @@ From this stage forward, we assume that we already have valid data. We also subs
 ```{r flow-chart, fig.cap="(ref:flow-chart)", out.width="85%", eval = !CENSOR}
 ```
 
-In addition, the list of variables that we cover in those three datasets are as follows:
+The list of variables provided in the three new datasets are as follows:
 
 **`demog_nlsy79`** :
 
@@ -498,17 +498,6 @@ In addition, the list of variables that we cover in those three datasets are as 
 # Comparison of refreshed with the original data {#compare}
 
 
-```{r sw_wages}
-```
-
-```{r do_refreshed}
-```
-
-```{r compare-sw-do}
-```
-
-
-
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
 The original set, containing wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994, is available in the R package `brolgar`. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This would require first identifying individuals who dropped out of high school.
 
@@ -533,17 +522,14 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 <!--AE comment: what does the natural log have to do with the y-axis?-->
 <!--AE comment: For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.-->
 
-```{r compare-xp-sw, fig.cap = "Density plot comparing the calculated work experience in the refreshed data, up to 1994, with that of the original data for male dropouts. Experience is shown on a square root scale to reduce the skewness. The highest concentration of observations is along the x=y axis, which means that most observations at most time points are similar.", out.width = "70%", eval=FALSE}
-```
-
-```{r plotting-sw-do, fig.cap = "Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.", fig.width = 9, fig.height = 5, out.width = "100%", cache = FALSE, eval=FALSE}
-```
-
 ## Summaries of original with refreshed dropouts data
 
 Because the original data does not have the year of collection, it is not possible to directly merge the two subsets. Merging longitudinal data requires both the key (`id`) and the index (ideally survey year). In the original data the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets has to be conducted in a two sample fashion rather than as a matched sample. 
 
 Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets.
+
+```{r calculate-summaries-on-subsets}
+```
 
 ```{r compare-subsets, fig.cap = "Comparison of original textbook example with refreshed data: (A) highest grade completed, (B) experience and (C) log wages", fig.width = 9, fig.height = 7, out.width = "100%", cache = FALSE}
 ```
@@ -555,32 +541,11 @@ There are two aspects of the original data that we cannot replicate. The first i
 
 Secondly, in the original dataset, wages were inflation-adjusted to 1990 prices. This is not done for the refreshed data because we plan to keep refreshing it as the data added to and released from the survey. Instead we have provided a function in the R package, `r yowie`, for users to conduct the inflation adjustment when they are ready to analyse the data.  
 
-```{r compare-xp-to-yrworkforce, fig.cap = "The association between the lenght of time in the workforce and the work experience. Generally, the longer someone were in the workforce, the higher the work experience. However, some of the respondents have much lower working experience compared to their duration in the workforce. This is possible when someone ", eval=FALSE}
-```
-
 <!--AE comment: “The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.-->
 It is important to note that the treatment of unlikely wages differs in the refreshed data. In the original data by @SingerJudithD2003Alda, wages greater than $75 are set to be missing. However, this value is too low to be set as the maximum threshold, and it doesn't take into account temporal neighbors for an individual. We opted to use the weights from a robust linear regression to determine what should be regarded as extreme and imputed them with their predicted values as as described in Section \@ref(censor).
 
 Figure \ref{fig:plotting-sw-do} shows a comparison of the two sets. (A direct ID matching is not possible.) There are 888 individuals in the original and 1,188 individuals in the refreshed data. This suggests some individuals were removed in the original data.
 In addition, in the original set the racial breakdown was 246 Black, 204 Hispanic and 438 White participants, while in the refreshed data there are 346 Black, 219 Hispanic, and 623 White participants, so the proportions have not been exactly reproduced. On education, in the refreshed data there are very few individuals with less than a 12th grade education, which is different from the original. <!--AE comment: How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?--> In the original data there were 366 individuals with up to 8th grade and 522 9th-12th grade, as compared to 967 with 12th grade in the refreshed data. 
-
-```{r summaries, eval=FALSE}
-```
-
-<!-- Hence, in this section, we will compare how close the `wages_hs_do`, henceforth refreshed data, to the textbook data. It is also worth noting that the textbook data is reused from @MurnaneRichardJ1999DMDB’s paper. Hence, it is not directly extracted from the NLSY79 database.  @SingerJudithD2003Alda do not state the time frame covered by the data. However, from @MurnaneRichardJ1999DMDB’s paper, we find that the textbook data cover the survey period from 1979-1994. Hence, for comparison purposes, we filter the refreshed data only until 1994. 
-
-In the absence of highs chool dropouts criteria in the textbook data, we create a clearer criteria of high school dropouts as mentioned in Section \@ref(#target). Consequently, we do not have the same ID of high-school dropouts as in the textbook data. The textbook data has `r nrow(sw_id)` IDs included, while the refreshed data has `r nrow(do_id)` IDs. Furthermore, there are only `r nrow(sw_do)` IDs included both in the textbook and the refreshed data. After observing @MurnaneRichardJ1999DMDB’s paper, it is mentioned that the data is randomly drawn from the low income subsample of the NLSY. This is probably the reason why, even using some criteria, we cannot match the dropouts in the textbook and the refreshed data.
-
-Further, the temporal variable used in the textbook data is experience, instead of year. The only explanation we found regarding this variable is that it is derived from the years of IDs’ experience since their first job. @SingerJudithD2003Alda stated that this variable reflects the specific moment in each ID labor force history associated with each wage observation. 
-Since it is not clearly articulated, we decide to keep the temporal variable in the refreshed data as year. Accordingly, in this comparison, we only compare the same ID but not the same temporal variable. 
-
-Regarding the wages, the textbook data express the wages as inflation adjusted with 1990 dollars as constant [@SingerJudithD2003Alda]. However, it is not stated how exactly the wages are adjusted. Note that in the refreshed data we publish in `yowie`, we do not adjust the data with inflation because the time frame covered ranged from 1979-2018. Hence, we allow flexibility to the data user to adjust, not adjust,  or adjust it with different base years. For comparison purposes, we adjust the wages with the average Consumer Price Index For All Urban Consumers (CPI-U) we got from @fed. -->
-
-
-
-<!-- Figure \ref{fig:plotting-sw-do} shows the comparison between the textbook and the refreshed data. Even though it has different temporal variables and possibly different CPI indicators used in inflation adjustment, we can still capture some of the patterns in the refreshed data.
-
-From this comparison, we learn that we cannot make an apple to apple comparison and produce the exact same data as the textbook due to the absence of clearly articulated data extraction and derivation process. Hence, the takeaway is that it is imperative to disclose how the data derived from the initial source to make data analysis reproducible. This is why in this paper, we show the practice of reproducible and responsible data cleaning workflow to make sure the longitudinal data from a continuous survey can be refreshed.-->
 
 
 # Summary {#summary}
