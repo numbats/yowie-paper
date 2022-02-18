@@ -282,7 +282,7 @@ wages_clean <- wages_cleaned %>%
 
 # rename and select the wages in tidy
 wages <- wages_clean %>%
-  select(id, year, mean_hourly_wage, age_1979, gender, race, grade, hgc, hgc_i, ged = dip_or_ged,
+  select(id, year, mean_hourly_wage, age_1979, gender, race, grade, hgc, hgc_i, hgc_1979, ged = dip_or_ged,
          number_of_jobs, total_hours, stwork, yr_wforce, exp, is_wm, is_pred) %>%
   mutate(id = as.factor(id),
          hgc = as.factor(hgc),

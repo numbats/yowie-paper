@@ -265,11 +265,11 @@ Thus we re-arrange and wrangle the data into tidy data form, columns correspondi
 
 ### Tidying demographic variables {#tidydemog}
 
-In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed reported in each round of survey (`grade`), highest grade completed ever reported (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`), and whether the graduate equivalency diploma is obtained (`ged`).
+In our final target data, we wish to include the demographic variables with variable names specified in brackets: gender (`gender`), race (`race`), age (`age_1979`), highest grade completed reported in each round of survey (`grade`), highest grade completed ever reported (`hgc`), highest grade completed in terms of years, e.g. 9th grade = 9, 3rd year college = 15, (`hgc_i`), highest grade completed in 1979 (`hgc_1979`) and whether the graduate equivalency diploma is obtained (`ged`).
 
-It is worth noting that `gender` comes from a variable called `sex` in the database. We use the term `gender` as the reports about the data on various pages in the website more commnly use `gender`. Gender, as provided in the data, is self-reported and only has two categories, "male" and "female". The interchangeable use of these terms reflects that gender and sex are sometimes regarded as similar in surveys, although they are not. Measuring gender as a binary variable has the potential to fail to capture people who do not identify themselves as either male or female or people whose gender does not align with their sex classification [@kennedy2020using]. From a statistical perspective, this sometimes difficult the adjustment of survey statistics to the population when gender is measured, for example, with three categories, and the census measured it with only two categories and used the term sex [@kennedy2020using]. Hence, for modern societal studies, it is highly recommended to separate sex and gender in the survey question and provide more options to respond to questions on gender. This discourse should also be emphasized in teaching that using these two variables should be accompanied by special attention. Similar this also relates to race, as reported in the database. When doing an analysis with this variable, one should keep in mind that the purpose is to study racism rather than race. 
+For `gender` and `race`, we only rename the column names provided in the raw data, `new_data_qnames`. It is worth noting that `gender` comes from a variable called `sex` in the database. We use the term `gender` as the reports about the data on various pages in the website more commonly use `gender`. Gender, as provided in the data, is self-reported and only has two categories, "male" and "female". The interchangeable use of these terms reflects that gender and sex are sometimes regarded as similar in surveys, although they are not. Measuring gender as a binary variable has the potential to fail to capture people who do not identify themselves as either male or female or people whose gender does not align with their sex classification [@kennedy2020using]. From a statistical perspective, this sometimes difficult the adjustment of survey statistics to the population when gender is measured, for example, with three categories, and the census measured it with only two categories and used the term sex [@kennedy2020using]. Hence, for modern societal studies, it is highly recommended to separate sex and gender in the survey question and provide more options to respond to questions on gender. This discourse should also be emphasized in teaching that using these two variables should be accompanied by special attention. Similar this also relates to race, as reported in the database. When doing an analysis with this variable, one should keep in mind that the purpose is to study racism rather than race. 
 
-The raw data, `new_data_qnames`, contains the variables `Q1-3_A~Y_1979` and `Q1-3_A~Y_1981` which records two versions of the birth year of the respondent; this is also the case for the record of birth month (`Q1-3_A~M_1979` and `Q1-3_A~M_1981`). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year. 
+`new_data_qnames`, contains the variables `Q1-3_A~Y_1979` and `Q1-3_A~Y_1981` which records two versions of the birth year of the respondent; this is also the case for the record of birth month (`Q1-3_A~M_1979` and `Q1-3_A~M_1981`). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year. 
 
 
 ```{r dob-tidy}
@@ -282,9 +282,11 @@ The raw data, `new_data_qnames`, contains the variables `Q1-3_A~Y_1979` and `Q1-
 <!--AE comment: I was confused by the following section: “We choose to use this revised May data because it seemed to have less missing and presumably has been checked. However, there is no revised May data for 2012, 2014, 2016, and 2018, thus, we use the ordinary May data for these years.” I was assuming the data was collected on a yearly basis, but this section suggests it was collected each month. Please clarify somewhere in the paper. 
 -->
 
-The refreshed dataset has two types of highest grade completed. The first one is the highest grade completed ever reported in the database (`hgc` and `hgc_i`, for the factor and integer type, respectively). For each ID, there is only one value of `hgc` and `hgc_i`. This variable is obtained from `new_data_qnames` with name `HGC_EVER_XRND` and stored in year unit (e.g., 10, 11, 12, 13, and so on), we only rename the column name to be `hgc_i` and recode it so we have the factor data type (e.g., 10th grade, 11th grade, and so on). 
+The refreshed dataset has three types of highest grade completed. The first one is the highest grade completed ever reported in the database (`hgc` and `hgc_i`, for the factor and integer type, respectively). For each ID, there is only one value of `hgc` and `hgc_i`. This variable is obtained from `new_data_qnames` with name `HGC_EVER_XRND` and stored in year unit (e.g., 10, 11, 12, 13, and so on), we only rename the column name to be `hgc_i` and recode it so we have the factor data type (e.g., 10th grade, 11th grade, and so on). 
 
-The second one is the highest grade completed corresponds to value  reported in each round of the survey (`grade`), meaning that the value can change. We decide to include this variable in the refreshed dataset to enrich the analysis possibly done with the data, for example if one would like to explore how the changes of highest grade completed in individuals affecting their wages. The highest grade completed are recorded in `new_data_qnames` as variables beginning with `Q3-4` and `HGC` with suffix of the year it was recorded. In addition the variables beginning with `HGCREV` contain the revised data. We choose to use this revised data because it seemed to have less missing and presumably has been checked. However, there is no revised data for 2012, 2014, 2016, and 2018, thus, we use the ordinary data for these years. <!--We also check the consistency between `hgc_i` and `grade`. Some problematic observations were found, for example, `grade` value is greater than `hgc_i`. We then fix this problem by replacing those `grade` that is greater than its `hgc_i`. -->
+The second one is the highest grade completed in 1979 (`hgc_1979`), the first round of the survey. We decide to include this variable in the dataset for comparison with the original data-purpose. The original data only covers the period until 1994. Hence, `hgc` in the refreshed data, which is the state of `hgc` in 2018, and the `hgc` in the original data will not be comparable. 
+
+The third one is the highest grade completed corresponds to value  reported in each round of the survey (`grade`), meaning that the value can change. We decide to include this variable in the refreshed dataset to enrich the analysis possibly done with the data, for example if one would like to explore how the changes of highest grade completed in individuals affecting their wages. The highest grade completed are recorded in `new_data_qnames` as variables beginning with `Q3-4` and `HGC` with suffix of the year it was recorded. In addition the variables beginning with `HGCREV` contain the revised data. We choose to use this revised data because it seemed to have less missing and presumably has been checked. However, there is no revised data for 2012, 2014, 2016, and 2018, thus, we use the ordinary data for these years. <!--We also check the consistency between `hgc_i` and `grade`. Some problematic observations were found, for example, `grade` value is greater than `hgc_i`. We then fix this problem by replacing those `grade` that is greater than its `hgc_i`. -->
 
 The next step is tidying to obtain `ged`. Along with `hgc`, `ged` is used to subset the data to the high school dropouts as in the original data. The graduate equivalency status is saved as variable started with "Q3-8A" followed by the year of the survey. Thus, we only separate the year and the GED status. Although there GED status is asked in each round of the survey, we only retain the latest status of one's GED.  
 
@@ -346,7 +348,7 @@ Work experience is one of the most important variables in @SingerJudithD2003Alda
 
 Experience is years after entering the labor force. It represents the difference between the day an individual enters the labor force (`EMPLOYERS_ALL_STARTDATE_ORIGINAL.01~Y_XRND` in the database) relative to the date of the survey, which we call `yr_wforce`. However, using this calculation produced numbers which don't quite match with the original data. 
 
-Reading the section titled ["Topical Guide to the Data"](https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience) in the guide, suggests that it should be calculated based on the variable "number of weeks worked since last interview". This would remove periods of unemployment which makes sense when measuring experience while actually working. Since it is only measured since the last interview, this needs to be cumulated for each survey year. This produced results more similar to the original data (as discussed futher in Section \@ref(takeaways)).
+Reading the section titled ["Topical Guide to the Data"](https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/employment/work-experience) in the guide, suggests that it should be calculated based on the variable "number of weeks worked since last interview". This would remove periods of unemployment which makes sense when measuring experience while actually working. Since it is only measured since the last interview, this needs to be cumulated for each survey year. This produced results more similar to the original data (as discussed further in Section \@ref(takeaways)).
 
 <!--It is conceptually motivated by the variables available in the original data and it also illustrates how one would create a new variable from the information provided by the database, a variable that is more useful than those provided.-->
 
@@ -470,9 +472,10 @@ In addition, the list of variables that we cover in those three datasets are as 
   2. `age_1979`: The age of the individual in 1979.
   3. `gender`: Gender of the individual, FEMALE and MALE.
   4. `race` : Race of the individual, NON-BLACK,NON-HISPANIC; HISPANIC; BLACK.
-  5. `hgc`: The highest grade completed.
-  6. `hgc_i`: Integer value of the highest grade completed.
-  7. `ged`: Wether the respondent had a high school diploma or Graduate Equivalency Degree (GED). 1: High school diploma; 2: GED; 3: Both.
+  5. `hgc`: The highest grade completed ever.
+  6. `hgc_i`: Integer value of the highest grade completed ever.
+  7. `hgc_1979`: The highest grade completed in 1979 (integer value). 
+  8. `ged`: Wether the respondent had a high school diploma or Graduate Equivalency Degree (GED). 1: High school diploma; 2: GED; 3: Both.
   
 **`wages`** and its subset for high school dropouts cohort **`wages_hs_do`**:
 
@@ -482,17 +485,19 @@ In addition, the list of variables that we cover in those three datasets are as 
   4. `age_1979`: The age of the individual in 1979.
   5. `gender`: Gender of the individual: FEMALE and MALE.
   6. `race`: Race where the individual belongs to: NON-BLACK,NON-HISPANIC; HISPANIC; BLACK.
-  7. `hgc`: The highest grade completed ever.
-  8. `hgc_i`: Integer value of the highest grade completed ever.
-  9. `grade`: Integer value of the highest grade completed corresponding to `year`. 
-  10. `ged`: Wether the respondent had a high school diploma or Graduate Equivalency Degree (GED). 1: High school diploma; 2: GED; 3: Both.
-  11. `njobs`: Number of jobs that an individual has.
-  12. `hours:`: The total number of hours the individual usually works per week.
-  13. `stwork`: The year when the individual starting to work.
-  14. `yr_wforce`: The length of time in the workforce in years (`year` - `stwork`).
-  15. `exp`: Work experience, i.e., the number of years of working. 
-  16. `is_wm`: Whether the mean hourly wage is weighted mean, using the hour work as the weight, or regular/arithmetic mean. TRUE = is weighted mean. FALSE = is regular mean.
-  17. `is_pred`: Whether the mean hourly wage is a predicted value of RLM or not.
+  7. `grade`: Integer value of the highest grade completed corresponding to `year`. 
+  8. `hgc`: The highest grade completed ever.
+  9. `hgc_i`: Integer value of the highest grade completed ever.
+  10. `hgc_1979`: The highest grade completed in 1979 (integer value).
+  
+  11. `ged`: Wether the respondent had a high school diploma or Graduate Equivalency Degree (GED). 1: High school diploma; 2: GED; 3: Both.
+  12. `njobs`: Number of jobs that an individual has.
+  13. `hours:`: The total number of hours the individual usually works per week.
+  14. `stwork`: The year when the individual starting to work.
+  15. `yr_wforce`: The length of time in the workforce in years (`year` - `stwork`).
+  16. `exp`: Work experience, i.e., the number of years of working. 
+  17. `is_wm`: Whether the mean hourly wage is weighted mean, using the hour work as the weight, or regular/arithmetic mean. TRUE = is weighted mean. FALSE = is regular mean.
+  18. `is_pred`: Whether the mean hourly wage is a predicted value of RLM or not.
 
 
 # Comparison of refreshed with the original data {#compare}
@@ -569,7 +574,7 @@ In addition, in the original set the racial breakdown was 246 Black, 204 Hispani
 
 <!-- Hence, in this section, we will compare how close the `wages_hs_do`, henceforth refreshed data, to the textbook data. It is also worth noting that the textbook data is reused from @MurnaneRichardJ1999DMDB’s paper. Hence, it is not directly extracted from the NLSY79 database.  @SingerJudithD2003Alda do not state the time frame covered by the data. However, from @MurnaneRichardJ1999DMDB’s paper, we find that the textbook data cover the survey period from 1979-1994. Hence, for comparison purposes, we filter the refreshed data only until 1994. 
 
-In the absence of highs chool dropouts criteria in the textbook data, we create a clearer criteria of high school dropouts as mentioned in Section \@ref(#target). Consequently, we do not have the same ID of high-school dropouts as in the textbook data. The textbook data has `r nrow(sw_id)` IDs included, while the refreshed data has `r nrow(do_id)` IDs. Furthermore, there are only `r nrow(sw_do)` IDs included both in the textbook and the refreshed data. After observing @MurnaneRichardJ1999DMDB’s paper, it is mentioned that the data is randomly drawn from the low income subsample of the NLSY. This is probably the reason why, even using some criteria, we cannot match the dropouts in the textbook and the refreshed data.
+In the absence of highs chool dropouts criteria in the textbook data, we create a clearer criteria of high school dropouts as mentioned in Section \@ref(#target). Consequently, we do not have the same ID of high-school dropouts as in the textbook data. The textbook data has 888 IDs included, while the refreshed data has xx IDs. Furthermore, there are only xx IDs included both in the textbook and the refreshed data. After observing @MurnaneRichardJ1999DMDB’s paper, it is mentioned that the data is randomly drawn from the low income subsample of the NLSY. This is probably the reason why, even using some criteria, we cannot match the dropouts in the textbook and the refreshed data.
 
 Further, the temporal variable used in the textbook data is experience, instead of year. The only explanation we found regarding this variable is that it is derived from the years of IDs’ experience since their first job. @SingerJudithD2003Alda stated that this variable reflects the specific moment in each ID labor force history associated with each wage observation. 
 Since it is not clearly articulated, we decide to keep the temporal variable in the refreshed data as year. Accordingly, in this comparison, we only compare the same ID but not the same temporal variable. 

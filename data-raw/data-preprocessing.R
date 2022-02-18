@@ -174,7 +174,8 @@ ged <- new_data_qnames %>%
   select(id, dip_or_ged)
 
 # join the hgc_ever and GED as education information for NLSY79 demographic data
-highest_year <- left_join(hgc_ever, ged, by = "id")
+highest_year <- left_join(hgc_ever, ged, by = "id") %>%
+  left_join(hgc_1979, by = "id")
 
 ## ---- full-demog
 
@@ -192,6 +193,7 @@ demog_nlsy79 <- full_demographics %>%
                 race,
                 hgc,
                 hgc_i,
+                hgc_1979,
                 ged = dip_or_ged) %>%
   mutate(id = as.factor(id),
          age_1979 = as.integer(age_1979),
