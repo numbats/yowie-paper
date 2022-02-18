@@ -547,26 +547,10 @@ An additional criteria from Singer and Willett (2003) is to only include males a
 
 The filtering was re-applied using these decisions, resulting in a refreshed dropout subset containing 863 individuals.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{figures/compare-xp-sw-1} 
-
-}
-
-\caption{Density plot comparing the calculated work experience in the refreshed data, up to 1994, with that of the original data for male dropouts. Experience is shown on a square root scale to reduce the skewness. The highest concentration of observations is along the x=y axis, which means that most observations at most time points are similar.}\label{fig:compare-xp-sw}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{figures/plotting-sw-do-1} 
-
-}
-
-\caption{Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.}\label{fig:plotting-sw-do}
-\end{figure}
-
 \hypertarget{summaries-of-original-with-refreshed-dropouts-data}{%
 \subsection{Summaries of original with refreshed dropouts data}\label{summaries-of-original-with-refreshed-dropouts-data}}
+
+Because the original data does not have the year of collection, it is not possible to directly merge the two subsets. Merging longitudinal data requires both the key (\texttt{id}) and the index (ideally survey year). In the original data the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets has to be conducted in a two sample fashion rather than as a matched sample.
 
 \hypertarget{takeaways}{%
 \subsection{The takeaways}\label{takeaways}}

@@ -500,15 +500,15 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 <!--AE comment: what does the natural log have to do with the y-axis?-->
 <!--AE comment: For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.-->
 
-```{r compare-xp-sw, fig.cap = "Density plot comparing the calculated work experience in the refreshed data, up to 1994, with that of the original data for male dropouts. Experience is shown on a square root scale to reduce the skewness. The highest concentration of observations is along the x=y axis, which means that most observations at most time points are similar.", out.width = "70%"}
+```{r compare-xp-sw, fig.cap = "Density plot comparing the calculated work experience in the refreshed data, up to 1994, with that of the original data for male dropouts. Experience is shown on a square root scale to reduce the skewness. The highest concentration of observations is along the x=y axis, which means that most observations at most time points are similar.", out.width = "70%", eval=FALSE}
 ```
 
-```{r plotting-sw-do, fig.cap = "Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.", fig.width = 9, fig.height = 5, out.width = "100%", cache = FALSE}
+```{r plotting-sw-do, fig.cap = "Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.", fig.width = 9, fig.height = 5, out.width = "100%", cache = FALSE, eval=FALSE}
 ```
 
 ## Summaries of original with refreshed dropouts data
 
-
+Because the original data does not have the year of collection, it is not possible to directly merge the two subsets. Merging longitudinal data requires both the key (`id`) and the index (ideally survey year). In the original data the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets has to be conducted in a two sample fashion rather than as a matched sample. 
 
 ## The takeaways {#takeaways}
 
