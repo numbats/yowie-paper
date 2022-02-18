@@ -282,11 +282,7 @@ In our final target data, we wish to include the demographic variables with vari
 
 For \texttt{gender} and \texttt{race}, we only rename the column names provided in the raw data, \texttt{new\_data\_qnames}. It is worth noting that \texttt{gender} comes from a variable called \texttt{sex} in the database. We use the term \texttt{gender} as the reports about the data on various pages in the website more commonly use \texttt{gender}. Gender, as provided in the data, is self-reported and only has two categories, ``male'' and ``female''. The interchangeable use of these terms reflects that gender and sex are sometimes regarded as similar in surveys, although they are not. Measuring gender as a binary variable has the potential to fail to capture people who do not identify themselves as either male or female or people whose gender does not align with their sex classification (Kennedy et al. 2020). From a statistical perspective, this sometimes difficult the adjustment of survey statistics to the population when gender is measured, for example, with three categories, and the census measured it with only two categories and used the term sex (Kennedy et al. 2020). Hence, for modern societal studies, it is highly recommended to separate sex and gender in the survey question and provide more options to respond to questions on gender. This discourse should also be emphasized in teaching that using these two variables should be accompanied by special attention. Similar this also relates to race, as reported in the database. When doing an analysis with this variable, one should keep in mind that the purpose is to study racism rather than race.
 
-<<<<<<< HEAD
 \texttt{new\_data\_qnames}, contains the variables \texttt{Q1-3\_A\textasciitilde{}Y\_1979} and \texttt{Q1-3\_A\textasciitilde{}Y\_1981} which records two versions of the birth year of the respondent; this is also the case for the record of birth month (\texttt{Q1-3\_A\textasciitilde{}M\_1979} and \texttt{Q1-3\_A\textasciitilde{}M\_1981}). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year.
-=======
-It is worth noting that \texttt{gender} comes from a variable called \texttt{sex} in the database. We use the term \texttt{gender} as the reports about the data on various pages in the website more commnly use \texttt{gender}. Gender, as provided in the data, is self-reported and only has two categories, ``male'' and ``female''. The interchangeable use of these terms reflects that gender and sex are sometimes regarded as similar in surveys, although they are not. Measuring gender as a binary variable has the potential to fail to capture people who do not identify themselves as either male or female or people whose gender does not align with their sex classification (Kennedy et al. 2020). From a statistical perspective, this sometimes difficult the adjustment of survey statistics to the population when gender is measured, for example, with three categories, and the census measured it with only two categories and used the term sex (Kennedy et al. 2020). Hence, for modern societal studies, it is highly recommended to separate sex and gender in the survey question and provide more options to respond to questions on gender. This discourse should also be emphasized in teaching that using these two variables should be accompanied by special attention. Similar this also relates to race, as reported in the database. When doing an analysis with this variable, one should keep in mind that the purpose is to study racism rather than race.
->>>>>>> main
 
 The refreshed dataset has three types of highest grade completed. The first one is the highest grade completed ever reported in the database (\texttt{hgc} and \texttt{hgc\_i}, for the factor and integer type, respectively). For each ID, there is only one value of \texttt{hgc} and \texttt{hgc\_i}. This variable is obtained from \texttt{new\_data\_qnames} with name \texttt{HGC\_EVER\_XRND} and stored in year unit (e.g., 10, 11, 12, 13, and so on), we only rename the column name to be \texttt{hgc\_i} and recode it so we have the factor data type (e.g., 10th grade, 11th grade, and so on).
 
@@ -469,11 +465,7 @@ There are many steps and decisions made to go from raw to input to valid data. F
 \caption{The stages of data cleaning from the raw data to get three datasets contained in \texttt{[CENSORED]}. ``\# of individuals'' means the number of respondents included in each stage, while ``\# of observations'' means the number of rows in the data. The color represents the stage of data cleaning in statistical value chain (van der Loo and de Jonge 2021). Pink, blue, and green represent the raw, input, and valid data, respectively.}\label{fig:flow-chart-blind}
 \end{figure}
 
-<<<<<<< HEAD
-In addition, the list of variables that we cover in those three datasets are as follows:
-=======
 The list of variables provided in the three new datasets are as follows:
->>>>>>> main
 
 \textbf{\texttt{demog\_nlsy79}} :
 
@@ -490,15 +482,10 @@ The list of variables provided in the three new datasets are as follows:
   \texttt{race} : Race of the individual, NON-BLACK,NON-HISPANIC; HISPANIC; BLACK.
 \item
   \texttt{hgc}: The highest grade completed ever.
-<<<<<<< HEAD
 \item
   \texttt{hgc\_i}: Integer value of the highest grade completed ever.
 \item
   \texttt{hgc\_1979}: The highest grade completed in 1979 (integer value).
-=======
-\item
-  \texttt{hgc\_i}: Integer value of the highest grade completed ever.
->>>>>>> main
 \item
   \texttt{ged}: Wether the respondent had a high school diploma or Graduate Equivalency Degree (GED). 1: High school diploma; 2: GED; 3: Both.
 \end{enumerate}
@@ -548,11 +535,7 @@ The list of variables provided in the three new datasets are as follows:
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
-<<<<<<< HEAD
-The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar}. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This would require first identifying individuals who dropped out of high school.
-=======
 The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar}. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This requires first identifying individuals who dropped out of high school.
->>>>>>> main
 
 \hypertarget{filtering-determining-who-is-a-dropout}{%
 \subsection{Filtering: Determining who is a dropout}\label{filtering-determining-who-is-a-dropout}}
@@ -608,15 +591,6 @@ Figure \ref{fig:compare-subsets} contains summaries of corresponding variables i
 }
 
 \caption{Comparison of original and refreshed data: (A) highest grade completed, (B) experience and (C) log wages. Some difference in wages would be expected because the refreshed data is not inflation-adjusted, but the two sets are reasonably similar.}\label{fig:compare-subsets}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{figures/compare-subsets-1} 
-
-}
-
-\caption{Comparison of original textbook example with refreshed data: (A) highest grade completed, (B) experience and (C) log wages}\label{fig:compare-subsets}
 \end{figure}
 
 \hypertarget{takeaways}{%
@@ -743,16 +717,11 @@ Huebner, Marianne, Werner Vach, and Saskia le Cessie. 2016. ``A Systematic Appro
 \leavevmode\hypertarget{ref-ilk2004}{}%
 Ilk, Ozlem. 2004. ``Exploratory Multivariate Longitudinal Data Analysis and Models for Multivariate Longitudinal Binary Data.'' PhD thesis, Iowa State University. \url{https://doi.org/10.31274/rtd-180813-11012}.
 
-<<<<<<< HEAD
 \leavevmode\hypertarget{ref-kennedy2020using}{}%
 Kennedy, Lauren, Katharine Khanna, Daniel Simpson, and Andrew Gelman. 2020. ``Using Sex and Gender in Survey Adjustment.'' \url{http://arxiv.org/abs/2009.14401}.
 
 \leavevmode\hypertarget{ref-tamedata}{}%
 Kim, A. Y, C. Ismay, and J. Chunn. 2018. ``The Fivethirtyeight R Package: ``Tame Data" Principles for Introductory Statistics and Data Science Courses.'' \emph{Technology Innovations in Statistics Education} 11 (1). \url{https://doi.org/10.5070/T511103589}.
-=======
-\leavevmode\vadjust pre{\hypertarget{ref-kennedy2020using}{}}%
-Kennedy, Lauren, Katharine Khanna, Daniel Simpson, and Andrew Gelman. 2020. {``Using Sex and Gender in Survey Adjustment.''} \url{https://arxiv.org/abs/2009.14401}.
->>>>>>> main
 
 \leavevmode\hypertarget{ref-KollerManuel2016rARP}{}%
 Koller, Manuel. 2016. ``robustlmm: An R Package for Robust Estimation of Linear Mixed-Effects Models.'' \emph{Journal of Statistical Software} 75 (6): 1--24.

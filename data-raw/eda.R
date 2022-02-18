@@ -6,7 +6,6 @@ sw <- brolgar::wages %>%
   mutate(index = 1:n(),
          id = as.factor(id))
 
-
 ## ---- calculate-summaries-on-subsets
 # Comparing the original and refreshed data
 # tabulating hgc
@@ -117,27 +116,6 @@ wg_p <- ggplot(wg_join) +
 ##  ---- compare-subsets
 hgc_p + exp_p + wg_p
 
-
-# Takeaways:
-
-# we don't know how exactly the criteria of drop out,
-# resulted view agreements of id being dropped out in the two dataset.
-
-# with the same id, the ln(wages) didn't agree each other, probably due to:
-
-# we don't have experience variable in the original data base.
-# we want to calculate it, but we don't know how Singer-Willet compute the experience
-# we want to compare it just with year, Singer and Willet dont have year variable
-# hence, it is hard to create key-index pair.
-
-
-# for people who work show data example (book, research, ets), it is very important to disclose how the data derived from the initial source, to make the analysis reproducible, especially for longitudinal data because other researcher often want to compare with the recent data.
-# in this case, in Singer-Willet textbook, it important to state how the experience variable derived from the database.
-# In this EDA, we found that it is difficult to make apple to apple comparison (and refresh the data in general) cause we don't know how exactly they calculate the variable (even the wages)
-
-
-# This is why in our paper, we show the practice of reproducible and responsible data cleaning work flow to make sure the data can be refreshed.
-# Especially with longitudinal data from a survey that is still being held (so it will be refreshed from year to year).
 
 
 

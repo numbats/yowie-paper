@@ -157,7 +157,7 @@ grade_ok <- left_join(demog_education, hgc_ever, by = "id") %>%
 grade <- rbind(grade_ok, grade_fixed) %>%
   select(id, year, grade)
 
-# get the highest grade completed reported in the first round of the survey
+# get the highest grade completed reported in the first round of the survey (1979)
 hgc_1979 <- grade %>%
   filter(year == 1979) %>%
   select(id, hgc_1979 = grade)

@@ -386,33 +386,6 @@ n_obs_do_pred <- filter(wages_hs_do, is_pred == TRUE) %>%
 
 ### ---- flow-chart
 include_graphics(here::here("paper/figures/flowchart.png"))
-# grViz("digraph flowchart {
-#       node [fontname = Helvetica, shape = rectangle]
-#       tab1 [label = '@@1']
-#       tab2 [label = '@@2']
-#       tab3 [label = '@@3']
-#       tab4 [label = '@@4']
-#       tab5 [label = '@@5']
-#       tab6 [label = '@@6']
-#       tab7 [label = '@@7']
-#
-#       tab1 -> tab2;
-#       tab1 -> tab3;
-#       tab1 -> tab4 -> tab5 -> tab6;
-#       tab5 -> tab7;
-#       tab6 -> tab7;
-#       tab2 -> tab7
-#       }
-#
-#       [1]: paste0('NLSY79, n = ', a)
-#       [2]: paste0('Extract demographic variable, n = ', b)
-#       [3]: paste0('Exclude ', a - d, ' IDs whose hourly rate is missing')
-#       [4]: paste0('Eligible ID, n = ', d)
-#       [5]: paste0('Cohort whose hgc is up to 12th grade and \\n participated at least 5 years in the survey, \\n n = ', n_hgc, ', n_obs = ', n_obs_hgc, ' \\n (', n_obs_hgc_pred, ' observations are predicted value)')
-#       [6]: paste0('High school dropouts cohort, \\n n = ', n_do, ', n_obs = ', n_obs_do, ' \\n (', n_obs_do_pred, ' observations are predicted value)')
-#       [7]: 'yowie Package'
-#       ",
-#             height = 700)
 
 ### ---- flow-chart-blind
 include_graphics(here::here("paper/figures/flowchart_blind.png"))
