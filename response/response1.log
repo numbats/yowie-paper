@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.16)  18 FEB 2022 08:12
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.13)  18 FEB 2022 12:11
+>>>>>>> main
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1640,7 +1644,16 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
+<<<<<<< HEAD
 [11] (./response1.aux)
+=======
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 799.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 799.
+(./response1.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 799.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 799.
+>>>>>>> main
 Package rerunfilecheck Info: File `response1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response1.run.xml'.
@@ -1648,6 +1661,7 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  27175 strings out of 480238
  474013 string characters out of 5894680
  1216441 words of memory out of 5000000
@@ -1662,6 +1676,23 @@ vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
 onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
 y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
 Output written on response1.pdf (11 pages, 169626 bytes).
+=======
+ 26040 strings out of 480608
+ 424984 string characters out of 5903630
+ 1116130 words of memory out of 5000000
+ 41416 multiletter control sequences out of 15000+600000
+ 613811 words of font info for 125 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,11n,96p,1273b,1589s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/sourcesanspro/a_sd7igg.enc}
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/sourcesanspro/a_umlpmm.enc}
+</usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansP
+ro-Bold.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/sourcesanspro
+/SourceSansPro-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
+ic/cm-super/sftt1200.pfb>
+Output written on response1.pdf (11 pages, 158929 bytes).
+>>>>>>> main
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

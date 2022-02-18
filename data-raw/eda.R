@@ -12,7 +12,7 @@ hgc_1979 <- hgc_1979 %>%
 
 # XXX Re-do of the comparison section
 # tabular hgc
-sw %>%
+sw_hgc <- sw %>%
   as_tibble() %>%
   select(id, high_grade) %>%
   distinct() %>%
@@ -25,7 +25,7 @@ do_1994 <- wages_hs_do %>%
   mutate(hgc_1994 = max(grade[between(year, 1979, 1994)], na.rm=TRUE)) %>%
   ungroup()
 
-do_1994 %>%
+d94_hgc <- do_1994 %>%
   select(id, hgc_1994) %>%
   filter(between(hgc_1994, 6, 12)) %>%
   distinct() %>%
@@ -40,13 +40,13 @@ exp_p2 <- do_1994 %>% ggplot(aes(x=exp)) +
   xlim(c(0, 13))
 
 # tabulate race
-sw %>%
+sw_d <- sw %>%
   as_tibble() %>%
   select(id, black, hispanic) %>%
   distinct() %>%
   count(black, hispanic)
 
-do_1994 %>%
+d94_d <- do_1994 %>%
   select(id, race) %>%
   distinct() %>%
   count(race)
@@ -179,7 +179,7 @@ do_1994 <- do %>%
   filter(year <= 1994) %>%
   filter(!is.na(exp)) %>%
   select(id, year, wage, age_1979, gender, exp)
-duplicates(do_1994, key=id, index=exp)
+# duplicates(do_1994, key=id, index=exp)
 
 # check common id in data set
 sw_do <- inner_join(sw_id, do_id, by = "id")
