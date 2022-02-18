@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.12)  18 FEB 2022 09:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.13)  18 FEB 2022 12:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1565,7 +1565,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [2] [3] [4] [5] [6] [7] [8] [9] [10]
 
-LaTeX Warning: Empty bibliography on input line 798.
+LaTeX Warning: Empty bibliography on input line 797.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1575,12 +1575,12 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 800.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 799.
 [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 800.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 799.
 (./response1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 800.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 800.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 799.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 799.
 Package rerunfilecheck Info: File `response1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response1.run.xml'.
@@ -1588,11 +1588,11 @@ Package logreq Info: Writing requests to 'response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26043 strings out of 480608
- 425083 string characters out of 5903630
+ 26040 strings out of 480608
+ 424984 string characters out of 5903630
  1116130 words of memory out of 5000000
  41416 multiletter control sequences out of 15000+600000
- 614120 words of font info for 127 fonts, out of 8000000 for 9000
+ 613811 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,96p,1273b,1589s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1602,7 +1602,7 @@ Here is how much of TeX's memory you used:
 ro-Bold.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/sourcesanspro
 /SourceSansPro-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1200.pfb>
-Output written on response1.pdf (11 pages, 159041 bytes).
+Output written on response1.pdf (11 pages, 158929 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
