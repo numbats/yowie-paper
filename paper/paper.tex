@@ -505,7 +505,7 @@ There are many steps and decisions made to go from raw to input to valid data. F
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
-The original set contains wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package \texttt{brolgar} and the refreshed data is available in the R package \texttt{[CENSORED]}.
+The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar}. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This would require first identifying individuals who dropped out of high school.
 
 \hypertarget{filtering-determining-who-is-a-dropout}{%
 \subsection{Filtering: Determining who is a dropout}\label{filtering-determining-who-is-a-dropout}}
@@ -564,6 +564,9 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 
 \caption{Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.}\label{fig:plotting-sw-do}
 \end{figure}
+
+\hypertarget{summaries-of-original-with-refreshed-dropouts-data}{%
+\subsection{Summaries of original with refreshed dropouts data}\label{summaries-of-original-with-refreshed-dropouts-data}}
 
 \hypertarget{takeaways}{%
 \subsection{The takeaways}\label{takeaways}}

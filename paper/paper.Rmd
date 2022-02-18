@@ -477,7 +477,7 @@ From this stage forward, we assume that we already have valid data. We also subs
 
 
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
-The original set contains wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994. The refreshed data set for comparison is also wages on high school dropouts from 1979 to 2018. The original set is available in the R package `brolgar` and the refreshed data is available in the R package `r yowie`. 
+The original set, containing wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994, is available in the R package `brolgar`. To compare the refreshed data with the original a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data, and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This would require first identifying individuals who dropped out of high school.
 
 ## Filtering: Determining who is a dropout
 
@@ -505,6 +505,9 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 
 ```{r plotting-sw-do, fig.cap = "Comparison of original textbook example (A) with refreshed data (B). The original data was inflation-adjusted to 1990 prices and the individual's time of collection was converted to a length of experience in the workforce, which makes it difficult to precisely compare the two sets.", fig.width = 9, fig.height = 5, out.width = "100%", cache = FALSE}
 ```
+
+## Summaries of original with refreshed dropouts data
+
 
 
 ## The takeaways {#takeaways}
