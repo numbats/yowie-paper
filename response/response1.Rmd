@@ -64,9 +64,7 @@ It also leads to Fig 7 (Now Figure 8) being essentially meaningless: we are unsu
 \end{description}
 
 
-* We thank the reviewer for pointing out to us that the data contains information on the work experience -- this additional data is added in the extraction of the data in Figure 1. We also add a Subsection dedicated to explain this variable, i.e., Subsection 3.2. Calculated variables: work experience. This information was compared with Singer & Willet's original data. Comparison shown in Figure 7 shows that the information does not match up, however, there is a high correlation between the variables.
-
-* **NEED HELP in responding comments on Figure 8.**
+* We thank the reviewer for pointing out to us that the data contains information on the work experience -- this additional data is added in the extraction of the data in Figure 1. We also add a Subsection dedicated to explain this variable, i.e., Subsection 3.2. Calculated variables: work experience. This information was compared with Singer & Willet's original data. Comparison between the subsets has been completely revised.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{My suggestion is that the authors reconfigure this paper to be presented as a pure case study. I believe the work that has been done is valuable: the data cleaning process is often messy and unplanned, so a case study like this on a popular dataset would provide an excellent educational resource.}
@@ -372,13 +370,13 @@ At the bottom of page 11, where you describe the model formation, more detail wo
 \item[Reviewer 3:]\textcolor{violet}{Figure 7 (Figure 8 in the current manuscript) is interesting, but it wasn’t until my second time through that I realized this was the textbook example for replicating. There is a clear difference in analyses (different question really), but is there anything to justify a similarity, or improvement of the analysis?}
 \end{description}
 
-* **NEED HELP** Figure 8 has been updated, and other comparisons of the original and refreshed data have been added. There are still some differences, but with the change in variables being created and better filtering to get the dropouts the data are now more similar.
+* The comparison of the original and refreshed data has been completely rewritten. There are still some differences, but with the change in variables being created and better filtering to get the dropouts the subsets are now more similar.
 
 \begin{description}
 \item[Reviewer 3:]\textcolor{violet}{(page 14, line 46) Thank you for this acknowledgment. I think this is true for most analyses. It doesn’t mean that you shouldn’t transparently and fully investigate your own choices.}
 \end{description}
 
-* NEED HELP We are really not sure what this refers to.
+* We are really not sure what this refers to. Perhaps it is solved with the revisions.
 
 
 
