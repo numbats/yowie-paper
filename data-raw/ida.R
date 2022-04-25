@@ -385,7 +385,7 @@ n_obs_do_pred <- filter(wages_hs_do, is_pred == TRUE) %>%
   nrow()
 
 ### ---- flow-chart
-include_graphics(here::here("paper/figures/flowchart.png"))
+include_graphics(here::here("paper/figures/flowchart_blind.png"))
 
 ### ---- flow-chart-blind
 include_graphics(here::here("paper/figures/flowchart_blind.png"))

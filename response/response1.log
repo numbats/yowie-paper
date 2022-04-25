@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.16)  18 FEB 2022 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.16)  18 FEB 2022 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1630,7 +1630,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [2] [3] [4] [5] [6] [7] [8] [9] [10]
 
-LaTeX Warning: Empty bibliography on input line 797.
+LaTeX Warning: Empty bibliography on input line 796.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1661,9 +1661,9 @@ esanspro/a_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
 vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
 onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
 y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response1.pdf (11 pages, 168759 bytes).
+Output written on response1.pdf (11 pages, 168022 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 98 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
  12 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)
