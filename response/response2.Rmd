@@ -72,6 +72,8 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \item[Associate Editor:] \textcolor{violet}{(page 7, figure 1). Is this figure cut off or is it just at the end of the page?}
 \end{description}
 
+* Yes, it is cut off, we have made the size smaller, so it is not cut off. 
+
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{(page 9, line 4-6). “HRP1 1980 and HRP2 1980, contain the information about the job number up to 5...” They only contain job number one and two – in other areas of the manuscript you use a subscript i to make the point clear and this would be a good solution here. The code here goes off the page a bit, too.}
 \end{description}
@@ -84,9 +86,13 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \item[Reviewer 2:] \textcolor{violet}{On page 6, several times you use the word “plan,” as in “We also plan to include additional variables” and “The plan is to create three datasets as follows.” Has this been done in the paper, or are some of these future goals?}
 \end{description}
 
+* These have been done in the paper so we have removed it.
+
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{The word “mutate” is used several times in the manuscript. While tidyverse uses are familiar with that as function name and “verb,” I think a general audience is going to find it a bit jarring. Consider replacing with the word “create” or similar.}
 \end{description}
+
+* We have changed the word "mutate" to be "create". 
 
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{On page 10, I don’t know what this sentence means: “When this value was missing, 2012, 2014, 2016, and 2018, but available in the first form substituted accordingly.”}
@@ -95,6 +101,8 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{The word “that” is used a lot in this manuscript, and most instances could be removed. For example “For example, an article published in the Sydney Morning Herald argues that there is no average Australian” can be replace by “For example, an article published in the Sydney Morning Herald argues there is no average Australian.” I suggest searching for the word “that” and removing any unnecessary instances.}
 \end{description}
+
+* We have removed unnecessary instances.
 
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{Some extraneous punctuation marks are present}
@@ -107,9 +115,13 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \end{itemize}
 \end{description}
 
+* All of the extraneous punctuation marks mentioned have been removed. 
+
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{p2 missing closing parenthesis after Stodel 2020 citation.}
 \end{description}
+
+* We have added the missing closing parenthesis.
 
 
 \begin{description}
@@ -123,6 +135,8 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \end{itemize}
 \end{description}
 
+* Done.
+
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{Miscellaneous comments:} 
 \begin{itemize}
@@ -133,6 +147,9 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \item p26 Cooksey reference should have NLSY capitalized. 
 \end{itemize}
 \end{description}
+
+* All of the comments on the list above have been addressed. (**Except for the Cooksey reference**) 
+
 
 \begin{description}
 \item[Reviewer 1:] \textcolor{violet}{Minor comments:}
@@ -148,9 +165,13 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \end{itemize}
 \end{description}
 
+* All of the comments on the list above have been addressed.
+
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{Page 2, line 42 – Parenthesis is not closed.}
 \end{description}
+
+* We have added the missing closing parenthesis.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{This comment from the first review is unaddressed: “Black” and “Hispanic” and “White” should be capitalized.  (There is some dispute among style guides regarding “white”, but the other two are unambiguous.)}
@@ -166,6 +187,8 @@ Willett (2003)’s data.
 \end{itemize}
 1 and 2 are nouns and 3 is a sentence – I’m a little confused what this third dataset represents.  I think you mean that you create a subset of (1) in the scope of the original data, to see how closely it replicates?
 \end{description}
+
+* Yes, you are correct, we have edited the point 3 to improve the clarity of this sentence. 
 
 
 

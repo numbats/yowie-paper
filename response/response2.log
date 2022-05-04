@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  25 APR 2022 20:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  4 MAY 2022 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1620,9 +1620,9 @@ ript. Fur-ther, the ex-pla-na-tion here
 [1
 
 {/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-}] [2] [3]
+}] [2]
 LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF o
-n input line 301.
+n input line 277.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/sourcesanspro/TS1Source
 SansPro-TLF.fd
@@ -1630,12 +1630,12 @@ File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/So
 urceSansPro-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 301.
+(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 277.
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 301.
-[4]
+(Font)              scaled to size 12.0pt on input line 277.
+[3] [4] [5]
 
-LaTeX Warning: Empty bibliography on input line 368.
+LaTeX Warning: Empty bibliography on input line 434.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1645,7 +1645,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-[5] (./response2.aux)
+[6] (./response2.aux)
 Package rerunfilecheck Info: File `response2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response2.run.xml'.
@@ -1653,8 +1653,8 @@ Package logreq Info: Writing requests to 'response2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27141 strings out of 480236
- 473005 string characters out of 5894623
+ 27142 strings out of 480236
+ 473011 string characters out of 5894623
  1217931 words of memory out of 5000000
  44572 multiletter control sequences out of 15000+600000
  552561 words of font info for 140 fonts, out of 8000000 for 9000
@@ -1665,10 +1665,10 @@ _5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourc
 esanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1
 /adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Library/TinyTeX/
 texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response2.pdf (5 pages, 146075 bytes).
+Output written on response2.pdf (6 pages, 147185 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
+ 50 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)
 

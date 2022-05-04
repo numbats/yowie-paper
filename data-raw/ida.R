@@ -201,7 +201,7 @@ ggplot(wages_compare) +
               labels = c("Before", "After")) +
   scale_x_continuous("Year",
                      breaks = seq(1980, 2020, 10),
-                     labels = c("80", "90", "00", "10", "20"),
+                     #labels = c("80", "90", "00", "10", "20"),
                      minor_breaks = seq(1980, 2020, 5)) +
   #xlab("Year") +
   ylab("Hourly wage ($)") +
@@ -217,7 +217,7 @@ spag2 <- wages_cleaned %>%
   geom_line(alpha = 0.1) +
   scale_x_continuous("Year",
                      breaks = seq(1980, 2020, 10),
-                     labels = c("80", "90", "00", "10", "20"),
+                     #labels = c("80", "90", "00", "10", "20"),
                      minor_breaks = seq(1980, 2020, 5)) +
   theme_bw() +
   labs(tag = "(A)") +
@@ -266,7 +266,7 @@ plot_high_after <- ggplot(filter(wages_cleaned, id == 39)) +
   annotate("text", x = 1985, y = 26, label = "id: 39") +
   scale_x_continuous("Year",
                      breaks = seq(1980, 2020, 10),
-                     labels = c("80", "90", "00", "10", "20"),
+                     #labels = c("80", "90", "00", "10", "20"),
                      minor_breaks = seq(1980, 2020, 5)) +
   theme_bw() +
   labs(tag = "(C)", y = "Hourly wage ($)")
