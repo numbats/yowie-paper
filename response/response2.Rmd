@@ -8,7 +8,7 @@ output: monash::memo
 # remotes::install_github("numbats/monash")
 ---
 
-We thank the Editor, Associate Editor and the three reviewers for their extensive comments, which have helped substantially to improve the manuscript. In response, we have made revisions of the main manuscript as outlined below. 
+We thank the editor, associate editor and the reviewers for their feedback. Here is how we have made revisions to the manuscript to address each point. 
 
 
 \section*{Major changes:}
