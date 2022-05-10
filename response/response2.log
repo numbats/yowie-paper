@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  10 MAY 2022 08:51
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  10 MAY 2022 11:49
->>>>>>> 04025d7eda67196cde4353731283387ef3c99d84
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  10 MAY 2022 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1605,33 +1601,8 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
 (Font)              `T1/SourceSansPro-TLF/bold/n' on input line 217.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
 (Font)              scaled to size 15.0pt on input line 217.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 226.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 226.
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
-[][]\T1/SourceSansPro-TLF/bold/n/12 (+20) ORIGINAL COM-MENT: The au-thor switch
-es be-tween gen-der
- []
-
-
-Underfull \hbox (badness 1286) in paragraph at lines 226--227
-\T1/SourceSansPro-TLF/bold/n/12 (+20) (man/woman/etc) and sex (male/female/etc.
-) through-out the manuscript. Fur-
- []
-
-[1
-
-{/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-}]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-41.
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF o
-n input line 301.
+n input line 226.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/sourcesanspro/TS1Source
 SansPro-TLF.fd
@@ -1639,12 +1610,35 @@ File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/So
 urceSansPro-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 301.
+(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 226.
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 301.
-[4] [5] [6]
+(Font)              scaled to size 12.0pt on input line 226.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 230.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
+(Font)              scaled to size 12.0pt on input line 230.
 
-LaTeX Warning: Empty bibliography on input line 466.
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+[][]\T1/SourceSansPro-TLF/bold/n/12 (+20) ORIGINAL COM-MENT: The au-thor switch
+es be-tween gen-der
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 230--231
+\T1/SourceSansPro-TLF/bold/n/12 (+20) (man/woman/etc) and sex (male/female/etc.
+) through-out the manuscript. Fur-
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+36.
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [1
+
+{/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+}] [2] [3] [4] [5] [6]
+
+LaTeX Warning: Empty bibliography on input line 529.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1662,28 +1656,22 @@ Package logreq Info: Writing requests to 'response2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27160 strings out of 480236
- 473541 string characters out of 5894623
+ 27166 strings out of 480236
+ 473742 string characters out of 5894623
  1216931 words of memory out of 5000000
  44590 multiletter control sequences out of 15000+600000
- 552264 words of font info for 137 fonts, out of 8000000 for 9000
+ 552888 words of font info for 141 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
-<<<<<<< HEAD
  69i,11n,117p,1243b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a
-_5ponh6.enc} </Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ectt1200.600pk>{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
+ </Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
+t1200.600pk>{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourc
+esanspro/a_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
 vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
 onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
 y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response2.pdf (7 pages, 154828 bytes).
-=======
- 69i,11n,117p,1243b,1705s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5ponh6.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.enc}</Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response2.pdf (7 pages, 155070 bytes).
->>>>>>> 04025d7eda67196cde4353731283387ef3c99d84
+Output written on response2.pdf (7 pages, 156538 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 74 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
  8 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)

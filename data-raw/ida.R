@@ -30,18 +30,18 @@ freq_formatting <- function(x) {
     mutate(across(where(is.numeric), ~scales::comma(.x, 1)))
 }
 
-gender_race_table <- full_demographics %>%
-  tabyl(gender, race) %>%
+sex_race_table <- full_demographics %>%
+  tabyl(sex, race) %>%
   adorn_totals(c("row", "col")) %>%
   adorn_percentages("row") %>%
   adorn_pct_formatting(digits = 0) %>%
   adorn_ns(., position = "front", ns = freq_formatting(.)) %>%
-  mutate(gender = str_to_title(gender),
+  mutate(sex = str_to_title(sex),
          Total = str_replace(Total, "\\([1|2]00\\%\\)", ""))
 
-kable(gender_race_table,
-      caption = "Contingency table for gender and race for the full NLSY79 data. The percentage (rounded to closest 1\\%) is out of the total corresponding to row.",
-      col.names = c("Gender", "Hispanic", "Black", "Non-Black, Non-Hispanic", "Total"),
+kable(sex_race_table,
+      caption = "Contingency table for sex and race for the full NLSY79 data. The percentage (rounded to closest 1\\%) is out of the total corresponding to row.",
+      col.names = c("Sex", "Hispanic", "Black", "Non-Black, Non-Hispanic", "Total"),
       booktabs = TRUE,
       linesep = "",
       align = "lrrrr") %>%
@@ -282,7 +282,7 @@ wages_clean <- wages_cleaned %>%
 
 # rename and select the wages in tidy
 wages <- wages_clean %>%
-  select(id, year, mean_hourly_wage, age_1979, gender, race, grade, hgc, hgc_i, hgc_1979, ged = dip_or_ged,
+  select(id, year, mean_hourly_wage, age_1979, sex, race, grade, hgc, hgc_i, hgc_1979, ged = dip_or_ged,
          number_of_jobs, total_hours, stwork, yr_wforce, exp, is_wm, is_pred) %>%
   mutate(id = as.factor(id),
          hgc = as.factor(hgc),
@@ -303,7 +303,7 @@ wages_hs_do <- wages %>%
   # based on two criteria mentioned in the paper
   filter(hgc_i < 12 | (hgc_i >= 12 & ged != 1)) %>%
   filter(age_1979 <= 17,
-         gender == "MALE") %>%
+         sex == "MALE") %>%
   as_tsibble(key = id,
              index = year,
              regular = FALSE)
