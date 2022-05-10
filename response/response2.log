@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.2)  5 MAY 2022 15:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  10 MAY 2022 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **response2.tex
 (./response2.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-04-29> (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2022-05-04> (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
@@ -1050,14 +1050,14 @@ File: biblatex.cfg
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-04-29 L3 programming layer (loader) 
+Package: expl3 2022-05-04 L3 programming layer (loader) 
 (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count421
 \l__pdf_internal_box=\box57
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2022-04-29 L3 programming layer (loader) 
+(biblatex)             2022-05-04 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -1230,26 +1230,293 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen258
 \xmathstrut@box=\box65
 \xmathstrut@dim=\dimen259
+) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip95
+\thanksmargin=\skip96
+\droptitle=\skip97
+) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip98
+\fb@frw=\dimen260
+\fb@frh=\dimen261
+\FrameRule=\dimen262
+\FrameSep=\dimen263
+) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2020/09/26 v1.10
+Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
+Package textpos Info: choosing support for LaTeX3 on input line 61.
+\TP@textbox=\box66
+\TP@holdbox=\box67
+\TPHorizModule=\dimen264
+\TPVertModule=\dimen265
+\TP@margin=\dimen266
+\TP@absmargin=\dimen267
+Grid set 16 x 16 = 37.34424pt x 52.81541pt
+\TPboxrulesize=\dimen268
+\TP@ox=\dimen269
+\TP@oy=\dimen270
+\TP@tbargs=\toks41
+TextBlockOrigin set to 0pt x 0pt
+) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/04/30 3.74 The Babel package
+\babel@savecnt=\count437
+\U@D=\dimen271
+\l@unhyphenated=\language4
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read4
+\bbl@dirlevel=\count438
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/babel-english/australian.ldf
+Language: australian 2017/06/06 v3.3r English support from the babel system
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+)))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'australian'.
+(./response2.aux)
+\openout1 = `response2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/ntxsfmi/m/it on input line 205.
+LaTeX Font Info:    Trying to load font information for OML+ntxsfmi on input line 205.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/newtxsf/omlntxsfmi.fd
+File: omlntxsfmi.fd 2014/11/16 Fontinst v1.933 font definitions for OML/ntxsfmi.
 )
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 205.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 205.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/newtx/untxexa.fd
+File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
+)
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 205.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 205.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/ly1/ly1ptm.fd
+File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
+)
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 205.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 205.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
+)
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+Package mathastext Info: current meaning of amsmath \resetMathstrut@ saved on input line 205.
+LaTeX Info: Redefining \microtypecontext on input line 205.
+Package microtype Info: Applying patch `item' on input line 205.
+Package microtype Info: Applying patch `toc' on input line 205.
+Package microtype Info: Applying patch `eqnum' on input line 205.
+Package microtype Info: Applying patch `footnote' on input line 205.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 205.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `SourceSansPro-TLF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package hyperref Info: Link coloring ON on input line 205.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count439
+)
+LaTeX Info: Redefining \ref on input line 205.
+LaTeX Info: Redefining \pageref on input line 205.
+LaTeX Info: Redefining \nameref on input line 205.
+(./response2.out) (./response2.out)
+\@outlinefile=\write5
+\openout5 = `response2.out'.
 
-! LaTeX Error: File `xpatch.sty' not found.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=702.78308pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-38.1381pt
+* \headheight=15.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+Package biblatex Info: Trying to load language 'australian'...
+Package biblatex Info: ... file 'australian.lbx' found.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/australian.lbx
+File: australian.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'british'...
+Package biblatex Info: ... file 'british.lbx' found.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/british.lbx
+File: british.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout4 = `response2.bcf'.
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.167 \xpatchbibmacro
-                     {volume+number+eid}{\setunit*{\adddot}}{}{}{}^^M 
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'response2.bbl' not found.
+No file response2.bbl.
+Package biblatex Info: Reference section=0 on input line 205.
+Package biblatex Info: Reference segment=0 on input line 205.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 209.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
+(Font)              scaled to size 20.74pt on input line 209.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 209.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
+(Font)              scaled to size 20.74pt on input line 209.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 209.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
+(Font)              scaled to size 14.4pt on input line 209.
+
+LaTeX Warning: No \author given.
+
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 209.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
+(Font)              scaled to size 10.95pt on input line 209.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 217.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
+(Font)              scaled to size 15.0pt on input line 217.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 226.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
+(Font)              scaled to size 12.0pt on input line 226.
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+[][]\T1/SourceSansPro-TLF/bold/n/12 (+20) ORIGINAL COM-MENT: The au-thor switches be-tween gen-der
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 226--227
+\T1/SourceSansPro-TLF/bold/n/12 (+20) (man/woman/etc) and sex (male/female/etc.) through-out the manuscript. Fur-
+ []
+
+[1
+
+{/Users/cookd/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 241.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [2] [3]
+LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF on input line 301.
+(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/sourcesanspro/TS1SourceSansPro-TLF.fd
+File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/SourceSansPro-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
+(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 301.
+LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
+(Font)              scaled to size 12.0pt on input line 301.
+[4] [5] [6]
+
+LaTeX Warning: Empty bibliography on input line 466.
+
+
+Package caption Warning: Unused \captionsetup[figure] on input line 66.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Unused \captionsetup[table] on input line 67.
+See the caption package documentation for explanation.
+
+[7] (./response2.aux)
+Package rerunfilecheck Info: File `response2.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'response2.run.xml'.
+\openout1 = `response2.run.xml'.
+
+ ) 
 Here is how much of TeX's memory you used:
- 24187 strings out of 480265
- 411363 string characters out of 5893792
- 884276 words of memory out of 5000000
- 41852 multiletter control sequences out of 15000+600000
- 479691 words of font info for 31 fonts, out of 8000000 for 9000
+ 27147 strings out of 480260
+ 471649 string characters out of 5893668
+ 1216954 words of memory out of 5000000
+ 44551 multiletter control sequences out of 15000+600000
+ 552264 words of font info for 137 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,0n,117p,366b,268s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69i,11n,117p,1243b,1705s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5ponh6.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.enc}</Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
+Output written on response2.pdf (7 pages, 154898 bytes).
+PDF statistics:
+ 72 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 28673 words of extra memory for PDF output out of 29859 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!
