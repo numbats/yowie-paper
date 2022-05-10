@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  10 MAY 2022 15:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  10 MAY 2022 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,12 +598,12 @@ File: figures/compare-subsets-1.pdf Graphic file (type pdf)
 <use figures/compare-subsets-1.pdf>
 Package pdftex.def Info: figures/compare-subsets-1.pdf  used on input line 609.
 (pdftex.def)             Requested size: 462.26999pt x 250.2743pt.
-[21] [22] [23] [24] [25] [26] [27]
+[21] [22] [23] [24] [25] [26] [27] [28]
 Overfull \hbox (14.43417pt too wide) in paragraph at lines 767--769
 []\OT1/cmr/m/n/12 Pedersen, Thomas Lin. 2020. \OT1/cmr/m/it/12 patch-work: The Com-poser of Plots\OT1/cmr/m/n/12 . []$\OT1/cmtt/m/n/12 https : / / CRAN . R-[]project .
  []
 
-[28]
+
 Overfull \hbox (26.5238pt too wide) in paragraph at lines 779--781
 []\OT1/cmr/m/n/12 Stodel, Megan. 2020. ``Stop Us-ing Iris.'' []$\OT1/cmtt/m/n/12 https : / / www . meganstodel . com / posts / no-[]to-[]iris/$[]\OT1/cmr/m/n/12 . 
  []
@@ -629,10 +629,10 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  83i,11n,89p,2003b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0700.600pk> </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on paper-jsdse.pdf (37 pages, 1378519 bytes).
+Output written on paper-jsdse.pdf (37 pages, 1378882 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 530 compressed objects within 6 object streams
+ 618 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
  176 named destinations out of 1000 (max. 500000)
  211 words of extra memory for PDF output out of 10000 (max. 10000000)
 

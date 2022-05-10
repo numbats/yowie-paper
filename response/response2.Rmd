@@ -60,7 +60,7 @@ We have revised the introduction to fix this. XXX DONE
 \item[Reviewer 1:] \textcolor{violet}{The manuscript is much improved. I would like to see less description of how to tidy the data in Section 3 and more discussion of lessons learned (useful for statistics and data science educators and students) in Section 5.}
 \end{description}
 
-We think it is best to keep this emphasis, because the hard work is on cleaning and tidying the data, in a reproducible manner, which is close to the mission of the special issue. We have added some additional sentences about lessons for statistics and data science educators. XXX DC to do (might need help from Emi or Nick)
+We have added additional bullet points on the benefit for educators in Section 5, in response to the overview comments by the Editor and AE (top of this response). We think it is best to keep content on cleaning and tidying the data, in a reproducible manner, to match the mission of the special issue. XXX DONE
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{One thing that could be made clearer throughout the paper – especially in Section 5 – is that the ultimate goal here is to get an equivalent dataset to the original that contains the additional years of data and better respects modern social justice norms.  The authors use the terms “update”, “refresh”, and “re-create” throughout, and I think it is sometimes ambiguous whether this is a replication or update.}
@@ -72,7 +72,7 @@ We have changed all to "refresh". XXX Dewi
 \item[Reviewer 3:] \textcolor{violet}{Here is what I think the strong takeaway in this work is:  "Any longitudinal dataset used for education should have a sufficiently reproducible process to be updated with new data.  The NLSY79 dataset is a great teaching tool that has become outdated, both because the dataset stops in 1994, and because the demographic data could be handled more delicately.  What you have done here is offered a well-documented and reproducible process that expands the dataset to modernity, and matches the original dataset decently well within its scope." This narrative doesn’t require any major structural revision; only some wordsmithing to make sure this message of your contribution hits home throughout the paper.}
 \end{description}
 
-Thanks for this, exactly right! We have changed the wording accordingly. XXX DC
+Thanks for this, exactly right! We have changed the wording accordingly, in various places in the paper. XXX DC, ET, NT please check that this message comes across clearly enough.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{Page 17:  I remain slightly uncomfortable with the “hand-way-ness” of the modeling step.  I don’t think that “we tried this and it failed to converge” is a satisfactory explanation for dismissing a model that the authors themselves believe would be a better fit.  Perhaps the discussion around robustlmm could be relegated to an appendix or supplement, with a bit more detail about why this model doesn’t converge on the data.  That way it would not distract from the details of the model that was actually used.}
@@ -85,7 +85,7 @@ Same point as made by the AE, and how we have addressed it is described above.
 For example: maybe a plot of the variability of the imputed data for various threshold choices, showing that a low threshold leads to very high variance and a high threshold leads to low variance? Or:  Can you make an argument from predictive power of the model, i.e., that a threshold around 0.12 trained on years 1979-2016 best predicts years 2017-18? Perhaps this is too much lift at this stage, but any amount of quantifiable justification would relieve a lot of the subjectivity around that 0.12 choice.}
 \end{description}
 
-XXX DC to address
+See response above to the associate editor, about this concern. XXX DONE
 
 \section*{Minor changes:}
 
