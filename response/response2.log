@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  10 MAY 2022 08:51
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  10 MAY 2022 11:49
+>>>>>>> 04025d7eda67196cde4353731283387ef3c99d84
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1664,6 +1668,7 @@ Here is how much of TeX's memory you used:
  44590 multiletter control sequences out of 15000+600000
  552264 words of font info for 137 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
+<<<<<<< HEAD
  69i,11n,117p,1243b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a
 _5ponh6.enc} </Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknap
@@ -1672,6 +1677,11 @@ vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
 onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
 y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
 Output written on response2.pdf (7 pages, 154828 bytes).
+=======
+ 69i,11n,117p,1243b,1705s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5ponh6.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.enc}</Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
+Output written on response2.pdf (7 pages, 155070 bytes).
+>>>>>>> 04025d7eda67196cde4353731283387ef3c99d84
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
