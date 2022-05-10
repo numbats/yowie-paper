@@ -24,7 +24,7 @@ authors:
     email: "hyde.kate.a@gmail.com"
   - name: Nicholas Tierney
     thanks: ""
-    department: 
+    department: "Geospatial Health and Development"
     affiliation: Telethon Kids Institute
     location: Nedlands, WA 6009
     email: "nicholas.tierney@gmail.com"

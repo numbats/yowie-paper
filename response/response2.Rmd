@@ -54,7 +54,7 @@ It would be nice if the database contained a broader description of race, but it
 \item[Associate Editor:] \textcolor{violet}{(page 3-4, lines 34-20) The discussion about “the average and the individual” is underdeveloped. It seems to be tangled with a couple other ideas in these paragraphs, which muddles the point.}
 \end{description}
 
-XXX DC to do
+We have revised the introduction to fix this. XXX DONE
 
 \begin{description}
 \item[Reviewer 1:] \textcolor{violet}{The manuscript is much improved. I would like to see less description of how to tidy the data in Section 3 and more discussion of lessons learned (useful for statistics and data science educators and students) in Section 5.}
