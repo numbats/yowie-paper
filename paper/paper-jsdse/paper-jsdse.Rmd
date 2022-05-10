@@ -28,7 +28,7 @@ authors:
     affiliation: Telethon Kids Institute
     location: Nedlands, WA 6009
     email: "nicholas.tierney@gmail.com"
-blind: 1 # 0 for no
+blind: 0 # 0 for no
 bibliography: ../references.bib
 #preamble: >
 output: 
