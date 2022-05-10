@@ -45,14 +45,15 @@ date: "24/02/2021"
 always_allow_html: true
 keywords: "Data cleaning; Data tidying; Reproducible workflow; Longitudinal data; NLSY79; Initial data analysis;"
 abstract: > 
- Textbook data is essential for teaching statistics and data science methods because they are clean, allowing the instructor to  focus on methodology. Ideally textbook data sets are refreshed regularly, especially when they are subsets taken from an on-going data collection. It is also important to use contemporary data for teaching, to imbue the sense that the methodology is relevant today. This paper describes the trials and tribulations of refreshing a textbook data set on wages, extracted from the National Longitudinal Survey of Youth (NLSY79) in the early 1990s. The data is useful for teaching modeling and exploratory analysis of longitudinal data. Subsets of NLSY79, including the wages data, can be found in supplementary files from numerous textbooks and research articles. The NLSY79 database has been continuously updated through to 2018, so new records are available. Here we describe our journey to re-create the wages data, and document the process so that the data can be regularly updated into the future. Our journey was difficult because the steps and decisions taken to get from the raw data to the wages textbook subset have not been clearly articulated. We have been diligent to provide a reproducible workflow for others to follow, which also hopefully inspires more attempts at refreshing data for teaching. Three new data sets and the code to produce them are provided in the open source R package called [CENSORED]. 
+ Textbook data is essential for teaching statistics and data science methods because they are clean, allowing the instructor to  focus on methodology. Ideally textbook data sets are refreshed regularly, especially when they are subsets taken from an on-going data collection. It is also important to use contemporary data for teaching, to imbue the sense that the methodology is relevant today. This paper describes the trials and tribulations of refreshing a textbook data set on wages, extracted from the National Longitudinal Survey of Youth (NLSY79) in the early 1990s. The data is useful for teaching modeling and exploratory analysis of longitudinal data. Subsets of NLSY79, including the wages data, can be found in supplementary files from numerous textbooks and research articles. The NLSY79 database has been continuously updated through to 2018, so new records are available. Here we describe our journey to re-create the wages data, and document the process so that the data can be regularly updated into the future. Our journey was difficult because the steps and decisions taken to get from the raw data to the wages textbook subset have not been clearly articulated. We have been diligent to provide a reproducible workflow for others to follow, which also hopefully inspires more attempts at refreshing data for teaching. Three new data sets and the code to produce them are provided in the open source R package called `yowie`. 
 ---
 
 ```{r censor, include = FALSE}
-CENSOR <- TRUE
+CENSOR <- FALSE
 yowie <- ifelse(CENSOR, "\\texttt{[CENSORED]}", "\\texttt{yowie}")
 yowie_repo <- ifelse(CENSOR, "CENSORED", "https://github.com/numbats/yowie")
 yowie_pkgdown <- ifelse(CENSOR, "CENSORED", "https://github.com/numbats/yowie")
+yowie_code <- ifelse(CENSOR, "CENSORED", "https://github.com/numbats/yowie-paper/data-raw")
 yowie_shiny <- ifelse(CENSOR, "CENSORED", "https://ebsmonash.shinyapps.io/yowie_app/")
 censor_word <- function(word) ifelse(CENSOR, "CENSORED", word)
 ```
@@ -588,11 +589,11 @@ The entire analysis is conducted using `R` [@R] in RStudio IDE using these packa
 # Supplementary Materials 
 
 
-- **Codes**: R script to reproduce data tidying and cleaning is available in this [page](`r yowie_pkgdown`/articles/process-data.html). The code for the extreme value handling with robust linear fits is in \url{`r yowie_pkgdown`/articles/input-to-valid-data.html}.
+- **Codes**: R script to reproduce data tidying and cleaning is available at \url{`r yowie_pkgdown`/articles/process-data.html}. The code for the extreme value handling with robust linear fits is in \url{`r yowie_pkgdown`/articles/input-to-valid-data.html}.
 
-- **R Package**:`r yowie` is a data container R package that contains 3 datasets, namely the high school mean hourly wage data, high school dropouts mean hourly wage data, and demographic data of the NLSY79 cohort. This package can be accessed [here](`r yowie_repo`).
+- **R Package**:`r yowie` is a data container R package that contains 3 datasets, namely the high school mean hourly wage data, high school dropouts mean hourly wage data, and demographic data of the NLSY79 cohort. This package can be accessed from \url{`r yowie_repo`}.
 
-- **shiny app**: An interactive `shiny` web app to visualise the effect of selecting different weight threshold for substituting the wages data to its predicted value from a fit of the robust linear regression model. This app can be accessed [here](`r yowie_shiny`) with the source code provided [here](`r yowie_repo`/tree/master/app).
+- **shiny app**: An interactive `shiny` web app to visualise the effect of selecting different weight threshold for substituting the wages data to its predicted value from a fit of the robust linear regression model. This app can be accessed at \url{`r yowie_shiny`} with the source code provided \url{`r yowie_repo`/tree/master/app}.
 
 
 # Data Availability Statement

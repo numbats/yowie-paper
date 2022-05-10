@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.16)  18 FEB 2022 13:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  10 MAY 2022 07:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **response1.tex
 (./response1.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-05> (/Users/deeamaliah/Library/TinyTeX/texmf-dist
+L3 programming layer <2022-02-24> (/Users/deeamaliah/Library/TinyTeX/texmf-dist
 /tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
@@ -736,29 +736,30 @@ tim
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2021/12/10 v3.0b Micro-typographical refinements (RS)
+Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
 \MT@toks=\toks32
-\MT@count=\count281
 \MT@tempbox=\box54
-LaTeX Info: Redefining \leftprotrusion on input line 1010.
-LaTeX Info: Redefining \rightprotrusion on input line 1018.
-LaTeX Info: Redefining \textls on input line 1173.
+\MT@count=\count281
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1027.
+LaTeX Info: Redefining \leftprotrusion on input line 1028.
+LaTeX Info: Redefining \rightprotrusion on input line 1036.
+LaTeX Info: Redefining \textls on input line 1195.
 \MT@outer@kern=\dimen148
-LaTeX Info: Redefining \textmicrotypecontext on input line 1759.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1781.
 \MT@listname@count=\count282
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdf
 tex.def
-File: microtype-pdftex.def 2021/12/10 v3.0b Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2022/03/14 v3.0d Definitions specific to pdftex (RS)
 
-LaTeX Info: Redefining \lsstyle on input line 897.
-LaTeX Info: Redefining \lslig on input line 897.
+LaTeX Info: Redefining \lsstyle on input line 900.
+LaTeX Info: Redefining \lslig on input line 900.
 \MT@outer@space=\skip52
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2021/12/10 v3.0b microtype main configuration file (RS)
+File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
 )) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/fancybox/fancybox.st
 y
 Package: fancybox 2010/05/15 1.4
@@ -773,7 +774,7 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read2
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
@@ -817,14 +818,9 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 \Hy@linkcounter=\count283
 \Hy@pagecounter=\count284
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langp
-atches.def
-File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
-nguages
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
@@ -833,24 +829,24 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count285
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4073.
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Option `unicode' set `true' on input line 4018.
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4445.
+Package hyperref Info: Bookmarks ON on input line 4390.
 \c@Hy@tempcnt=\count286
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4804.
+LaTeX Info: Redefining \url on input line 4749.
 \XeTeXLinkMargin=\dimen151
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -863,15 +859,15 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 \Fld@menulength=\count287
 \Field@Width=\dimen152
 \Fld@charsize=\dimen153
-Package hyperref Info: Hyper figures OFF on input line 6076.
-Package hyperref Info: Link nesting OFF on input line 6081.
-Package hyperref Info: Hyper index ON on input line 6084.
-Package hyperref Info: backreferencing OFF on input line 6091.
-Package hyperref Info: Link coloring OFF on input line 6096.
-Package hyperref Info: Link coloring with OCG OFF on input line 6101.
-Package hyperref Info: PDF/A mode OFF on input line 6106.
-LaTeX Info: Redefining \ref on input line 6146.
-LaTeX Info: Redefining \pageref on input line 6150.
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
@@ -882,7 +878,7 @@ package with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
@@ -1159,7 +1155,7 @@ File: biblatex.cfg
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-02-05 L3 programming layer (loader) 
+Package: expl3 2022-02-24 L3 programming layer (loader) 
 
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdf
 tex.def
@@ -1168,7 +1164,7 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box57
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2022-02-05 L3 programming layer (loader) 
+(biblatex)             2022-02-24 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
@@ -1223,16 +1219,17 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen177
-\captionmargin@=\dimen178
-\captionwidth=\dimen179
-\caption@tempdima=\dimen180
-\caption@indent=\dimen181
-\caption@parindent=\dimen182
-\caption@hangindent=\dimen183
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen177
+\captionmargin=\dimen178
+\caption@leftmargin=\dimen179
+\caption@rightmargin=\dimen180
+\caption@width=\dimen181
+\caption@indent=\dimen182
+\caption@parindent=\dimen183
+\caption@hangindent=\dimen184
 Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count431
@@ -1241,7 +1238,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2021/04/25 v1.2e Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup13
@@ -1278,31 +1275,31 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen184
-\Gin@req@width=\dimen185
+\Gin@req@height=\dimen185
+\Gin@req@width=\dimen186
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box64
 \beforetitleunit=\skip89
 \aftertitleunit=\skip90
-\ttl@plus=\dimen186
-\ttl@minus=\dimen187
+\ttl@plus=\dimen187
+\ttl@minus=\dimen188
 \ttl@toksa=\toks39
-\titlewidth=\dimen188
-\titlewidthlast=\dimen189
-\titlewidthfirst=\dimen190
+\titlewidth=\dimen189
+\titlewidthlast=\dimen190
+\titlewidthfirst=\dimen191
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/footmisc/footmisc.sty
-Package: footmisc 2022/02/14 v6.0b a miscellany of footnote facilities
+Package: footmisc 2022/03/08 v6.0d a miscellany of footnote facilities
 \FN@temptoken=\toks40
-\footnotemargin=\dimen191
-\@outputbox@depth=\dimen192
-Package footmisc Info: Declaring symbol style bringhurst on input line 686.
-Package footmisc Info: Declaring symbol style chicago on input line 694.
-Package footmisc Info: Declaring symbol style wiley on input line 703.
-Package footmisc Info: Declaring symbol style lamport-robust on input line 714.
+\footnotemargin=\dimen192
+\@outputbox@depth=\dimen193
+Package footmisc Info: Declaring symbol style bringhurst on input line 695.
+Package footmisc Info: Declaring symbol style chicago on input line 703.
+Package footmisc Info: Declaring symbol style wiley on input line 712.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 723.
 
-Package footmisc Info: Declaring symbol style lamport* on input line 734.
-Package footmisc Info: Declaring symbol style lamport*-robust on input line 755
+Package footmisc Info: Declaring symbol style lamport* on input line 743.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 764
 .
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
@@ -1332,8 +1329,8 @@ Package: mathtools 2022/02/07 v1.28a mathematical typesetting tools
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count433
 \calc@Bcount=\count434
-\calc@Adimen=\dimen193
-\calc@Bdimen=\dimen194
+\calc@Adimen=\dimen194
+\calc@Bdimen=\dimen195
 \calc@Askip=\skip91
 \calc@Bskip=\skip92
 LaTeX Info: Redefining \setlength on input line 80.
@@ -1344,16 +1341,16 @@ LaTeX Info: Redefining \addtolength on input line 81.
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 \g_MT_multlinerow_int=\count436
-\l_MT_multwidth_dim=\dimen195
+\l_MT_multwidth_dim=\dimen196
 \origjot=\skip94
-\l_MT_shortvdotswithinadjustabove_dim=\dimen196
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen197
-\l_MT_above_intertext_sep=\dimen198
-\l_MT_below_intertext_sep=\dimen199
-\l_MT_above_shortintertext_sep=\dimen256
-\l_MT_below_shortintertext_sep=\dimen257
+\l_MT_shortvdotswithinadjustabove_dim=\dimen197
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen198
+\l_MT_above_intertext_sep=\dimen199
+\l_MT_below_intertext_sep=\dimen256
+\l_MT_above_shortintertext_sep=\dimen257
+\l_MT_below_shortintertext_sep=\dimen258
 \xmathstrut@box=\box65
-\xmathstrut@dim=\dimen258
+\xmathstrut@dim=\dimen259
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/titling/titling.sty
@@ -1364,30 +1361,30 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip98
-\fb@frw=\dimen259
-\fb@frh=\dimen260
-\FrameRule=\dimen261
-\FrameSep=\dimen262
+\fb@frw=\dimen260
+\fb@frh=\dimen261
+\FrameRule=\dimen262
+\FrameSep=\dimen263
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2020/09/26 v1.10
 Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
 Package textpos Info: choosing support for LaTeX3 on input line 61.
 \TP@textbox=\box66
 \TP@holdbox=\box67
-\TPHorizModule=\dimen263
-\TPVertModule=\dimen264
-\TP@margin=\dimen265
-\TP@absmargin=\dimen266
+\TPHorizModule=\dimen264
+\TPVertModule=\dimen265
+\TP@margin=\dimen266
+\TP@absmargin=\dimen267
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen267
-\TP@ox=\dimen268
-\TP@oy=\dimen269
+\TPboxrulesize=\dimen268
+\TP@ox=\dimen269
+\TP@oy=\dimen270
 \TP@tbargs=\toks41
 TextBlockOrigin set to 0pt x 0pt
 ) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2022/02/13 3.71 The Babel package
+Package: babel 2022/02/26 3.73 The Babel package
 \babel@savecnt=\count437
-\U@D=\dimen270
+\U@D=\dimen271
 \l@unhyphenated=\language4
 (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read4
@@ -1415,7 +1412,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'australian'.
-(./response1.aux)
+No file response1.aux.
 \openout1 = `response1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxsfmi/m/it on input line 205.
@@ -1499,7 +1496,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 205.
 LaTeX Info: Redefining \pageref on input line 205.
 LaTeX Info: Redefining \nameref on input line 205.
-(./response1.out) (./response1.out)
 \@outlinefile=\write5
 \openout5 = `response1.out'.
 
@@ -1563,8 +1559,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 \openout4 = `response1.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'response1.bbl' found.
-(./response1.bbl)
+Package biblatex Info: ... file 'response1.bbl' not found.
+No file response1.bbl.
 Package biblatex Info: Reference section=0 on input line 205.
 Package biblatex Info: Reference segment=0 on input line 205.
 Package caption Info: Begin \AtBeginDocument code.
@@ -1641,17 +1637,31 @@ Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
 [11] (./response1.aux)
-Package rerunfilecheck Info: File `response1.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `response1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `response1.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                response1
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'response1.run.xml'.
 \openout1 = `response1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27168 strings out of 480238
- 473826 string characters out of 5894680
- 1216441 words of memory out of 5000000
- 44576 multiletter control sequences out of 15000+600000
+ 27169 strings out of 480236
+ 473903 string characters out of 5894623
+ 1216873 words of memory out of 5000000
+ 44590 multiletter control sequences out of 15000+600000
  553661 words of font info for 145 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  69i,11n,117p,1273b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s

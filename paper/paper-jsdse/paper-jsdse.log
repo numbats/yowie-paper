@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  10 MAY 2022 11:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  10 MAY 2022 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,27 +567,30 @@ Overfull \hbox (11.51877pt too wide) in paragraph at lines 368--369
  []
 
 [13]
-<figures/sample-plot-1.pdf, id=195, 716.6775pt x 566.115pt>
+<figures/sample-plot-1.pdf, id=196, 716.6775pt x 566.115pt>
 File: figures/sample-plot-1.pdf Graphic file (type pdf)
 <use figures/sample-plot-1.pdf>
 Package pdftex.def Info: figures/sample-plot-1.pdf  used on input line 383.
 (pdftex.def)             Requested size: 462.26999pt x 365.16296pt.
-<figures/feature-plot-1.pdf, id=198, 701.62125pt x 263.98625pt>
+<figures/feature-plot-1.pdf, id=199, 701.62125pt x 263.98625pt>
 File: figures/feature-plot-1.pdf Graphic file (type pdf)
 <use figures/feature-plot-1.pdf>
 Package pdftex.def Info: figures/feature-plot-1.pdf  used on input line 434.
 (pdftex.def)             Requested size: 462.26999pt x 173.93338pt.
 [14] [15] [16]
-<figures/compare-plot-1.pdf, id=219, 716.6775pt x 557.08125pt>
+<figures/compare-plot-1.pdf, id=220, 716.6775pt x 557.08125pt>
 File: figures/compare-plot-1.pdf Graphic file (type pdf)
 <use figures/compare-plot-1.pdf>
 Package pdftex.def Info: figures/compare-plot-1.pdf  used on input line 454.
 (pdftex.def)             Requested size: 416.04016pt x 323.39636pt.
-<figures/fixed-feature-plot-1.pdf, id=221, 701.62125pt x 263.98625pt>
+<figures/fixed-feature-plot-1.pdf, id=222, 701.62125pt x 263.98625pt>
 File: figures/fixed-feature-plot-1.pdf Graphic file (type pdf)
 <use figures/fixed-feature-plot-1.pdf>
 Package pdftex.def Info: figures/fixed-feature-plot-1.pdf  used on input line 465.
 (pdftex.def)             Requested size: 462.26999pt x 173.93338pt.
+
+LaTeX Warning: Reference `fig:flow-chart-blind' on page 17 undefined on input line 475.
+
 <../figures/flowchart_blind.png, id=223, 1606.0pt x 2069.7325pt>
 File: ../figures/flowchart_blind.png Graphic file (type png)
 <use ../figures/flowchart_blind.png>
@@ -596,7 +599,7 @@ Package pdftex.def Info: ../figures/flowchart_blind.png  used on input line 481.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 490.
 [17] [18] [19]
-<figures/compare-subsets-1.pdf, id=274, 630.355pt x 341.275pt>
+<figures/compare-subsets-1.pdf, id=273, 630.355pt x 341.275pt>
 File: figures/compare-subsets-1.pdf Graphic file (type pdf)
 <use figures/compare-subsets-1.pdf>
 Package pdftex.def Info: figures/compare-subsets-1.pdf  used on input line 609.
@@ -617,22 +620,25 @@ Overfull \hbox (33.67421pt too wide) in paragraph at lines 830--832
  []
 
 [29] [30] [31 <./figures/sample-plot-1.pdf>] [32 <./figures/feature-plot-1.pdf>] [33 <./figures/compare-plot-1.pdf>] [34 <./figures/fixed-feature-plot-1.pdf>] [35 <../figures/flowchart_blind.png>] [36 <./figures/compare-subsets-1.pdf>] (./paper-jsdse.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `paper-jsdse.out' has not changed.
 (rerunfilecheck)             Checksum: 93BA855BF1030511AA0ABB6EEE0E1889;3440.
  ) 
 Here is how much of TeX's memory you used:
- 21155 strings out of 480260
- 391110 string characters out of 5893668
- 665039 words of memory out of 5000000
- 38564 multiletter control sequences out of 15000+600000
- 476748 words of font info for 54 fonts, out of 8000000 for 9000
+ 21158 strings out of 480260
+ 391150 string characters out of 5893668
+ 665034 words of memory out of 5000000
+ 38566 multiletter control sequences out of 15000+600000
+ 476916 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,9n,89p,1625b,578s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on paper-jsdse.pdf (36 pages, 1364340 bytes).
+{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on paper-jsdse.pdf (36 pages, 1374055 bytes).
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 510 compressed objects within 6 object streams
+ 597 PDF objects out of 1000 (max. 8388607)
+ 515 compressed objects within 6 object streams
  175 named destinations out of 1000 (max. 500000)
  211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
