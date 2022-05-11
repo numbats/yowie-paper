@@ -15,7 +15,7 @@ age_table <- full_demographics %>%
 age_table %>%
   mutate(n = scales::comma(n)) %>%
   kable(
-      caption = "Frequency table of the age at the start of the survey in NSLY79 cohort",
+      caption = "Frequency table of the age at the start of the survey in NSLY79 cohort in the extracted data.",
       col.names = c("Age", "Number of individuals"),
       booktabs = TRUE,
       linesep = "",
@@ -40,7 +40,7 @@ sex_race_table <- full_demographics %>%
          Total = str_replace(Total, "\\([1|2]00\\%\\)", ""))
 
 kable(sex_race_table,
-      caption = "Contingency table for sex and race for the full NLSY79 data. The percentage (rounded to closest 1\\%) is out of the total corresponding to row.",
+      caption = "Contingency table for sex and race for the extracted NLSY79 demographic data. The percentage (rounded to closest 1\\%) is out of the total corresponding to row.",
       col.names = c("Sex", "Hispanic", "Black", "Non-Black, Non-Hispanic", "Total"),
       booktabs = TRUE,
       linesep = "",
@@ -301,9 +301,9 @@ wages <- wages_clean %>%
 # Create a data set for the high school dropouts cohort
 wages_hs_do <- wages %>%
   # based on two criteria mentioned in the paper
-  filter(hgc_i < 12 | (hgc_i >= 12 & ged != 1)) %>%
+  filter(hgc_i < 12 | (hgc_i >= 12 & ged == 2)) %>%
   filter(age_1979 <= 17,
-         sex == "MALE") %>%
+         sex == "m") %>%
   as_tsibble(key = id,
              index = year,
              regular = FALSE)
@@ -385,10 +385,10 @@ n_obs_do_pred <- filter(wages_hs_do, is_pred == TRUE) %>%
   nrow()
 
 ### ---- flow-chart
-include_graphics(here::here("paper/figures/flowchart_blind.png"))
+include_graphics(here::here("paper/figures/flowchart.png"))
 
 ### ---- flow-chart-blind
-include_graphics(here::here("paper/figures/flowchart_blind.png"))
+include_graphics(here::here("paper/figures/flowchart-blind.png"))
 
 ## The end of data refreshing procedure
 ## Go to "data-raw/eda" to see the code of comparison between original and refreshed data.

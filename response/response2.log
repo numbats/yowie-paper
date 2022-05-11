@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  10 MAY 2022 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  11 MAY 2022 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1629,14 +1629,15 @@ Underfull \hbox (badness 1286) in paragraph at lines 230--231
 ) through-out the manuscript. Fur-
  []
 
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-36.
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [1
+[1
 
 {/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-}] [2] [3] [4] [5] [6]
+}]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+56.
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [2] [3] [4] [5] [6] [7]
 
 LaTeX Warning: Empty bibliography on input line 529.
 
@@ -1648,7 +1649,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-[7] (./response2.aux)
+[8] (./response2.aux)
 Package rerunfilecheck Info: File `response2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response2.run.xml'.
@@ -1656,11 +1657,11 @@ Package logreq Info: Writing requests to 'response2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27166 strings out of 480236
- 473742 string characters out of 5894623
+ 27170 strings out of 480236
+ 473847 string characters out of 5894623
  1216931 words of memory out of 5000000
  44590 multiletter control sequences out of 15000+600000
- 552888 words of font info for 141 fonts, out of 8000000 for 9000
+ 553200 words of font info for 143 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  69i,11n,117p,1243b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
@@ -1669,10 +1670,10 @@ esanspro/a_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
 vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
 onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
 y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response2.pdf (7 pages, 156538 bytes).
+Output written on response2.pdf (8 pages, 159968 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)
 

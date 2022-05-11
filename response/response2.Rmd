@@ -30,7 +30,7 @@ The only comments on framing appear to come from the associate editor: \textcolo
 \item[Associate Editor:] \textcolor{violet}{\textbf{The discussion around highest grade completed is mechanical in what was done, but lacks substantive reasoning for those decisions and possible downstream consequences.} It is still unclear to me whether education is measured by year or by category (it’s described both ways) and, in either case, the decision for one or the other isn’t contrasted or justified. For example `hcg` is described as a factor and `grade` is described as only increasing (numeric?) and surely the authors mean non-decreasing. If this is meant to be a case study for the classroom, this decision is rich ground for discussion.}
 \end{description}
 
-* We have added more explanation of the two variables, and suggestions of where to use one and the other in classroom analyses. XXX Dewi to do
+* We have added more explanation of the two variables, and suggestions of where to use one and the other in classroom analyses. XXX DONE
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{\textbf{I’m not sure this is accurate. The robustlmm package in R fits these models rather quickly with thousands of observations. What are the authors using? Does it run out of memory (requires more RAM) or does it take too much time?} The mixed effects models that robustlmm fits are identical to that of lmer. There is extensive documentation about the convergence issues (which are generally false positives). One may use the allFit() function to evaluate this.}
@@ -99,13 +99,13 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \item[Associate Editor:] \textcolor{violet}{(page 9, line 4-6). “HRP1 1980 and HRP2 1980, contain the information about the job number up to 5...” They only contain job number one and two – in other areas of the manuscript you use a subscript i to make the point clear and this would be a good solution here. The code here goes off the page a bit, too.}
 \end{description}
 
-* Done XXX Dewi
+* We have modified the discussion around HRP to be more concise about what we have done with the variable. On page 9, we use the HRP to demonstrate the untidy form of the data. Hence, the sentence “HRP1 1980 and HRP2 1980, contain the information about the job number up to 5...” has been removed. In another part of the manuscript, we explain that if a respondent has multiple jobs, the `mean_hourly_wage` is computed as a weighted average of the hourly wage (`HRP`) for each job with the number of hours worked for each job as weights (provided that the information on the number of hours is available); if the number of hours worked for any job is missing, then the `mean_hourly_wage` is computed as a simple average of all available hourly wages. We hope that our modification makes the manuscript clearer. XXX DONE
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{(page 10, tables 1-2) I believe these tables show what the authors see in their cleaned data compared to the NLSY numbers provided on page 15. Is this correct?}
 \end{description}
 
-* XXX Dewi Add some words to make it clear what data this is summarising
+* The tables show the number by characteristics (age, sex, and race) in the input data (referring the term in the de Jonge and van der Loo's statistical value chain), i.e., the data we have extracted and tidied from the database. We are not saying it as a clean data as we have not treat the extreme values. We have modified the tables' caption to make this clearer. XXX DONE
 
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{On page 6, several times you use the word “plan,” as in “We also plan to include additional variables” and “The plan is to create three datasets as follows.” Has this been done in the paper, or are some of these future goals?}
