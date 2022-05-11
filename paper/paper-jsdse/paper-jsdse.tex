@@ -137,7 +137,7 @@ This paper is structured in the following way. Section \ref{database} describes 
 
 Singer and Willett (2003) used the wages and other variables of high school dropouts from the NLSY79 data as an example data set to illustrate longitudinal data modeling of wages on workforce experience, with covariates education and race. This data has been playing an important role in research in various disciplines, including but not limited to economics, sociology, education, public policy, and public health for more than a quarter of the century (Pergamit et al. 2001). In addition, this is considered a carefully designed longitudinal survey with high retention rates, making it suitable for life course research (Pergamit et al. 2001; Cooksey 2017). According to Cooksey (2017), thousands of articles and hundreds of book chapters and monographs have utilized this data. Moreover, the NLSY79 is considered the most widely used and most important cohort in the survey data (Pergamit et al. 2001).
 
-Our aim is to refresh the wages textbook data and append it with data from 1994 through to the latest data reported in 2018, a purpose consistent with Grimshaw (2015)'s statistics education goal of embracing authentic data experiences. Here, we investigate the process of getting from the raw NLSY79 data to a textbook data set as similar as possible to that provided by Singer and Willett (2003). We should also note that race is a variable in the original data set, and for compatibility, it is also provided with the refreshed data for the \emph{purposes of studying racism, not race} (Fullilove 1998). There are a number of data sets provided by Singer and Willett (2003), and we focus only on this one because it has captivated our attention for a number of years. We use it in our own teaching of longitudinal data analysis and would very much like to use data since 1994.
+Our aim is to refresh the wages textbook data and append it with data from 1994 through to the latest data reported in 2018, a purpose consistent with Grimshaw (2015)'s statistics education goal of embracing authentic data experiences. Here, we investigate the process of getting from the raw NLSY79 data to a textbook data set as similar as possible to that provided by Singer and Willett (2003). We should also note that race is a variable in the original data set, and for compatibility, it is also provided with the refreshed data for the \emph{purposes of studying racism, not race} (Fullilove 1998). There are a number of data sets provided by Singer and Willett (2003), but we focus only on wages data because it has captivated our attention for a number of years in our own teaching of longitudinal data analysis.
 
 \hypertarget{database-1}{%
 \subsection{Database}\label{database-1}}
@@ -180,9 +180,9 @@ We aim to create three datasets as follows:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  The wages data of the whole NLSY79 cohort, including females.
+  The wages data of the whole NLSY79 cohort, including females,
 \item
-  A separate table of the demographic data of the whole NLSY79 cohort.
+  A separate table of the demographic data of the whole NLSY79 cohort, and
 \item
   The subset of wages data in (1), which is the wages of high school dropouts' as a refreshed version of Singer and Willett (2003)'s data.
 \end{enumerate}
@@ -190,7 +190,7 @@ We aim to create three datasets as follows:
 \hypertarget{cleaning}{%
 \section{Data cleaning}\label{cleaning}}
 
-In the context of official statistics, M. van der Loo and de Jonge (2018) describe the ``statistical value chain,'' which includes various production stages of the data cleaning process as raw data (data in the initial that it arrives), input data (data organized with correct type and identified variables), and valid data (data that has been cleaned and more accurately represents the intent of variables). What we have colorfully named wild data can be considered to be raw data, and valid data could be considered to be textbook data in the above statistical value chain. In this section, we outline the steps to download the raw data (Section \ref{getdata}) and then tidy the raw data into input data, specifically for the demographic variables (Section \ref{tidydemog}) and the employment variables (Section \ref{tidyemp}), so that the resulting input data can be used downstream for validating the data as described in Section \ref{ida} and Section \ref{censor}.
+In the context of official statistics, M. van der Loo and de Jonge (2018) describe the ``statistical value chain,'' which includes various production stages of the data cleaning process as raw data (initial data as delivered originally), input data (data organized with correct type and identified variables), and valid data (data that has been cleaned and more accurately represents the intent of variables). What we have colorfully named wild data can be considered to be raw data, and valid data could be considered to be textbook data in the above statistical value chain. In this section, we outline the steps to download the raw data (Section \ref{getdata}) and then tidy the raw data into input data, specifically for the demographic variables (Section \ref{tidydemog}) and the employment variables (Section \ref{tidyemp}), so that the resulting input data can be used downstream for validating the data as described in Section \ref{ida} and Section \ref{censor}.
 
 \hypertarget{getdata}{%
 \subsection{Getting the data}\label{getdata}}
@@ -298,7 +298,7 @@ To get the data into tidy form (Wickham 2014), it needs to comply with three rul
 #>   [list output truncated]
 \end{verbatim}
 
-Thus, we re-arrange and wrangle the data into tidy data form, with columns corresponding to individual ID, year, job number, wage in dollars, and the demographic variables. This is done using the \texttt{tidyverse} suite of packages (Wickham et al. 2019): \texttt{tidyr} (Wickham 2020) to pivot the data into long-form, with \texttt{dplyr} (Wickham et al. 2020) and \texttt{stringr} (Wickham 2019) to create new variables from the downloaded data from the database, and code levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{https://github.com/numbats/yowie/articles/raw-to-input-data.html} but also described in the subsequent subsections.
+Thus, we re-arrange and wrangle the data into tidy data form, with columns corresponding to individual ID, year, job number, wage in dollars, and the demographic variables. This is done using the \texttt{tidyverse} suite of packages (Wickham et al. 2019): \texttt{tidyr} (Wickham 2020) to pivot the data into long-form, with \texttt{dplyr} (Wickham et al. 2020) and \texttt{stringr} (Wickham 2019) to create new variables from the downloaded data from the database, and code levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{https://numbats.github.io/yowie/articles/raw-to-input-data.html} but also described in the subsequent subsections.
 
 \hypertarget{tidydemog}{%
 \subsubsection{Tidying demographic variables}\label{tidydemog}}
@@ -309,9 +309,9 @@ For \texttt{sex} and \texttt{race}, we have simplified the original names provid
 
 Similarly, there are issues for the \texttt{race} variable. The current US Federal guidelines (Office of Management and Budget 1997) state that there should be at least five categories for race, and an individual should be able to identify as more than one race category. In addition, ``Hispanic'' or ``Latino'' should be considered to be an ethnic group rather than a race. This level of detail is not available in the database. There is one variable with only three categories, and an individual can be a member of only one. Thus, the \texttt{race} variable is inadequate by today's standards, and educators should point to the current Federal guidelines when using this variable, and keep in mind that the purpose of any analysis is to study racism rather than race.
 
-Further, the object \texttt{new\_data\_qnames}, contains the variables \texttt{Q1-3\_A\textasciitilde{}Y\_1979} and \texttt{Q1-3\_A\textasciitilde{}Y\_1981}, which records two versions of the birth year of the respondent; this is also the case for the record of birth month (\texttt{Q1-3\_A\textasciitilde{}M\_1979} and \texttt{Q1-3\_A\textasciitilde{}M\_1981}). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year.
+Furthermore, the object \texttt{new\_data\_qnames}, contains the variables \texttt{Q1-3\_A\textasciitilde{}Y\_1979} and \texttt{Q1-3\_A\textasciitilde{}Y\_1981}, which records two versions of the birth year of the respondent; this is also the case for the record of birth month (\texttt{Q1-3\_A\textasciitilde{}M\_1979} and \texttt{Q1-3\_A\textasciitilde{}M\_1981}). The record contains two versions of birth year and birth month as the survey recorded this in 1979 and 1981. We checked for consistency between the two versions and found no discrepancy where the responses were recorded in both 1979 and 1981. The age was then calculated using the birth year.
 
-The next step is processing the highest grade completed. There are several ways to define this, and this should be reflected in the refreshed data to give some flexibility for downstream analysis. The first one is the highest grade ever completed is reported in the database and provided in the refreshed data as \texttt{hgc} and \texttt{hgc\_i}, for the factor and integer type, respectively. For each individual, there is only one value of \texttt{hgc} and \texttt{hgc\_i}. This variable is obtained from \texttt{new\_data\_qnames} with the name \texttt{HGC\_EVER\_XRND} and stored in year units (e.g., 10, 11, 12, 13, and so on), so the transformation is simply giving a new column name as \texttt{hgc\_i} and recoded as a factor to give \texttt{hgc} (e.g., 10th grade, 11th grade, and so on). We decide to include both the factor and integer values to be used as examples in various classroom demonstrations, such as to explain different data types. Besides, it can also be used as the demonstration of different type of data visualization which is determined by the data type. It can also be used for teaching the modeling of cross sectional data.
+The next step is processing the highest grade completed. There are several ways to define this, and this should be reflected in the refreshed data to give some flexibility for downstream analysis. The first one is the highest grade ever completed is reported in the database and provided in the refreshed data as \texttt{hgc} and \texttt{hgc\_i}, encoded as a factor and integer variable, respectively. For each individual, there is only one value of \texttt{hgc} and \texttt{hgc\_i}. This variable is obtained from \texttt{new\_data\_qnames} with the name \texttt{HGC\_EVER\_XRND} and stored in year units (e.g., 10, 11, 12, 13, and so on), so the transformation is simply giving a new column name as \texttt{hgc\_i} and recoded as a factor to give \texttt{hgc} (e.g., 10th grade, 11th grade, and so on). We decide to include both the factor and integer variables to be used as examples in various classroom demonstrations to explain different data types say. Besides this, it can also serve as a demonstration of different type of data visualization ascribed by the data type and for teaching the modeling of cross sectional data.
 
 The second definition is the highest grade completed that is reported in each round of the survey (provided in the refreshed data as \texttt{grade}). This value can change over time, but it should only increase. This has been included in the refreshed dataset to enable richer downstream analyses, for example, if one would like to explore how the temporal changes in education level affect the wages of individuals. Hence, different from \texttt{hgc}, this variable could be used to demonstrate longitudinal and time series analysis in the classroom. This is recorded in \texttt{new\_data\_qnames} as columns beginning with \texttt{Q3-4} and \texttt{HGC} with year as a suffix. In addition, it is also in the columns beginning with \texttt{HGCREV} reflecting revised data. We chose to use these revised values because there were fewer missing values indicating it had been more thoroughly checked. In the survey years when the revised value were not reported, i.e., in 2012, 2014, 2016, and 2018, we used the unrevised version accordingly.
 
@@ -328,14 +328,14 @@ Our target variables for the employment are to obtain respondent's mean hourly w
 
 From 1979 to 1987, \texttt{new\_data\_qnames} only contains one version of hours worked per week for each job (in the variables with names starting with \texttt{QES-52A}). From 1988 onward, we selected the total hours worked per week, including hours working from home (\texttt{QES-52D}). However, in 1993, this variable was missing for the first and last job, so we selected to use \texttt{QES-52A} instead. In addition, 2008 only had jobs 1-4 for the \texttt{QES-52D} variable, so we use only these.
 
-The hourly wages are in the variables beginning with \texttt{HRP} in \texttt{new\_data\_qnames}. As a respondent may have multiple jobs, the \texttt{mean\_hourly\_wage} is computed as a weighted average of the hourly wage for each job with the number of hours worked for each job as weights (provided that the information on the number of hours is available); if the number of hours worked for any job is missing, then the \texttt{mean\_hourly\_wage} is computed as a simple average of all available hourly wages. Prior to computing the mean hourly wage, we undertook a number of steps to treat unusual observations as described below:
+The hourly wages are in the variables beginning with \texttt{HRP} in \texttt{new\_data\_qnames}. As a respondent may have multiple jobs, the \texttt{mean\_hourly\_wage} is computed as a weighted average of the hourly wage for each job with the number of hours worked for each job as weights (provided that the information on the number of hours is available); if the number of hours worked for any job is missing, then the \texttt{mean\_hourly\_wage} is computed as a simple average of all available hourly wages. Prior to computing the mean hourly wage, we undertook a number of steps to treat extreme observations as described below:
 
 \begin{itemize}
 \tightlist
 \item
-  If the hourly rate is recorded as 0, we set wage as missing.
+  If the hourly rate is recorded as 0, we set wage as missing, and
 \item
-  If the total hours of worked for the corresponding job is greater than 84 hours, we set the wage and hours worked as missing.
+  If the total hours of worked per week for the corresponding job is greater than 84 hours, we set the wage and hours worked as missing.
 \end{itemize}
 
 The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is computed from the number of non-missing values of hourly wage. In other words, even if the information of hours worked exists for a particular observation, we do not tally when the hourly wage is missing.
@@ -474,7 +474,7 @@ Figure \ref{fig:fixed-feature-plot} shows the summary statistics after removing 
 \hypertarget{recap}{%
 \subsection{Recap}\label{recap}}
 
-There are many steps and decisions made to go from raw to input to valid data. Figure \ref{fig:flow-chart-blind} summarizes these in order to create a refreshed wages data set.
+There are many steps and decisions made to go from raw to input to valid data. Figure \ref{fig:flow-chart} summarizes these in order to create a refreshed wages data set.
 
 
 
@@ -541,7 +541,7 @@ The list of variables provided in the three new datasets are as follows:
 \item
   \texttt{njobs}: Number of jobs that an individual has.
 \item
-  \texttt{hours:}: The total number of hours the individual usually works per week.
+  \texttt{hours}: The total number of hours the individual usually works per week.
 \item
   \texttt{stwork}: The year when the individual started to work.
 \item
@@ -691,7 +691,7 @@ The entire analysis is conducted using \texttt{R} (R Core Team 2020) in RStudio 
 
 \begin{itemize}
 \item
-  \textbf{Codes}: R script to reproduce data tidying and cleaning is available at \url{https://github.com/numbats/yowie/articles/process-data.html}. The code for the extreme value handling with robust linear fits is in \url{https://github.com/numbats/yowie/articles/input-to-valid-data.html}.
+  \textbf{Codes}: R script to reproduce data tidying and cleaning is available at \url{https://numbats.github.io/yowie/articles/process-data.html}. The code for the extreme value handling with robust linear fits is in \url{https://numbats.github.io/yowie/articles/input-to-valid-data.html}.
 \item
   \textbf{R Package}:\texttt{yowie} is a data container R package that contains 3 datasets, namely the high school mean hourly wage data, high school dropouts mean hourly wage data, and demographic data of the NLSY79 cohort. This package can be accessed from \url{https://github.com/numbats/yowie}.
 \item
