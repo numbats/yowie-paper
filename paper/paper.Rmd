@@ -489,22 +489,22 @@ The list of variables provided in the three new datasets are as follows:
 
 
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
-The original set, containing wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994, is available in the R package `brolgar`. To compare the refreshed data with the original, a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This requires first identifying individuals who dropped out of high school.
+The original set, containing wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994, is available in the R package `brolgar`. To compare the refreshed data with the original, we need to subset the data into a matching cohort of high school dropouts. There are multiple ways to match a comparative cohort from the updated data -- the simplest approach is to subset to individuals with matching IDs in the original data and restricting the longitudinal measurements to the same years; another approach is to replicate the process as suggested by the description of the original data thus identifying a new (and possibly removal of old) set of individuals that is included in the refreshed data. We use the latter approach and as the first step we identify individuals who dropped out of high school.
 
 ## Filtering: Determining who is a dropout
 
 There is no explicit explanation of how the dropouts cohort is determined in the original data. Hence, we use the high school dropouts criteria from @nlsy79edu, which are:
 
 1. An individual whose highest grade completed (`hgc`) is reported to be less than 12th grade, **or**
-2. An individual whose highest grade completed (`hgc`) is reported to be at least 12th grade and has received a GED (`ged` is code to 2).
+2. An individual whose highest grade completed (`hgc`) is reported to be at least 12th grade and has received a GED (i.e. `ged` code is 2).
 
 An additional criterion from @SingerJudithD2003Alda is to only include males aged between 14 and 17 years old in 1979. With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. To investigate the reason for the difference, individuals from the original and refreshed dataset were matched by id. This revealed several reasons for the disparity:
 
 1. 173 individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate that there are people older than 17 in the subset. Our decision is to also include them in the refreshed data as the new data contains an age variable, so analysts could filter them later. 
 2. 79 individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because: 
-    i. 35 of them completed at least 12th grade with a diploma instead of GED (`ged` variable is coded to 1). This suggests they are not dropouts, and so we excluded them from the refreshed data. 
+    i. 35 of them completed at least 12th grade with a diploma instead of GED (`ged` variable is coded as 1). This suggests they are not dropouts, and so we excluded them from the refreshed data. 
     ii. The information about `ged` is missing in 38 individuals. We decided to include them in the refreshed data. 
-    iii. 3 individuals have both diploma and GED (`ged` is coded to 3). These were kept in the refreshed data. 
+    iii. 3 individuals have both diploma and GED (`ged` is coded as 3). These were kept in the refreshed data. 
     iv. 12 individuals do not exist in `wages` data because they have participated in less than 3 rounds of the survey. 
 
 The filtering was re-applied using these decisions, resulting in a refreshed dropout subset containing 863 individuals.
@@ -516,7 +516,7 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 
 Because the original data does not have the year of collection, it is not possible to merge the two subsets directly. Merging longitudinal data requires both the key (`id`) and the index (ideally survey year). In the original data, the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets have to be conducted in a two-sample fashion rather than a matched sample. 
 
-Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets. Plot (A) shows a back-back bar chart of the highest grade completed. The two sets are almost the same, but small differences remain. Plots (B) and (C) show stacked density plots of experience and log wages, respectively. The distributions are relatively close, with more differences in wages as would be expected because the refreshed data is not inflation-adjusted.
+Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets. Plot (A) shows a back-to-back bar chart of the highest grade completed. The two sets are almost the same, but small differences remain. Plots (B) and (C) show stacked density plots of experience and log wages, respectively. The distributions are relatively close, with more differences in wages as would be expected because the refreshed data is not inflation-adjusted.
 
 ```{r calculate-summaries-on-subsets}
 ```
