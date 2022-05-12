@@ -311,7 +311,7 @@ wages_hs_do <- wages %>%
 
 # investigate the dropouts IDs whether it agrees with the IDs in the original data
 
-# number of IDs in the original data
+# number of IDs in the refreshed data
 ori_do_nrow <- wages_hs_do %>% as_tibble() %>% count(id) %>% nrow()
 
 # create a negation function
@@ -319,6 +319,8 @@ ori_do_nrow <- wages_hs_do %>% as_tibble() %>% count(id) %>% nrow()
 
 # read the original data
 sw <- brolgar::wages
+sw_do_nrow <- sw %>% as_tibble() %>% count(id) %>% nrow()
+
 
 # filter the IDs in the refreshed data set that do not exist in the original data
 not_in_sw <- sw %>% filter(id %!in% wages_hs_do$id) %>% distinct(id, .keep_all = TRUE)
