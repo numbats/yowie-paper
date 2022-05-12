@@ -174,14 +174,13 @@ The NLSY79 data contains a large number of variables, but for our purposes, the 
 
 \begin{figure*}[p]
 
-\begin{tcolorbox}[title = Navigating the data source, halign=center,fontupper=\linespread{.66}\selectfont]{\fontsize{10pt}{10pt}}
-\faDatabase\ NLSY79 (\url{https://www.nlsinfo.org/investigator/pages/search?s=NLSY79})\\
-\vspace{1mm}
+\begin{tcolorbox}[title = Navigating the data source, fontupper=\linespread{.8}\selectfont]
+\vspace{3mm}
+\faDatabase\ NLSY79 (\url{https://www.nlsinfo.org/investigator/pages/search?s=NLSY79})\\\\
+\vspace{3mm}
 \faCheck\ The CASEID will be always be selected.  \\
 \vspace{1mm}
-\faCheck\ The 3 recommended demographic variable (sample ID, race and sex) were selected.  \\
-\vspace{1mm}
-For the remaining variables, we went to the "Variable Search" tab and select variables as follows
+\faCheck\ The 3 recommended demographic variable (sample ID, race and sex) were selected.  For the remaining variables, we went to the ``Variable Search" tab and select variables as follows
 \begin{itemize}
 \item[$\triangleright$] Education, Training and Achievement Scores
 \begin{itemize}
@@ -234,7 +233,7 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
+\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab ``Save / Download" then select the tab ``Advanced Download". We select the R Source code and comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename ``NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
 \caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
@@ -245,7 +244,7 @@ The downloaded data set comes as a zip file, containing the following set of fil
 - `NLSY79.csv`: comma separated value format of the response data,
 - `NLSY79.dat`: alternative text format of the response data,
 - `NLSY79.NLSY79`: tagset of variables that can be uploaded to the website to recreate the data set, and
-- `NLSY79.R`: R script for reading the data into R and converting the variables' names and label into something more sensible. 
+- `NLSY79.R`: R script for reading the data into R and converting the variable names and label into something more sensible. 
 
 We alter only the file path in `NLSY79.R` and run the script without any other alteration. This results in the initial processing of the raw data into two data sets,  `categories_qnames` (where the observations are stored in categorical/interval values) and `new_data_qnames` (the observations are stored in integer form).  
 
