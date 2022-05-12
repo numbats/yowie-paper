@@ -107,7 +107,7 @@ The story from modeling the data (and as reported by Singer and Willett) is that
 
 This disparity between the overall trend and the individual heterogeneity is what makes this data interesting. Textbook data sets have longevity if they have unresolved elements. The iris data [@iris-data] is a prime example. It has withstood the test of time because the three species cannot be perfectly classified, and so it continues to challenge researchers and instructors to do better in the analysis^[It should be noted that the iris data is best replaced today with the penguins data [@penguins-data], which has similar qualities, is new, and does not suffer from a connection with eugenics [@notiris]]. We argue that the wages data is in this class of textbook data, too, because it presents a challenge for longitudinal data analysis: how can we better summarize and explain the individual experience? 
 
-For statistics, and data science by association, it is increasingly important to reach the individual. One might think of this as a divergence of purpose -- statistics for public policy -- or statistics for the public. The two are not the same. As the world becomes more electronically connected, combating misinformation and mitigating conspiracy theories require statistics that address the individual. For example, with the wages data, the overall trend, across demographics, is a steady increase in wages, but the patterns among individuals is heterogeneous. Some individuals see a decline in their wages, some an increase, some have dramatic ups and downs from year to year, and the heterogeneity of the patterns are evident across demographics. Subject-specific variation explains most of the variation in wages, and even though the overall trend is statistically significant, it is weak. The message for public policy is that demographic profile is related to different wage patterns on average and some structural social change is desirable. However, discussing the overall trend with an individual is misleading -- more than likely their pattern is completely different. It could even be depressing for them to compare themselves to the overall average, especially if the individual's wages have a declining trend or high volatility. It would be more useful for an individual to know what percentage of the population have profiles like theirs. We argue that different summaries are needed to communicate with the public, and ones where they might be able to individually act on to change their own situation. <!--this information is the appropriate message for an individual is that you as an individual are far more than your demographic. The majority of people in the study do not have a pattern that is similar to the overall trend. If you have experienced declining wages, you are not alone; there are others like you, and more than you think.--> We occasionally hear this voiced in the public media media, also, for example, an article published in the Sydney Morning Herald argues there is no average Australian [@notaverage]. Thus the wages data provides educators with a challenge, from a methodological and a philosophical perspective, and wage experience is a topic of interest to many.
+For statistics, and data science by association, it is increasingly important to reach the individual. One might think of this as a divergence of purpose -- statistics for public policy -- or statistics for the public. The two are not the same. As the world becomes more electronically connected, combating misinformation and mitigating conspiracy theories require statistics that address the individual. For example, with the wages data, the overall trend, across demographics, is a steady increase in wages, but the patterns among individuals is heterogeneous. Some individuals see a decline in their wages, some an increase, some have dramatic ups and downs from year to year, and the heterogeneity of the patterns are evident across demographics. Subject-specific variation explains most of the variation in wages, and even though the overall trend is statistically significant, it is weak. The message for public policy is that demographic profile is related to different wage patterns on average and some structural social change is desirable. However, discussing the overall trend with an individual is misleading -- more than likely their pattern is completely different. It could even be depressing for them to compare themselves to the overall average, especially if the individual's wages have a declining trend or high volatility. It would be more useful for an individual to know what percentage of the population have profiles like theirs. We argue that different summaries are needed to communicate with the public, and ones where they might be able to individually act on to change their own situation. <!--this information is the appropriate message for an individual is that you as an individual are far more than your demographic. The majority of people in the study do not have a pattern that is similar to the overall trend. If you have experienced declining wages, you are not alone; there are others like you, and more than you think.--> We occasionally hear this voiced in the public media, also, for example, an article published in the Sydney Morning Herald argues there is no average Australian [@notaverage]. Thus the wages data provides educators with a challenge, from a methodological and a philosophical perspective, and wage experience is a topic of interest to many.
 
 As a textbook data set, though, the wages data is outdated. The most recent year in the data is 1994, 9 years prior to when @SingerJudithD2003Alda was published. Teachers of statistics need contemporary data sets to show how techniques are relevant for today's students. Using tired old textbook data sets can imbue a misconception that the field is not current. The wages data is extracted from NSLY79, one of the best examples of open data [see details at @opendata], which is constantly being updated. It should be possible to continuously refresh the textbook data from the data repository. This paper describes our (non-glamorous) journey from open wild data to textbook data. 
 
@@ -172,16 +172,15 @@ In the context of official statistics, @LooMarkvander2018Sdcw describe the "stat
 
 The NLSY79 data contains a large number of variables, but for our purposes, the scope required is limited to demographic profiles, wages data, and work experience. More specifically, we went to the NLSY79 database website at \url{https://www.nlsinfo.org/content/cohorts/nlsy79/get-data}, clicked on the direct link to NSLY79 data, and navigated as described in Figure \ref{fig:source-nav}.
 
-\begin{figure}[t]
+\begin{figure*}[p]
 
-\begin{tcolorbox}[title = Navigating the data source]
-\faDatabase\ NLSY79 (\url{https://www.nlsinfo.org/investigator/pages/search?s=NLSY79})\\
-\vspace{1mm}
+\begin{tcolorbox}[title = Navigating the data source, fontupper=\linespread{.8}\selectfont]
+\vspace{3mm}
+\faDatabase\ NLSY79 (\url{https://www.nlsinfo.org/investigator/pages/search?s=NLSY79})\\\\
+\vspace{3mm}
 \faCheck\ The CASEID will be always be selected.  \\
 \vspace{1mm}
-\faCheck\ The 3 recommended demographic variable (sample ID, race and sex) were selected.  \\
-\vspace{1mm}
-For the remaining variables, we went to the "Variable Search" tab and select variables as follows
+\faCheck\ The 3 recommended demographic variable (sample ID, race and sex) were selected.  For the remaining variables, we went to the ``Variable Search" tab and select variables as follows
 \begin{itemize}
 \item[$\triangleright$] Education, Training and Achievement Scores
 \begin{itemize}
@@ -234,18 +233,18 @@ For the remaining variables, we went to the "Variable Search" tab and select var
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab "Save / Download" then select the tab "Advanced Download". We select the R Source code and comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename "NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
+\item[\faCloudDownload] To download all 742 variables selected, we then navigate to the tab ``Save / Download" then select the tab ``Advanced Download". We select the R Source code and comma-delimited datafile of selected variables with Reference Number as column headers. We name the filename ``NLSY79" and press the download button. There are also options to get control or dictionary files for SAS, SPSS and STATA. 
 \end{itemize}
 \end{tcolorbox}
 \caption{Documented steps taken to select variables of interest and download the raw data.\label{fig:source-nav}}
-\end{figure}
+\end{figure*}
       
 The downloaded data set comes as a zip file, containing the following set of files:
 
 - `NLSY79.csv`: comma separated value format of the response data,
 - `NLSY79.dat`: alternative text format of the response data,
 - `NLSY79.NLSY79`: tagset of variables that can be uploaded to the website to recreate the data set, and
-- `NLSY79.R`: R script for reading the data into R and converting the variables' names and label into something more sensible. 
+- `NLSY79.R`: R script for reading the data into R and converting the variable names and label into something more sensible. 
 
 We alter only the file path in `NLSY79.R` and run the script without any other alteration. This results in the initial processing of the raw data into two data sets,  `categories_qnames` (where the observations are stored in categorical/interval values) and `new_data_qnames` (the observations are stored in integer form).  
 
@@ -489,25 +488,27 @@ The list of variables provided in the three new datasets are as follows:
 
 
 <!--AE comment: first sentence can be removed or rephrased. Next sentence includes the word wages too many times. Next sentence should say “dropouts” rather than “drop outs” to be consistent with the previous sentence. -->
+
 The original set, containing wages of high school dropouts [@SingerJudithD2003Alda] from 1979 through to 1994, is available in the R package `brolgar` [@brolgar]. To compare the refreshed data with the original, a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This requires first identifying individuals who dropped out of high school.
+
 
 ## Filtering: Determining who is a dropout
 
 There is no explicit explanation of how the dropouts cohort is determined in the original data. Hence, we use the high school dropouts criteria from @nlsy79edu, which are:
 
 1. An individual whose highest grade completed (`hgc`) is reported to be less than 12th grade, **or**
-2. An individual whose highest grade completed (`hgc`) is reported to be at least 12th grade and has received a GED (`ged` is code to 2).
+2. An individual whose highest grade completed (`hgc`) is reported to be at least 12th grade and has received a GED (i.e. `ged` code is 2).
 
-An additional criterion from @SingerJudithD2003Alda is to only include males aged between 14 and 17 years old in 1979. With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. To investigate the reason for the difference, individuals from the original and refreshed dataset were matched by id. This revealed several reasons for the disparity:
+An additional criterion from @SingerJudithD2003Alda is to only include males aged between 14 and 17 years old in 1979. With this filtering, we obtained `r ori_do_nrow` individuals in the refreshed data compared to `r sw_do_nrow` individuals in the original data. To investigate the reason for the difference, individuals from the original and refreshed dataset were matched by id. This revealed several reasons for the disparity:
 
-1. 173 individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate that there are people older than 17 in the subset. Our decision is to also include them in the refreshed data as the new data contains an age variable, so analysts could filter them later. 
-2. 79 individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because: 
-    i. 35 of them completed at least 12th grade with a diploma instead of GED (`ged` variable is coded to 1). This suggests they are not dropouts, and so we excluded them from the refreshed data. 
-    ii. The information about `ged` is missing in 38 individuals. We decided to include them in the refreshed data. 
-    iii. 3 individuals have both diploma and GED (`ged` is coded to 3). These were kept in the refreshed data. 
-    iv. 12 individuals do not exist in `wages` data because they have participated in less than 3 rounds of the survey. 
+1. `r nrow(join_more_17)` individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate that there are people older than 17 in the subset. Our decision is to also include them in the refreshed data as the new data contains an age variable, so analysts could filter them later. 
+2. `r nrow(join_less_17)` individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because: 
+    i. `r nrow(join_not_elig)` of them completed at least 12th grade with a diploma instead of GED (`ged` variable is coded as 1). This suggests they are not dropouts, and so we excluded them from the refreshed data. 
+    ii. The information about `ged` is missing in `r nrow(join_missing_ged)` individuals. We decided to include them in the refreshed data. 
+    iii. `r nrow(join_ged_both)` individuals have both diploma and GED (`ged` is coded as 3). These were kept in the refreshed data. 
+    iv. `r nrow(join_not_exist)` individuals do not exist in `wages` data because they have participated in less than 3 rounds of the survey. 
 
-The filtering was re-applied using these decisions, resulting in a refreshed dropout subset containing 863 individuals.
+The filtering was re-applied using these decisions, resulting in a refreshed dropout subset containing `r n_do` individuals.
 
 <!--AE comment: what does the natural log have to do with the y-axis?-->
 <!--AE comment: For Figure 7, why did you choose to show the entire dataset here? It would be easier to make a comparison if the plot was cut off at 1994 on the x-axis.-->
@@ -516,7 +517,7 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 
 Because the original data does not have the year of collection, it is not possible to merge the two subsets directly. Merging longitudinal data requires both the key (`id`) and the index (ideally survey year). In the original data, the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets have to be conducted in a two-sample fashion rather than a matched sample. 
 
-Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets. Plot (A) shows a back-back bar chart of the highest grade completed. The two sets are almost the same, but small differences remain. Plots (B) and (C) show stacked density plots of experience and log wages, respectively. The distributions are relatively close, with more differences in wages as would be expected because the refreshed data is not inflation-adjusted.
+Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets. Plot (A) shows a back-to-back bar chart of the highest grade completed. The two sets are almost the same, but small differences remain. Plots (B) and (C) show stacked density plots of experience and log wages, respectively. The distributions are relatively close, with more differences in wages as would be expected because the refreshed data is not inflation-adjusted.
 
 ```{r calculate-summaries-on-subsets}
 ```
@@ -536,7 +537,7 @@ In the original dataset, wages were inflation-adjusted to 1990 prices. This is n
 <!--AE comment: “The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.-->
 It is important to note that the treatment of unlikely wages differs in the refreshed data. In the original data by @SingerJudithD2003Alda, wages greater than $75 are set to be missing. However, this value is too low to be set as the maximum threshold, and it doesn't take into account temporal neighbors for an individual. We opted to use the weights from a robust linear regression to determine what should be regarded as extreme and imputed them with their predicted values as described in Section \@ref(censor).
 
-Lastly, the race variable is almost perfectly matched. The `id`'s in the dropouts subset of the refreshed data all correspond to males, which perfectly matches the original subset.
+Lastly, the matching of individuals in the dropouts subset of the refreshed data with the original data was done using their `id`s. (Only males were in the original data.) It was comforting to see that all of the individuals in both sets do match on sex (all are male!), and race. 
 
  <!--AE comment: How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?--> 
 
@@ -557,7 +558,7 @@ Various difficulties were encountered in trying to refresh the data, which inclu
 - Determining the dropouts subset as there is no explicit variable in the database recording high school dropout, which means we needed to compare the date of 12th grade with their GED status.
 - Matching IDs from the original data with those in the refreshed data do refer to the same person based on the demographic information available.
 
-Ultimately, the refreshed data is reasonably similar to the original but unsatisfactorily far from it. The last step required would be to inflation-adjust wages. This is better to do with each wave of new data added so that it is relative to the last date in the data. Our decision was to provide the raw wages and include codes to make the adjustment as part of the package. 
+Ultimately, the refreshed data is reasonably similar to the original but unsatisfactorily far from it. The last step required would be to inflation-adjust wages. This is better to do with each wave of new data added so that it is relative to the last date in the data. Our decision was to provide the raw wages and include code to make the adjustment as part of the package. 
 
 Some readers may disagree with our decisions made to produce the refreshed textbook data and may have better insight than us in producing more appropriate textbook data. We do not assert that we have produced the best textbook data, but rather we describe our journey to provide a reasonable textbook data set. All code and documentation are provided for transparency. Readers could use this to make different decisions or provide suggestions through the package for better choices. Future updates of the `r yowie` package may contain additional variables, or filters of the full set if it is deemed important. 
 
@@ -576,7 +577,7 @@ On an individual level, people might want to see how their characteristics relat
 
 The above interpretations of results from analyzing the wages data rely on trusting that the data provided is accurate and valid. The wages data is collected by a reputable organization, but we found the data has obvious errors that should be corrected. This paper has illustrated procedures and guidelines to achieve valid data and provides the code and details for it to be reproduced and modified if deemed appropriate. 
 
-Having trustworthy data is imperative for statistics and data science education. Whenever one uses a textbook data set that is perceived as relating to the students' lives, there will be interpretations made. The wages data is an example of this. Students will take away the interpretations from whatever is taught with the data, that wages increase with experience, education, race. If one uses data examples that are synthetic, instilled with our own inherent prejudices (e.g., sex and race), or data that has been poorly processed containing errors, we as educators are being irresponsible because the societal message taught to students may be flawed. This paper demonstrates the process of producing a trustworthy data set for teaching.
+Having trustworthy data is imperative for statistics and data science education. Whenever one uses a textbook data set that is perceived as relating to the students' lives, there will be interpretations made. The wages data is an example of this. Students can take away multiple interpretations from the data (e.g. wages increase with experience, education, and race) based on the teaching focus to learn about the world. If one uses data examples that are synthetic, instilled with our own inherent prejudices (e.g., sex and race), or data that has been poorly processed containing errors, we, as educators, are being irresponsible because the societal message taught to students may be flawed. This paper demonstrates the process of producing a trustworthy data set for teaching.
 
 <!--this paper implies that data providers should design a database that is able to produce tidy data sets. A data provider should also check for data anomalies before the data publishing or at least provides a set of rules or threshold values. For example, in this case, is the threshold of reasonable wages. This will greatly support the data users to validate and set the same understanding of which data are considered outliers. Moreover, providing validation rules would facilitate any established data validation tool, such as `validate` [@validate] package. In this case, we cannot use this handy validation package due to the absence of validation rules. -->
 
