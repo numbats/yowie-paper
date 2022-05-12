@@ -591,7 +591,7 @@ The entire analysis is conducted using `R` [@R] in RStudio IDE using these packa
 # Supplementary Materials 
 
 
-- **Codes**: R script to reproduce data tidying and cleaning is available at \url{`r yowie_pkgdown`/articles/process-data.html}. The code for the extreme value handling with robust linear fits is in \url{`r yowie_pkgdown`/articles/input-to-valid-data.html}.
+- **Code**: R script to reproduce data tidying and cleaning is available at \url{`r yowie_pkgdown`/articles/process-data.html}. The code for the extreme value handling with robust linear fits is in \url{`r yowie_pkgdown`/articles/input-to-valid-data.html}.
 
 - **R Package**:`r yowie` is a data container R package that contains 3 datasets, namely the high school mean hourly wage data, high school dropouts mean hourly wage data, and demographic data of the NLSY79 cohort. This package can be accessed from \url{`r yowie_repo`}.
 
