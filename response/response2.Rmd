@@ -17,56 +17,56 @@ The editor says \textcolor{violet}{The paper falls squarely into the call for th
 
 The only comments on framing appear to come from the associate editor: \textcolor{violet}{If this was (1) a general process for demonstrating the cleaning of longitudinal data, (2) a case study for cleaning data in the classroom, or (3) a case study for using the data in the classroom the value would be clear. In its current state, however, the manuscript still partly each of the three by describing the R package they've created and, as a result, does not fully address any of the three.}
 
-* It is not clear how to handle this. We interpret the comment from the Editor, that the paper is consistent with the call for the special issue. The AE would like it to be clearly one of three types. The paper does have of each of the three types, which we believe has value. There is some wording in the introduction ("An example of this is the wages data made public by Singer and Willett (2003) in their book, “Applied lon- gitudinal data analysis,” which can be used to teach generalized linear models, in addition to hierarchical, mixed effects, and multilevel models.") and we have added additional text in Section 5 Summary, on lessons learned, to help the reader understand the elements that might be used for their teaching. XXX DONE
+* It is not clear how to handle this. We interpret the comment from the Editor, that the paper is consistent with the call for the special issue. The AE would like it to be clearly one of three types. The paper does have of each of the three types, which we believe has value. There is some wording in the introduction ("An example of this is the wages data made public by Singer and Willett (2003) in their book, “Applied lon- gitudinal data analysis,” which can be used to teach generalized linear models, in addition to hierarchical, mixed effects, and multilevel models.") and we have added additional text in Section 5 Summary, on lessons learned, to help the reader understand the elements that might be used for their teaching. 
 
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{\textbf{ORIGINAL COMMENT: The author switches between gender (man/woman/etc) and sex (male/female/etc.) throughout the manuscript. Further, the explanation here covers important ideas in teaching how to use data on gender/sex and race, but it’s just the beginning of ideas. It might be better to discuss the questions on the survey and discuss possible shortcomings, rather than make a somewhat empty gesture towards today’s standard.} R1 COMMENT: The authors still incorrectly refer to male/female as gender. While it is clear the authors are trying to be thoughtful in how they address important issues with data collection on demographics they are not correctly doing so (see note about race/ethnicity below). Certainly there are potential issues with binary sex variables, this can and should be discussed but care should go into this. Please review the literature surrounding the discussion of sex and gender in data (e.g., SAGER guidelines).}
 \end{description}
 
-* We have revised the language, made a note for educators on usage, and referred to the SAGER guidelines. XXX DONE
+* We have revised the language, made a note for educators on usage, and referred to the SAGER guidelines. 
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{\textbf{The discussion around highest grade completed is mechanical in what was done, but lacks substantive reasoning for those decisions and possible downstream consequences.} It is still unclear to me whether education is measured by year or by category (it’s described both ways) and, in either case, the decision for one or the other isn’t contrasted or justified. For example `hcg` is described as a factor and `grade` is described as only increasing (numeric?) and surely the authors mean non-decreasing. If this is meant to be a case study for the classroom, this decision is rich ground for discussion.}
 \end{description}
 
-* We have added more explanation of the two variables, and suggestions of where to use one and the other in classroom analyses. XXX DONE
+* We have added more explanation of the two variables, and suggestions of where to use one and the other in classroom analyses. 
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{\textbf{I’m not sure this is accurate. The robustlmm package in R fits these models rather quickly with thousands of observations. What are the authors using? Does it run out of memory (requires more RAM) or does it take too much time?} The mixed effects models that robustlmm fits are identical to that of lmer. There is extensive documentation about the convergence issues (which are generally false positives). One may use the allFit() function to evaluate this.}
 \end{description}
 
-* Using `rlm` with the `nest` and `map` functions from `tidyr`, efficiently and simply fit these models. They can be easily explained in a classroom setting, and equip students generally with advanced data handling skills. Similar results would be obtained from using robustlmm, though. We have removed reference to memory and convergence issues. We have also removed a specific reference to threshold used. Having the particular number used is not important for the explanation of the approach and as we have seen from the review, is distracting for the reader. This section has been modified so that the approach is more understandable. XXX DONE
+* Using `rlm` with the `nest` and `map` functions from `tidyr`, efficiently and simply fit these models. They can be easily explained in a classroom setting, and equip students generally with advanced data handling skills. Similar results would be obtained from using robustlmm, though. We have removed reference to memory and convergence issues. We have also removed a specific reference to threshold used. Having the particular number used is not important for the explanation of the approach and as we have seen from the review, is distracting for the reader. This section has been modified so that the approach is more understandable. 
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{\textbf{The choice of 0.12 seems arbitrary at best. I don’t see any justification for this approach (e.g., literature, simulations, etc). Why not use bi-square, instead of huber, and simply impute for observations with weight 0. While still arbitrary, it’s decided by the bisquare model and isn’t a guesstimate. Further, it would be sensible for any dataset and not just this one. (This would correspond to a smaller threshold, which may catch too many strange outcomes). In any case, it’s hard to justify something so adhoc.} I agree that it is simpler not to use robustlmm (see note above about robustlmm), and that how to decide what to do with outlandish observations would be rich for class discussion. However, this isn’t discussed as part of this data being a case study – if this is to be used for an educational purpose (beyond how the data were compiled) instructing this type of discussion and the possible avenues for exploration would be important. To teach this, we’d want to used a justified method for data imputation and outlier detection and note there may be other sensible ways (which I think this is) to do it.}
 \end{description}
 
-* This is more of a comment than a request to make a change, but we agree that this is an area that could be a good classroom discussion. We have revised the section on handling extremes to make our explanation simpler, with links to the shiny app that we put together to assist in the judgment and choice of threshold. We hope that this provides fodder for discussion. It could definitely be worked into a teaching exercise. XXX DONE
+* This is more of a comment than a request to make a change, but we agree that this is an area that could be a good classroom discussion. We have revised the section on handling extremes to make our explanation simpler, with links to the shiny app that we put together to assist in the judgment and choice of threshold. We hope that this provides fodder for discussion. It could definitely be worked into a teaching exercise.
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{The authors also make some problematic decisions about the race (Black or not-Black) and ethnicity (Hispanic or not-Hispanic) variables. They suggest three categories (non-Black/non-Hispanic; Black; Hispanic) and don’t discuss the process of combining them, while recent standard is (non-Black/non-Hispanic; non-Black/Hispanic; Black/non-Hispanic; Black/Hispanic). It's possible that this selection was made for backwards compatibility, lack of certain demographics in the sample, or some other reason but it is not communicated. Please review the literature surrounding the discussion of race and ethnicity (e.g., Standards for the classification of federal data on race and ethnicity).}
 \end{description}
 
-* We have revised the language, referenced the Federal standard, and explained the reasoning for using a single variable.  XXX DONE 
+* We have revised the language, referenced the Federal standard, and explained the reasoning for using a single variable.  
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{(page 3-4, lines 34-20) The discussion about “the average and the individual” is underdeveloped. It seems to be tangled with a couple other ideas in these paragraphs, which muddles the point.}
 \end{description}
 
-* We have revised the introduction to fix this. XXX DONE
+* We have revised the introduction to fix this. 
 
 \begin{description}
 \item[Reviewer 1:] \textcolor{violet}{The manuscript is much improved. I would like to see less description of how to tidy the data in Section 3 and more discussion of lessons learned (useful for statistics and data science educators and students) in Section 5.}
 \end{description}
 
-* We have added additional bullet points on the benefit for educators in Section 5, in response to the overview comments by the Editor and AE (top of this response). We think it is best to keep content on cleaning and tidying the data, in a reproducible manner, to match the mission of the special issue. XXX DONE
+* We have added additional bullet points on the benefit for educators in Section 5, in response to the overview comments by the Editor and AE (top of this response). We think it is best to keep content on cleaning and tidying the data, in a reproducible manner, to match the mission of the special issue. 
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{One thing that could be made clearer throughout the paper – especially in Section 5 – is that the ultimate goal here is to get an equivalent dataset to the original that contains the additional years of data and better respects modern social justice norms.  The authors use the terms “update”, “refresh”, and “re-create” throughout, and I think it is sometimes ambiguous whether this is a replication or update.}
 \end{description}
 
-* We have changed all to "refresh" as it is not correct if we say it as a replication because we did not use the exactly same variable and same result (esepcially ID included in the dropouts cohort.) XXX DONE
+* We have changed all to "refresh" as it is not correct if we say it as a replication because we did not use the exactly same variable and same result (esepcially ID included in the dropouts cohort.) 
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{Here is what I think the strong takeaway in this work is:  "Any longitudinal dataset used for education should have a sufficiently reproducible process to be updated with new data.  The NLSY79 dataset is a great teaching tool that has become outdated, both because the dataset stops in 1994, and because the demographic data could be handled more delicately.  What you have done here is offered a well-documented and reproducible process that expands the dataset to modernity, and matches the original dataset decently well within its scope." This narrative doesn’t require any major structural revision; only some wordsmithing to make sure this message of your contribution hits home throughout the paper.}
@@ -85,7 +85,7 @@ The only comments on framing appear to come from the associate editor: \textcolo
 For example: maybe a plot of the variability of the imputed data for various threshold choices, showing that a low threshold leads to very high variance and a high threshold leads to low variance? Or:  Can you make an argument from predictive power of the model, i.e., that a threshold around 0.12 trained on years 1979-2016 best predicts years 2017-18? Perhaps this is too much lift at this stage, but any amount of quantifiable justification would relieve a lot of the subjectivity around that 0.12 choice.}
 \end{description}
 
-* See response above to the associate editor, about this concern. XXX DONE
+* See response above to the associate editor, about this concern. 
 
 \section*{Minor changes:}
 
@@ -99,13 +99,13 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \item[Associate Editor:] \textcolor{violet}{(page 9, line 4-6). “HRP1 1980 and HRP2 1980, contain the information about the job number up to 5...” They only contain job number one and two – in other areas of the manuscript you use a subscript i to make the point clear and this would be a good solution here. The code here goes off the page a bit, too.}
 \end{description}
 
-* We have modified the discussion around HRP to be more concise about what we have done with the variable. On page 9, we use the HRP to demonstrate the untidy form of the data. Hence, the sentence “HRP1 1980 and HRP2 1980, contain the information about the job number up to 5...” has been removed. In another part of the manuscript, we explain that if a respondent has multiple jobs, the `mean_hourly_wage` is computed as a weighted average of the hourly wage (`HRP`) for each job with the number of hours worked for each job as weights (provided that the information on the number of hours is available); if the number of hours worked for any job is missing, then the `mean_hourly_wage` is computed as a simple average of all available hourly wages. We hope that our modification makes the manuscript clearer. XXX DONE
+* We have modified the discussion around HRP to be more concise about what we have done with the variable. On page 9, we use the HRP to demonstrate the untidy form of the data. Hence, the sentence “HRP1 1980 and HRP2 1980, contain the information about the job number up to 5...” has been removed. In another part of the manuscript, we explain that if a respondent has multiple jobs, the `mean_hourly_wage` is computed as a weighted average of the hourly wage (`HRP`) for each job with the number of hours worked for each job as weights (provided that the information on the number of hours is available); if the number of hours worked for any job is missing, then the `mean_hourly_wage` is computed as a simple average of all available hourly wages. We hope that our modification makes the manuscript clearer. 
 
 \begin{description}
 \item[Associate Editor:] \textcolor{violet}{(page 10, tables 1-2) I believe these tables show what the authors see in their cleaned data compared to the NLSY numbers provided on page 15. Is this correct?}
 \end{description}
 
-* The tables show the number by characteristics (age, sex, and race) in the input data (referring the term in the de Jonge and van der Loo's statistical value chain), i.e., the data we have extracted and tidied from the database. We are not saying it as a clean data as we have not treat the extreme values. We have modified the tables' caption to make this clearer. XXX DONE
+* The tables show the number by characteristics (age, sex, and race) in the input data (referring the term in the de Jonge and van der Loo's statistical value chain), i.e., the data we have extracted and tidied from the database. We are not saying it as a clean data as we have not treat the extreme values. We have modified the tables' caption to make this clearer. 
 
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{On page 6, several times you use the word “plan,” as in “We also plan to include additional variables” and “The plan is to create three datasets as follows.” Has this been done in the paper, or are some of these future goals?}
@@ -123,7 +123,7 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \item[Reviewer 2:] \textcolor{violet}{On page 10, I don’t know what this sentence means: “When this value was missing, 2012, 2014, 2016, and 2018, but available in the first form substituted accordingly.”}
 \end{description}
 
-* This sentence means that when the revised `hgc` variable were not reported, we only use the unrevised version of the `hgc` in that year. We thank the reviewer for this notice. We agree that this sentences is not clear, so we have modified it. XXX DONE
+* This sentence means that when the revised `hgc` variable were not reported, we only use the unrevised version of the `hgc` in that year. We thank the reviewer for this notice. We agree that this sentences is not clear, so we have modified it. 
 
 \begin{description}
 \item[Reviewer 2:] \textcolor{violet}{The word “that” is used a lot in this manuscript, and most instances could be removed. For example “For example, an article published in the Sydney Morning Herald argues that there is no average Australian” can be replace by “For example, an article published in the Sydney Morning Herald argues there is no average Australian.” I suggest searching for the word “that” and removing any unnecessary instances.}
@@ -203,7 +203,7 @@ For example: maybe a plot of the variability of the imputed data for various thr
 \item[Reviewer 3:] \textcolor{violet}{This comment from the first review is unaddressed: “Black” and “Hispanic” and “White” should be capitalized.  (There is some dispute among style guides regarding “white”, but the other two are unambiguous.)}
 \end{description}
 
-* We have put the capitalisation back in. Besides, we did not use the term "White" in the dataset as we used the same term reported in the database, which is "Non-Black, Non-Hispanic". XXX Done
+* We have put the capitalisation back in. Besides, we did not use the term "White" in the dataset as we used the same term reported in the database, which is "Non-Black, Non-Hispanic". 
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{Page 7 lines 36-42:}
