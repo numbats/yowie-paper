@@ -134,7 +134,7 @@ The NLSY79 data used in Singer and Willett (2003) contains the longitudinal reco
 \item
   ID: the respondents' ID.
 \item
-  EXPER: temporal scale, i.e., the length of time (years) in the workforce, starting on the respondents' first day at work.
+  EXPER: stands for experience, the temporal scale, i.e., the length of time (years) in the workforce, starting on the respondents' first day at work.
 \item
   LNW: natural logarithm of wages, adjusted with 1990's inflation rate.
 \item
@@ -258,18 +258,19 @@ We alter only the file path in \texttt{NLSY79.R} and run the script without any 
 To get the data into tidy form (Wickham 2014), it needs to comply with three rules: (i) each variable forms a column, (ii) each observation forms a row, and (iii) each type of observational unit forms a table. The raw data, \texttt{new\_data\_qnames}, violates these rules (i) and (ii) because information about an individual's multiple jobs over different years are in multiple columns. The raw data consequently has a large number of columns (742 to be specific). The values in the cell under the variables begin with \texttt{HRP} correspond to the hourly wage in dollars. A glimpse of this data show the format problems:
 
 \begin{verbatim}
-#> 'data.frame':    12686 obs. of  742 variables:
-#>  $ CASEID_1979                               : int  1 2 3 4 5 6 7 8 ...
-#>  $ HRP1_1979                                 : int  328 385 365 NA 310 NA NA NA ...
-#>  $ HRP2_1979                                 : int  NA NA NA NA 375 NA NA NA ...
-#>  $ HRP3_1979                                 : int  NA NA 275 NA NA NA NA NA ...
-#>  $ HRP4_1979                                 : int  NA NA NA NA NA 250 NA NA ...
-#>  $ HRP5_1979                                 : int  NA NA NA NA NA NA NA NA ...
-#>  $ HRP1_1980                                 : int  NA 457 397 NA 333 275 300 394 ...
-#>  $ HRP2_1980                                 : int  NA NA 367 NA NA NA NA NA ...
-#>  $ HRP3_1980                                 : int  NA NA 380 NA NA NA 290 NA ...
-#>  $ HRP4_1980                                 : int  NA NA NA NA NA NA NA NA ...
-#>   [list output truncated]
+#> Rows: 12,686
+#> Columns: 11
+#> $ CASEID_1979 <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1~
+#> $ HRP1_1979   <int> 328, 385, 365, NA, 310, NA, NA, NA, 214, NA, 337~
+#> $ HRP2_1979   <int> NA, NA, NA, NA, 375, NA, NA, NA, NA, NA, 300, NA~
+#> $ HRP3_1979   <int> NA, NA, 275, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+#> $ HRP4_1979   <int> NA, NA, NA, NA, NA, 250, NA, NA, NA, NA, NA, NA,~
+#> $ HRP5_1979   <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
+#> $ HRP1_1980   <int> NA, 457, 397, NA, 333, 275, 300, 394, 200, 318, ~
+#> $ HRP2_1980   <int> NA, NA, 367, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+#> $ HRP3_1980   <int> NA, NA, 380, NA, NA, NA, 290, NA, NA, NA, NA, NA~
+#> $ HRP4_1980   <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
+#> $ HRP5_1980   <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
 \end{verbatim}
 
 Thus, we re-arrange and wrangle the data into tidy data form, with columns corresponding to individual ID, year, job number, wage in dollars, and the demographic variables. This is done using the \texttt{tidyverse} suite of packages (Wickham, Averick, et al. 2019): \texttt{tidyr} (Wickham 2020) to pivot the data into long-form, with \texttt{dplyr} (Wickham, François, et al. 2020) and \texttt{stringr} (Wickham 2019) to create new variables from the downloaded data from the database, and code levels of factors by text wrangling. The long form of the data makes it possible to do these data transformations efficiently, and it is an intermediate step towards the final target data. The code for tidying the data are demonstrated at \url{https://numbats.github.io/yowie/articles/raw-to-input-data.html} but also described in the subsequent subsections.
@@ -277,7 +278,7 @@ Thus, we re-arrange and wrangle the data into tidy data form, with columns corre
 \hypertarget{tidydemog}{%
 \subsubsection{Tidying demographic variables}\label{tidydemog}}
 
-Our final target data will include the demographic variables (variable names): sex (\texttt{sex}), race (\texttt{race}), age (\texttt{age\_1979}), highest grade completed reported in each round of the survey (\texttt{grade}), highest grade completed ever reported (\texttt{hgc}), highest grade completed in terms of years, e.g., 9th grade = 9, 3rd-year college = 15, (\texttt{hgc\_i}), highest grade completed in 1979 (\texttt{hgc\_1979}) and whether the graduate equivalency diploma is obtained (\texttt{ged}).
+Our final target data will include the demographic variables (variable names): sex (\texttt{sex}), race (\texttt{race}), age (\texttt{age\_1979}), highest grade completed reported in each round of the survey (\texttt{grade}), highest grade completed ever reported (\texttt{hgc}), highest grade completed in terms of years (as an integers), e.g., 9th grade = 9, 3rd-year college = 15, (\texttt{hgc\_i}), highest grade completed in 1979 (\texttt{hgc\_1979}) and whether the graduate equivalency diploma is obtained (\texttt{ged}).
 
 For \texttt{sex} and \texttt{race}, we have simplified the original names provided in the raw data, \texttt{SAMPLE\_SEX\_1979} and \texttt{SAMPLE\_RACE\_78SCRN}, respectively. However, it is important to note that the use of ``sex'' is probably not correct. This information is provided by the individual, and although only has two categories, is more consistent with ``gender'' as defined in Heidari et al. (2016). When using the dataset in the classroom, the educators might include discourse on the use of terms ``sex'' and ``gender''. Particularly, measuring gender as a binary variable has the potential to fail to capture people who do not identify themselves as either male or female or create measurement error for people whose gender does not align with their sex classification. From a statistical perspective, this can make it difficult to adjust survey statistics to the population when gender is measured in different categorization in different data sources. Kennedy et al. (2020) provides a helpful discussion on these topics.
 
@@ -330,7 +331,7 @@ The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is c
 #> 10     2  1986             7.69          NA              1 FALSE
 \end{verbatim}
 
-For \texttt{stwork} variable, we only rename the column names from \texttt{new\_data\_qnames}. This variable is then used to calculate the next variable, \texttt{yr\_wforce} for each survey round, which is the year of survey (\texttt{year}) minus the year of individual started working (\texttt{stwork}). Finally, \texttt{exp} variable is derived from the number of weeks worked since the last interview indicated as variable started with \texttt{WKSWK} in \texttt{new\_data\_qnames}. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is weeks, we convert this to year.
+For \texttt{stwork} variable, we only rename the column names from \texttt{new\_data\_qnames}. This variable is then used to calculate the next variable, \texttt{yr\_wforce} for each survey round, which is the year of survey (\texttt{year}) minus the year of individual started working (\texttt{stwork}). Finally, \texttt{exp} variable is derived from the number of weeks worked since the last interview indicated as variable started with \texttt{WKSWK} in \texttt{new\_data\_qnames}. To obtain the work experience since 1979, we calculate the cumulative value. As the measurement unit is weeks, we convert this to fractional year.
 
 The employment and demographic variables are then joined. These data are further filtered to the cohort who participated in at least three rounds in the survey, the minimum observation recommended for longitudinal data in Singer and Willett (2003). We also opt to restrict the minimum number of observations so that the data can be used to demonstrate within-person variation when it is used to teach longitudinal data. However, it is worth noting that the original data does not restrict the number of observations for each individual, i.e., there are individuals with only one and two observations.
 
@@ -423,7 +424,7 @@ A robust linear regression model using the \texttt{rlm} function from \texttt{MA
 
 Figure \ref{fig:compare-plot} shows the profiles for a sample of 30 individuals the mean hourly wage before and after extreme values are replaced. The plot shows fluctuations in wages remain, but the large spikes (in this sample, individuals 8296, 9962), which are considered implausible, are replaced.
 
-The challenging part of detecting an anomaly using the robustness weight is determining the weight threshold beyond which the observations are considered outliers. It is also important not to be too aggressive in outlier removal, because this would overly smooth the data, and ignore actual workforce experiences important wage volatility such as, abnormally high wages for a fleeting amount of time. To explore the risk of being overly vigorous in labeling observations as outliers, a range of threshold value were assessed. Numerous samples of individuals were drawn for each threshold, and the smoothness of the profiles was examined. Overly smooth profiles would indicate the replacement of values was too severe, resulting in the removing the very interesting volatility of wages seen in many individuals. This was achieved using a purpose written \texttt{shiny} (Chang et al. 2020) app (provided with the code of this paper). Observations where a change was made are tracked with a new variable called \texttt{is\_pred}, so that this effect in the downstream analyses can be monitored.
+The challenging part of detecting an anomaly using the robustness weight is determining the weight threshold beyond which the observations are considered outliers. It is also important not to be too aggressive in outlier removal, because this would overly smooth the data, and ignore actual workforce experiences important wage volatility such as, abnormally high wages for a fleeting amount of time. To explore the risk of being overly vigorous in labeling observations as outliers, a range of threshold value were assessed. Numerous samples of individuals were drawn for each threshold, and the smoothness of the profiles was examined. Overly smooth profiles would indicate the replacement of values was too severe, resulting in removing the very interesting volatility of wages seen in many individuals. This was achieved using a purpose written \texttt{shiny} (Chang et al. 2020) app (provided with the code of this paper). Observations where a change was made are tracked with a new variable called \texttt{is\_pred}, so that this effect in the downstream analyses can be monitored.
 
 \begin{figure}
 
@@ -531,7 +532,7 @@ The list of variables provided in the three new datasets are as follows:
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
-The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar}. To compare the refreshed data with the original, we need to subset the data into a matching cohort of high school dropouts. There are multiple ways to match a comparative cohort from the updated data -- the simplest approach is to subset to individuals with matching IDs in the original data and restricting the longitudinal measurements to the same years; another approach is to replicate the process as suggested by the description of the original data thus identifying a new (and possibly removal of old) set of individuals that is included in the refreshed data. We use the latter approach and as the first step we identify individuals who dropped out of high school.
+The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar} (Tierney, Cook, and Prvan 2020). To compare the refreshed data with the original, a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This requires first identifying individuals who dropped out of high school.
 
 \hypertarget{filtering-determining-who-is-a-dropout}{%
 \subsection{Filtering: Determining who is a dropout}\label{filtering-determining-who-is-a-dropout}}
@@ -600,7 +601,7 @@ In the original dataset, wages were inflation-adjusted to 1990 prices. This is n
 
 It is important to note that the treatment of unlikely wages differs in the refreshed data. In the original data by Singer and Willett (2003), wages greater than \$75 are set to be missing. However, this value is too low to be set as the maximum threshold, and it doesn't take into account temporal neighbors for an individual. We opted to use the weights from a robust linear regression to determine what should be regarded as extreme and imputed them with their predicted values as described in Section \ref{censor}.
 
-Lastly, the individuals in the dropouts subset of the refreshed data (as matched by their \texttt{id}s) belong to the same race as the individuals in the original data. This is also the case in the \texttt{sex} variables, which all correspond to males.
+Lastly, the matching of individuals in the dropouts subset of the refreshed data with the original data was done using their \texttt{id}s. (Only males were in the original data.) It was comforting to see that all of the individuals in both sets do match on sex (all are male!), and race.
 
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
@@ -645,7 +646,7 @@ Why is the work presented here useful for teachers and students? There are sever
   It provides the data to develop a case study for teaching exploratory data analysis of longitudinal data, focusing on the individual experience. The vignettes of the \texttt{brolgar} (Tierney, Cook, and Prvan 2020) package provide useful guides for the case study content.
 \end{itemize}
 
-The wages data provides a good opportunity to discuss the difference between statistics for public policy and statistics that relate to the individual. Public policy is based on models, yielding averages that might vary across strata. Modeling the wages relative to workforce experience with demographic covariates, we learn that there are significantly different patterns. More education leads to increasingly higher wages, which is a satisfying result for educators. It means education makes a difference in the wage experience and that public policy that encourages education is a data-supported action. We would also learn, although not presented here, that wages on average differ by race category. This is a disturbing finding because there is no rationale for such a difference in a fair society. This would provide support for action in public policy to remove this overall average effect. It also provides an example for educators to explain the use of data to support public policy action.
+The wages data provides a good opportunity to discuss the difference between statistics for public policy and statistics that relate to the individual. Public policy is based on models, yielding averages that might vary across strata. Modeling the wages relative to workforce experience with demographic covariates, we learn that there are significantly different patterns. More education leads to increasingly higher wages, which is a satisfying result for educators. It means education makes a difference in the wage experience, so public policy encouraging education is a data-supported action. We would also learn, although not presented here, that wages on average differ by race category. This is a disturbing finding because there is no rationale for such a difference in a fair society. This would provide support for action in public policy to remove this overall average effect. It also provides an example for educators to explain the use of data to support public policy action.
 
 On an individual level, people might want to see how their characteristics relate to those in the dataset. To do this, the individual profiles need to be explored. Predominantly, we would learn the variation from one individual to another is far more than the variation between demographic strata. For example, many individuals with lower educational attainment earn very high wages. From a statistics and data science educator perspective, more focus and more methodology for this type of statistics need to be included in the curriculum.
 
@@ -665,9 +666,9 @@ The entire analysis is conducted using \texttt{R} (R Core Team 2020) in RStudio 
 
 \begin{itemize}
 \item
-  \textbf{Codes}: R script to reproduce data tidying and cleaning is available at \url{https://numbats.github.io/yowie/articles/process-data.html}. The code for the extreme value handling with robust linear fits is in \url{https://numbats.github.io/yowie/articles/input-to-valid-data.html}.
+  \textbf{Code}: R script to reproduce data tidying and cleaning is available at \url{https://numbats.github.io/yowie/articles/process-data.html}. The code for the extreme value handling with robust linear fits is in \url{https://numbats.github.io/yowie/articles/input-to-valid-data.html}.
 \item
-  \textbf{R Package}:\texttt{yowie} is a data container R package that contains 3 datasets, namely the high school mean hourly wage data, high school dropouts mean hourly wage data, and demographic data of the NLSY79 cohort. This package can be accessed from \url{https://github.com/numbats/yowie}.
+  \textbf{R Package}: \texttt{yowie} is an R data package that contains 3 datasets, namely the high school mean hourly wage data, high school dropouts mean hourly wage data, and demographic data of the NLSY79 cohort. This package can be accessed from \url{https://github.com/numbats/yowie}.
 \item
   \textbf{shiny app}: An interactive \texttt{shiny} web app to visualise the effect of selecting different weight threshold for substituting the wages data to its predicted value from a fit of the robust linear regression model. This app can be accessed at \url{https://ebsmonash.shinyapps.io/yowie_app/} with the source code provided \url{https://github.com/numbats/yowie/tree/master/app}.
 \end{itemize}

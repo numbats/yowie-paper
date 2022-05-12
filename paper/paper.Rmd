@@ -144,7 +144,7 @@ There are two ways to conduct the interview of the NLSY79, which are face-to-fac
 The NLSY79 data used in @SingerJudithD2003Alda contains the longitudinal records of male high school dropouts who first participated in the study at age 14-17 years from 1979 through to 1994. This dataset contains several variables as follows: 
 
 1. ID: the respondents' ID. 
-2. EXPER: temporal scale, i.e., the length of time (years) in the workforce, starting on the respondents' first day at work.
+2. EXPER: stands for experience, the temporal scale, i.e., the length of time (years) in the workforce, starting on the respondents' first day at work.
 3. LNW: natural logarithm of wages, adjusted with 1990's inflation rate. 
 4. BLACK: binary variable, 1 indicates Black and 0 otherwise. 
 5. HISPANIC: binary variable, 1 indicates Hispanic and 0 otherwise. 
@@ -265,7 +265,7 @@ Thus, we re-arrange and wrangle the data into tidy data form, with columns corre
 
 ### Tidying demographic variables {#tidydemog}
 
-Our final target data will include the demographic variables (variable names): sex (`sex`), race (`race`), age (`age_1979`), highest grade completed reported in each round of the survey (`grade`), highest grade completed ever reported (`hgc`), highest grade completed in terms of years, e.g., 9th grade = 9, 3rd-year college = 15, (`hgc_i`), highest grade completed in 1979 (`hgc_1979`) and whether the graduate equivalency diploma is obtained (`ged`).
+Our final target data will include the demographic variables (variable names): sex (`sex`), race (`race`), age (`age_1979`), highest grade completed reported in each round of the survey (`grade`), highest grade completed ever reported (`hgc`), highest grade completed in terms of years (as an integers), e.g., 9th grade = 9, 3rd-year college = 15, (`hgc_i`), highest grade completed in 1979 (`hgc_1979`) and whether the graduate equivalency diploma is obtained (`ged`).
 
 For `sex` and `race`, we have simplified the original names provided in the raw data, `SAMPLE_SEX_1979` and `SAMPLE_RACE_78SCRN`, respectively. However, it is important to note that the use of "sex" is probably not correct. This information is provided by the individual, and although only has two categories, is more consistent with "gender" as defined in @SAGER. When using the dataset in the classroom, the educators might include discourse on the use of terms "sex" and "gender". Particularly, measuring gender as a binary variable has the potential to fail to capture people who do not identify themselves as either male or female or create measurement error for people whose gender does not align with their sex classification. From a statistical perspective, this can make it difficult to adjust survey statistics to the population when gender is measured in different categorization in different data sources.  @kennedy2020using provides a helpful discussion on these topics. <!--Hence, for modern societal studies, it is highly recommended to separate sex and gender in the survey question and provide more options to respond to questions on gender. -->
 

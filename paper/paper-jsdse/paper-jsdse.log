@@ -1,13 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  12 MAY 2022 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  12 MAY 2022 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **paper-jsdse.tex
 (./paper-jsdse.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-05-04> (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2022-02-24> (/Users/deeamaliah/Library/TinyTeX/texmf-dist
+/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
@@ -21,20 +22,20 @@ File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen139
-)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen140
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
 )
 \inf@bad=\count193
@@ -74,30 +75,33 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen148
 \Gin@req@width=\dimen149
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/psfrag/psfrag.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/psfrag/psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
 \pfg@pcount=\count271
 \pfg@scount=\count272
 \pfg@temp=\write3
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/epsf/epsf.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/epsf/epsf.sty
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read2
 \epsfframemargin=\dimen150
@@ -108,33 +112,55 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsfxsize=\dimen155
 \epsfysize=\dimen156
 \pspoints=\dimen157
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/tools/enumerate.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks22
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip52
 \bibsep=\skip53
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count273
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2022/01/07 version 5.0.2 text color boxes
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.st
+y
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil
+-common.tex
 \pgfutil@everybye=\toks23
 \pgfutil@tempdima=\dimen158
 \pgfutil@tempdimb=\dimen159
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil
+-common-lists.tex))
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil
+-latex.def
 \pgfutil@abb=\box52
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.
+code.tex (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revi
+sion.tex)
 Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
 ))
 Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.
+sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.
+sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
+s.code.tex
 Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys
+.code.tex
 \pgfkeys@pathtoks=\toks24
 \pgfkeys@temptoks=\toks25
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys
+filtered.code.tex
 \pgfkeys@tmptoks=\toks26
 ))
 \pgf@x=\dimen160
@@ -157,23 +183,33 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 \t@pgf@tokb=\toks28
 \t@pgf@tokc=\toks29
 \pgf@sys@id@count=\count278
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.c
+fg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
 Driver file for pgf: pgfsys-pdftex.def
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
+s-pdftex.def
 File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
+s-common-pdf.def
 File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
-))) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+)))
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
+ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfsyssoftpath@smallbuffer@items=\count279
 \pgfsyssoftpath@bigbuffer@items=\count280
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
+sprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+)) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
@@ -186,18 +222,52 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+e.code.tex
 Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code
+.tex
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.
+code.tex
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.
+code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparse
+r.code.tex
 \pgfmath@dimen=\dimen170
 \pgfmath@count=\count281
 \pgfmath@box=\box53
 \pgfmath@toks=\toks30
 \pgfmath@stack@operand=\toks31
 \pgfmath@stack@operation=\toks32
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.code.tex
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.basic.code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.trigonometric.code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.random.code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.comparison.code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.base.code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.round.code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.misc.code.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunct
+ions.integerarithmetics.code.tex)))
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat
+.code.tex
 \c@pgfmathroundto@lastzeros=\count282
-)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+))
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.
+tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+epoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@picminx=\dimen171
 \pgf@picmaxx=\dimen172
@@ -213,76 +283,119 @@ File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@yy=\dimen182
 \pgf@zx=\dimen183
 \pgf@zy=\dimen184
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@path@lastx=\dimen185
 \pgf@path@lasty=\dimen186
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+epathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@shorten@end@additional=\dimen187
 \pgf@shorten@start@additional=\dimen188
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+escopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box54
 \pgf@hbox=\box55
 \pgf@layerbox@main=\box56
 \pgf@picture@serial@count=\count283
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgflinewidth=\dimen189
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+etransformations.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@pt@x=\dimen190
 \pgf@pt@y=\dimen191
 \pgf@pt@temp=\dimen192
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+equick.code.tex
 File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+eobjects.code.tex
 File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+epathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+earrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfarrowsep=\dimen193
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+eshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen194
 \pgf@sys@shading@range@num=\count284
 \pgf@shadingcount=\count285
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+eimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+eexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfexternal@startupbox=\box57
-)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+))
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+elayers.code.tex
 File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+etransparency.code.tex
 File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+epatterns.code.tex
 File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
+erdf.code.tex
 File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+)))
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodule
+shapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfnodeparttextbox=\box58
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodule
+plot.code.tex
 File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfco
+mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@nodesepstart=\dimen195
 \pgf@nodesepend=\dimen196
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfco
+mp-version-1-18.sty
 Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
-)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
+)) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks33
 \verbatim@line=\toks34
 \verbatim@in@stream=\read4
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.s
+ty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+)) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.st
+y
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count286
 )
@@ -297,15 +410,22 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \tcb@temp=\box64
 \tcb@temp=\box65
 \tcb@temp=\box66
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesome
+.sty
 Package: fontawesome 2016/05/15 v4.6.3.1 font awesome icons
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
+)) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex)) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesome
+symbols-generic.tex)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesome
+symbols-pdftex.tex)) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/bo
+oktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen197
 \lightrulewidth=\dimen198
@@ -324,14 +444,14 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count292
 \@lastruleclass=\count293
 \@thisrulewidth=\dimen265
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 \cslhangindent=\skip54
 \csllabelwidth=\skip55
 \cslentryspacingunit=\skip56
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count294
 \calc@Bcount=\count295
@@ -343,47 +463,62 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count296
 \calc@Cskip=\skip59
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.s
+ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.s
+ty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefine
+keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.s
+ty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro
+.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen268
 \Hy@linkcounter=\count297
 \Hy@pagecounter=\count298
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count299
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -398,10 +533,13 @@ Package hyperref Info: Bookmarks ON on input line 4390.
 \c@Hy@tempcnt=\count300
 LaTeX Info: Redefining \url on input line 4749.
 \XeTeXLinkMargin=\dimen269
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc
+.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
 \Fld@menulength=\count301
 \Field@Width=\dimen270
@@ -415,7 +553,7 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6052.
 Package hyperref Info: PDF/A mode OFF on input line 6057.
 LaTeX Info: Redefining \ref on input line 6097.
 LaTeX Info: Redefining \pageref on input line 6101.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -424,24 +562,32 @@ package with kernel methods
 \c@Hfootnote=\count304
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
 with kernel methods
 )
 \Fld@listcount=\count305
 \c@bookmark@seq@number=\count306
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfil
+echeck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquec
+ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
 )
 \Hy@SectionHShift=\skip60
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count307
 \l__pdf_internal_box=\box67
 ) (./paper-jsdse.aux)
@@ -465,18 +611,26 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sy
+s.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 Package hyperref Info: Link coloring OFF on input line 66.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/Users/cookd/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettit
+lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count308
@@ -492,18 +646,26 @@ LaTeX Info: Redefining \nameref on input line 66.
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
-{/Users/cookd/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+}]
 Overfull \hbox (7.12393pt too wide) in paragraph at lines 109--111
-\OT1/cmr/m/it/12 Keywords: \OT1/cmr/m/n/12 Data clean-ing; Data tidy-ing; Re-pro-ducible work-flow; Lon-gi-tu-di-nal data; NLSY79;
+\OT1/cmr/m/it/12 Keywords: \OT1/cmr/m/n/12 Data clean-ing; Data tidy-ing; Re-pr
+o-ducible work-flow; Lon-gi-tu-di-nal data; NLSY79;
  []
 
 [2] [3] [4] [5] [6] [7]
-LaTeX Font Info:    Trying to load font information for U+fontawesomethree on input line 204.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
+nput line 204.
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/ufontawesom
+ethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )
-LaTeX Font Info:    Trying to load font information for U+fontawesometwo on input line 206.
-(/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
+ut line 206.
+
+(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/ufontawesom
+etwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 204--209
@@ -512,7 +674,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 204--209
 
 [8] [9] [10] [11] [12] [13] [14]
 Overfull \hbox (11.51877pt too wide) in paragraph at lines 370--371
-\OT1/cmr/m/n/12 the day an in-di-vid-ual en-ters the la-bor force (\OT1/cmtt/m/n/12 EMPLOYERS[]ALL[]STARTDATE[]ORIGINAL.01~Y[]XRND
+\OT1/cmr/m/n/12 the day an in-di-vid-ual en-ters the la-bor force (\OT1/cmtt/m/
+n/12 EMPLOYERS[]ALL[]STARTDATE[]ORIGINAL.01~Y[]XRND
  []
 
 [15]
@@ -522,70 +685,99 @@ File: figures/sample-plot-1.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/sample-plot-1.pdf  used on input line 385.
 (pdftex.def)             Requested size: 462.26999pt x 365.16296pt.
 [16] [17 <./figures/sample-plot-1.pdf>]
-<figures/feature-plot-1.pdf, id=237, 701.62125pt x 263.98625pt>
+<figures/feature-plot-1.pdf, id=237, 722.7pt x 289.08pt>
 File: figures/feature-plot-1.pdf Graphic file (type pdf)
 <use figures/feature-plot-1.pdf>
 Package pdftex.def Info: figures/feature-plot-1.pdf  used on input line 436.
-(pdftex.def)             Requested size: 462.26999pt x 173.93338pt.
-[18] [19 <./figures/feature-plot-1.pdf>] [20]
-<figures/compare-plot-1.pdf, id=266, 716.6775pt x 557.08125pt>
+(pdftex.def)             Requested size: 462.26999pt x 184.9091pt.
+[18] [19] [20 <./figures/feature-plot-1.pdf>]
+<figures/compare-plot-1.pdf, id=263, 716.6775pt x 557.08125pt>
 File: figures/compare-plot-1.pdf Graphic file (type pdf)
 <use figures/compare-plot-1.pdf>
 Package pdftex.def Info: figures/compare-plot-1.pdf  used on input line 456.
 (pdftex.def)             Requested size: 416.04016pt x 323.39636pt.
-<figures/fixed-feature-plot-1.pdf, id=268, 701.62125pt x 263.98625pt>
+<figures/fixed-feature-plot-1.pdf, id=265, 722.7pt x 289.08pt>
 File: figures/fixed-feature-plot-1.pdf Graphic file (type pdf)
 <use figures/fixed-feature-plot-1.pdf>
-Package pdftex.def Info: figures/fixed-feature-plot-1.pdf  used on input line 467.
-(pdftex.def)             Requested size: 462.26999pt x 173.93338pt.
-<../figures/flowchart.png, id=270, 1606.0pt x 2192.19pt>
-File: ../figures/flowchart.png Graphic file (type png)
-<use ../figures/flowchart.png>
-Package pdftex.def Info: ../figures/flowchart.png  used on input line 483.
+Package pdftex.def Info: figures/fixed-feature-plot-1.pdf  used on input line 4
+67.
+(pdftex.def)             Requested size: 462.26999pt x 184.9091pt.
+</Users/deeamaliah/Documents/yowie-paper/paper/figures/flowchart.png, id=267, 1
+606.0pt x 2192.19pt>
+File: /Users/deeamaliah/Documents/yowie-paper/paper/figures/flowchart.png Graph
+ic file (type png)
+<use /Users/deeamaliah/Documents/yowie-paper/paper/figures/flowchart.png>
+Package pdftex.def Info: /Users/deeamaliah/Documents/yowie-paper/paper/figures/
+flowchart.png  used on input line 483.
 (pdftex.def)             Requested size: 392.93231pt x 536.33864pt.
 
 LaTeX Warning: Float too large for page by 11.34547pt on input line 488.
 
+[21] [22 <./figures/compare-plot-1.pdf>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 492.
-[21] [22 <./figures/compare-plot-1.pdf>] [23 <./figures/fixed-feature-plot-1.pdf>] [24 <../figures/flowchart.png>] [25] [26]
-<figures/compare-subsets-1.pdf, id=359, 630.355pt x 341.275pt>
+[23 <./figures/fixed-feature-plot-1.pdf>] [24 </Users/deeamaliah/Documents/yowi
+e-paper/paper/figures/flowchart.png>] [25] [26]
+<figures/compare-subsets-1.pdf, id=348, 650.43pt x 361.35pt>
 File: figures/compare-subsets-1.pdf Graphic file (type pdf)
 <use figures/compare-subsets-1.pdf>
 Package pdftex.def Info: figures/compare-subsets-1.pdf  used on input line 611.
-(pdftex.def)             Requested size: 462.26999pt x 250.2743pt.
-[27 <./figures/compare-subsets-1.pdf>] [28] [29] [30] [31] [32] [33] [34]
-Overfull \hbox (14.43417pt too wide) in paragraph at lines 775--777
-[]\OT1/cmr/m/n/12 Pedersen, Thomas Lin. 2020. \OT1/cmr/m/it/12 patch-work: The Com-poser of Plots\OT1/cmr/m/n/12 . []$\OT1/cmtt/m/n/12 https : / / CRAN . R-[]project .
+
+(pdftex.def)             Requested size: 462.26999pt x 256.82495pt.
+[27] [28 <./figures/compare-subsets-1.pdf>] [29] [30] [31] [32] [33]
+Overfull \hbox (1.58751pt too wide) in paragraph at lines 720--722
+\OT1/cmr/m/it/12 shiny: Web Ap-pli-ca-tion Frame-work for R\OT1/cmr/m/n/12 . []
+$\OT1/cmtt/m/n/12 https : / / CRAN . R-[]project . org / package = shiny$[]\OT1
+/cmr/m/n/12 . 
  []
 
 
-Overfull \hbox (26.5238pt too wide) in paragraph at lines 787--789
-[]\OT1/cmr/m/n/12 Stodel, Megan. 2020. ``Stop Us-ing Iris.'' []$\OT1/cmtt/m/n/12 https : / / www . meganstodel . com / posts / no-[]to-[]iris/$[]\OT1/cmr/m/n/12 . 
+Overfull \hbox (0.70255pt too wide) in paragraph at lines 726--728
+[][]\OT1/cmr/m/n/12 Cooksey, Eliz-a-beth C. 2017. ``Us-ing the Na-tional Lon-gi
+-tu-di-nal Sur-veys of Youth (NLSY)
  []
 
-[35] [36]
-Overfull \hbox (33.67421pt too wide) in paragraph at lines 838--840
-\OT1/cmr/m/n/12 Ra-ton, Florida: Chap-man; Hall/CRC. []$\OT1/cmtt/m/n/12 https : / / bookdown . org / yihui / rmarkdown-[]cookbook$[]\OT1/cmr/m/n/12 . 
+[34] [35] [36] [37]
+Overfull \hbox (44.27966pt too wide) in paragraph at lines 837--839
+\OT1/cmr/m/n/12 Boca Ra-ton, Florida: Chap-man; Hall/CRC. []$\OT1/cmtt/m/n/12 h
+ttps : / / bookdown . org / yihui / rmarkdown-[]cookbook$[]\OT1/cmr/m/n/12 . 
  []
 
-[37] (./paper-jsdse.aux)
+[38] (./paper-jsdse.aux)
 Package rerunfilecheck Info: File `paper-jsdse.out' has not changed.
 (rerunfilecheck)             Checksum: 93BA855BF1030511AA0ABB6EEE0E1889;3440.
  ) 
 Here is how much of TeX's memory you used:
- 21100 strings out of 480260
- 390024 string characters out of 5893668
- 657709 words of memory out of 5000000
- 38506 multiletter control sequences out of 15000+600000
+ 21080 strings out of 480236
+ 391258 string characters out of 5894623
+ 656994 words of memory out of 5000000
+ 38516 multiletter control sequences out of 15000+600000
  479051 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 83i,11n,89p,1997b,578s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0700.600pk> </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on paper-jsdse.pdf (37 pages, 1422248 bytes).
+ 83i,11n,89p,1997b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fon
+tawesometwo.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/f
+ontawesome/fontawesomethree.enc} </Users/deeamaliah/Library/TinyTeX/texmf-var/f
+onts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </Users/deeamaliah/Library/TinyTeX/t
+exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0700.600pk> </Users/deeamaliah/Library
+/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></Users/deeamalia
+h/Library/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></U
+sers/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb></Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb></Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></Users/deeamaliah/Library/TinyTeX/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr12.pfb></Users/deeamaliah/Library/TinyTeX/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/deeamaliah/Library/TinyT
+eX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/deeamaliah/Librar
+y/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/deeamali
+ah/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users
+/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pf
+b>
+Output written on paper-jsdse.pdf (38 pages, 1421324 bytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 546 compressed objects within 6 object streams
- 179 named destinations out of 1000 (max. 500000)
+ 632 PDF objects out of 1000 (max. 8388607)
+ 545 compressed objects within 6 object streams
+ 180 named destinations out of 1000 (max. 500000)
  211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
