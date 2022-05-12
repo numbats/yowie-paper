@@ -535,7 +535,7 @@ In the original dataset, wages were inflation-adjusted to 1990 prices. This is n
 <!--AE comment: “The treatment of unlikely wages differ in the refreshed data.” I think this means “The treatment of anomalous wages differs between the original and refreshed data sets.” Then you say “We opted to use the weights from a robust linear regression to determine what should be set as missing value as described in Section 3.2.1.” I don’t think you were setting missing values though, were you? It was used to determine which values should be imputed, correct? Either way, please clarify.-->
 It is important to note that the treatment of unlikely wages differs in the refreshed data. In the original data by @SingerJudithD2003Alda, wages greater than $75 are set to be missing. However, this value is too low to be set as the maximum threshold, and it doesn't take into account temporal neighbors for an individual. We opted to use the weights from a robust linear regression to determine what should be regarded as extreme and imputed them with their predicted values as described in Section \@ref(censor).
 
-Lastly, the race variable is almost perfectly matched. The `id`'s in the dropouts subset of the refreshed data all correspond to males, which perfectly matches the original subset.
+Lastly, the individuals in the dropouts subset of the refreshed data (as matched by their `id`s) belong to the same race as the individuals in the original data. This is also the case in the `sex` variables, which all correspond to males.
 
  <!--AE comment: How many individuals up to 8th grade are in the refreshed dataset? What are plausible reasons for these differences?--> 
 

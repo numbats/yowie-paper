@@ -625,7 +625,7 @@ In the original dataset, wages were inflation-adjusted to 1990 prices. This is n
 
 It is important to note that the treatment of unlikely wages differs in the refreshed data. In the original data by Singer and Willett (2003), wages greater than \$75 are set to be missing. However, this value is too low to be set as the maximum threshold, and it doesn't take into account temporal neighbors for an individual. We opted to use the weights from a robust linear regression to determine what should be regarded as extreme and imputed them with their predicted values as described in Section \ref{censor}.
 
-Lastly, the race variable is almost perfectly matched. The \texttt{id}'s in the dropouts subset of the refreshed data all correspond to males, which perfectly matches the original subset.
+Lastly, the individuals in the dropouts subset of the refreshed data (as matched by their \texttt{id}s) belong to the same race as the individuals in the original data. This is also the case in the \texttt{sex} variables, which all correspond to males.
 
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
