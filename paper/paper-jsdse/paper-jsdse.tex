@@ -557,7 +557,7 @@ The list of variables provided in the three new datasets are as follows:
 \hypertarget{compare}{%
 \section{Comparison of refreshed with the original data}\label{compare}}
 
-The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar}. To compare the refreshed data with the original, a subset needs to be matched. There are numerous ways to do this, with the simplest being to extract the individuals based on their id being part of the original data and restricting the longitudinal measurements to the same years. However, we decided to try to replicate the process, as suggested by the description of the original data. This requires first identifying individuals who dropped out of high school.
+The original set, containing wages of high school dropouts (Singer and Willett 2003) from 1979 through to 1994, is available in the R package \texttt{brolgar}. To compare the refreshed data with the original, we need to subset the data into a matching cohort of high school dropouts. There are multiple ways to match a comparative cohort from the updated data -- the simplest approach is to subset to individuals with matching IDs in the original data and restricting the longitudinal measurements to the same years; another approach is to replicate the process as suggested by the description of the original data thus identifying a new (and possibly removal of old) set of individuals that is included in the refreshed data. We use the latter approach and as the first step we identify individuals who dropped out of high school.
 
 \hypertarget{filtering-determining-who-is-a-dropout}{%
 \subsection{Filtering: Determining who is a dropout}\label{filtering-determining-who-is-a-dropout}}
@@ -570,7 +570,7 @@ There is no explicit explanation of how the dropouts cohort is determined in the
 \item
   An individual whose highest grade completed (\texttt{hgc}) is reported to be less than 12th grade, \textbf{or}
 \item
-  An individual whose highest grade completed (\texttt{hgc}) is reported to be at least 12th grade and has received a GED (\texttt{ged} is code to 2).
+  An individual whose highest grade completed (\texttt{hgc}) is reported to be at least 12th grade and has received a GED (i.e.~\texttt{ged} code is 2).
 \end{enumerate}
 
 An additional criterion from Singer and Willett (2003) is to only include males aged between 14 and 17 years old in 1979. With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. To investigate the reason for the difference, individuals from the original and refreshed dataset were matched by id. This revealed several reasons for the disparity:
@@ -587,11 +587,11 @@ An additional criterion from Singer and Willett (2003) is to only include males 
   \def\labelenumii{\roman{enumii}.}
   \tightlist
   \item
-    35 of them completed at least 12th grade with a diploma instead of GED (\texttt{ged} variable is coded to 1). This suggests they are not dropouts, and so we excluded them from the refreshed data.
+    35 of them completed at least 12th grade with a diploma instead of GED (\texttt{ged} variable is coded as 1). This suggests they are not dropouts, and so we excluded them from the refreshed data.
   \item
     The information about \texttt{ged} is missing in 38 individuals. We decided to include them in the refreshed data.
   \item
-    3 individuals have both diploma and GED (\texttt{ged} is coded to 3). These were kept in the refreshed data.
+    3 individuals have both diploma and GED (\texttt{ged} is coded as 3). These were kept in the refreshed data.
   \item
     12 individuals do not exist in \texttt{wages} data because they have participated in less than 3 rounds of the survey.
   \end{enumerate}
@@ -604,7 +604,7 @@ The filtering was re-applied using these decisions, resulting in a refreshed dro
 
 Because the original data does not have the year of collection, it is not possible to merge the two subsets directly. Merging longitudinal data requires both the key (\texttt{id}) and the index (ideally survey year). In the original data, the experience variable is the time index, and it was not possible to exactly match this for the refreshed data. Thus, comparisons of the two sets have to be conducted in a two-sample fashion rather than a matched sample.
 
-Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets. Plot (A) shows a back-back bar chart of the highest grade completed. The two sets are almost the same, but small differences remain. Plots (B) and (C) show stacked density plots of experience and log wages, respectively. The distributions are relatively close, with more differences in wages as would be expected because the refreshed data is not inflation-adjusted.
+Figure \ref{fig:compare-subsets} contains summaries of corresponding variables in the two subsets. Plot (A) shows a back-to-back bar chart of the highest grade completed. The two sets are almost the same, but small differences remain. Plots (B) and (C) show stacked density plots of experience and log wages, respectively. The distributions are relatively close, with more differences in wages as would be expected because the refreshed data is not inflation-adjusted.
 
 \begin{figure}
 
@@ -677,7 +677,7 @@ On an individual level, people might want to see how their characteristics relat
 
 The above interpretations of results from analyzing the wages data rely on trusting that the data provided is accurate and valid. The wages data is collected by a reputable organization, but we found the data has obvious errors that should be corrected. This paper has illustrated procedures and guidelines to achieve valid data and provides the code and details for it to be reproduced and modified if deemed appropriate.
 
-Having trustworthy data is imperative for statistics and data science education. Whenever one uses a textbook data set that is perceived as relating to the students' lives, there will be interpretations made. The wages data is an example of this. Students will take away the interpretations from whatever is taught with the data, that wages increase with experience, education, race. If one uses data examples that are synthetic, instilled with our own inherent prejudices (e.g., sex and race), or data that has been poorly processed containing errors, we as educators are being irresponsible because the societal message taught to students may be flawed. This paper demonstrates the process of producing a trustworthy data set for teaching.
+Having trustworthy data is imperative for statistics and data science education. Whenever one uses a textbook data set that is perceived as relating to the students' lives, there will be interpretations made. The wages data is an example of this. Students can take away multiple interpretations from the data (e.g.~wages increase with experience, education, and race) based on the teaching focus to learn about the world. If one uses data examples that are synthetic, instilled with our own inherent prejudices (e.g., sex and race), or data that has been poorly processed containing errors, we, as educators, are being irresponsible because the societal message taught to students may be flawed. This paper demonstrates the process of producing a trustworthy data set for teaching.
 
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}
