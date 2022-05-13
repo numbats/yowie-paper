@@ -1,0 +1,68 @@
+---
+authors:
+  - name: Dewi Amaliah
+    thanks: "Corresponding author, dlamaleeah@gmail.com"
+    department: Dept of Econometrics and Business Statistics
+    affiliation: Monash University
+    location: Clayton, VIC 3800
+    email: dlamaleeah@gmail.com
+  - name: Dianne Cook
+    department: Dept of Econometrics and Business Statistics
+    affiliation: Monash University
+    location: Clayton, VIC 3800
+    email: dicook@monash.edu
+  - name: Emi Tanaka
+    department: Dept of Econometrics and Business Statistics
+    affiliation: Monash University
+    location: Clayton, VIC 3800
+    email: emi.tanaka@monash.edu
+  - name: Kate Hyde
+    thanks: ""
+    department: Dept of Econometrics and Business Statistics
+    affiliation: Monash University
+    location: Clayton, VIC 3800
+    email: "hyde.kate.a@gmail.com"
+  - name: Nicholas Tierney
+    thanks: ""
+    department: "Geospatial Health and Development"
+    affiliation: Telethon Kids Institute
+    location: Nedlands, WA 6009
+    email: "nicholas.tierney@gmail.com"
+wpnumber: no/yr
+jelcodes: C10,C14,C22
+blind: false
+cover: true
+toc: false
+bibliography: ../references.bib
+biblio-style: authoryear-comp
+header-includes:
+  - \usepackage{tcolorbox}
+  - \usepackage{fontawesome}
+  - \usepackage{color, colortbl}
+output:
+  monash::workingpaper:
+    fig_caption: yes
+    fig_height: 5
+    fig_width: 8
+    includes:
+      in_header: preamble.tex
+    keep_tex: yes
+    number_sections: yes
+    citation_package: biblatex
+---
+
+```{r, include = FALSE}
+paper <- here::here("paper/paper.Rmd")
+meta <- rmarkdown::yaml_front_matter(paper)
+```
+
+```{r, child = "../paper.Rmd"}
+```
+
+---
+title: "`r meta$title`"
+abstract: >
+  `r meta$abstract`
+keywords: `r meta$keywords`
+---
+
