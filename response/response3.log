@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  7 JUN 2022 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  7 JUN 2022 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1461,7 +1461,7 @@ LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
 
 {/Users/cookd/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 
-LaTeX Warning: Empty bibliography on input line 340.
+LaTeX Warning: Empty bibliography on input line 344.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 68.
@@ -1487,7 +1487,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  69i,12n,117p,1006b,1705s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5ponh6.enc}{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.enc}</Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response3.pdf (3 pages, 132973 bytes).
+Output written on response3.pdf (3 pages, 133024 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

@@ -93,6 +93,7 @@ Done
 
 \textcolor{violet}{(page 31, line 9) Certainly you don’t mean to say that you’ve created data ”unsatisfactorily far from” the original.}
 
+We have changed "unsatisfactorily" to "disappointingly"
 
 \textcolor{violet}{(page 32, line 18-30) Here you describe some modeling (see first note). Re-framing this as a possible activity could be helpful to the reader. As it is written now it sounds like a summary (the section title) of what was presented – instead you can make it a path forward for the readers.}
 
