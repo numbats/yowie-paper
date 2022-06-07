@@ -79,6 +79,8 @@ The abstract does NOT promise an exploratory analysis for longitudinal data. It 
 
 \textcolor{violet}{(page 22, line 5) The default for rlm is huber weighting which never applies a weight of 0. You may have meant bisquare, but that change should be discussed.}
 
+We are really not sure what you are requesting here. The section was re-written in the revision. We don't refer to huber weighting, and it makes no sense to refer to bisquare.
+
 \textcolor{violet}{(page 28, figure 7) This is a helpful graph, but perhaps making the barplot “position dodge” and the density plots overlapping with transparency would sell your point better. This graphic makes the point, but the suggestions I made may produce more compelling evidence.}
 
 We have done as you suggest for the density plots, but feel the back-to-back bar chart is better for the hgc comparison.
