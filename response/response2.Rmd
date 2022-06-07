@@ -72,7 +72,7 @@ The only comments on framing appear to come from the associate editor: \textcolo
 \item[Reviewer 3:] \textcolor{violet}{Here is what I think the strong takeaway in this work is:  "Any longitudinal dataset used for education should have a sufficiently reproducible process to be updated with new data.  The NLSY79 dataset is a great teaching tool that has become outdated, both because the dataset stops in 1994, and because the demographic data could be handled more delicately.  What you have done here is offered a well-documented and reproducible process that expands the dataset to modernity, and matches the original dataset decently well within its scope." This narrative doesn’t require any major structural revision; only some wordsmithing to make sure this message of your contribution hits home throughout the paper.}
 \end{description}
 
-* Thanks for this, exactly right! We have changed the wording accordingly, in various places in the paper. XXX DC, ET, NT please check that this message comes across clearly enough.
+* Thanks for this, exactly right! We have changed the wording accordingly, in various places in the paper.
 
 \begin{description}
 \item[Reviewer 3:] \textcolor{violet}{Page 17:  I remain slightly uncomfortable with the “hand-way-ness” of the modeling step.  I don’t think that “we tried this and it failed to converge” is a satisfactory explanation for dismissing a model that the authors themselves believe would be a better fit.  Perhaps the discussion around robustlmm could be relegated to an appendix or supplement, with a bit more detail about why this model doesn’t converge on the data.  That way it would not distract from the details of the model that was actually used.}

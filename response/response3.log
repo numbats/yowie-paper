@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  12 MAY 2022 17:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.24)  6 JUN 2022 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**response2.tex
-(./response2.tex
+**response3.tex
+(./response3.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/Users/deeamaliah/Library/TinyTeX/texmf-dist
 /tex/latex/base/article.cls
@@ -1412,8 +1412,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'australian'.
-(./response2.aux)
-\openout1 = `response2.aux'.
+(./response3.aux)
+\openout1 = `response3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxsfmi/m/it on input line 205.
 LaTeX Font Info:    Trying to load font information for OML+ntxsfmi on input li
@@ -1496,9 +1496,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 205.
 LaTeX Info: Redefining \pageref on input line 205.
 LaTeX Info: Redefining \nameref on input line 205.
-(./response2.out) (./response2.out)
+(./response3.out) (./response3.out)
 \@outlinefile=\write5
-\openout5 = `response2.out'.
+\openout5 = `response3.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1557,11 +1557,11 @@ File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Data encoding 'utf8' specified.
 (biblatex)             No need to reencode data.
-\openout4 = `response2.bcf'.
+\openout4 = `response3.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'response2.bbl' found.
-(./response2.bbl)
+Package biblatex Info: ... file 'response3.bbl' found.
+(./response3.bbl)
 Package biblatex Info: Reference section=0 on input line 205.
 Package biblatex Info: Reference segment=0 on input line 205.
 Package caption Info: Begin \AtBeginDocument code.
@@ -1598,48 +1598,19 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
 (Font)              scaled to size 10.95pt on input line 209.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 217.
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 221.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
-(Font)              scaled to size 15.0pt on input line 217.
-LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF o
-n input line 226.
-
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/sourcesanspro/TS1Source
-SansPro-TLF.fd
-File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/So
-urceSansPro-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 226.
-LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 226.
+(Font)              scaled to size 15.0pt on input line 221.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 230.
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 228.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 230.
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
-[][]\T1/SourceSansPro-TLF/bold/n/12 (+20) ORIGINAL COM-MENT: The au-thor switch
-es be-tween gen-der
- []
-
-
-Underfull \hbox (badness 1286) in paragraph at lines 230--231
-\T1/SourceSansPro-TLF/bold/n/12 (+20) (man/woman/etc) and sex (male/female/etc.
-) through-out the manuscript. Fur-
- []
-
+(Font)              scaled to size 12.0pt on input line 228.
 [1
 
 {/Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 }]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-56.
-(/Users/deeamaliah/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [2] [3] [4] [5] [6]
 
-LaTeX Warning: Empty bibliography on input line 529.
+LaTeX Warning: Empty bibliography on input line 296.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 66.
@@ -1649,31 +1620,29 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 67.
 See the caption package documentation for explanation.
 
-[7] (./response2.aux)
-Package rerunfilecheck Info: File `response2.out' has not changed.
+[2] (./response3.aux)
+Package rerunfilecheck Info: File `response3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package logreq Info: Writing requests to 'response2.run.xml'.
-\openout1 = `response2.run.xml'.
+Package logreq Info: Writing requests to 'response3.run.xml'.
+\openout1 = `response3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27169 strings out of 480236
- 473841 string characters out of 5894623
+ 27000 strings out of 480236
+ 468597 string characters out of 5894623
  1216931 words of memory out of 5000000
- 44590 multiletter control sequences out of 15000+600000
- 553200 words of font info for 143 fonts, out of 8000000 for 9000
+ 44510 multiletter control sequences out of 15000+600000
+ 545317 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,11n,117p,1243b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/deeamaliah/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
-t1200.600pk>{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourc
-esanspro/a_5ponh6.enc}{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/d
-vips/sourcesanspro/a_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/f
-onts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Librar
-y/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response2.pdf (7 pages, 159255 bytes).
+ 69i,11n,117p,1198b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a
+_emkxm5.enc}</Users/deeamaliah/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sou
+rcesanspro/SourceSansPro-Bold.pfb></Users/deeamaliah/Library/TinyTeX/texmf-dist
+/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
+Output written on response3.pdf (2 pages, 132250 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 28673 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 28 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 24577 words of extra memory for PDF output out of 24883 (max. 10000000)
 
