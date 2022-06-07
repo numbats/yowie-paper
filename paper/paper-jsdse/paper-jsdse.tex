@@ -335,7 +335,7 @@ The hourly wages are in the variables beginning with \texttt{HRP} in \texttt{new
 \item
   If the hourly rate is recorded as 0, we set wage as missing, and
 \item
-  If the total hours of worked per week for the corresponding job is greater than 84 hours, we set the wage and hours worked as missing.
+  If the total hours of worked per week for the corresponding job is greater than 84 hours (12 hours/day every day), we set the wage and hours worked as missing.
 \end{itemize}
 
 The number of jobs (\texttt{number\_of\_jobs}) for each respondent per year is computed from the number of non-missing values of hourly wage. In other words, even if the information of hours worked exists for a particular observation, we do not tally when the hourly wage is missing.
@@ -573,7 +573,7 @@ There is no explicit explanation of how the dropouts cohort is determined in the
   An individual whose highest grade completed (\texttt{hgc}) is reported to be at least 12th grade and has received a GED (i.e.~\texttt{ged} code is 2).
 \end{enumerate}
 
-An additional criterion from Singer and Willett (2003) is to only include males aged between 14 and 17 years old in 1979. With this filtering, we obtained 670 individuals in the refreshed data compared to 888 individuals in the original data. To investigate the reason for the difference, individuals from the original and refreshed dataset were matched by id. This revealed several reasons for the disparity:
+An additional criterion from Singer and Willett (2003) is to only include males aged between 14 and 17 years old in 1979. With this filtering, we obtained 0 individuals in the refreshed data compared to 888 individuals in the original data. To investigate the reason for the difference, individuals from the original and refreshed dataset were matched by id. This revealed several reasons for the disparity:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -581,7 +581,7 @@ An additional criterion from Singer and Willett (2003) is to only include males 
 \item
   173 individuals were more than 17 years old in 1979. Thus, it looks like the description of the original data is not quite accurate that there are people older than 17 in the subset. Our decision is to also include them in the refreshed data as the new data contains an age variable, so analysts could filter them later.
 \item
-  79 individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because:
+  715 individuals were less than or equal to 17 years old in 1979. However, they were not captured in the refreshed data because:
 
   \begin{enumerate}
   \def\labelenumii{\roman{enumii}.}
@@ -589,7 +589,7 @@ An additional criterion from Singer and Willett (2003) is to only include males 
   \item
     35 of them completed at least 12th grade with a diploma instead of GED (\texttt{ged} variable is coded as 1). This suggests they are not dropouts, and so we excluded them from the refreshed data.
   \item
-    The information about \texttt{ged} is missing in 38 individuals. We decided to include them in the refreshed data.
+    The information about \texttt{ged} is missing in 341 individuals. We decided to include them in the refreshed data.
   \item
     3 individuals have both diploma and GED (\texttt{ged} is coded as 3). These were kept in the refreshed data.
   \item
@@ -597,7 +597,7 @@ An additional criterion from Singer and Willett (2003) is to only include males 
   \end{enumerate}
 \end{enumerate}
 
-The filtering was re-applied using these decisions, resulting in a refreshed dropout subset containing 863 individuals.
+The filtering was re-applied using these decisions, resulting in a refreshed dropout subset containing 865 individuals.
 
 \hypertarget{summaries-of-original-with-refreshed-dropouts-data}{%
 \subsection{Summaries of original with refreshed dropouts data}\label{summaries-of-original-with-refreshed-dropouts-data}}

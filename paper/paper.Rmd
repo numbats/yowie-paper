@@ -316,7 +316,7 @@ From 1979 to 1987, `new_data_qnames` only contains one version of hours worked p
 The hourly wages are in the variables beginning with `HRP` in `new_data_qnames`. As a respondent may have multiple jobs, the `mean_hourly_wage` is computed as a weighted average of the hourly wage for each job with the number of hours worked for each job as weights (provided that the information on the number of hours is available); if the number of hours worked for any job is missing, then the `mean_hourly_wage` is computed as a simple average of all available hourly wages. Prior to computing the mean hourly wage, we undertook a number of steps to treat extreme observations as described below:
 
 * If the hourly rate is recorded as 0, we set wage as missing, and
-* If the total hours of worked per week for the corresponding job is greater than 84 hours, we set the wage and hours worked as missing. 
+* If the total hours of worked per week for the corresponding job is greater than 84 hours (12 hours/day every day), we set the wage and hours worked as missing. 
 
 The number of jobs (`number_of_jobs`) for each respondent per year is computed from the number of non-missing values of hourly wage. In other words, even if the information of hours worked exists for a particular observation, we do not tally when the hourly wage is missing.
 
