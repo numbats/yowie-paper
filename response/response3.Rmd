@@ -97,7 +97,7 @@ We have changed "unsatisfactorily" to "disappointingly"
 
 \textcolor{violet}{(page 32, line 18-30) Here you describe some modeling (see first note). Re-framing this as a possible activity could be helpful to the reader. As it is written now it sounds like a summary (the section title) of what was presented – instead you can make it a path forward for the readers.}
 
-
+This bullet list is a path forward. It is clearly not a summary of what was presented. We did not discuss teaching modeling. We simply used one type of model for pre-rpcessing the data to handle unusual observations. No change made.
 
 
 
