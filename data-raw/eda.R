@@ -66,8 +66,9 @@ exp_d94 <- do_1994 %>%
 exp_join <- bind_rows(exp_sw, exp_d94)
 
 exp_p <- ggplot(exp_join) +
-  geom_density(aes(x=exp, colour=subset, fill=subset), alpha=0.9) +
-  facet_wrap(~subset, ncol=1) +
+  geom_density(aes(x=exp, colour=subset, fill=subset),
+               alpha=0.7) +
+  #facet_wrap(~subset, ncol=1) +
   xlim(c(0,13)) +
   xlab("Experience") + ylab("") +
   scale_fill_brewer("", palette="Dark2") +
@@ -103,8 +104,9 @@ wg_d94 <- do_1994 %>%
 wg_join <- bind_rows(wg_sw, wg_d94)
 
 wg_p <- ggplot(wg_join) +
-  geom_density(aes(x=ln_wages, colour=subset, fill=subset), alpha=0.9) +
-  facet_wrap(~subset, ncol=1) +
+  geom_density(aes(x=ln_wages, colour=subset, fill=subset),
+               alpha=0.7) +
+  #facet_wrap(~subset, ncol=1) +
   xlim(c(0,4)) +
   xlab("Wages (natural log)") + ylab("") +
   scale_fill_brewer("", palette="Dark2") +
