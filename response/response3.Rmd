@@ -21,11 +21,15 @@ Thank you!
 
 \textcolor{violet}{While the data are interesting, the necessary details for a pedagogical application or case study are still largely missing. The manuscript reads more like a paper about the R package, something for a software journal. In my last review, I had missed that this was for a special issue, still I agree with the reviewer that the clear contributions to educators other than its use in class are plenty, but not fully described.}
 
+Nothing to respond to here.
+
 \textcolor{violet}{The main item left to be addressed is polish. This twice-revised manuscript still contains several places where authors are missing words, awkward phrasing, or grammatical errors.}
 
+Corrected as follows
 
 \textcolor{violet}{The abstract promises a discussion of the process for cleaning data and exploratory analyses for longitudinal data. The latter is not provided, nor is a discussion about how that might be done in a class activity. This is a place for adding another clear contribution to educators. (Alternatively it can be deleted).}
 
+The abstract does NOT promise an exploratory analysis for longitudinal data. It mentions that one of the purposes of this textbook data is to use it to teach exploratory analysis of longitudinal data. Similarly, it also states that the data is useful for teaching modeling. Both of these are beyond the scope of this paper. They are still important to keep because it makes the reader aware of why this data is useful and important. No change to abstract was made.
 
 \textcolor{violet}{(page 10, line 18) “these” is errant}
 
