@@ -85,6 +85,7 @@ We have done as you suggest for the density plots, but feel the back-to-back bar
 
 \textcolor{violet}{(page 29, line 21) The sentence “The highest grade completed has some confusion” should be rewritten.}
 
+Done
 
 \textcolor{violet}{(page 29, line 37) Naming the function would be helpful for readers interested in using it.}
 
