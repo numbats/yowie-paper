@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  8 JUN 2022 07:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  8 JUN 2022 07:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -556,7 +556,7 @@ Overfull \hbox (26.5238pt too wide) in paragraph at lines 787--789
  []
 
 [35] [36]
-Overfull \hbox (33.67421pt too wide) in paragraph at lines 838--840
+Overfull \hbox (33.67421pt too wide) in paragraph at lines 841--843
 \OT1/cmr/m/n/12 Ra-ton, Florida: Chap-man; Hall/CRC. []$\OT1/cmtt/m/n/12 https : / / bookdown . org / yihui / rmarkdown-[]cookbook$[]\OT1/cmr/m/n/12 . 
  []
 
@@ -565,18 +565,18 @@ Package rerunfilecheck Info: File `paper-jsdse.out' has not changed.
 (rerunfilecheck)             Checksum: 8D64FEC00C880E7DBBB6BA6AFAD3BD4D;3521.
  ) 
 Here is how much of TeX's memory you used:
- 21116 strings out of 480260
- 390514 string characters out of 5893668
+ 21117 strings out of 480260
+ 390528 string characters out of 5893668
  657933 words of memory out of 5000000
  38522 multiletter control sequences out of 15000+600000
  479051 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,11n,89p,1997b,578s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0700.600pk> </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on paper-jsdse.pdf (37 pages, 1419664 bytes).
+Output written on paper-jsdse.pdf (37 pages, 1420522 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 549 compressed objects within 6 object streams
- 179 named destinations out of 1000 (max. 500000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 555 compressed objects within 6 object streams
+ 180 named destinations out of 1000 (max. 500000)
  211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
