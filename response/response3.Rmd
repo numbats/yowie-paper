@@ -10,6 +10,7 @@ output: monash::memo
 
 We thank the editor, associate editor and the reviewers for their feedback. Here is how we have made revisions to the manuscript to address each point. 
 
+In addition we have made a few small changes to wording and language as suggested by a colleague, and added an additional reference for the iris data as suggested by another colleague.
 
 Editor: \textcolor{violet}{The reviews are in general quite favorable and suggest that, subject to the minor revisions that the paper would be suitable for publication as part of the special issue on reproducibility and responsible workflow.} 
 

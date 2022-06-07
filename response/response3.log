@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  8 JUN 2022 07:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.10)  8 JUN 2022 07:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1445,27 +1445,27 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
 (Font)              `T1/SourceSansPro-TLF/regular/n' on input line 211.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
 (Font)              scaled to size 10.95pt on input line 211.
-LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF on input line 226.
+LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF on input line 228.
 (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/sourcesanspro/TS1SourceSansPro-TLF.fd
 File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/SourceSansPro-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 226.
+(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 228.
 LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 226.
+(Font)              scaled to size 12.0pt on input line 228.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 229.
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 231.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
-(Font)              scaled to size 15.0pt on input line 229.
+(Font)              scaled to size 15.0pt on input line 231.
 [1
 
-{/Users/cookd/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 333.
+{/Users/cookd/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 335.
 (/Users/cookd/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [2]
+) [3]
 
-LaTeX Warning: Empty bibliography on input line 384.
+LaTeX Warning: Empty bibliography on input line 386.
 
 
 Package caption Warning: Unused \captionsetup[figure] on input line 68.
@@ -1475,7 +1475,7 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 69.
 See the caption package documentation for explanation.
 
-[3] (./response3.aux)
+[4] (./response3.aux)
 Package rerunfilecheck Info: File `response3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'response3.run.xml'.
@@ -1483,18 +1483,18 @@ Package logreq Info: Writing requests to 'response3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27117 strings out of 480260
- 470825 string characters out of 5893668
+ 27118 strings out of 480260
+ 470831 string characters out of 5893668
  1218500 words of memory out of 5000000
  44564 multiletter control sequences out of 15000+600000
  539016 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  69i,11n,117p,1006b,1705s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/cookd/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5ponh6.enc}{/Users/cookd/Library/TinyTeX/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.enc}</Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></Users/cookd/Library/TinyTeX/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb>
-Output written on response3.pdf (3 pages, 138346 bytes).
+Output written on response3.pdf (4 pages, 139029 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
+ 58 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
+ 5 named destinations out of 1000 (max. 500000)
  26625 words of extra memory for PDF output out of 29859 (max. 10000000)
 
